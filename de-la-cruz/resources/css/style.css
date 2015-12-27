@@ -1,0 +1,206 @@
+/* Import Roboto Thin, Light, and Normal */
+@import url(http://fonts/googleapis/com/css?family=Roboto:100,300,400);
+/* Import Material Design icons */
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+/* TYPOGRAPHY */
+h1 {
+    font-family: 'Roboto Thin', sans-serif;
+    font-weight: normal;
+    font-size: 400%;
+}
+
+/* May want to use Roboto Condensed Light to differentiate h2 and h3 */
+h2 {
+    font-family: 'Roboto Light', sans-serif;
+    font-weight: normal;
+    font-size: 160%;
+    text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
+}
+
+h3 {
+    font-family: 'Roboto Light', sans-serif;
+    font-weight: normal;
+    font-size: 125%;
+    text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
+}
+
+/* May want to use underline or a different style to differentiate h4 and p */
+h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+p, li {
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 105%;
+}
+
+/* GENERAL */
+ul {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+body {
+    background-color: #424242;
+}
+
+div {
+    /*padding-left: 1.8em;
+    padding-right: 1.8em;*/
+    padding: 0.8em;
+    overflow: auto;
+}
+
+/* SECTIONS */
+/* Headline (title, background image) */
+#headline {
+    background-image: url("../images/banner/blurred/banner00-blur-wide.jpg");
+    background-size: cover;
+    padding-top: 11.0em; /* Initially top: 16.0em, bot not specified */
+    padding-bottom: 0em;
+    padding-left: 0;
+    padding-right: 0;
+    color: white;
+}
+
+/* Title */
+#title{
+    padding-bottom: 0;
+    margin-bottom: 0.01em;
+    text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
+}
+
+/* Navbar & contact bar */
+#navbar, #contactbar {
+    list-style-type: none;
+    text-align: center;
+    overflow: hidden;
+    width: inherit;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0;
+}
+/* Coloring specific to navbar */
+#navbar {
+    /*background-color: rgba(33, 33, 33, 0.75);
+    border-bottom:  rgba(33, 33, 33, 0.75);*/
+}
+#navbox, #contactbox {
+    background-color: rgba(33, 33, 33, 0.75);
+    border-bottom:  rgba(33, 33, 33, 0.75);
+    margin: 0;
+}
+#navbox {
+    width: inherit;
+    padding: 0;
+}
+#contactbox {
+    padding: 1em 2em;
+}
+
+.navitem, .conitem {
+    float: left;
+}
+
+.conitem {
+    display: block;
+    text-align: center;
+    font-family: 'Roboto Light', sans-serif;
+    font-weight: normal;
+    padding: 0 1em;
+    margin: 0;
+    text-decoration: none;
+}
+
+#conheader {
+    width: inherit;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+/*a:link.about, a:visited.about, a:link.resume, a:visited.resume, a:link.contact, a:visited.contact,*/
+a:link.navlink, a:visited.navlink, a:link.conlink, a:visited.conlink {
+    display: block;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-family: 'Roboto Light', sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    transition-property: background-color, border-bottom;
+    transition-duration: 180ms;
+    transition-timing-function: linear;
+}
+a:link.navlink, a:visited.navlink {
+    width: 8em;
+    font-size: 1.15em;
+    padding: 1em;
+    text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.60);
+}
+a:link.conlink, a:visited.conlink {
+    padding: 1em;
+    width: 3em;
+}
+
+/*a:hover.about, a:hover.resume, a:hover.contact, */
+a:hover.navlink, a:hover.conlink {
+    background-color: rgba(66, 66, 66, 0.75);
+    border-bottom-color: rgba(66, 66, 66, 0.75);
+}
+
+/* Shared (content sections) */
+#skills, #education, #experience, #aboutme {
+    padding: 1em;
+    background-color: rgba(33, 33, 33, 0.75);
+    color: white;
+}
+
+/* Shared (decorative sections) */
+#headline, #about, #resume, #contact {
+    margin: 1em;
+    box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, .6);
+}
+
+/* DECORATIVE SECTIONS */
+/* About section */
+#about {
+    background-image: url("../images/banner/blurred/banner16-blur-wide.jpg");
+    background-size: cover;
+}
+/* Resume section */
+#resume {
+    background-image: url("../images/banner/blurred/banner16-blur.jpg");
+    background-size: cover;
+}
+/* Contact section */
+#contact {
+    background-image: url("../images/banner/blurred/banner13-blur-wide.jpg");
+    background-size: cover;
+    color: white;
+}
+
+/* CONTENT */
+
+/* Portrait */
+#portrait {
+    float: left;
+    width: 10.0em;
+    padding: 1em;
+}
+
+/* About text */
+#abouttext {
+    padding: 2em;
+}
+
+/* SVG links */
+.svg {
+    -webkit-filter: invert(1);
+}
