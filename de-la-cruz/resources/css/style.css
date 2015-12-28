@@ -4,35 +4,38 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 /* TYPOGRAPHY */
+/* Roboto Thin = Roboto weight 100 */
 h1 {
-    font-family: 'Roboto Thin', sans-serif;
-    font-weight: normal;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 100;
     font-size: 400%;
 }
 
 /* May want to use Roboto Condensed Light to differentiate h2 and h3 */
+/* Roboto Light = Roboto weight 300 */
 h2 {
-    font-family: 'Roboto Light', sans-serif;
-    font-weight: normal;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300;
     font-size: 160%;
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
 }
-
+/* Roboto Light = Roboto weight 300 */
 h3 {
-    font-family: 'Roboto Light', sans-serif;
-    font-weight: normal;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300;
     font-size: 125%;
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
 }
 
 /* May want to use underline or a different style to differentiate h4 and p */
 h4 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
     font-weight: normal;
 }
-
+/* Roboto Light = Roboto weight 300 */
 p, li {
-    font-family: 'Roboto Light', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
+	font-weight: 300;
     font-size: 105%;
 }
 
