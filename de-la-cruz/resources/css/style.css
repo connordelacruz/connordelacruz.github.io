@@ -6,23 +6,38 @@
 /* TYPOGRAPHY */
 /* Roboto Thin = Roboto weight 100 */
 h1 {
+<<<<<<< HEAD
     font-family: 'Roboto', sans-serif !important;
     font-weight: 100;
+=======
+    font-family: 'Roboto Thin', sans-serif !important;
+    font-weight: normal;
+>>>>>>> 197b5d600b33146e557d7f82550b67f0c11eb08b
     font-size: 400%;
 }
 
 /* May want to use Roboto Condensed Light to differentiate h2 and h3 */
 /* Roboto Light = Roboto weight 300 */
 h2 {
+<<<<<<< HEAD
     font-family: 'Roboto', sans-serif !important;
     font-weight: 300;
+=======
+    font-family: 'Roboto Light', sans-serif !important;
+    font-weight: normal;
+>>>>>>> 197b5d600b33146e557d7f82550b67f0c11eb08b
     font-size: 160%;
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
 }
 /* Roboto Light = Roboto weight 300 */
 h3 {
+<<<<<<< HEAD
     font-family: 'Roboto', sans-serif !important;
     font-weight: 300;
+=======
+    font-family: 'Roboto Light', sans-serif !important;
+    font-weight: normal;
+>>>>>>> 197b5d600b33146e557d7f82550b67f0c11eb08b
     font-size: 125%;
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
 }
@@ -34,8 +49,12 @@ h4 {
 }
 /* Roboto Light = Roboto weight 300 */
 p, li {
+<<<<<<< HEAD
     font-family: 'Roboto', sans-serif !important;
 	font-weight: 300;
+=======
+    font-family: 'Roboto Light', sans-serif !important;
+>>>>>>> 197b5d600b33146e557d7f82550b67f0c11eb08b
     font-size: 105%;
 }
 
