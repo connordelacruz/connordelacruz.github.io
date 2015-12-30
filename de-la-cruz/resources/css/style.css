@@ -1,7 +1,6 @@
 /* Import Roboto Thin, Light, and Normal */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
-/* Import Material Design icons */
-@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
 
 /* TYPOGRAPHY */
 /* Roboto Thin = Roboto weight 100 */
@@ -17,6 +16,7 @@ h2 {
     font-family: 'Roboto', sans-serif !important;
     font-weight: 300;
     font-size: 160%;
+    font-style: normal;
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
 }
 /* Roboto Light = Roboto weight 300 */
@@ -38,6 +38,7 @@ p, li {
 	font-weight: 300;
     font-size: 105%;
 }
+
 
 /* GENERAL */
 ul {
@@ -70,30 +71,34 @@ div {
     color: white;
 }
 
-/* Title */
+/* Title (h1) */
 #title{
     padding-bottom: 0;
     margin-bottom: 0.01em;
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
 }
+/* Center title on smaller screens, adjust h1 font size to be  in order to prevent word wrapping to 2+ lines */
+@media (max-width: 745px) {
+    #title {
+        text-align: center;
+        /* Font size set to 90% the viewport width on smaller screens*/
+        font-size: 9vw;
+    }
+}
 
-/* Navbar & contact bar */
+/* Navbar & contact bar (ul) */
 #navbar, #contactbar {
     list-style-type: none;
     text-align: center;
     overflow: hidden;
-    width: inherit;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     margin: 0 auto;
     padding: 0;
 }
-/* Coloring specific to navbar */
-#navbar {
-    /*background-color: rgba(33, 33, 33, 0.75);
-    border-bottom:  rgba(33, 33, 33, 0.75);*/
-}
+
+/* navbox and contactbox (div containing navbar/contactbar) */
 #navbox, #contactbox {
     background-color: rgba(33, 33, 33, 0.75);
     border-bottom:  rgba(33, 33, 33, 0.75);
@@ -111,6 +116,7 @@ div {
     float: left;
 }
 
+/* Contact bar item (li) */
 .conitem {
     display: block;
     text-align: center;
@@ -141,12 +147,14 @@ a:link.navlink, a:visited.navlink, a:link.conlink, a:visited.conlink {
     transition-duration: 180ms;
     transition-timing-function: linear;
 }
+/* Navbar link (a) */
 a:link.navlink, a:visited.navlink {
     width: 8em;
     font-size: 1.15em;
     padding: 1em;
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.60);
 }
+
 a:link.conlink, a:visited.conlink {
     padding: 1em;
     width: 3em;
@@ -157,6 +165,25 @@ a:hover.navlink, a:hover.conlink {
     background-color: rgba(66, 66, 66, 0.75);
     border-bottom-color: rgba(66, 66, 66, 0.75);
 }
+
+/* Navbar layout adjusts for smaller widths */
+@media (max-width: 645px) {
+    /* Navbar width set to inherit to keep vertical list centered */
+    #navbar {
+        width:inherit;
+    }
+    /* Navbar stops being single line at around 645px. At this size, make it vertical instead */
+    .navitem {
+        display: block;
+        width: inherit;
+        float: none;
+    }
+    /* Navlinks extend to ends of screen when layout changes on small screens */
+    a:link.navlink, a:visited.navlink {
+        width: inherit;
+    }
+}
+
 
 /* Shared (content sections) */
 #skills, #education, #experience, #aboutme {
@@ -193,9 +220,13 @@ a:hover.navlink, a:hover.conlink {
 
 /* Portrait */
 #portrait {
-    float: left;
+    /*float: left;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
     width: 10.0em;
-    padding: 1em;
+    padding: 0;
 }
 
 /* About text */
