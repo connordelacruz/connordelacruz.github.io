@@ -59,6 +59,7 @@ div {
     overflow: auto;
 }
 
+
 /* SECTIONS */
 /* Headline (title, background image) */
 #headline {
@@ -76,6 +77,7 @@ div {
     padding-bottom: 0;
     margin-bottom: 0.01em;
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
+    text-align: center;
 }
 /* Center title on smaller screens, adjust h1 font size to be  in order to prevent word wrapping to 2+ lines */
 @media (max-width: 745px) {
@@ -187,15 +189,25 @@ a:hover.navlink, a:hover.conlink {
 
 /* Shared (content sections) */
 #skills, #education, #experience, #aboutme {
-    padding: 1em;
+    padding: 1.5em 4em;
     background-color: rgba(33, 33, 33, 0.75);
     color: white;
 }
-
 /* Shared (decorative sections) */
 #headline, #about, #resume, #contact {
     margin: 1em;
     box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, .6);
+}
+/* On small screens, side margins on the decorative sections and side padding on the content sections are reduced */
+@media (max-width: 645px) {
+    /* Shared (content sections) */
+    #skills, #education, #experience, #aboutme {
+        padding: 1em;
+    }
+    /* Shared (decorative sections) */
+    #headline, #about, #resume, #contact {
+        margin: .2em;
+    }
 }
 
 /* DECORATIVE SECTIONS */
