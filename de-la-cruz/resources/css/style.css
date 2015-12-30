@@ -59,16 +59,27 @@ div {
     overflow: auto;
 }
 
+hr {
+    border: none;
+    background-color: #BDBDBD;
+    height: 1px;
+    margin: 0.5em 0.4em;
+}
+/* hr on smaller screens */
+@media (max-width: 645px) {
+    hr {
+        height: 1px;
+        margin: 0.5em 0;
+    }
+}
 
 /* SECTIONS */
 /* Headline (title, background image) */
 #headline {
     background-image: url("../images/banner/blurred/banner00-blur-wide.jpg");
     background-size: cover;
-    padding-top: 11.0em; /* Initially top: 16.0em, bot not specified */
-    padding-bottom: 0em;
-    padding-left: 0;
-    padding-right: 0;
+    /* Initially top: 16.0em, bot not specified */
+    padding: 11.0em 0 0em;
     color: white;
 }
 
@@ -80,11 +91,11 @@ div {
     text-align: center;
 }
 /* Center title on smaller screens, adjust h1 font size to be  in order to prevent word wrapping to 2+ lines */
-@media (max-width: 745px) {
+@media (max-width: 645px) {
     #title {
         text-align: center;
-        /* Font size set to 90% the viewport width on smaller screens*/
-        font-size: 9vw;
+        /* Font size set to 12% the viewport width on smaller screens */
+        font-size: 11.5vw;
     }
 }
 
@@ -189,7 +200,7 @@ a:hover.navlink, a:hover.conlink {
 
 /* Shared (content sections) */
 #skills, #education, #experience, #aboutme {
-    padding: 1.5em 4em;
+    padding: 1.5em 3em;
     background-color: rgba(33, 33, 33, 0.75);
     color: white;
 }
@@ -242,8 +253,10 @@ a:hover.navlink, a:hover.conlink {
 }
 
 /* About text */
-#abouttext {
-    padding: 2em;
+@media (max-width: 645px) {
+    #abouttext {
+        padding: 1em;
+    }
 }
 
 /* SVG links */
