@@ -64,6 +64,9 @@ hr {
     background-color: #BDBDBD;
     height: 1px;
     margin: 0.5em 0.4em;
+    /* Max width so it doesn't stretch too far, margin auto so it remains centered
+    margin: 0.5em auto;
+    max-width: 1200px; */
 }
 /* hr on smaller screens */
 @media (max-width: 645px) {
@@ -78,8 +81,7 @@ hr {
 #headline {
     background-image: url("../images/banner/blurred/banner00-blur-wide.jpg");
     background-size: cover;
-    /* Initially top: 16.0em, bot not specified */
-    padding: 11.0em 0 0em;
+    padding: 11.0vh 0 0;
     color: white;
 }
 
@@ -135,7 +137,7 @@ hr {
     text-align: center;
     font-family: 'Roboto Light', sans-serif;
     font-weight: normal;
-    padding: 0 1em;
+    padding: 0;
     margin: 0;
     text-decoration: none;
 }
@@ -199,20 +201,26 @@ a:hover.navlink, a:hover.conlink {
 
 
 /* Shared (content sections) */
-#skills, #education, #experience, #aboutme {
+#skills, #education, #experience, #aboutme, #contactbox {
     padding: 1.5em 3em;
     background-color: rgba(33, 33, 33, 0.75);
     color: white;
+    /* Max width so it doesn't stretch too far, margin auto so it remains centered
+    margin: auto;
+    max-width: 1000px; */
 }
 /* Shared (decorative sections) */
 #headline, #about, #resume, #contact {
     margin: 1em;
+    /* Max width so it doesn't stretch too far, margin auto so it remains centered
+    margin: auto;
+    max-width: 1100px; */
     box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, .6);
 }
 /* On small screens, side margins on the decorative sections and side padding on the content sections are reduced */
 @media (max-width: 645px) {
     /* Shared (content sections) */
-    #skills, #education, #experience, #aboutme {
+    #skills, #education, #experience, #aboutme, #contactbox {
         padding: 1em;
     }
     /* Shared (decorative sections) */
@@ -262,4 +270,5 @@ a:hover.navlink, a:hover.conlink {
 /* SVG links */
 .svg {
     -webkit-filter: invert(1);
+    filter: invert(1);
 }
