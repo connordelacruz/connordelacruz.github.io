@@ -183,10 +183,20 @@ a:hover.navlink, a:hover.conlink {
 
 /* Navbar layout adjusts for smaller widths */
 @media (max-width: 645px) {
+    /* Navbox to be positioned at the top and be persistent on mobile */
+    /* Will have a menu button that expands to list */
+    /*#navbox {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }*/
     /* Navbar width set to inherit to keep vertical list centered */
     #navbar {
-        width:inherit;
+        /* hide navbar on small screens, display mobile navbar instead */
+        display: none;
+        /*width:inherit;*/
     }
+    /* NOTE -- MIGHT WANT TO REMOVE FOLLOWING AS IT'S HIDDEN ANYWAY
     /* Navbar stops being single line at around 645px. At this size, make it vertical instead */
     .navitem {
         display: block;
@@ -198,6 +208,39 @@ a:hover.navlink, a:hover.conlink {
         width: inherit;
     }
 }
+
+/* Mobile navbar */
+#navbox-m {
+    /* On larger screens, mobile navbar is hidden */
+    display: none;
+    /* Fixed to top of screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(33, 33, 33, 0.96);
+    box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, .55);
+    margin: 0;
+    padding: 0;
+}
+/* make mobile navbar visible on smaller screens */
+@media (max-width: 645px) {
+    #navbox-m {
+        display: block;
+    }
+}
+/* Nav button */
+#navbutton-m {
+    padding: 1em;
+    float: left;
+}
+/* Dropdown content (hidden by default) */
+.dropcontent {
+    display: none;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
 
 
 /* Shared (content sections) */

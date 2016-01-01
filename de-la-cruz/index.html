@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Connor de la Cruz</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+    <!-- Icon -->
+    <link rel="icon" sizes="192x192" href="resources/images/icon/icon.png"/>
+    <link rel="icon" sizes="144x144" href="resources/images/icon/icon-144x144.png"/>
+    <link rel="icon" sizes="96x96" href="resources/images/icon/icon-96x96.png"/>
+    <link rel="icon" sizes="48x48" href="resources/images/icon/icon-48x48.png"/>
+
+    <!-- Safari icon -->
+    <link rel="apple-touch-icon" sizes="192x192" href="resources/images/icon/icon.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="resources/images/icon/icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="96x96" href="resources/images/icon/icon-96x96.png"/>
+    <link rel="apple-touch-icon" sizes="48x48" href="resources/images/icon/icon-48x48.png"/>
 
     <!-- Chrome, Firefox, Opera theme color -->
     <meta name="theme-color" content="#212121">
@@ -11,24 +26,25 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <title>Connor de la Cruz</title>
-    <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
-    <!-- Icon -->
-    <link rel="icon" sizes="192x192" href="resources/images/icon/icon.png"/>
-    <link rel="icon" sizes="144x144" href="resources/images/icon/icon-144x144.png"/>
-    <link rel="icon" sizes="96x96" href="resources/images/icon/icon-96x96.png"/>
-    <link rel="icon" sizes="48x48" href="resources/images/icon/icon-48x48.png"/>
-    <!-- Safari icon -->
-    <link rel="apple-touch-icon" sizes="192x192" href="resources/images/icon/icon.png"/>
-    <link rel="apple-touch-icon" sizes="144x144" href="resources/images/icon/icon-144x144.png"/>
-    <link rel="apple-touch-icon" sizes="96x96" href="resources/images/icon/icon-96x96.png"/>
-    <link rel="apple-touch-icon" sizes="48x48" href="resources/images/icon/icon-48x48.png"/>
+    <script src="resources/js/scripts.js"></script>
 </head>
+
 <body>
+<!-- Mobile Navbar -->
+<div id="navbox-m">
+    <a id="navbutton-m" class="conlink" onclick="dropdown()">
+        <img class="svg" id="navicon-m" src="resources/svg/menu.svg">
+    </a>
+    <div id="navbar-m" class="dropcontent">
+        <a class="navlink" href="#headline">Top</a>
+        <a class="navlink" href="#about" >About</a>
+        <a class="navlink" href="#resume" >Resume</a>
+        <a class="navlink" href="#contact" >Contact</a>
+    </div>
+</div>
 <div id="headline" class="decorative">
     <header>
         <h1 id="title">Connor de la Cruz</h1>
-        <!-- Insert subtitle? -->
         <!-- Navbar -->
         <div id="navbox">
         <ul id="navbar">
@@ -98,8 +114,6 @@
 <div id="contact" class="decorative">
     <div id="contactbox" class="content">
         <h2 id="conheader">Contact</h2>
-        <!-- NOTE: older browsers (IE9 or below) require hex code -->
-        <!-- NOTE: This is for mock-up purposes, probably don't want my Facebook and phon # published -->
         <ul id="contactbar">
             <li class="conitem"><a class="conlink" href="mailto:connor.c.delacruz@gmail.com" target="_blank"><img class="svg" src="resources/svg/email.svg"></a></li>
             <li class="conitem"><a class="conlink" href="http://www.linkedin.com/in/connordelacruz" target="_blank"><img class="svg" src="resources/svg/linkedin-box.svg"></a></li>
