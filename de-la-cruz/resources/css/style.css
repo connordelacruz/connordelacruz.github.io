@@ -149,14 +149,13 @@ hr {
     padding: 0 auto;
 }
 
-/*a:link.about, a:visited.about, a:link.resume, a:visited.resume, a:link.contact, a:visited.contact,*/
 a:link.navlink, a:visited.navlink, a:link.conlink, a:visited.conlink {
     display: block;
     margin: auto;
     color: white;
     text-align: center;
-    font-family: 'Roboto Light', sans-serif;
-    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     text-decoration: none;
     transition-property: background-color, border-bottom;
     transition-duration: 180ms;
@@ -233,6 +232,14 @@ a:hover.navlink, a:hover.conlink {
 #navbutton-m {
     padding: 1em;
     float: left;
+}
+/* Logo on navbar */
+#navlogo-m {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 117%;
+    padding: 1em;
+    float: right;
 }
 /* Dropdown content (hidden by default) */
 .dropcontent {
