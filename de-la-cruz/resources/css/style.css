@@ -180,27 +180,24 @@ a:hover.navlink, a:hover.conlink {
     border-bottom-color: rgba(66, 66, 66, 0.75);
 }
 
+/* For JavaScript function fixNav(). When far enough down the page, fix the navbar to the
+ * top of the screen. Also stretches width to 100%, makes navbox more opaque, and adds a
+ * drop shadow. */
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    background-color: rgba(33, 33, 33, 0.96);
+    box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, .55);
+}
+
 /* Navbar layout adjusts for smaller widths */
 @media (max-width: 645px) {
-    /* Navbox to be positioned at the top and be persistent on mobile */
-    /* Will have a menu button that expands to list */
-    /*#navbox {
-        position: fixed;
-        top: 0;
-        width: 100%;
-    }*/
-    /* Navbar width set to inherit to keep vertical list centered */
+    /* hide navbar on small screens, display mobile navbar instead */
     #navbar {
-        /* hide navbar on small screens, display mobile navbar instead */
         display: none;
-        /*width:inherit;*/
-    }
-    /* NOTE -- MIGHT WANT TO REMOVE FOLLOWING AS IT'S HIDDEN ANYWAY
-    /* Navbar stops being single line at around 645px. At this size, make it vertical instead */
-    .navitem {
-        display: block;
-        width: inherit;
-        float: none;
     }
     /* Navlinks extend to ends of screen when layout changes on small screens */
     a:link.navlink, a:visited.navlink {
