@@ -76,6 +76,10 @@ hr {
     }
 }
 
+button:focus {
+    outline-color: rgba(66, 66, 66, 0.75);
+}
+
 /* SECTIONS */
 /* Headline (title, background image) */
 #headline {
@@ -161,6 +165,22 @@ a:link.navlink, a:visited.navlink, a:link.conlink, a:visited.conlink {
     transition-duration: 180ms;
     transition-timing-function: linear;
 }
+/* nav/conlinks as buttons instead of anchors */
+button.navlink, button.conlink {
+    display: block;
+    margin: auto;
+    color: white;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+    transition-property: background-color, border-bottom;
+    transition-duration: 180ms;
+    transition-timing-function: linear;
+}
+
 /* Navbar link (a) */
 a:link.navlink, a:visited.navlink {
     width: 8em;
@@ -173,16 +193,20 @@ a:link.conlink, a:visited.conlink {
     padding: 1em;
     width: 3em;
 }
+/* conlinks as buttons instead of anchors */
+button.conlink {
+    padding: 1em;
+    width: 3em;
+}
 
-/*a:hover.about, a:hover.resume, a:hover.contact, */
-a:hover.navlink, a:hover.conlink {
+a:hover.navlink, a:hover.conlink, button:hover.conlink, button:hover.navlink {
     background-color: rgba(66, 66, 66, 0.75);
     border-bottom-color: rgba(66, 66, 66, 0.75);
 }
 
 /* For JavaScript function fixNav(). When far enough down the page, fix the navbar to the
  * top of the screen. Also stretches width to 100%, makes navbox more opaque, and adds a
- * drop shadow. */
+ * drop shadow.
 .fixed {
     position: fixed;
     top: 0;
@@ -191,7 +215,7 @@ a:hover.navlink, a:hover.conlink {
     margin: auto;
     background-color: rgba(33, 33, 33, 0.96);
     box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, .55);
-}
+} */
 
 /* Navbar layout adjusts for smaller widths */
 @media (max-width: 645px) {
@@ -227,7 +251,9 @@ a:hover.navlink, a:hover.conlink {
 }
 /* Nav button */
 #navbutton-m {
-    padding: 1em;
+    /*padding: 1em;*/
+    padding: 1.2em;
+    width: auto;
     float: left;
 }
 /* Logo on navbar */
