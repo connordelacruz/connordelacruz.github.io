@@ -9,7 +9,7 @@ var headlineheight;
 var offsetval;
 /* Initialize vars when page loads
 window.onload = function() {
-    navbox = document.getElementById("navbox");
+    navbox = document.getElementById("navbox-m");
     navboxheight = document.getElementById("navbox").style.height;
     headlineheight = document.getElementById("headline").style.height;
     offsetval = headlineheight - navboxheight;
@@ -22,11 +22,11 @@ window.onscroll = function() {
     var scrolltop = document.body.scrollTop;
 
     if(scrolltop >= offsetval) {
-        navbox.classList.toggle('fixed', true);
+        navbox.classList.style.display = "block";
     } else {
-        navbox.classList.toggle('fixed', false);
+        navbox.classList.style.display = "none";
     }
-}*/
+}
 
 /* Toggles dropdown menu */
 function dropdown() {
