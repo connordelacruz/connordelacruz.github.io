@@ -30,7 +30,8 @@ h3 {
 /* May want to use underline or a different style to differentiate h4 and p */
 h4 {
     font-family: 'Roboto', sans-serif !important;
-    font-weight: normal;
+    font-weight: 300;
+    font-style: italic;
 }
 /* Roboto Light = Roboto weight 300 */
 p, li {
