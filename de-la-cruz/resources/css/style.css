@@ -153,7 +153,7 @@ button:focus {
     padding: 0 auto;
 }
 
-a:link.navlink, a:visited.navlink, a:link.conlink, a:visited.conlink {
+a:link.navlink, a:visited.navlink, a:link.conlink, a:visited.conlink, button.navlink, button.conlink {
     display: block;
     margin: auto;
     color: white;
@@ -163,22 +163,12 @@ a:link.navlink, a:visited.navlink, a:link.conlink, a:visited.conlink {
     text-decoration: none;
     transition-property: background-color, border-bottom;
     transition-duration: 180ms;
-    transition-timing-function: linear;
+    transition-timing-function: ease-out;
 }
 /* nav/conlinks as buttons instead of anchors */
 button.navlink, button.conlink {
-    display: block;
-    margin: auto;
-    color: white;
     background-color: transparent;
     border: none;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    text-decoration: none;
-    transition-property: background-color, border-bottom;
-    transition-duration: 180ms;
-    transition-timing-function: linear;
 }
 
 /* Navbar link (a) */
@@ -189,15 +179,11 @@ a:link.navlink, a:visited.navlink {
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.60);
 }
 
-a:link.conlink, a:visited.conlink {
+a:link.conlink, a:visited.conlink, button.conlink {
     padding: 1em;
     width: 3em;
 }
-/* conlinks as buttons instead of anchors */
-button.conlink {
-    padding: 1em;
-    width: 3em;
-}
+
 
 a:hover.navlink, a:hover.conlink, button:hover.conlink, button:hover.navlink {
     background-color: rgba(66, 66, 66, 0.75);
@@ -278,9 +264,6 @@ a:hover.navlink, a:hover.conlink, button:hover.conlink, button:hover.navlink {
     padding: 1.5em 3em;
     background-color: rgba(33, 33, 33, 0.75);
     color: white;
-    /* Max width so it doesn't stretch too far, margin auto so it remains centered
-    margin: auto;
-    max-width: 1000px; */
 }
 /* Shared (decorative sections) */
 #headline, #about, #resume, #contact {
