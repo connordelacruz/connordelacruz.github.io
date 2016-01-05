@@ -3,37 +3,33 @@
 
 
 /* TYPOGRAPHY */
-/* Roboto Thin = Roboto weight 100 */
+/* Roboto Thin/Light weren't showing up in some browsers. The fix was to use Roboto with
+ * weight of 100 or 300 respectively */
 h1 {
     font-family: 'Roboto', sans-serif !important;
     font-weight: 100;
     font-size: 400%;
 }
-
-/* May want to use Roboto Condensed Light to differentiate h2 and h3 */
-/* Roboto Light = Roboto weight 300 */
 h2 {
     font-family: 'Roboto', sans-serif !important;
     font-weight: 300;
     font-size: 160%;
     font-style: normal;
+    text-align: center;
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
 }
-/* Roboto Light = Roboto weight 300 */
 h3 {
     font-family: 'Roboto', sans-serif !important;
     font-weight: 300;
-    font-size: 125%;
+    font-size: 145%;
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
 }
-
-/* May want to use underline or a different style to differentiate h4 and p */
 h4 {
     font-family: 'Roboto', sans-serif !important;
     font-weight: 300;
-    font-style: italic;
+    font-size: 120%;
+    line-height: 0.1;
 }
-/* Roboto Light = Roboto weight 300 */
 p, li {
     font-family: 'Roboto', sans-serif !important;
 	font-weight: 300;
@@ -54,8 +50,6 @@ body {
 }
 
 div {
-    /*padding-left: 1.8em;
-    padding-right: 1.8em;*/
     padding: 0.8em;
     overflow: auto;
 }
@@ -64,7 +58,6 @@ hr {
     border: none;
     background-color: #BDBDBD;
     height: 1px;
-    /*margin: 0.5em 0.4em;
     /* Max width so it doesn't stretch too far, margin auto so it remains centered */
     margin: 0.5em auto;
     max-width: 1150px;
