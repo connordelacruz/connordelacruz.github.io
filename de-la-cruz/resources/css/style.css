@@ -140,6 +140,21 @@ button:focus {
     text-decoration: none;
 }
 
+/* conitems listed vertically on smaller screens */
+@media (max-width: 645px) {
+    #contactbar {
+        width: inherit;
+    }
+    .conitem {
+        float: none;
+        width: inherit;
+    }
+    /* Conlinks extend to ends of screen when layout changes on small screens */
+    a:link.conlink, a:visited.conlink {
+        width: inherit;
+    }
+}
+
 #conheader {
     width: inherit;
     text-align: center;
