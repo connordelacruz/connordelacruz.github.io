@@ -140,21 +140,6 @@ button:focus {
     text-decoration: none;
 }
 
-/* conitems listed vertically on smaller screens */
-@media (max-width: 645px) {
-    #contactbar {
-        width: inherit;
-    }
-    .conitem {
-        float: none;
-        width: inherit;
-    }
-    /* Conlinks extend to ends of screen when layout changes on small screens */
-    a:link.conlink, a:visited.conlink {
-        width: inherit;
-    }
-}
-
 #conheader {
     width: inherit;
     text-align: center;
@@ -162,7 +147,8 @@ button:focus {
     padding: 0 auto;
 }
 
-a:link.navlink, a:visited.navlink, a:link.conlink, a:visited.conlink, button.navlink, button.conlink {
+a:link.navlink, a:visited.navlink, a:link.conlink, a:visited.conlink, button.navlink, button.conlink,
+#navlogo-m:link, #navlogo-m:visited {
     display: block;
     margin: auto;
     color: white;
@@ -188,29 +174,31 @@ a:link.navlink, a:visited.navlink {
     text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.60);
 }
 
-a:link.conlink, a:visited.conlink, button.conlink {
+a:link.conlink, a:visited.conlink, #navlogo-m:link, #navlogo-m:visited, button.conlink {
     padding: 1em;
     width: 3em;
 }
 
 
-a:hover.navlink, a:hover.conlink, button:hover.conlink, button:hover.navlink {
+a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button:hover.navlink {
     background-color: rgba(66, 66, 66, 0.75);
     border-bottom-color: rgba(66, 66, 66, 0.75);
 }
 
-/* For JavaScript function fixNav(). When far enough down the page, fix the navbar to the
- * top of the screen. Also stretches width to 100%, makes navbox more opaque, and adds a
- * drop shadow.
-.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin: auto;
-    background-color: rgba(33, 33, 33, 0.96);
-    box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, .55);
-} */
+/* conitems listed vertically on smaller screens */
+@media (max-width: 645px) {
+    #contactbar {
+        width: inherit;
+    }
+    .conitem {
+        float: none;
+        width: inherit;
+    }
+    /* Conlinks extend to ends of screen when layout changes on small screens */
+    a:link.conlink, a:visited.conlink {
+        width: inherit;
+    }
+}
 
 /* Navbar layout adjusts for smaller widths */
 @media (max-width: 645px) {
