@@ -1,5 +1,6 @@
 /* Import Roboto Thin, Light, and Normal */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
+/* TODO: REORGANIZE CSS SHEET */
 /* COLOR VARIABLES */
 /* TYPOGRAPHY */
 /* Roboto Thin/Light weren't showing up in some browsers. The fix was to use Roboto with
@@ -63,6 +64,9 @@ hr {
     margin: 0.5em 0; } }
 button:focus {
   outline-color: rgba(66, 66, 66, 0.75); }
+
+::selection, ::-moz-selection {
+  background: rgba(66, 66, 66, 0.75); }
 
 /* SECTIONS */
 /* Headline (title, background image) */
@@ -280,7 +284,8 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
   display: block;
   margin: 0.5em auto;
   width: 10.0em;
-  padding: 0; }
+  padding: 0;
+  box-shadow: 2px 2px 2px rgba(33, 33, 33, 0.4); }
 
 /* About text */
 @media (max-width: 645px) {
