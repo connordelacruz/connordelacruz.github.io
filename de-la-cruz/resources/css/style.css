@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
 /* TODO: REORGANIZE CSS SHEET */
 /* COLOR VARIABLES */
+/* MEDIA QUERY VIEWPORT SIZES */
 /* TYPOGRAPHY */
 /* Roboto Thin/Light weren't showing up in some browsers. The fix was to use Roboto with
  * weight of 100 or 300 respectively */
@@ -55,7 +56,7 @@ hr {
   height: 1px;
   /* Max width so it doesn't stretch too far, margin auto so it remains centered */
   margin: 0.5em auto;
-  max-width: 1150px; }
+  max-width: 1050px; }
 
 /* hr on smaller screens */
 @media (max-width: 645px) {
@@ -159,7 +160,7 @@ a:link.navlink, a:visited.navlink {
   width: 8em;
   font-size: 1.15em;
   padding: 1em;
-  text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.6); }
+  text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.55); }
 
 a:link.conlink, a:visited.conlink, #navlogo-m:link, #navlogo-m:visited, button.conlink {
   padding: 1em;
@@ -172,8 +173,7 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
 /* conitems listed vertically on smaller screens */
 @media (max-width: 645px) {
   #contactbar {
-    display: none;
-    /*width: inherit;*/ }
+    display: none; }
 
   #contactbar-m {
     display: block; }
@@ -246,8 +246,11 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
   margin: 1em;
   /* Max width so it doesn't stretch too far, margin auto so it remains centered */
   margin: auto;
-  max-width: 1100px;
-  box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, 0.6); }
+  max-width: 1000px;
+  box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, 0.55); }
+
+#headline {
+  max-width: 1021px; }
 
 /* On small screens, side margins on the decorative sections and side padding on the content sections are reduced */
 @media (max-width: 645px) {

@@ -5,10 +5,16 @@
 
 /* COLOR VARIABLES */
 // TODO: declare variables for colors here
-$content-bg: rgba(33, 33, 33, 0.75);
-$hover-color: rgba(66, 66, 66, 0.75);
+$content-bg: rgba(33, 33, 33, 0.75); // Background color of content sections
+$page-bg: rgb(66, 66, 66); // Background color of the page body
+$navbox-bg: rgba(33, 33, 33, 0.96); // Fixed navbox partially transparent
+$hover-color: rgba(66, 66, 66, 0.75); // Color used when hovering over links (same as page-bg with transparency)
+$text-shadow-color: rgba(33, 33, 33, 0.40); // Color of the drop shadow on text items
+$page-component-shadow: rgba(33, 33, 33, .55); // Darker shadow (text shadow is the same grey as the body, hence it doesn't show up)
 
-// TODO: store media query screen sizes as variables
+
+/* MEDIA QUERY VIEWPORT SIZES */
+$vp-narrow: 645px;
 
 /* TYPOGRAPHY */
 /* Roboto Thin/Light weren't showing up in some browsers. The fix was to use Roboto with
@@ -24,13 +30,13 @@ h2 {
   font-size: 160%;
   font-style: normal;
   text-align: center;
-  text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
+  text-shadow: 1px 1px 1px $text-shadow-color;
 }
 h3 {
   font-family: 'Roboto', sans-serif !important;
   font-weight: 300;
   font-size: 145%;
-  text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
+  text-shadow: 1px 1px 1px $text-shadow-color;
 }
 h4 {
   font-family: 'Roboto', sans-serif !important;
@@ -54,7 +60,7 @@ ul {
 }
 
 body {
-  background-color: #424242;
+  background-color: $page-bg;
 }
 
 div {
@@ -68,10 +74,10 @@ hr {
   height: 1px;
   /* Max width so it doesn't stretch too far, margin auto so it remains centered */
   margin: 0.5em auto;
-  max-width: 1150px;
+  max-width: 1050px;
 }
 /* hr on smaller screens */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   hr {
     height: 1px;
     margin: 0.5em 0;
@@ -79,7 +85,7 @@ hr {
 }
 
 button:focus {
-  outline-color: rgba(66, 66, 66, 0.75);
+  outline-color: $hover-color;
 }
 
 // Highlight color
@@ -100,11 +106,11 @@ button:focus {
 #title{
   padding-bottom: 0;
   margin-bottom: 0.01em;
-  text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.40);
+  text-shadow: 1px 1px 1px $text-shadow-color;
   text-align: center;
 }
 /* Center title on smaller screens, adjust h1 font size to be  in order to prevent word wrapping to 2+ lines */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   #title {
     text-align: center;
     /* Font size set to 12% the viewport width on smaller screens */
@@ -131,8 +137,8 @@ button:focus {
 
 /* navbox and contactbox (div containing navbar/contactbar) */
 #navbox, #contactbox {
-  background-color: rgba(33, 33, 33, 0.75);
-  border-bottom:  rgba(33, 33, 33, 0.75);
+  background-color: $content-bg;
+  border-bottom:  $content-bg;
   margin: 0;
 }
 #navbox {
@@ -189,7 +195,7 @@ a:link.navlink, a:visited.navlink {
   width: 8em;
   font-size: 1.15em;
   padding: 1em;
-  text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.60);
+  text-shadow: 1px 1px 1px $page-component-shadow;
 }
 
 a:link.conlink, a:visited.conlink, #navlogo-m:link, #navlogo-m:visited, button.conlink {
@@ -199,15 +205,14 @@ a:link.conlink, a:visited.conlink, #navlogo-m:link, #navlogo-m:visited, button.c
 
 
 a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button:hover.navlink {
-  background-color: rgba(66, 66, 66, 0.75);
-  border-bottom-color: rgba(66, 66, 66, 0.75);
+  background-color: $hover-color;
+  border-bottom-color: $hover-color;
 }
 
 /* conitems listed vertically on smaller screens */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   #contactbar {
     display: none;
-    /*width: inherit;*/
   }
   #contactbar-m {
     display: block;
@@ -223,7 +228,7 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
 }
 
 /* Navbar layout adjusts for smaller widths */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   /* hide navbar on small screens, display mobile navbar instead */
   #navbar {
     display: none;
@@ -243,13 +248,13 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(33, 33, 33, 0.96);
-  box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, .55);
+  background-color: $navbox-bg;
+  box-shadow: 3px 3px 5px 3px $page-component-shadow;
   margin: 0;
   padding: 0;
 }
 /* make mobile navbar visible on smaller screens */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   #navbox-m {
     display: block;
   }
@@ -278,11 +283,10 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
-
 /* Shared (content sections) */
 #skills, #education, #experience, #aboutme, #contactbox {
   padding: 1.5em 3em;
-  background-color: rgba(33, 33, 33, 0.75);
+  background-color: $content-bg;
   color: white;
 }
 /* Shared (decorative sections) */
@@ -290,11 +294,15 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
   margin: 1em;
   /* Max width so it doesn't stretch too far, margin auto so it remains centered */
   margin: auto;
-  max-width: 1100px;
-  box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, .6);
+  max-width: 1000px;
+  box-shadow: 3px 3px 5px 3px $page-component-shadow;
 }
+#headline {
+  max-width: 1021px;
+}
+
 /* On small screens, side margins on the decorative sections and side padding on the content sections are reduced */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   /* Shared (content sections) */
   #skills, #education, #experience, #aboutme, #contactbox {
     padding: 1em;
@@ -334,11 +342,11 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
   margin: 0.5em auto;
   width: 10.0em;
   padding: 0;
-  box-shadow: 2px 2px 2px rgba(33, 33, 33, 0.4);
+  box-shadow: 2px 2px 2px $text-shadow-color;
 }
 
 /* About text */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   #abouttext {
     padding: 1em;
   }
