@@ -1,4 +1,4 @@
-/* Import Roboto Thin, Light, and Normal */
+/* Import Roboto Thin, Light, Normal */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
 
 /* TODO: REORGANIZE CSS SHEET */
@@ -26,7 +26,8 @@ h1 {
 }
 h2 {
   font-family: 'Roboto', sans-serif !important;
-  font-weight: 300;
+  //font-weight: 300;
+  font-weight: 400;
   font-size: 160%;
   font-style: normal;
   text-align: center;
@@ -40,7 +41,7 @@ h3 {
 }
 h4 {
   font-family: 'Roboto', sans-serif !important;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 120%;
   line-height: 0.1;
 }
@@ -64,7 +65,7 @@ body {
 }
 
 div {
-  padding: 0.8em;
+  padding: 1em;
   overflow: auto;
 }
 
@@ -285,7 +286,7 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
 
 /* Shared (content sections) */
 #skills, #education, #experience, #aboutme, #contactbox {
-  padding: 1.5em 3em;
+  padding: 1.5em 5em;
   background-color: $content-bg;
   color: white;
 }
