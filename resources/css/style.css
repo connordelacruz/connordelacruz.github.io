@@ -206,7 +206,7 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(33, 33, 33, 0.96);
+  background-color: rgba(33, 33, 33, 0.99);
   box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, 0.55);
   margin: 0;
   padding: 0; }
