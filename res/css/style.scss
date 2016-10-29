@@ -1,103 +1,136 @@
 /* Import Roboto Thin, Light, Normal */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
+
 /* TODO: REORGANIZE CSS SHEET */
+
 /* COLOR VARIABLES */
+// TODO: declare variables for colors here
+$content-bg: rgba(33, 33, 33, 0.75); // Background color of content sections
+$page-bg: rgb(66, 66, 66); // Background color of the page body
+$navbox-bg: rgba(33, 33, 33, 0.99); // Fixed navbox partially transparent
+$hover-color: rgba(66, 66, 66, 0.75); // Color used when hovering over links (same as page-bg with transparency)
+$text-shadow-color: rgba(33, 33, 33, 0.40); // Color of the drop shadow on text items
+$page-component-shadow: rgba(33, 33, 33, .55); // Darker shadow (text shadow is the same grey as the body, hence it doesn't show up)
+
+
 /* MEDIA QUERY VIEWPORT SIZES */
+$vp-narrow: 645px;
+
 /* TYPOGRAPHY */
 /* Roboto Thin/Light weren't showing up in some browsers. The fix was to use Roboto with
  * weight of 100 or 300 respectively */
 h1 {
   font-family: 'Roboto', sans-serif !important;
   font-weight: 100;
-  font-size: 400%; }
-
+  font-size: 400%;
+}
 h2 {
   font-family: 'Roboto', sans-serif !important;
   font-weight: 300;
   font-size: 160%;
   font-style: normal;
   text-align: center;
-  text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.4);
-  margin: 0 auto; }
-
+  text-shadow: 1px 1px 1px $text-shadow-color;
+  margin: 0 auto;
+}
 h3 {
   font-family: 'Roboto', sans-serif !important;
   font-weight: 300;
   font-size: 145%;
-  text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.4);
-  text-align: center; }
-
+  text-shadow: 1px 1px 1px $text-shadow-color;
+  text-align: center;
+}
 h4 {
   font-family: 'Roboto', sans-serif !important;
   font-weight: 400;
   font-size: 120%;
-  line-height: 0.1; }
-
+  line-height: 0.1;
+}
 p, li {
   font-family: 'Roboto', sans-serif !important;
   font-weight: 300;
-  font-size: 105%; }
+  font-size: 105%;
+}
 
-@media (max-width: 645px) {
+// Remove margins on body in narrow viewports
+@media (max-width: $vp-narrow) {
   body {
-    margin: 0; } }
+    margin: 0;
+  }
+}
+
 /* GENERAL */
 ul {
   padding-top: 0;
   padding-bottom: 0;
   margin-top: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 body {
-  background-color: #424242; }
+  background-color: $page-bg;
+}
 
 div {
   padding: 1em;
-  overflow: auto; }
+  overflow: auto;
+}
+@media (max-width: $vp-narrow) {
+  div{
+    padding: 0.8em;
+  }
+}
 
-@media (max-width: 645px) {
-  div {
-    padding: 0.8em; } }
 hr {
   border: none;
   background-color: #BDBDBD;
   height: 1px;
   /* Max width so it doesn't stretch too far, margin auto so it remains centered */
   margin: 0.5em auto;
-  max-width: 1050px; }
-
+  max-width: 1050px;
+}
 /* hr on smaller screens */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   hr {
     height: 1px;
-    margin: 0.5em 0; } }
-button:focus {
-  outline-color: rgba(66, 66, 66, 0.75); }
+    margin: 0.5em 0;
+  }
+}
 
+button:focus {
+  outline-color: $hover-color;
+}
+
+// Highlight color
 ::selection, ::-moz-selection {
-  background: rgba(66, 66, 66, 0.75); }
+  background: $hover-color;
+}
 
 /* SECTIONS */
 /* Headline (title, background image) */
 #headline {
-  background-image: url("../images/banner/blurred/banner00-blur-wide-progressive.jpg");
+  background-image: url("../img/banner/blurred/banner00-blur-wide-progressive.jpg");
   background-size: cover;
   padding: 11.0vh 0 0;
-  color: white; }
+  color: white;
+}
 
 /* Title (h1) */
-#title {
+#title{
   padding-bottom: 0;
   margin-bottom: 0.01em;
-  text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.4);
-  text-align: center; }
-
+  text-shadow: 1px 1px 1px $text-shadow-color;
+  text-align: center;
+}
 /* Center title on smaller screens, adjust h1 font size to be  in order to prevent word wrapping to 2+ lines */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   #title {
     text-align: center;
     /* Font size set to 12% the viewport width on smaller screens */
-    font-size: 11.5vw; } }
+    font-size: 11.5vw;
+  }
+}
+
 /* Navbar & contact bar (ul) */
 #navbar, #contactbar, #contactbar-m {
   list-style-type: none;
@@ -107,27 +140,31 @@ button:focus {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
-  padding: 0; }
+  padding: 0;
+}
 
 #contactbar-m {
   display: none;
-  width: inherit; }
+  width: inherit;
+}
 
 /* navbox and contactbox (div containing navbar/contactbar) */
 #navbox, #contactbox {
-  background-color: rgba(33, 33, 33, 0.75);
-  border-bottom: rgba(33, 33, 33, 0.75);
-  margin: 0; }
-
+  background-color: $content-bg;
+  border-bottom:  $content-bg;
+  margin: 0;
+}
 #navbox {
   width: inherit;
-  padding: 0; }
-
+  padding: 0;
+}
 #contactbox {
-  padding: 1em 2em; }
+  padding: 1em 2em;
+}
 
 .navitem, .conitem {
-  float: left; }
+  float: left;
+}
 
 /* Contact bar item (li) */
 .conitem {
@@ -137,7 +174,10 @@ button:focus {
   font-weight: normal;
   padding: 0;
   margin: 0;
-  text-decoration: none; }
+  text-decoration: none;
+}
+
+
 
 a:link.navlink, a:visited.navlink, a:link.conlink, a:visited.conlink, button.navlink, button.conlink,
 #navlogo-m:link, #navlogo-m:visited {
@@ -150,52 +190,63 @@ a:link.navlink, a:visited.navlink, a:link.conlink, a:visited.conlink, button.nav
   text-decoration: none;
   transition-property: background-color, border-bottom;
   transition-duration: 180ms;
-  transition-timing-function: ease-out; }
-
+  transition-timing-function: ease-out;
+}
 /* nav/conlinks as buttons instead of anchors */
 button.navlink, button.conlink {
   background-color: transparent;
-  border: none; }
+  border: none;
+}
 
 /* Navbar link (a) */
 a:link.navlink, a:visited.navlink {
   width: 8em;
   font-size: 1.15em;
   padding: 1em;
-  text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.55); }
+  text-shadow: 1px 1px 1px $page-component-shadow;
+}
 
 a:link.conlink, a:visited.conlink, #navlogo-m:link, #navlogo-m:visited, button.conlink {
   padding: 1em;
-  width: 3em; }
+  width: 3em;
+}
+
 
 a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button:hover.navlink {
-  background-color: rgba(66, 66, 66, 0.75);
-  border-bottom-color: rgba(66, 66, 66, 0.75); }
+  background-color: $hover-color;
+  border-bottom-color: $hover-color;
+}
 
 /* conitems listed vertically on smaller screens */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   #contactbar {
-    display: none; }
-
+    display: none;
+  }
   #contactbar-m {
-    display: block; }
-
+    display: block;
+  }
   .conitem {
     float: none;
-    width: inherit; }
-
+    width: inherit;
+  }
   /* Conlinks extend to ends of screen when layout changes on small screens */
   a:link.conlink, a:visited.conlink {
-    width: inherit; } }
+    width: inherit;
+  }
+}
+
 /* Navbar layout adjusts for smaller widths */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   /* hide navbar on small screens, display mobile navbar instead */
   #navbar {
-    display: none; }
-
+    display: none;
+  }
   /* Navlinks extend to ends of screen when layout changes on small screens */
   a:link.navlink, a:visited.navlink {
-    width: inherit; } }
+    width: inherit;
+  }
+}
+
 /* Mobile navbar */
 #navbox-m {
   /* On larger screens, mobile navbar is hidden */
@@ -205,82 +256,91 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(33, 33, 33, 0.99);
-  box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, 0.55);
+  background-color: $navbox-bg;
+  box-shadow: 3px 3px 5px 3px $page-component-shadow;
   margin: 0;
-  padding: 0; }
-
+  padding: 0;
+}
 /* make mobile navbar visible on smaller screens */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   #navbox-m {
-    display: block; } }
+    display: block;
+  }
+}
 /* Nav button */
 #navbutton-m {
   /*padding: 1em;*/
   padding: 1.2em;
   width: auto;
-  float: left; }
-
+  float: left;
+}
 /* Logo on navbar */
+// TODO: this is inheriting Roboto Light from elsewhere on stylesheet instead of Roboto Thin
 #navlogo-m {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   font-size: 117%;
   padding: 1em;
-  float: right; }
-
+  float: right;
+}
 /* Dropdown content (hidden by default) */
 .dropcontent {
-  display: none; }
+  display: none;
+}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-  display: block; }
+.show {display:block;}
 
 /* Shared (content sections) */
 #skills, #education, #experience, #aboutme, #contactbox {
   padding: 1.5em 5em;
-  background-color: rgba(33, 33, 33, 0.75);
-  color: white; }
-
+  background-color: $content-bg;
+  color: white;
+}
 /* Shared (decorative sections) */
 #headline, #about, #resume, #contact {
+  //margin: 1em;
   /* Max width so it doesn't stretch too far, margin auto so it remains centered */
   margin: auto;
   max-width: 1000px;
-  box-shadow: 3px 3px 5px 3px rgba(33, 33, 33, 0.55); }
-
+  box-shadow: 3px 3px 5px 3px $page-component-shadow;
+}
 #headline {
-  max-width: 1021px; }
+  max-width: 1021px;
+}
 
 /* On small screens, side margins on the decorative sections and side padding on the content sections are reduced */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   /* Shared (content sections) */
   #skills, #education, #experience, #aboutme, #contactbox {
-    padding: 1em; }
-
+    padding: 1em;
+  }
   /* Shared (decorative sections)
   #headline, #about, #resume, #contact {
     margin: .2em;
-  }*/ }
+  }*/
+}
+
 /* DECORATIVE SECTIONS */
 /* About section */
 #about {
-  background-image: url("../images/banner/blurred/banner16-blur-wide-progressive.jpg");
-  background-size: cover; }
-
+  background-image: url("../img/banner/blurred/banner16-blur-wide-progressive.jpg");
+  background-size: cover;
+}
 /* Resume section */
 #resume {
-  background-image: url("../images/banner/blurred/banner16-blur-progressive.jpg");
-  background-size: cover; }
-
+  background-image: url("../img/banner/blurred/banner16-blur-progressive.jpg");
+  background-size: cover;
+}
 /* Contact section */
 #contact {
-  background-image: url("../images/banner/blurred/banner13-blur-wide-progressive.jpg");
+  background-image: url("../img/banner/blurred/banner13-blur-wide-progressive.jpg");
   background-size: cover;
-  color: white; }
+  color: white;
+}
 
 /* CONTENT */
+
 /* Portrait */
 #portrait {
   -webkit-border-radius: 100%;
@@ -290,16 +350,19 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
   margin: 0.5em auto;
   width: 10.0em;
   padding: 0;
-  box-shadow: 2px 2px 2px rgba(33, 33, 33, 0.4); }
+  box-shadow: 2px 2px 2px $text-shadow-color;
+}
 
 /* About text */
-@media (max-width: 645px) {
+@media (max-width: $vp-narrow) {
   #abouttext {
-    padding: 1em; } }
+    padding: 1em;
+  }
+}
+
 /* SVG links */
 .svg {
   -webkit-filter: invert(1);
   filter: invert(1);
-  vertical-align: bottom; }
-
-/*# sourceMappingURL=style.css.map */
+  vertical-align: bottom;
+}
