@@ -40,6 +40,7 @@
     <!-- Style and viewport -->
     <!--<link rel="stylesheet" type="text/css" href="res/css/style.css" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
@@ -59,7 +60,7 @@
 
 <!-- Content -->
 <!-- About -->
-<div id="about" class="container-fluid">
+<div id="about" class="container-fluid" style="padding-top: 50px;">
     <h1>About</h1>
     <img src="res/img/placeholder/portrait-placeholder-square.jpg" class="img-circle img-responsive" style="width: 10em; margin: 0 auto;">
     <div class="panel panel-default"> <!-- TODO: Sloppy about section, rewrite -->
@@ -73,7 +74,7 @@
     </div>
 </div>
 
-<!-- Resume -->
+<!-- Resume TODO: update to match actual resume -->
 <div id="resume" class="container-fluid">
     <h1>Resume</h1>
     <div class="panel panel-default">
@@ -86,12 +87,56 @@
             </ul>
         </div>
     </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Education</div>
+        <div class="panel-body">
+            <p>Wheaton College - Wheaton, IL<br>
+                Pursuing B.S. in Computer Science<br>
+                Expected May 2017</p>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Experience</div>
+        <div class="panel-body">
+            <!-- TODO: Add location and date range of employment -->
+            <!-- TODO: Make each job collapsible in narrow viewports -->
+            <h3>Wheaton College Academic and Institutional Technology</h3>
+            <h4>Software Deployment Internship</h4>
+            <ul>
+                <li>Used Microsoft System Center 2012 Configuration Manager to deploy software packages.</li>
+                <li>Created and tested software packages and wrote batch installation scripts for deployment.</li>
+                <li>Worked with the packaging team to come up with solutions for scripting and deployment issues.</li>
+                <li>Updated existing software packages and created knowledge base documentation for them.</li>
+                <li>Researched and troubleshot issues with deployed software to improve end user experience.</li>
+            </ul>
+            <h4>IT Service Desk Technician</h4>
+            <ul>
+                <li>Provided technical support to students and faculty over the phone as well as in-person.</li>
+                <li>Used troubleshooting techniques to determine how to go about solving problems.</li>
+                <li>Researched solutions to issues where a resolution could not be met with basic troubleshooting.</li>
+                <li>Learned how to resolve commonly encountered problems from co-workers and from information posted in the knowledge base.</li>
+                <li>Added new articles to the knowledge base and modified existing ones.</li>
+                <li>Compiled information for and wrote a significant portion of the advanced Windows 7 proficiency.</li>
+            </ul>
+        </div>
+    </div>
 
 </div>
 
 <!-- Contact -->
 <div id="contact" class="container-fluid">
     <h1>Contact</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <ul class="list-inline">
+                <li><a href="mailto:contact@connordelacruz.com" target="_blank"><img class="svg" src="res/svg/email.svg"> Email</a></li>
+                <li><a href="http://www.linkedin.com/in/connordelacruz" target="_blank"><img class="svg" src="res/svg/linkedin-box.svg"> LinkedIn</a></li>
+                <li><a href="https://plus.google.com/115013815974739318334" target="_blank"><img class="svg" src="res/svg/google-plus-box.svg"> Google+</a></li>
+                <li><a href="https://github.com/connordelacruz" target="_blank"><img class="svg" src="res/svg/github-box.svg"> GitHub</a></li>
+                <li><a href="https://bitbucket.org/connordelacruz/" target="_blank"><img class="svg" src="res/svg/bitbucket.svg"> Bitbucket</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 
