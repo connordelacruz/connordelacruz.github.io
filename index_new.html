@@ -27,9 +27,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <!-- Scripts -->
-    <!--<script src="res/js/scripts.js"></script>-->
-
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -38,14 +35,32 @@
     <script src="res/js/bootstrap.min.js"></script>
 
     <!-- Style and viewport -->
+    <link rel="stylesheet" href="res/css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 
+    <!-- Scripts -->
+    <script>
+        $('document').ready(function () {
+            // set navbar affix offset to the height of the page header
+            $('#navbar').affix({
+               offset: {
+                   top: $('#page-header').outerHeight()
+               }
+            });
+        });
+    </script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
+
+<!-- Header -->
+<div class="page-header" id="page-header">
+    <h1 id="title">Connor de la Cruz</h1>
+</div>
+
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default affix-top" id="navbar" data-spy="affix" data-offset-top="200">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Connor de la Cruz</a>
@@ -60,7 +75,7 @@
 
 <!-- Content -->
 <!-- About -->
-<div id="about" class="container-fluid" style="padding-top: 50px;">
+<div id="about" class="container-fluid">
     <h1>About</h1>
     <img src="res/img/placeholder/portrait-placeholder-square.jpg" class="img-circle img-responsive" style="width: 10em; margin: 0 auto;">
     <div class="panel panel-default"> <!-- TODO: Sloppy about section, rewrite -->

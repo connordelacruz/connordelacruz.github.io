@@ -1,3 +1,52 @@
 /* Import Roboto Thin, Light, Normal */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
 
+/* VARIABLES */
+/* Colors */
+$text-shadow-color: rgba(33, 33, 33, 0.40);
+
+/* PAGE CONTENT */
+/* General */
+// For parallax scrolling
+html, body {
+  height: 100%;
+}
+
+/* Typography */
+h1, .h1 {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 100;
+}
+
+/* Header Section */
+#page-header {
+  padding: 11.0vh 0;
+  margin: 0;
+  height: 75%;
+  // For parallax
+  background: url("../img/banner/blurred/banner00-blur-wide-progressive.jpg") no-repeat fixed center;
+  background-size: cover;
+}
+#title {
+  text-shadow: 1px 1px 1px $text-shadow-color;
+  text-align: center;
+}
+
+/* Navbar */
+#navbar {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+#navbar.affix {
+  top: 0;
+  width: 100%;
+}
+
+/* Contact Section */
+// SVG links
+.svg {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  vertical-align: bottom;
+}
