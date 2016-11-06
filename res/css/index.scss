@@ -4,6 +4,7 @@
 /* VARIABLES */
 /* Colors */
 $text-shadow-color: rgba(33, 33, 33, 0.40);
+$navbar-color: rgba(33, 33, 33, 0.99);
 
 /* PAGE CONTENT */
 /* General */
@@ -58,6 +59,9 @@ h1, .h1 {
 .affix ~ .container-fluid {
   position: relative;
   top: 50px;
+}
+.navbar-default {
+  background-color: $navbar-color;
 }
 
 /* About Section */
