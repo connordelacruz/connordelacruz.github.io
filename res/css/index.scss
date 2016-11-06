@@ -11,8 +11,17 @@ $text-shadow-color: rgba(33, 33, 33, 0.40);
 html, body {
   height: 100%;
 }
+body {
+  position: relative;
+}
 
 /* Typography */
+// Override font used in Bootstrap theme
+h1, h2, h3, h4, h5, h6
+.h1, .h2, .h3, .h4, .h5, .h6,
+body, .tooltip, .popover {
+  font-family: "Roboto", sans-serif !important;
+}
 h1, .h1 {
   font-family: 'Roboto', sans-serif !important;
   font-weight: 100;
@@ -33,15 +42,26 @@ h1, .h1 {
 }
 
 /* Navbar */
-#navbar {
+#navbar, .navbar {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  margin-bottom: 0px;
 }
-#navbar.affix {
-  top: 0;
+// Ensure affixed elements appear above other elements
+.affix {
+  top:0;
   width: 100%;
+  z-index: 9999 !important;
 }
+// For smoother affixing
+.affix ~ .container-fluid {
+  position: relative;
+  top: 50px;
+}
+
+/* About Section */
+
 
 /* Contact Section */
 // SVG links
