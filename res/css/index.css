@@ -1,0 +1,71 @@
+/* Import Roboto Thin, Light, Normal */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
+/* VARIABLES */
+/* Colors */
+/* Device Widths */
+/* Media Queries */
+/* PAGE CONTENT */
+/* General */
+html, body {
+  height: 100%; }
+
+body {
+  position: relative; }
+
+/* Typography */
+h1, h2, h3, h4, h5, h6
+.h1, .h2, .h3, .h4, .h5, .h6,
+body, .tooltip, .popover {
+  font-family: "Roboto", sans-serif !important; }
+
+h1, .h1 {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 100; }
+
+/* Header Section */
+#page-header {
+  padding: 11.0vh 0;
+  margin: 0;
+  height: 90%;
+  background: url("../img/banner/blurred/banner00-blur-wide-progressive.jpg") no-repeat fixed center;
+  background-size: cover; }
+
+#title {
+  text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.4);
+  text-align: center; }
+
+/* Navbar */
+#navbar, .navbar {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  margin-bottom: 0px; }
+
+.navbar-brand {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 300; }
+
+.affix {
+  top: 0;
+  width: 100%;
+  z-index: 9999 !important; }
+
+.affix ~ .container-fluid {
+  position: relative;
+  top: 50px; }
+
+.navbar-default {
+  background-color: rgba(33, 33, 33, 0.99); }
+
+/* About Section */
+/* Contact Section */
+.svg {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  vertical-align: bottom; }
+
+@media (max-width: 768px) {
+  span.contact-btn {
+    display: none; } }
+
+/*# sourceMappingURL=index.css.map */

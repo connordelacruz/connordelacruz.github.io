@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Page info -->
     <title>Connor de la Cruz</title>
     <meta name="description" content="Connor de la Cruz's personal site."/>
     <meta name="keywords" content="Java, Python, HTML, PHP, Android, Windows, Linux, software, deployment, development, programmer, graphic, design"/>
     <meta name="author" content="Connor de la Cruz"/>
 
-    <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-
     <!-- Icon -->
-    <link rel="icon" sizes="192x192" href="resources/images/icon/icon.png"/>
-    <link rel="icon" sizes="144x144" href="resources/images/icon/icon-144x144.png"/>
-    <link rel="icon" sizes="96x96" href="resources/images/icon/icon-96x96.png"/>
-    <link rel="icon" sizes="48x48" href="resources/images/icon/icon-48x48.png"/>
+    <link rel="icon" sizes="192x192" href="res/img/icon/icon.png"/>
+    <link rel="icon" sizes="144x144" href="res/img/icon/icon-144x144.png"/>
+    <link rel="icon" sizes="96x96" href="res/img/icon/icon-96x96.png"/>
+    <link rel="icon" sizes="48x48" href="res/img/icon/icon-48x48.png"/>
 
     <!-- Safari icon -->
-    <link rel="apple-touch-icon" sizes="192x192" href="resources/images/icon/icon.png"/>
-    <link rel="apple-touch-icon" sizes="144x144" href="resources/images/icon/icon-144x144.png"/>
-    <link rel="apple-touch-icon" sizes="96x96" href="resources/images/icon/icon-96x96.png"/>
-    <link rel="apple-touch-icon" sizes="48x48" href="resources/images/icon/icon-48x48.png"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="res/img/icon/icon.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="res/img/icon/icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="96x96" href="res/img/icon/icon-96x96.png"/>
+    <link rel="apple-touch-icon" sizes="48x48" href="res/img/icon/icon-48x48.png"/>
 
     <!-- Chrome, Firefox OS, Opera theme color -->
     <meta name="theme-color" content="#212121">
@@ -30,7 +27,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <script src="resources/js/scripts.js"></script>
+    <!-- Scripts -->
+    <script src="res/js/scripts.js"></script>
+
+    <!-- Style and viewport -->
+    <link rel="stylesheet" type="text/css" href="res/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 </head>
 
 
@@ -39,7 +41,7 @@
 <!-- Mobile Navbar -->
 <div id="navbox-m">
     <button type="button" id="navbutton-m" class="conlink" onclick="dropdown()">
-        <img class="svg" id="navicon-m" src="resources/svg/menu.svg">
+        <img class="svg" id="navicon-m" src="res/svg/menu.svg">
     </button>
 
     <a id="navlogo-m" href="#headline">Cd</a>
@@ -74,7 +76,7 @@
         <hr>
         <h2>About Me</h2>
         <hr>
-        <img id="portrait" src="resources/images/placeholder/portrait-placeholder-square.jpg">
+        <img id="portrait" src="res/img/placeholder/portrait-placeholder-square.jpg">
         <p id="abouttext" style="margin-top: 0;">
             Hello, I'm Connor de la Cruz, a programmer and web designer living in the Chicago area.
             I'm always interested in learning more about computers, programming, and graphic design.
@@ -143,19 +145,19 @@
         <h2 id="conheader">Contact</h2>
         <hr>
         <ul id="contactbar">
-            <li class="conitem"><a class="conlink" href="mailto:contact@connordelacruz.com" target="_blank"><img class="svg" src="resources/svg/email.svg">Email</a></li>
-            <li class="conitem"><a class="conlink" href="http://www.linkedin.com/in/connordelacruz" target="_blank"><img class="svg" src="resources/svg/linkedin-box.svg">LinkedIn</a></li>
-            <li class="conitem"><a class="conlink" href="https://plus.google.com/115013815974739318334" target="_blank"><img class="svg" src="resources/svg/google-plus-box.svg">Google+</a></li>
-            <li class="conitem"><a class="conlink" href="https://github.com/connordelacruz" target="_blank"><img class="svg" src="resources/svg/github-box.svg">GitHub</a></li>
-            <!--<li class="conitem"><a class="conlink" href="https://bitbucket.org/connordelacruz/" target="_blank"><img class="svg" src="resources/svg/bitbucket.svg">Bitbucket</a></li>-->
+            <li class="conitem"><a class="conlink" href="mailto:contact@connordelacruz.com" target="_blank"><img class="svg" src="res/svg/email.svg">Email</a></li>
+            <li class="conitem"><a class="conlink" href="http://www.linkedin.com/in/connordelacruz" target="_blank"><img class="svg" src="res/svg/linkedin-box.svg">LinkedIn</a></li>
+            <li class="conitem"><a class="conlink" href="https://plus.google.com/115013815974739318334" target="_blank"><img class="svg" src="res/svg/google-plus-box.svg">Google+</a></li>
+            <li class="conitem"><a class="conlink" href="https://github.com/connordelacruz" target="_blank"><img class="svg" src="res/svg/github-box.svg">GitHub</a></li>
+            <!--<li class="conitem"><a class="conlink" href="https://bitbucket.org/connordelacruz/" target="_blank"><img class="svg" src="res/svg/bitbucket.svg">Bitbucket</a></li>-->
         </ul>
         <!-- TODO: The contactbar-m is pretty redundant. Get rid of it and make sure the normal one scales properly -->
         <ul id="contactbar-m">
-            <li class="conitem"><a class="conlink" href="mailto:contact@connordelacruz.com" target="_blank"><img class="svg" src="resources/svg/email.svg"> Email</a></li>
-            <li class="conitem"><a class="conlink" href="http://www.linkedin.com/in/connordelacruz" target="_blank"><img class="svg" src="resources/svg/linkedin-box.svg"> LinkedIn</a></li>
-            <li class="conitem"><a class="conlink" href="https://plus.google.com/115013815974739318334" target="_blank"><img class="svg" src="resources/svg/google-plus-box.svg"> Google+</a></li>
-            <li class="conitem"><a class="conlink" href="https://github.com/connordelacruz" target="_blank"><img class="svg" src="resources/svg/github-box.svg"> GitHub</a></li>
-            <li class="conitem"><a class="conlink" href="https://bitbucket.org/connordelacruz/" target="_blank"><img class="svg" src="resources/svg/bitbucket.svg"> Bitbucket</a></li>
+            <li class="conitem"><a class="conlink" href="mailto:contact@connordelacruz.com" target="_blank"><img class="svg" src="res/svg/email.svg"> Email</a></li>
+            <li class="conitem"><a class="conlink" href="http://www.linkedin.com/in/connordelacruz" target="_blank"><img class="svg" src="res/svg/linkedin-box.svg"> LinkedIn</a></li>
+            <li class="conitem"><a class="conlink" href="https://plus.google.com/115013815974739318334" target="_blank"><img class="svg" src="res/svg/google-plus-box.svg"> Google+</a></li>
+            <li class="conitem"><a class="conlink" href="https://github.com/connordelacruz" target="_blank"><img class="svg" src="res/svg/github-box.svg"> GitHub</a></li>
+            <li class="conitem"><a class="conlink" href="https://bitbucket.org/connordelacruz/" target="_blank"><img class="svg" src="res/svg/bitbucket.svg"> Bitbucket</a></li>
         </ul>
         <hr>
     </div>

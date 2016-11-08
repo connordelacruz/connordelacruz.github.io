@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page info -->
+    <title>Connor de la Cruz</title>
+    <meta name="description" content="Connor de la Cruz's personal site."/>
+    <meta name="keywords" content="Java, Python, HTML, PHP, Android, Windows, Linux, software, deployment, development, programmer, graphic, design"/>
+    <meta name="author" content="Connor de la Cruz"/>
+
+    <!-- Icon -->
+    <link rel="icon" sizes="192x192" href="res/img/icon/icon.png"/>
+    <link rel="icon" sizes="144x144" href="res/img/icon/icon-144x144.png"/>
+    <link rel="icon" sizes="96x96" href="res/img/icon/icon-96x96.png"/>
+    <link rel="icon" sizes="48x48" href="res/img/icon/icon-48x48.png"/>
+
+    <!-- Safari icon -->
+    <link rel="apple-touch-icon" sizes="192x192" href="res/img/icon/icon.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="res/img/icon/icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="96x96" href="res/img/icon/icon-96x96.png"/>
+    <link rel="apple-touch-icon" sizes="48x48" href="res/img/icon/icon-48x48.png"/>
+
+    <!-- Chrome, Firefox OS, Opera theme color -->
+    <meta name="theme-color" content="#212121">
+    <!-- Windows phone -->
+    <meta name="msapplication-navbutton-color" content="#212121"/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="res/css/bootstrap.min.css">
+    <script src="res/js/bootstrap.min.js"></script>
+
+    <!-- Style and viewport -->
+    <link rel="stylesheet" href="res/css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+    <!-- Scripts -->
+    <script>
+        $(function () {
+            // set navbar affix offset to the height of the page header. Since we pass it a function, it's dynamically calculated
+            $('#navbar').affix({
+               offset: {
+                   top: function() {return $('#page-header').outerHeight();}
+               }
+            });
+        });
+    </script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+
+<!-- Page Header -->
+<div class="page-header jumbotron" id="page-header">
+    <h1 id="title">Connor de la Cruz</h1>
+    <!-- TODO: add some sort of subtitle here -->
+    <!-- TODO: add downward arrow that fades when you scroll down. Clicking on it should jump to 'About' -->
+</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default" id="navbar" data-spy="affix">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-contents">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Connor de la Cruz</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-contents">
+            <ul class="nav navbar-nav">
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Content -->
+<!-- About -->
+<div id="about" class="container-fluid">
+    <h1>About</h1>
+    <div class="panel panel-default"> <!-- TODO: Sloppy about section, rewrite -->
+        <div class="panel-body">
+            <img src="res/img/placeholder/portrait-placeholder-square.jpg" class="img-circle img-responsive" style="width: 10em; margin: 0 auto;">
+            Hello, I'm Connor de la Cruz, a programmer and web designer living in the Chicago area.
+            I'm always interested in learning more about computers, programming, and graphic design.
+            In my spare time, I enjoy listening to music, playing video games, and messing around with Photoshop.
+            I'm currently a junior in college studying computer science.
+            I work part time in the IT department at my school and do the occasional freelance programming job.
+        </div>
+    </div>
+</div>
+
+<!-- Resume TODO: update to match actual resume -->
+<div id="resume" class="container-fluid">
+    <h1>Resume</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading">Skills</div>
+        <div class="panel-body">
+            <ul>
+                <li>Programming experience in Java, C, Python, JavaScript, HTML, and scripting in Batch and Bash</li>
+                <li>Experience with Adobe Photoshop and Illustrator for graphic design</li>
+                <li>Experience using Microsoft System Center Configuration Manager to deploy software packages</li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Education</div>
+        <div class="panel-body">
+            <p>Wheaton College - Wheaton, IL<br>
+                Pursuing B.S. in Computer Science<br>
+                Expected May 2017</p>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Experience</div>
+        <div class="panel-body">
+            <!-- TODO: Add location and date range of employment -->
+            <!-- TODO: Make each job collapsible in narrow viewports -->
+            <h3>Wheaton College Academic and Institutional Technology</h3>
+            <h4>Software Deployment Internship</h4>
+            <ul>
+                <li>Used Microsoft System Center 2012 Configuration Manager to deploy software packages.</li>
+                <li>Created and tested software packages and wrote batch installation scripts for deployment.</li>
+                <li>Worked with the packaging team to come up with solutions for scripting and deployment issues.</li>
+                <li>Updated existing software packages and created knowledge base documentation for them.</li>
+                <li>Researched and troubleshot issues with deployed software to improve end user experience.</li>
+            </ul>
+            <h4>IT Service Desk Technician</h4>
+            <ul>
+                <li>Provided technical support to students and faculty over the phone as well as in-person.</li>
+                <li>Used troubleshooting techniques to determine how to go about solving problems.</li>
+                <li>Researched solutions to issues where a resolution could not be met with basic troubleshooting.</li>
+                <li>Learned how to resolve commonly encountered problems from co-workers and from information posted in the knowledge base.</li>
+                <li>Added new articles to the knowledge base and modified existing ones.</li>
+                <li>Compiled information for and wrote a significant portion of the advanced Windows 7 proficiency.</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<!-- Contact -->
+<div id="contact" class="container-fluid">
+    <h1>Contact</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <!-- TODO: change to btn-group-vertical when window not wide enough -->
+            <div id="contact-btn-group" class="btn-group btn-group-justified">
+                <a class="btn btn-success" href="mailto:contact@connordelacruz.com" target="_blank"><img class="svg" src="res/svg/email.svg"><span class="contact-btn"> Email</span></a>
+                <a class="btn btn-primary" href="http://www.linkedin.com/in/connordelacruz" target="_blank"><img class="svg" src="res/svg/linkedin-box.svg"><span class="contact-btn"> LinkedIn</span></a>
+                <a class="btn btn-danger" href="https://plus.google.com/115013815974739318334" target="_blank"><img class="svg" src="res/svg/google-plus-box.svg"><span class="contact-btn"> Google+</span></a>
+                <a class="btn btn-default" href="https://github.com/connordelacruz" target="_blank"><img class="svg" src="res/svg/github-box.svg"><span class="contact-btn"> GitHub</span></a>
+                <a class="btn btn-info" href="https://bitbucket.org/connordelacruz/" target="_blank"><img class="svg" src="res/svg/bitbucket.svg"><span class="contact-btn"> Bitbucket</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

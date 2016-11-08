@@ -4,7 +4,6 @@
 /* TODO: REORGANIZE CSS SHEET */
 
 /* COLOR VARIABLES */
-// TODO: declare variables for colors here
 $content-bg: rgba(33, 33, 33, 0.75); // Background color of content sections
 $page-bg: rgb(66, 66, 66); // Background color of the page body
 $navbox-bg: rgba(33, 33, 33, 0.99); // Fixed navbox partially transparent
@@ -109,7 +108,7 @@ button:focus {
 /* SECTIONS */
 /* Headline (title, background image) */
 #headline {
-  background-image: url("../images/banner/blurred/banner00-blur-wide-progressive.jpg");
+  background-image: url("../img/banner/blurred/banner00-blur-wide-progressive.jpg");
   background-size: cover;
   padding: 11.0vh 0 0;
   color: white;
@@ -324,17 +323,17 @@ a:hover.navlink, a:hover.conlink, #navlogo-m:hover, button:hover.conlink, button
 /* DECORATIVE SECTIONS */
 /* About section */
 #about {
-  background-image: url("../images/banner/blurred/banner16-blur-wide-progressive.jpg");
+  background-image: url("../img/banner/blurred/banner16-blur-wide-progressive.jpg");
   background-size: cover;
 }
 /* Resume section */
 #resume {
-  background-image: url("../images/banner/blurred/banner16-blur-progressive.jpg");
+  background-image: url("../img/banner/blurred/banner16-blur-progressive.jpg");
   background-size: cover;
 }
 /* Contact section */
 #contact {
-  background-image: url("../images/banner/blurred/banner13-blur-wide-progressive.jpg");
+  background-image: url("../img/banner/blurred/banner13-blur-wide-progressive.jpg");
   background-size: cover;
   color: white;
 }

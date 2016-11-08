@@ -33,9 +33,9 @@ function dropdown() {
     var navicon = document.getElementById("navicon-m");
     // returns true if .show is added (i.e. dropdown opens) so change the img to an 'x'
     if (document.getElementById("navbar-m").classList.toggle('show')) {
-        navicon.src = "resources/svg/close.svg";
+        navicon.src = "res/svg/close.svg";
     } else {
-        navicon.src = "resources/svg/menu.svg";
+        navicon.src = "res/svg/menu.svg";
     }
 }
 
@@ -44,7 +44,7 @@ window.onclick = function(event) {
     if(document.getElementById("navbar-m").classList.contains('show') &&
         !event.target.matches('#navbutton-m') && !event.target.matches('#navicon-m')) {
         document.getElementById("navbar-m").classList.toggle('show', false);
-        document.getElementById("navicon-m").src = "resources/svg/menu.svg";
+        document.getElementById("navicon-m").src = "res/svg/menu.svg";
     }
 }
 
