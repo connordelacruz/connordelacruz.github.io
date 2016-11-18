@@ -28,6 +28,10 @@ html, body {
 body {
   position: relative;
 }
+// center content
+.center {
+  margin: 0 auto;
+}
 
 /* Typography */
 // Override font used in Bootstrap theme
@@ -49,10 +53,17 @@ h1, .h1 {
   // For parallax
   background: url("../img/banner/blurred/banner00-blur-wide-progressive.jpg") no-repeat fixed center;
   background-size: cover;
+  // For positioning of .scroll-arrow-container
+  position: relative;
 }
 #title {
   text-shadow: 1px 1px 1px $text-shadow-color;
   text-align: center;
+}
+.scroll-arrow-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 /* Navbar */

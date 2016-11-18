@@ -12,6 +12,9 @@ html, body {
 body {
   position: relative; }
 
+.center {
+  margin: 0 auto; }
+
 /* Typography */
 h1, h2, h3, h4, h5, h6
 .h1, .h2, .h3, .h4, .h5, .h6,
@@ -28,11 +31,17 @@ h1, .h1 {
   margin: 0;
   height: 90%;
   background: url("../img/banner/blurred/banner00-blur-wide-progressive.jpg") no-repeat fixed center;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
 
 #title {
   text-shadow: 1px 1px 1px rgba(33, 33, 33, 0.4);
   text-align: center; }
+
+.scroll-arrow-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
 
 /* Navbar */
 #navbar, .navbar {
