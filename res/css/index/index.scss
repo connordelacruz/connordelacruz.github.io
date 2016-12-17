@@ -9,7 +9,7 @@
 /* Colors */
 // General
 $text-shadow-color: rgba(33, 33, 33, 0.40);
-$navbar-color: rgba(33, 33, 33, 0.99);
+$navbar-color: #212121;
 // Contact links
 $github: #464545;
 $linkedin: #008CC9;
@@ -72,7 +72,7 @@ html, body {
 body {
   position: relative;
 }
-// center content
+// center content TODO: reorganize scss and make helper class section
 .center {
   margin: 0 auto;
 }
@@ -97,7 +97,7 @@ h1, .h1 {
 #page-header {
   padding: 11.0vh 0;
   margin: 0;
-  height: 90%;
+  height: 80%;
   // For parallax
   background: url("../../img/banner/blurred/banner00-blur-wide-progressive.jpg") no-repeat fixed center;
   background-size: cover;
@@ -113,19 +113,26 @@ h1, .h1 {
   position: absolute;
   bottom: 0;
 }
+hr.header {
+  border: none;
+  background-color: white;
+  height: 1px;
+  margin: auto;
+  max-width: 1050px;
+}
 
 /* Navbar */
 #navbar, .navbar {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .navbar-brand {
   font-family: "Roboto", sans-serif !important;
   font-weight: 300;
 }
-// Override hover color
+// Override hover color TODO: do we need this anymore?
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-brand:hover {
   color: darken(white, 20%);
@@ -146,6 +153,9 @@ h1, .h1 {
 }
 
 /* About Section */
+#about {
+  padding-top: 100px; // To ensure the navbar doesn't cover the title when affixed
+}
 
 
 /* Contact Section */
