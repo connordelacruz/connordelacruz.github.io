@@ -6084,9 +6084,8 @@ h1, .h1 {
 
 /* Header Section */
 #page-header {
-  padding: 11.0vh 0;
   margin: 0;
-  height: 80%;
+  height: 40%;
   background: url("../../img/banner/blurred/banner00-blur-wide-progressive.jpg") no-repeat fixed center;
   background-size: cover;
   position: relative; }
