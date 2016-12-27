@@ -5,7 +5,7 @@ $(function () {
     // set navbar affix offset to the height of the page header. Since we pass it a function, it's dynamically calculated
     $('#navbar').affix({
         offset: {
-            top: function() {return $('#page-header').outerHeight() - 10;}
+            top: function() {return $('#page-header').outerHeight();}
         }
     });
 
