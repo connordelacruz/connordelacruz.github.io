@@ -2,6 +2,8 @@
 @import "variables";
 @import "bootstrap";
 @import "bootswatch";
+// Import transition mixins
+@import "mixins/transition";
 
 
 /* VARIABLES */
@@ -28,39 +30,6 @@ $sm-query: "(min-width: #{$sm}) and (max-width: #{$md})";
 $md-query: "(min-width: #{$md}) and (max-width: #{$lg})";
 $lg-query: "(min-width: #{$lg})";
 
-
-/* MIXINS */
-/* Transitions */
-@mixin transition($transition...) {
-  -moz-transition:    $transition;
-  -o-transition:      $transition;
-  -webkit-transition: $transition;
-  transition:         $transition;
-}
-@mixin transition-property($property...) {
-  -moz-transition-property:    $property;
-  -o-transition-property:      $property;
-  -webkit-transition-property: $property;
-  transition-property:         $property;
-}
-@mixin transition-duration($duration...) {
-  -moz-transition-duration:    $duration;
-  -o-transition-duration:      $duration;
-  -webkit-transition-duration: $duration;
-  transition-duration:         $duration;
-}
-@mixin transition-timing-function($timing...) {
-  -moz-transition-timing-function:    $timing;
-  -o-transition-timing-function:      $timing;
-  -webkit-transition-timing-function: $timing;
-  transition-timing-function:         $timing;
-}
-@mixin transition-delay($delay...) {
-  -moz-transition-delay:    $delay;
-  -o-transition-delay:      $delay;
-  -webkit-transition-delay: $delay;
-  transition-delay:         $delay;
-}
 
 /* PAGE CONTENT */
 
@@ -131,11 +100,6 @@ hr.header {
 .navbar-brand {
   font-family: "Roboto", sans-serif !important;
   font-weight: 300;
-}
-// Override hover color TODO: do we need this anymore?
-.navbar-default .navbar-nav>li>a:hover,
-.navbar-default .navbar-brand:hover {
-  color: darken(white, 20%);
 }
 // Ensure affixed elements appear above other elements
 .affix {

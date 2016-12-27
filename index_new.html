@@ -6,6 +6,7 @@
     <meta name="description" content="Connor de la Cruz's personal site."/>
     <meta name="keywords" content="Java, Python, HTML, PHP, Android, Windows, Linux, software, deployment, development, programmer, graphic, design"/>
     <meta name="author" content="Connor de la Cruz"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 
     <!-- Icon -->
     <link rel="icon" sizes="192x192" href="res/img/icon/icon.png"/>
@@ -32,48 +33,14 @@
 
     <!-- Bootstrap/Bootswatch SCSS is imported in index.scss -->
     <link rel="stylesheet" href="res/css/index/index.css">
-    <script src="res/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- Scripts -->
     <script src="res/js/index.js"></script>
-    <!--<script>
-        $(function () {
-            // set navbar affix offset to the height of the page header. Since we pass it a function, it's dynamically calculated
-            $('#navbar').affix({
-               offset: {
-                   top: function() {return $('#page-header').outerHeight() - 10;}
-               }
-            });
 
-            // for smooth scrolling links
-            // navbar
-            $("#navbar a").on('click', function(event) {
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
-
-                    // Store hash
-                    var hash = this.hash;
-
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function(){
-
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                }  // End if
-            });
-        });
-    </script>-->
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-
 
 <!-- Page Header -->
 <div class="page-header jumbotron container-fluid" id="page-header">
@@ -182,7 +149,6 @@
     <hr>
     <div class="panel panel-default">
         <div class="panel-body">
-            <!-- TODO: change to btn-group-vertical when window not wide enough -->
             <div id="contact-btn-group" class="btn-group btn-group-justified">
                 <a class="btn btn-contact" id="contact-email" href="mailto:contact@connordelacruz.com" target="_blank">
                     <img class="svg" src="res/svg/email.svg"><span class="contact-btn"> Email</span>

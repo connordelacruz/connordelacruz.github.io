@@ -3959,14 +3959,14 @@ tbody.collapse.in {
   .navbar-default .navbar-brand {
     color: #fff; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-      color: #e6e6e6;
+      color: #cccccc;
       background-color: transparent; }
   .navbar-default .navbar-text {
     color: #fff; }
   .navbar-default .navbar-nav > li > a {
     color: #fff; }
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-      color: #e6e6e6;
+      color: #cccccc;
       background-color: transparent; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #fff;
@@ -3990,7 +3990,7 @@ tbody.collapse.in {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
       color: #fff; }
       .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #e6e6e6;
+        color: #cccccc;
         background-color: transparent; }
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
       color: #fff;
@@ -4001,11 +4001,11 @@ tbody.collapse.in {
   .navbar-default .navbar-link {
     color: #fff; }
     .navbar-default .navbar-link:hover {
-      color: #e6e6e6; }
+      color: #cccccc; }
   .navbar-default .btn-link {
     color: #fff; }
     .navbar-default .btn-link:hover, .navbar-default .btn-link:focus {
-      color: #e6e6e6; }
+      color: #cccccc; }
     .navbar-default .btn-link[disabled]:hover, .navbar-default .btn-link[disabled]:focus, fieldset[disabled] .navbar-default .btn-link:hover, fieldset[disabled] .navbar-default .btn-link:focus {
       color: #ccc; }
 
@@ -6044,12 +6044,11 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 .panel-default > .panel-heading {
   background-color: #464545; }
 
+/* Transitions */
 /* VARIABLES */
 /* Colors */
 /* Device Widths */
 /* Media Queries */
-/* MIXINS */
-/* Transitions */
 /* PAGE CONTENT */
 /* General */
 html, body {
@@ -6116,10 +6115,6 @@ hr.header {
 .navbar-brand {
   font-family: "Roboto", sans-serif !important;
   font-weight: 300; }
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-brand:hover {
-  color: #cccccc; }
 
 .affix {
   top: 0;
