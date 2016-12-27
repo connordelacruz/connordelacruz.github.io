@@ -6,13 +6,14 @@
     <meta name="description" content="Connor de la Cruz's personal site."/>
     <meta name="keywords" content="Java, Python, HTML, PHP, Android, Windows, Linux, software, deployment, development, programmer, graphic, design"/>
     <meta name="author" content="Connor de la Cruz"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 
+    <!-- TODO: do favicons better: https://github.com/audreyr/favicon-cheat-sheet -->
     <!-- Icon -->
     <link rel="icon" sizes="192x192" href="res/img/icon/icon.png"/>
     <link rel="icon" sizes="144x144" href="res/img/icon/icon-144x144.png"/>
     <link rel="icon" sizes="96x96" href="res/img/icon/icon-96x96.png"/>
     <link rel="icon" sizes="48x48" href="res/img/icon/icon-48x48.png"/>
-
     <!-- Safari icon -->
     <link rel="apple-touch-icon" sizes="192x192" href="res/img/icon/icon.png"/>
     <link rel="apple-touch-icon" sizes="144x144" href="res/img/icon/icon-144x144.png"/>
@@ -27,140 +28,153 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <!-- Scripts -->
-    <script src="res/js/scripts.js"></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!-- Style and viewport -->
-    <link rel="stylesheet" type="text/css" href="res/css/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <!-- Bootstrap/Bootswatch SCSS is imported in index.scss -->
+    <link rel="stylesheet" href="res/css/index/index.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Scripts -->
+    <script src="res/js/index.js"></script>
+
 </head>
 
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<!-- dummy onclick event added so clicking the window to close the navmenu will work in Safari -->
-<body onclick="void(0)">
-<!-- Mobile Navbar -->
-<div id="navbox-m">
-    <button type="button" id="navbutton-m" class="conlink" onclick="dropdown()">
-        <img class="svg" id="navicon-m" src="res/svg/menu.svg">
-    </button>
-
-    <a id="navlogo-m" href="#headline">Cd</a>
-
-    <div id="navbar-m" class="dropcontent">
-        <a class="navlink" href="#headline">Top</a>
-        <a class="navlink" href="#about" >About</a>
-        <a class="navlink" href="#resume" >Resume</a>
-        <a class="navlink" href="#contact" >Contact</a>
+<!-- Page Header -->
+<div class="page-header jumbotron container-fluid" id="page-header">
+    <h1 id="title">Connor de la Cruz</h1>
+    <!-- TODO: add some sort of subtitle here -->
+    <!-- TODO: add downward arrow that fades when you scroll down. Clicking on it should jump to 'About' -->
+    <div class="scroll-arrow-container">
+        <img class="img-responsive center" src="res/svg/ic_keyboard_arrow_down_white_24px.svg">
     </div>
 </div>
 
-
-<div id="headline" class="decorative">
-    <header>
-        <h1 id="title">Connor de la Cruz</h1>
-        <!-- Navbar -->
-        <div id="navbox">
-        <ul id="navbar">
-            <li class="navitem"><a class="navlink" href="#about">About</a></li>
-            <li class="navitem"><a class="navlink" href="#resume">Resume</a></li>
-            <li class="navitem"><a class="navlink" href="#contact">Contact</a></li>
-        </ul>
+<!-- Navigation -->
+<nav class="navbar navbar-default" id="navbar" data-spy="affix">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#navbar-contents">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Connor de la Cruz</a>
         </div>
-    </header>
-</div>
-<hr>
+        <div class="collapse navbar-collapse" id="navbar-contents">
+            <ul class="nav navbar-nav">
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-
-<div id="about" class="decorative">
-    <div id="aboutme" class="content">
-        <hr>
-        <h2>About Me</h2>
-        <hr>
-        <img id="portrait" src="res/img/placeholder/portrait-placeholder-square.jpg">
-        <p id="abouttext" style="margin-top: 0;">
-            Hello, I'm Connor de la Cruz, a programmer and web designer living in the Chicago area.
-            I'm always interested in learning more about computers, programming, and graphic design.
-            In my spare time, I enjoy listening to music, playing video games, and messing around with Photoshop.
-            I'm currently a junior in college studying computer science.
-            I work part time in the IT department at my school and do the occasional freelance programming job.
-        </p>
-        <hr>
+<!-- Content -->
+<!-- About -->
+<div id="about" class="container">
+    <hr>
+    <h1 class="section-title">About</h1>
+    <hr>
+    <div class="well">
+        <img src="res/img/placeholder/portrait-placeholder-square.jpg" class="img-circle img-responsive center" style="width: 10em">
+        Hello, I'm Connor de la Cruz, a programmer and web developer living in the Chicago area.
+        I'm always interested in learning more about computers, programming, and graphic design.
+        I'm a senior in college studying computer science.
+        Currently, I work part time programming and providing tech support at the Wheaton College
+        IT service desk and part time developing in-house web applications for the Wheaton College library.
     </div>
 </div>
-<hr>
 
-
-<div id="resume" class="decorative">
-    <div id="skills" class="content">
+<!-- Resume TODO: update to match actual resume -->
+<div id="resume" class="container">
+    <hr>
+    <h1 class="section-title">Resume</h1>
+    <hr>
+    <div class="well">
+        <h2>Technical Skills</h2>
         <hr>
-        <h2>Skills</h2>
-        <hr>
-        <ul>
-            <li>Programming experience in Java, C, Python, JavaScript, HTML, and scripting in Batch and Bash</li>
-            <li>Experience with Adobe Photoshop and Illustrator for graphic design</li>
-            <li>Experience using Microsoft System Center Configuration Manager to deploy software packages</li>
-        </ul>
+        <b>Programming:</b> Java, C, Python, PHP, JavaScript, HTML, CSS, JQuery, Bootstrap, VBScript, Batch, Bash<br>
+        <b>Software / Tools:</b> MySQL, GitHub, Bitbucket, Eclipse, PhpStorm, Microsoft Office, Photoshop, Illustrator<br>
+        <b>Operation Systems:</b> Windows, Android, Linux, macOS<br>
     </div>
-    <div id="education" class="content" style="padding-top: 0; padding-bottom: 0">
-        <hr>
+    <div class="well">
         <h2>Education</h2>
         <hr>
-        <p>Wheaton College - Wheaton, IL<br>
-        Pursuing B.S. in Computer Science<br>
-        Expected May 2017</p>
+        <p>
+            Wheaton College - Wheaton, IL<br>
+            Pursuing B.S. in Computer Science<br>
+            Expected May 2018
+        </p>
     </div>
-    <div id="experience" class="content">
-        <hr>
+    <div class="well">
         <h2>Experience</h2>
         <hr>
+
         <!-- TODO: Add location and date range of employment -->
         <!-- TODO: Make each job collapsible in narrow viewports -->
-        <h3>Wheaton College Academic and Institutional Technology</h3>
+        <h3>Wheaton College Buswell Library<small> - Wheaton, IL</small></h3>
+        <h4>Full Stack Web Developer</h4>
+        <ul>
+            <li>Created web applications for the library using PHP, JavaScript, MySQL, and HTML/CSS.</li>
+            <li>Collaborated on large projects with other developers using GitHub.</li>
+        </ul>
+
+        <br>
+
+        <h3>Wheaton College Academic and Institutional Technology<small> - Wheaton, IL</small></h3>
+        <h4>Service Desk Programmer</h4>
+        <ul>
+            <li>Created scripts to automate support procedures commonly performed by service desk techs.</li>
+            <li>Developed software tools to add functionality to the service desk’s remote desktop software.</li>
+            <li>Created in-house web applications for the IT service desk.</li>
+        </ul>
         <h4>Software Deployment Internship</h4>
         <ul>
-            <li>Used Microsoft System Center 2012 Configuration Manager to deploy software packages.</li>
-            <li>Created and tested software packages and wrote batch installation scripts for deployment.</li>
-            <li>Worked with the packaging team to come up with solutions for scripting and deployment issues.</li>
-            <li>Updated existing software packages and created knowledge base documentation for them.</li>
-            <li>Researched and troubleshot issues with deployed software to improve end user experience.</li>
+            <li>Created software packages for deployment to all domain-managed computers at the college.</li>
+            <li>Developed scripts using Batch and VBScript to automate the installation of software packages.</li>
+            <li>Collaborated with the packaging team to come up with solutions for deployment issues.</li>
+            <li>Used Microsoft System Center Configuration Manager to deploy software packages.</li>
         </ul>
-        <h4>IT Service Desk Technician</h4>
+        <h4>IT Support Technician</h4>
         <ul>
-            <li>Provided technical support to students and faculty over the phone as well as in-person.</li>
-            <li>Used troubleshooting techniques to determine how to go about solving problems.</li>
-            <li>Researched solutions to issues where a resolution could not be met with basic troubleshooting.</li>
-            <li>Learned how to resolve commonly encountered problems from co-workers and from information posted in the knowledge base.</li>
-            <li>Added new articles to the knowledge base and modified existing ones.</li>
-            <li>Compiled information for and wrote a significant portion of the advanced Windows 7 proficiency.</li>
+            <li>Provided technical support for faculty and students over the phone, through email, and in person.</li>
+            <li>Worked with customers to troubleshoot and resolve hardware, software, and network issues.</li>
+            <li>Collaborated with other technicians to diagnose issues and come up with solutions.</li>
+            <li>Created support articles in the service desk knowledge base for common issues and procedures.</li>
+            <li>Helped create the training resources for the advanced Windows proficiency.</li>
         </ul>
-        <hr>
+
+    </div>
+
+</div>
+
+<!-- Contact -->
+<div id="contact" class="container">
+    <hr>
+    <h1 class="section-title">Contact</h1>
+    <hr>
+    <div class="well">
+        <div id="contact-btn-group" class="btn-group btn-group-justified">
+            <a class="btn btn-contact" id="contact-email" href="mailto:contact@connordelacruz.com" target="_blank">
+                <img class="svg" src="res/svg/email.svg"><span class="contact-btn"> Email</span>
+            </a>
+            <a class="btn btn-contact" id="contact-linkedin" href="http://www.linkedin.com/in/connordelacruz" target="_blank">
+                <img class="svg" src="res/svg/linkedin-box.svg"><span class="contact-btn"> LinkedIn</span>
+            </a>
+            <a class="btn btn-contact" id="contact-github" href="https://github.com/connordelacruz" target="_blank">
+                <img class="svg" src="res/svg/github-box.svg"><span class="contact-btn"> GitHub</span>
+            </a>
+            <a class="btn btn-contact" id="contact-bitbucket" href="https://bitbucket.org/connordelacruz/" target="_blank">
+                <img class="svg" src="res/svg/bitbucket.svg"><span class="contact-btn"> Bitbucket</span>
+            </a>
+        </div>
     </div>
 </div>
-<hr>
 
 
-<div id="contact" class="decorative">
-    <div id="contactbox" class="content">
-        <hr>
-        <h2 id="conheader">Contact</h2>
-        <hr>
-        <ul id="contactbar">
-            <li class="conitem"><a class="conlink" href="mailto:contact@connordelacruz.com" target="_blank"><img class="svg" src="res/svg/email.svg">Email</a></li>
-            <li class="conitem"><a class="conlink" href="http://www.linkedin.com/in/connordelacruz" target="_blank"><img class="svg" src="res/svg/linkedin-box.svg">LinkedIn</a></li>
-            <li class="conitem"><a class="conlink" href="https://plus.google.com/115013815974739318334" target="_blank"><img class="svg" src="res/svg/google-plus-box.svg">Google+</a></li>
-            <li class="conitem"><a class="conlink" href="https://github.com/connordelacruz" target="_blank"><img class="svg" src="res/svg/github-box.svg">GitHub</a></li>
-            <!--<li class="conitem"><a class="conlink" href="https://bitbucket.org/connordelacruz/" target="_blank"><img class="svg" src="res/svg/bitbucket.svg">Bitbucket</a></li>-->
-        </ul>
-        <!-- TODO: The contactbar-m is pretty redundant. Get rid of it and make sure the normal one scales properly -->
-        <ul id="contactbar-m">
-            <li class="conitem"><a class="conlink" href="mailto:contact@connordelacruz.com" target="_blank"><img class="svg" src="res/svg/email.svg"> Email</a></li>
-            <li class="conitem"><a class="conlink" href="http://www.linkedin.com/in/connordelacruz" target="_blank"><img class="svg" src="res/svg/linkedin-box.svg"> LinkedIn</a></li>
-            <li class="conitem"><a class="conlink" href="https://plus.google.com/115013815974739318334" target="_blank"><img class="svg" src="res/svg/google-plus-box.svg"> Google+</a></li>
-            <li class="conitem"><a class="conlink" href="https://github.com/connordelacruz" target="_blank"><img class="svg" src="res/svg/github-box.svg"> GitHub</a></li>
-            <li class="conitem"><a class="conlink" href="https://bitbucket.org/connordelacruz/" target="_blank"><img class="svg" src="res/svg/bitbucket.svg"> Bitbucket</a></li>
-        </ul>
-        <hr>
-    </div>
-</div>
 </body>
 </html>
