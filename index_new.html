@@ -6,6 +6,7 @@
     <meta name="description" content="Connor de la Cruz's personal site."/>
     <meta name="keywords" content="Java, Python, HTML, PHP, Android, Windows, Linux, software, deployment, development, programmer, graphic, design"/>
     <meta name="author" content="Connor de la Cruz"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 
     <!-- Icon -->
     <link rel="icon" sizes="192x192" href="res/img/icon/icon.png"/>
@@ -32,28 +33,19 @@
 
     <!-- Bootstrap/Bootswatch SCSS is imported in index.scss -->
     <link rel="stylesheet" href="res/css/index/index.css">
-    <script src="res/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- Scripts -->
-    <script>
-        $(function () {
-            // set navbar affix offset to the height of the page header. Since we pass it a function, it's dynamically calculated
-            $('#navbar').affix({
-               offset: {
-                   top: function() {return $('#page-header').outerHeight();}
-               }
-            });
-        });
-    </script>
+    <script src="res/js/index.js"></script>
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-
 <!-- Page Header -->
-<div class="page-header jumbotron" id="page-header">
+<div class="page-header jumbotron container-fluid" id="page-header">
     <h1 id="title">Connor de la Cruz</h1>
+    <!--<hr class="header">-->
     <!-- TODO: add some sort of subtitle here -->
     <!-- TODO: add downward arrow that fades when you scroll down. Clicking on it should jump to 'About' -->
     <div class="scroll-arrow-container">
@@ -131,20 +123,19 @@
             <h3>Wheaton College Academic and Institutional Technology</h3>
             <h4>Software Deployment Internship</h4>
             <ul>
-                <li>Used Microsoft System Center 2012 Configuration Manager to deploy software packages.</li>
-                <li>Created and tested software packages and wrote batch installation scripts for deployment.</li>
-                <li>Worked with the packaging team to come up with solutions for scripting and deployment issues.</li>
-                <li>Updated existing software packages and created knowledge base documentation for them.</li>
-                <li>Researched and troubleshot issues with deployed software to improve end user experience.</li>
+                <li>Created software packages for deployment to all domain-managed computers at the college.</li>
+                <li>Developed scripts using Batch and VBScript to automate the installation of software packages.</li>
+                <li>Collaborated with the packaging team to come up with solutions for deployment issues.</li>
+                <li>Used Microsoft System Center Configuration Manager to deploy software packages.</li>
             </ul>
-            <h4>IT Service Desk Technician</h4>
+            <h4>IT Support Technician</h4>
             <ul>
-                <li>Provided technical support to students and faculty over the phone as well as in-person.</li>
-                <li>Used troubleshooting techniques to determine how to go about solving problems.</li>
-                <li>Researched solutions to issues where a resolution could not be met with basic troubleshooting.</li>
+                <li>Provided technical support for faculty and students over the phone, through email, and in person.</li>
+                <li>Worked with customers to troubleshoot and resolve hardware, software, and network issues.</li>
+                <li>Collaborated with other technicians to diagnose issues and come up with solutions.</li>
                 <li>Learned how to resolve commonly encountered problems from co-workers and from information posted in the knowledge base.</li>
-                <li>Added new articles to the knowledge base and modified existing ones.</li>
-                <li>Compiled information for and wrote a significant portion of the advanced Windows 7 proficiency.</li>
+                <li>Created support articles in the service desk knowledge base for common issues and procedures. </li>
+                <li>Helped create the training resources for the advanced Windows proficiency.</li>
             </ul>
         </div>
     </div>
@@ -158,7 +149,6 @@
     <hr>
     <div class="panel panel-default">
         <div class="panel-body">
-            <!-- TODO: change to btn-group-vertical when window not wide enough -->
             <div id="contact-btn-group" class="btn-group btn-group-justified">
                 <a class="btn btn-contact" id="contact-email" href="mailto:contact@connordelacruz.com" target="_blank">
                     <img class="svg" src="res/svg/email.svg"><span class="contact-btn"> Email</span>
