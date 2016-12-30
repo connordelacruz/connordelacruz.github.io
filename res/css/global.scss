@@ -1,8 +1,12 @@
 /* Stylesheet imported in page-specific stylesheets for shared content */
 
-// Import Bootstrap and Bootswatch theme SCSS files
+// Bootstrap
 @import "variables";
 @import "bootstrap";
 @import "bootswatch";
-// Import transition mixins
+
+// Mixins
 @import "mixins/transition";
+
+// Generic styling
+@import "general";

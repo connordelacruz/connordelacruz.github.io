@@ -6046,12 +6046,12 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   background-color: #333; }
 
 /* Transitions */
+/* Styling used for multiple pages or sections */
 /* VARIABLES */
 /* Colors */
 /* Device Widths */
 /* Media Queries */
 /* PAGE CONTENT */
-/* General */
 ::selection {
   background: #375a7f;
   /* WebKit/Blink Browsers */ }
@@ -6092,6 +6092,7 @@ a {
   font-weight: 400; }
 
 /* Header Section */
+/* Styles for page header */
 #page-header {
   margin: 0;
   height: 40%;
@@ -6117,6 +6118,7 @@ hr.header {
   max-width: 1050px; }
 
 /* Navbar */
+/* Styles for navbar */
 #navbar, .navbar {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -6140,10 +6142,13 @@ hr.header {
   background-color: #212121; }
 
 /* About Section */
+/* Styles for about section */
 #about {
   padding-top: 100px; }
 
 /* Contact Section */
+/* Contact section */
+/* VARIABLES */
 .svg {
   -webkit-filter: invert(1);
   filter: invert(1);

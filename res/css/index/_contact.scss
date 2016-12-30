@@ -1,0 +1,54 @@
+/* Contact section */
+
+/* VARIABLES */
+// Contact link colors
+$github: #464545;
+$linkedin: #008CC9;
+$bitbucket: #205081;
+$email: #d14836;
+
+// SVG links
+.svg {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  vertical-align: bottom;
+}
+// Contact button text
+span.contact-btn {
+  // make text invisible on xs screen widths
+  @media #{$xs-query} {
+    display: none;
+  }
+}
+// Text color for contact links
+.btn-contact {
+  color: white;
+  @include transition-property(background-color);
+  @include transition-duration(180ms);
+  @include transition-timing-function(ease-out);
+}
+// Specific link colors
+#contact-email {
+  background-color: $email;
+  &:hover {
+    background-color: darken($email, 20%);
+  }
+}
+#contact-linkedin {
+  background-color: $linkedin;
+  &:hover {
+    background-color: darken($linkedin, 20%);
+  }
+}
+#contact-github {
+  background-color: $github;
+  &:hover {
+    background-color: darken($github, 20%);
+  }
+}
+#contact-bitbucket {
+  background-color: $bitbucket;
+  &:hover {
+    background-color: darken($bitbucket, 20%);
+  }
+}
