@@ -1,9 +1,5 @@
-// Import Bootstrap and Bootswatch theme SCSS files
-@import "variables";
-@import "bootstrap";
-@import "bootswatch";
-// Import transition mixins
-@import "mixins/transition";
+// Import global stylesheet
+@import "../global";
 
 
 /* VARIABLES */
