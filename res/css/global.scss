@@ -1,0 +1,12 @@
+/* Stylesheet imported in page-specific stylesheets for shared content */
+
+// Bootstrap
+@import "variables";
+@import "bootstrap";
+@import "bootswatch";
+
+// Mixins
+@import "mixins/transition";
+
+// Generic styling
+@import "general";
