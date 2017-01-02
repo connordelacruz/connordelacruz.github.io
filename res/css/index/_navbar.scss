@@ -6,10 +6,23 @@
   border-radius: 0;
   margin-bottom: 0;
 }
+
 .navbar-brand {
+  // Hide navbar-brand when not affixed
+  visibility: hidden;
+  opacity: 0;
+  // Transition when width changes
+  @include transition(visibility 0s linear, opacity 100ms ease-out);
+
   font-family: "Roboto", sans-serif !important;
   font-weight: 300;
 }
+
+#navbar.affix > div > div.navbar-header > a.navbar-brand {
+  visibility: visible;
+  opacity:1;
+}
+
 // Ensure affixed elements appear above other elements
 .affix {
   top:0;

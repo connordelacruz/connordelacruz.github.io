@@ -6126,8 +6126,18 @@ hr.header {
   margin-bottom: 0; }
 
 .navbar-brand {
+  visibility: hidden;
+  opacity: 0;
+  -moz-transition: visibility 0s linear, opacity 100ms ease-out;
+  -o-transition: visibility 0s linear, opacity 100ms ease-out;
+  -webkit-transition: visibility 0s linear, opacity 100ms ease-out;
+  transition: visibility 0s linear, opacity 100ms ease-out;
   font-family: "Roboto", sans-serif !important;
   font-weight: 300; }
+
+#navbar.affix > div > div.navbar-header > a.navbar-brand {
+  visibility: visible;
+  opacity: 1; }
 
 .affix {
   top: 0;
