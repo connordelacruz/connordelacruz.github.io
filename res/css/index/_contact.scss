@@ -8,9 +8,10 @@ $bitbucket: #205081;
 $email: #d14836;
 
 // SVG links
+// TODO: move to general?
 .svg {
   -webkit-filter: invert(1);
-  filter: invert(1);
+  filter: invert(1); // TODO: color white instead?
   vertical-align: bottom;
 }
 // Contact button text
