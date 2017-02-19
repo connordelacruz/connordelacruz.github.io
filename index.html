@@ -45,33 +45,33 @@
 <!-- Page Header -->
 <div class="page-header jumbotron" id="page-header">
     <h1 id="title">Connor de la Cruz</h1>
-    <!-- TODO: add some sort of subtitle here -->
-    <!-- TODO: add downward arrow that fades when you scroll down. Clicking on it should jump to 'About' -->
     <div class="scroll-arrow-container">
         <img class="img-responsive center" src="res/svg/ic_keyboard_arrow_down_white_24px.svg">
     </div>
 </div>
 
 <!-- Navigation -->
-<nav class="navbar navbar-default" id="navbar" data-spy="affix">
+<div class="navbar-container">
+<nav class="navbar navbar-default affix-top" id="navbar" data-spy="affix">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#navbar-contents">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <button type="button" class="navbar-toggle pull-left collapsed" data-toggle="collapse" data-target="#navbar-contents">
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
             </button>
             <a class="navbar-brand" href="#">Connor de la Cruz</a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-contents">
             <ul class="nav navbar-nav">
-                <li><a href="#about">About</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#about">About</a></li>
+                <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#resume">Resume</a></li>
+                <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
+</div>
 
 <!-- Content -->
 <!-- About -->
@@ -82,14 +82,13 @@
     <div class="well">
         <img src="res/img/placeholder/portrait-placeholder-square.jpg" class="img-circle img-responsive center" style="width: 10em">
         Hello, I'm Connor de la Cruz, a programmer and web developer living in the Chicago area.
-        I'm always interested in learning more about computers, programming, and graphic design.
         I'm a senior in college studying computer science.
         Currently, I work part time programming and providing tech support at the Wheaton College
         IT service desk and part time developing in-house web applications for the Wheaton College library.
     </div>
 </div>
 
-<!-- Resume TODO: update to match actual resume -->
+<!-- Resume -->
 <div id="resume" class="container">
     <hr>
     <h1 class="section-title">Resume</h1>
@@ -97,8 +96,8 @@
     <div class="well">
         <h2>Technical Skills</h2>
         <hr>
-        <b>Programming:</b> Java, C, Python, PHP, JavaScript, HTML, CSS, JQuery, Bootstrap, VBScript, Batch, Bash<br>
-        <b>Software / Tools:</b> MySQL, GitHub, Bitbucket, Eclipse, PhpStorm, Microsoft Office, Photoshop, Illustrator<br>
+        <b>Programming:</b> PHP, JavaScript, HTML/CSS, Java, C, Python, JQuery, Ajax, Bootstrap, Batch, Bash, VBScript<br>
+        <b>Software / Tools:</b> MySQL, GitHub, Bitbucket, PhpStorm, IntelliJ, Microsoft Office, Photoshop, Illustrator<br>
         <b>Operation Systems:</b> Windows, Android, Linux, macOS<br>
     </div>
     <div class="well">
@@ -115,42 +114,62 @@
         <hr>
 
         <!-- TODO: Add location and date range of employment -->
-        <!-- TODO: Make each job collapsible in narrow viewports -->
         <h3>Wheaton College Buswell Library<small> - Wheaton, IL</small></h3>
         <h4>Full Stack Web Developer</h4>
+
         <ul>
-            <li>Created web applications for the library using PHP, JavaScript, MySQL, and HTML/CSS.</li>
+            <li>Created responsive user interfaces using HTML/CSS, SCSS, Bootstrap, JavaScript, and JQuery.</li>
+            <li>Used PHP, MySQL, and Apache for backend development and Ajax to coordinate with frontend.</li>
             <li>Collaborated on large projects with other developers using GitHub.</li>
         </ul>
 
         <br>
 
         <h3>Wheaton College Academic and Institutional Technology<small> - Wheaton, IL</small></h3>
+        <h4>Student Tech Supervisor</h4>
+        <ul>
+            <li>Responsible for supervising, training, and assisting student techs at the IT service desk.</li>
+            <li>Ensured that the phones were getting answered and appoints were being kept.</li>
+            <li>Helped create the training resources for the advanced Windows proficiency.</li>
+        </ul>
+
         <h4>Service Desk Programmer</h4>
         <ul>
             <li>Created scripts to automate support procedures commonly performed by service desk techs.</li>
-            <li>Developed software tools to add functionality to the service desk’s remote desktop software.</li>
-            <li>Created in-house web applications for the IT service desk.</li>
+            <li>Integrated the support scripts with the service desk’s remote desktop software.</li>
+            <li>Developed in-house web applications for the IT service desk.</li>
         </ul>
-        <h4>Software Deployment Internship</h4>
+
+        <h4>Software Deployment Intern</h4>
         <ul>
             <li>Created software packages for deployment to all domain-managed computers at the college.</li>
             <li>Developed scripts using Batch and VBScript to automate the installation of software packages.</li>
             <li>Collaborated with the packaging team to come up with solutions for deployment issues.</li>
-            <li>Used Microsoft System Center Configuration Manager to deploy software packages.</li>
         </ul>
+
         <h4>IT Support Technician</h4>
         <ul>
             <li>Provided technical support for faculty and students over the phone, through email, and in person.</li>
             <li>Worked with customers to troubleshoot and resolve hardware, software, and network issues.</li>
-            <li>Collaborated with other technicians to diagnose issues and come up with solutions.</li>
             <li>Created support articles in the service desk knowledge base for common issues and procedures.</li>
-            <li>Helped create the training resources for the advanced Windows proficiency.</li>
         </ul>
 
     </div>
 
+    <div class="well">
+        <!-- TODO: styling, remove from group?, explain? -->
+        <div class="btn-group btn-group-justified" id="resume-btn-group">
+            <a class="btn btn-contact btn-success" id="resume-download"
+               href="res/doc/resume/Connor%20de%20la%20Cruz%20Resume.pdf" target="_blank">
+                <img class="svg" src="res/svg/doc.svg">
+                <span> Resume PDF</span>
+            </a>
+        </div>
+    </div>
+
 </div>
+
+<!-- TODO: projects section? -->
 
 <!-- Contact -->
 <div id="contact" class="container">

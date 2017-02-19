@@ -8,11 +8,13 @@ $bitbucket: #205081;
 $email: #d14836;
 
 // SVG links
+// TODO: move to general?
 .svg {
   -webkit-filter: invert(1);
-  filter: invert(1);
+  filter: invert(1); // TODO: color white instead?
   vertical-align: bottom;
 }
+
 // Contact button text
 span.contact-btn {
   // make text invisible on xs screen widths
@@ -20,13 +22,16 @@ span.contact-btn {
     display: none;
   }
 }
-// Text color for contact links
+
+// TODO: move to general and apply style to all .btn?
 .btn-contact {
   color: white;
   @include transition-property(background-color);
   @include transition-duration(180ms);
   @include transition-timing-function(ease-out);
 }
+
+
 // Specific link colors
 #contact-email {
   background-color: $email;

@@ -1,9 +1,9 @@
 /* Stylesheet imported in page-specific stylesheets for shared content */
 
-// Bootstrap
-@import "variables";
+// Bootstrap and Bootswatch theme
+@import "bootswatch/_variables";
 @import "bootstrap";
-@import "bootswatch";
+@import "bootswatch/_bootswatch";
 
 // Mixins
 @import "mixins/transition";
