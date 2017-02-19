@@ -6148,9 +6148,11 @@ hr.header {
   position: relative;
   top: 50px; }
 
-/*.affix + .container {
-  padding-top: 100px;
-}*/
+div.navbar-container {
+  min-height: 60px;
+  width: 100%;
+  display: table; }
+
 .navbar-toggle {
   border: none;
   background: transparent !important; }
@@ -6176,9 +6178,12 @@ hr.header {
 
 /* About Section */
 /* Styles for about section */
+/*
+TODO: remove commented out code
 #about {
-  padding-top: 100px; }
-
+  padding-top: 100px; // To ensure the navbar doesn't cover the title when affixed
+}
+*/
 /* Contact Section */
 /* Contact section */
 /* VARIABLES */

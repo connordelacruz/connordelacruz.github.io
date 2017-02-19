@@ -33,10 +33,13 @@
   position: relative;
   top: 50px;
 }
-// Adds padding to element immediately below navbar when affixing TODO: implement this in a smooth way
-/*.affix + .container {
-  padding-top: 100px;
-}*/
+
+// navbar container minimum height set to match navbar's to avoid jump affix
+div.navbar-container {
+  min-height: 60px;
+  width: 100%;
+  display: table;
+}
 
 // Animated navbar toggle
 .navbar-toggle {
