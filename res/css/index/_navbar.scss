@@ -33,6 +33,10 @@
   position: relative;
   top: 50px;
 }
+// Adds padding to element immediately below navbar when affixing TODO: implement this in a smooth way
+/*.affix + .container {
+  padding-top: 100px;
+}*/
 
 // Animated navbar toggle
 .navbar-toggle {

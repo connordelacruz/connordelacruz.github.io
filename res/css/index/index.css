@@ -6148,6 +6148,9 @@ hr.header {
   position: relative;
   top: 50px; }
 
+/*.affix + .container {
+  padding-top: 100px;
+}*/
 .navbar-toggle {
   border: none;
   background: transparent !important; }
