@@ -1173,7 +1173,7 @@ h1, h2, h3, h4, h5, h6,
   .h6 .small {
     font-weight: normal;
     line-height: 1;
-    color: #666; }
+    color: rgba(255, 255, 255, 0.7); }
 
 h1, .h1,
 h2, .h2,
@@ -6178,12 +6178,10 @@ div.navbar-container {
 
 /* About Section */
 /* Styles for about section */
-/*
-TODO: remove commented out code
-#about {
-  padding-top: 100px; // To ensure the navbar doesn't cover the title when affixed
-}
-*/
+#about-photo {
+  width: 10em;
+  margin-bottom: 10px; }
+
 /* Contact Section */
 /* Contact section */
 /* VARIABLES */

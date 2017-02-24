@@ -3,7 +3,7 @@
 
 $(function () {
     var navbar = $('#navbar');
-    // Set offset for affixing navbar
+    // Enable affixed navbar
     navbar.affix({
         offset: {
             top: navbar.offset().top
