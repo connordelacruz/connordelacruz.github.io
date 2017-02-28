@@ -6046,11 +6046,11 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   background-color: #333; }
 
 /* Transitions */
-/* Styling used for multiple pages or sections */
-/* VARIABLES */
+/* Variable declarations */
 /* Colors */
 /* Device Widths */
 /* Media Queries */
+/* Styling used for multiple pages or sections */
 /* PAGE CONTENT */
 ::selection {
   background: #375a7f;
