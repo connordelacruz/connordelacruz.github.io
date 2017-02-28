@@ -1,24 +1,5 @@
 /* Styling used for multiple pages or sections */
 
-/* VARIABLES */
-
-/* Colors */
-$text-shadow-color: rgba(33, 33, 33, 0.40);
-
-
-/* Device Widths */
-$xs: 768px; // Bootstrap's max-width for phones
-$sm: 768px; // Bootstrap's min-width for tablets
-$md: 992px; // Bootstrap's min-width for desktops
-$lg: 1200px;// Bootstrap's min-width for large desktops
-
-/* Media Queries */
-$xs-query: "(max-width: #{$xs})";
-$sm-query: "(min-width: #{$sm}) and (max-width: #{$md})";
-$md-query: "(min-width: #{$md}) and (max-width: #{$lg})";
-$lg-query: "(min-width: #{$lg})";
-
-
 /* PAGE CONTENT */
 
 // Highlight colors
@@ -32,14 +13,17 @@ $lg-query: "(min-width: #{$lg})";
 html, body {
   height: 100%; // For parallax scrolling
 }
+
 body {
   position: relative; // For parallax scrolling
   font-weight: 300; // default font is Roboto Light
 }
+
 // center content TODO: reorganize scss and make helper class section
 .center {
   margin: 0 auto;
 }
+
 // add transition animation to links
 a {
   @include transition-property(color);
