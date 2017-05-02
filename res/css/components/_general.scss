@@ -1,4 +1,4 @@
-/* Styling used for multiple pages or sections */
+/* General styling */
 
 /* PAGE CONTENT */
 
@@ -17,11 +17,6 @@ html, body {
 body {
   position: relative; // For parallax scrolling
   font-weight: 300; // default font is Roboto Light
-}
-
-// center content TODO: reorganize scss and make helper class section
-.center {
-  margin: 0 auto;
 }
 
 // add transition animation to links

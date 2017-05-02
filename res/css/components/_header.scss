@@ -1,24 +1,34 @@
 /* page header */
 
+// If path to res directory isn't set, assume it's relative to this directory
+@if(not variable_exists(res-directory)) {
+  $res-directory: '../..';
+}
+
+/* Variables */
+$header-bg-url: url($res-directory + "/img/banner/blurred/banner00-blur-wide-progressive.jpg");
+
 #page-header {
   margin: 0;
   height: 40%;
-  // For parallax
-  background: url("../../img/banner/blurred/banner00-blur-wide-progressive.jpg") no-repeat fixed center;
+  background: $header-bg-url no-repeat fixed center;
   background-size: cover;
   // For positioning of .scroll-arrow-container
   position: relative;
 }
-#title {
+
+.page-title {
   font-weight: 100;
   text-shadow: 1px 1px 1px $text-shadow-color;
   text-align: center;
 }
+
 .scroll-arrow-container {
   width: 100%;
   position: absolute;
   bottom: 0;
 }
+
 hr.header {
   border: none;
   background-color: white;
