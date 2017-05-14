@@ -1,12 +1,36 @@
 /* Contact section */
 
 /* VARIABLES */
-// Contact link colors
+// Contact link colors TODO: use better naming conventions
 $github: #464545;
 $linkedin: #008CC9;
 $bitbucket: #205081;
 $email: #d14836;
 
+/* MIXINS */
+// Contact button mixin based on the one in Paper Bootswatch theme
+@mixin btn-contact($class,$bg,$color){
+  .btn-contact-#{$class} {
+    background-color: $bg;
+
+    &:focus {
+      background-color: $bg;
+    }
+
+    &:hover,
+    &:active:hover {
+      background-color: darken($bg, 6%);
+    }
+
+    &:active {
+      @include box-shadow(2px 2px 4px rgba(0,0,0,.4));
+    }
+
+    @include ripple($color);
+  }
+}
+
+/* STYLING */
 // SVG links
 // TODO: move to general?
 .svg {
@@ -15,7 +39,8 @@ $email: #d14836;
   vertical-align: bottom;
 }
 
-// Contact button text
+
+// Contact button text TODO: rename to be more indicative of what it does
 span.contact-btn {
   // make text invisible on xs screen widths
   @media #{$xs-query} {
@@ -23,38 +48,7 @@ span.contact-btn {
   }
 }
 
-// TODO: use Paper btn styles
-.btn-contact {
-  color: white;
-  @include transition-property(background-color);
-  @include transition-duration(180ms);
-  @include transition-timing-function(ease-out);
-}
-
-
-// TODO: change ids to classes and use btn() mixin from Paper
-// Specific link colors
-#contact-email {
-  background-color: $email;
-  &:hover {
-    background-color: darken($email, 20%);
-  }
-}
-#contact-linkedin {
-  background-color: $linkedin;
-  &:hover {
-    background-color: darken($linkedin, 20%);
-  }
-}
-#contact-github {
-  background-color: $github;
-  &:hover {
-    background-color: darken($github, 20%);
-  }
-}
-#contact-bitbucket {
-  background-color: $bitbucket;
-  &:hover {
-    background-color: darken($bitbucket, 20%);
-  }
-}
+@include btn-contact(email,$email,$btn-default-color);
+@include btn-contact(linkedin,$linkedin,$btn-default-color);
+@include btn-contact(github,$github,$btn-default-color);
+@include btn-contact(bitbucket,$bitbucket,$btn-default-color);
