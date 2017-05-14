@@ -23,7 +23,7 @@ span.contact-btn {
   }
 }
 
-// TODO: move to general and apply style to all .btn?
+// TODO: use Paper btn styles
 .btn-contact {
   color: white;
   @include transition-property(background-color);
@@ -32,6 +32,7 @@ span.contact-btn {
 }
 
 
+// TODO: change ids to classes and use btn() mixin from Paper
 // Specific link colors
 #contact-email {
   background-color: $email;
