@@ -6,13 +6,14 @@ $res-directory: '..';
  /* Bootstrap and Bootswatch theme */
 @import "bootswatch/variables";
 @import "bootstrap";
+// Import additional variables before theme TODO: move to bootswatch/variables
+@import "components/variables";
 @import "bootswatch/bootswatch";
 
 /* Mixins */
 @import "mixins/transition";
 
 /* Components */
-@import "components/variables";
 @import "components/general";
 @import "components/helper";
 @import "components/header";
