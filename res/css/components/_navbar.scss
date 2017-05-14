@@ -1,0 +1,80 @@
+/* Styles for navbar */
+
+// Navbar TODO: move to bootswatch theme? make sure box shadow doesn't show on header
+.navbar {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+// Navbar brand
+.navbar-brand {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 300;
+  // Hide navbar-brand when not affixed
+  visibility: hidden;
+  opacity: 0;
+  @include transition(all 0.2s);
+}
+.navbar.affix .navbar-brand {
+  visibility: visible;
+  opacity:1;
+}
+
+// Ensure affixed elements appear above other elements
+.affix {
+  top:0;
+  width: 100%;
+  z-index: 9999 !important;
+  // For smoother affixing
+  & ~ .container-fluid {
+    position: relative;
+    top: 50px;
+  }
+}
+
+// navbar container minimum height set to match navbar's to avoid jump affix
+div.navbar-container {
+  min-height: 64px;
+  width: 100%;
+  display: table;
+}
+
+// Animated navbar toggle
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+
+  &.collapsed {
+    .top-bar {
+      transform: rotate(0);
+    }
+    .middle-bar {
+      opacity: 1;
+    }
+    .bottom-bar {
+      transform: rotate(0);
+    }
+  }
+}

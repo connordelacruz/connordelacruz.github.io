@@ -1,0 +1,13 @@
+/* Styling for typography */
+
+// Center section titles
+.section-title {
+  font-weight: 300;
+  text-align: center;
+}
+
+// Class to underline text with brand-secondary
+.subsection-title {
+  font-weight: 300;
+  border-bottom: $brand-secondary solid 1px;
+}

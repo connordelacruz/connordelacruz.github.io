@@ -1,0 +1,8 @@
+/* Styles for about section */
+
+// Photo TODO: make this class generic?
+#about-photo {
+  width: 10em;
+  margin-bottom: 10px;
+  @include box-shadow($md-content-shadow);
+}

@@ -4,12 +4,11 @@
     <!-- Page info -->
     <title>Connor de la Cruz</title>
     <meta name="description" content="Connor de la Cruz's personal site."/>
-    <meta name="keywords" content="Java, Python, HTML, PHP, Android, Windows, Linux, software, deployment, development, programmer, graphic, design"/>
+    <meta name="keywords" content="developer, HTML, PHP, JavaScript, jQuery, Bootstrap, Java, Python, Android, Windows, Linux, software, deployment, development, programmer, design"/>
     <meta name="author" content="Connor de la Cruz"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 
-    <!-- TODO: do favicons better: https://github.com/audreyr/favicon-cheat-sheet -->
     <!-- Icon -->
     <link rel="icon" sizes="192x192" href="res/img/icon/icon.png"/>
     <link rel="icon" sizes="144x144" href="res/img/icon/icon-144x144.png"/>
@@ -22,21 +21,19 @@
     <link rel="apple-touch-icon" sizes="48x48" href="res/img/icon/icon-48x48.png"/>
 
     <!-- Chrome, Firefox OS, Opera theme color -->
-    <meta name="theme-color" content="#212121">
+    <meta name="theme-color" content="#3F51B5">
     <!-- Windows phone -->
-    <meta name="msapplication-navbutton-color" content="#212121"/>
+    <meta name="msapplication-navbutton-color" content="#3F51B5"/>
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <!-- JQuery -->
+    <link rel="stylesheet" href="res/css/global.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <!-- Bootstrap/Bootswatch SCSS is imported in index.scss -->
-    <link rel="stylesheet" href="res/css/index/index.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <!-- Scripts -->
     <script src="res/js/index.js"></script>
 
 </head>
@@ -45,13 +42,10 @@
 
 <!-- Page Header -->
 <div class="page-header jumbotron" id="page-header">
-    <h1 id="title">Connor de la Cruz</h1>
-    <div class="scroll-arrow-container">
-        <img class="img-responsive center" src="res/svg/ic_keyboard_arrow_down_white_24px.svg">
-    </div>
+    <h1 class="page-title">Connor de la Cruz</h1>
 </div>
 
-<!-- Navigation -->
+<!-- Navigation TODO: use justified nav buttons -->
 <div class="navbar-container" id="navbar-container">
 <nav class="navbar navbar-default" id="navbar">
     <div class="container-fluid">
@@ -75,10 +69,8 @@
 </div>
 
 <!-- Content -->
-<!-- About -->
+<!-- About TODO: should there be a section header? -->
 <div id="about" class="container">
-    <hr>
-    <h1 class="section-title">About</h1>
     <hr>
     <div class="well">
         <img class="img-circle img-responsive center" src="res/img/placeholder/portrait-placeholder-square.jpg" id="about-photo">
@@ -95,15 +87,13 @@
     <h1 class="section-title">Resume</h1>
     <hr>
     <div class="well">
-        <h2>Technical Skills</h2>
-        <hr>
+        <h2 class="subsection-title">Technical Skills</h2>
         <b>Programming:</b> PHP, JavaScript, HTML/CSS, Java, C, Python, JQuery, Ajax, Bootstrap, Batch, Bash, VBScript<br>
         <b>Software / Tools:</b> MySQL, GitHub, Bitbucket, PhpStorm, IntelliJ, Microsoft Office, Photoshop, Illustrator<br>
         <b>Operating Systems:</b> Windows, Android, Linux, macOS<br>
     </div>
     <div class="well">
-        <h2>Education</h2>
-        <hr>
+        <h2 class="subsection-title">Education</h2>
         <p>
             Wheaton College &mdash; Wheaton, IL<br>
             Pursuing B.S. in Computer Science<br>
@@ -111,8 +101,7 @@
         </p>
     </div>
     <div class="well">
-        <h2>Experience</h2>
-        <hr>
+        <h2 class="subsection-title">Experience</h2>
 
         <h3>Wheaton College Buswell Library<small> &mdash; Wheaton, IL</small></h3>
         <h4>Full Stack Web Developer<small> &mdash; August 2016&ndash;Present</small></h4>
@@ -159,7 +148,7 @@
     <div class="well">
         <!-- TODO: styling, remove from group?, explain? -->
         <div class="btn-group btn-group-justified" id="resume-btn-group">
-            <a class="btn btn-contact btn-success" id="resume-download"
+            <a class="btn btn-contact btn-primary" id="resume-download"
                href="res/doc/resume/Connor%20de%20la%20Cruz%20Resume.pdf" target="_blank">
                 <img class="svg" src="res/svg/doc.svg">
                 <span> Resume PDF</span>
@@ -178,16 +167,16 @@
     <hr>
     <div class="well">
         <div id="contact-btn-group" class="btn-group btn-group-justified">
-            <a class="btn btn-contact" id="contact-email" href="mailto:contact@connordelacruz.com" target="_blank">
+            <a class="btn btn-contact-email" href="mailto:contact@connordelacruz.com" target="_blank">
                 <img class="svg" src="res/svg/email.svg"><span class="contact-btn"> Email</span>
             </a>
-            <a class="btn btn-contact" id="contact-linkedin" href="http://www.linkedin.com/in/connordelacruz" target="_blank">
+            <a class="btn btn-contact-linkedin" href="http://www.linkedin.com/in/connordelacruz" target="_blank">
                 <img class="svg" src="res/svg/linkedin-box.svg"><span class="contact-btn"> LinkedIn</span>
             </a>
-            <a class="btn btn-contact" id="contact-github" href="https://github.com/connordelacruz" target="_blank">
+            <a class="btn btn-contact-github" href="https://github.com/connordelacruz" target="_blank">
                 <img class="svg" src="res/svg/github-box.svg"><span class="contact-btn"> GitHub</span>
             </a>
-            <a class="btn btn-contact" id="contact-bitbucket" href="https://bitbucket.org/connordelacruz/" target="_blank">
+            <a class="btn btn-contact-bitbucket" href="https://bitbucket.org/connordelacruz/" target="_blank">
                 <img class="svg" src="res/svg/bitbucket.svg"><span class="contact-btn"> Bitbucket</span>
             </a>
         </div>

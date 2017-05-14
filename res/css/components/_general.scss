@@ -1,0 +1,20 @@
+/* General styling */
+
+/* PAGE CONTENT */
+
+// Highlight colors
+::selection {
+  background: $selection-bg; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $selection-bg; /* Gecko Browsers */
+}
+
+html, body {
+  height: 100%; // For parallax scrolling
+}
+
+body {
+  position: relative; // For parallax scrolling
+  font-weight: 300; // default font is Roboto Light
+}

@@ -1,0 +1,24 @@
+/* Global stylesheet */
+
+// Used handle relative paths in partials
+$res-directory: '..';
+
+ /* Bootstrap and Bootswatch theme */
+@import "bootswatch/variables";
+@import "bootstrap";
+// Import additional variables before theme TODO: move to bootswatch/variables
+@import "components/variables";
+@import "bootswatch/bootswatch";
+
+/* Mixins */
+@import "mixins/transition";
+@import "mixins/effects";
+
+/* Components */
+@import "components/general";
+@import "components/typography";
+@import "components/helper";
+@import "components/header";
+@import "components/navbar";
+@import "components/about";
+@import "components/contact";
