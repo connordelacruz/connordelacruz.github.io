@@ -4,10 +4,10 @@
 
 // Highlight colors
 ::selection {
-  background: $brand-primary; /* WebKit/Blink Browsers */
+  background: $selection-bg; /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: $brand-primary; /* Gecko Browsers */
+  background: $selection-bg; /* Gecko Browsers */
 }
 
 html, body {
@@ -17,22 +17,4 @@ html, body {
 body {
   position: relative; // For parallax scrolling
   font-weight: 300; // default font is Roboto Light
-}
-
-// add transition animation to links
-a {
-  @include transition-property(color);
-  @include transition-duration(180ms);
-  @include transition-timing-function(ease-out);
-}
-
-/* Typography */
-
-// Center section titles
-.section-title {
-  text-align: center;
-}
-// Give panel headings the same font weight as headings
-.panel-heading {
-  font-weight: $headings-font-weight;
 }

@@ -15,7 +15,7 @@
   // Hide navbar-brand when not affixed
   visibility: hidden;
   opacity: 0;
-  @include transition(visibility 0s linear, opacity 100ms ease-out);
+  @include transition(all 0.2s);
 }
 .navbar.affix .navbar-brand {
   visibility: visible;
