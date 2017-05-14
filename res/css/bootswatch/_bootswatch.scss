@@ -358,6 +358,7 @@ textarea {
 
 // Navs =======================================================================
 
+/* The following is from Darkly: (TODO: Remove?) */
 .nav {
   .open > a,
   .open > a:hover,
@@ -389,6 +390,13 @@ textarea {
 
 .breadcrumb a {
   color: #fff;
+}
+
+/* The following is from Paper: (TODO: use Paper's .nav-tabs styling as well?) */
+.dropdown-menu {
+  margin-top: 0;
+  border: none;
+  @include box-shadow(0 1px 4px rgba(0,0,0,.3));
 }
 
 // Indicators =================================================================
