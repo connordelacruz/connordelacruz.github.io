@@ -27,7 +27,7 @@ $brand-danger:          #F44336 !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               $gray-dark !default;
+$body-bg:               $gray-darker !default;
 //** Global text color on `<body>`.
 $text-color:            #fff !default;
 
@@ -760,7 +760,7 @@ $thumbnail-caption-padding:   9px !default;
 //
 //##
 
-$well-bg:                     $gray !default;
+$well-bg:                     $gray-dark !default;
 $well-border:                 transparent !default;
 
 
