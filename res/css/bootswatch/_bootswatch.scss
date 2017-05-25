@@ -434,7 +434,7 @@ textarea {
 
 .well {
   border: none;
-  border-radius: 2px;
+  border-radius: 0;
   @include box-shadow($md-content-shadow);
 }
 
