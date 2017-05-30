@@ -4,7 +4,8 @@
     <!-- Page info -->
     <title>Connor de la Cruz</title>
     <meta name="description" content="Connor de la Cruz's personal site."/>
-    <meta name="keywords" content="developer, HTML, PHP, JavaScript, jQuery, Bootstrap, Java, Python, Android, Windows, Linux, software, deployment, development, programmer, design"/>
+    <meta name="keywords"
+          content="developer, HTML, PHP, JavaScript, jQuery, Bootstrap, Java, Python, Android, Windows, Linux, software, deployment, development, programmer, design"/>
     <meta name="author" content="Connor de la Cruz"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
@@ -47,25 +48,25 @@
 
 <!-- Navigation TODO: use justified nav buttons -->
 <div class="navbar-container" id="navbar-container">
-<nav class="navbar navbar-default" id="navbar">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle pull-left collapsed" data-toggle="collapse" data-target="#navbar-contents">
-                <span class="icon-bar top-bar"></span>
-                <span class="icon-bar middle-bar"></span>
-                <span class="icon-bar bottom-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Connor de la Cruz</a>
+    <nav class="navbar navbar-default" id="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle pull-left collapsed" data-toggle="collapse" data-target="#navbar-contents">
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Connor de la Cruz</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-contents">
+                <ul class="nav navbar-nav">
+                    <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#about">About</a></li>
+                    <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#resume">Resume</a></li>
+                    <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="navbar-contents">
-            <ul class="nav navbar-nav">
-                <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#about">About</a></li>
-                <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#resume">Resume</a></li>
-                <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav>
 </div>
 
 <!-- Content -->
@@ -146,14 +147,25 @@
     </div>
 
     <div class="well">
-        <!-- TODO: styling, remove from group?, explain? -->
-        <div class="btn-group btn-group-justified" id="resume-btn-group">
-            <a class="btn btn-contact btn-primary" id="resume-download"
-               href="res/doc/resume/Connor%20de%20la%20Cruz%20Resume.pdf" target="_blank">
-                <img class="svg" src="res/svg/doc.svg">
-                <span> Resume PDF</span>
+        <a class="btn btn-primary btn-block" id="resume-download"
+           href="res/doc/resume/Connor%20de%20la%20Cruz%20Resume.pdf" target="_blank">
+            <img class="svg" src="res/svg/doc.svg">
+            <span> Resume PDF</span>
+        </a>
+
+        <a class="btn btn-contact-linkedin btn-block" href="http://www.linkedin.com/in/connordelacruz" target="_blank">
+            <img class="svg" src="res/svg/linkedin-box.svg"><span> LinkedIn</span>
+        </a>
+
+        <div class="btn-group btn-group-justified">
+            <a class="btn btn-contact-github" href="https://github.com/connordelacruz" target="_blank">
+                <img class="svg" src="res/svg/github-box.svg"><span class="contact-btn"> GitHub</span>
+            </a>
+            <a class="btn btn-contact-bitbucket" href="https://bitbucket.org/connordelacruz/" target="_blank">
+                <img class="svg" src="res/svg/bitbucket.svg"><span class="contact-btn"> Bitbucket</span>
             </a>
         </div>
+
     </div>
 
 </div>

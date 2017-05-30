@@ -39,6 +39,7 @@ $email: #d14836;
   vertical-align: bottom;
 }
 
+// TODO: move styles to _button.scss
 
 // Contact button text TODO: rename to be more indicative of what it does
 span.contact-btn {
@@ -52,3 +53,8 @@ span.contact-btn {
 @include btn-contact(linkedin,$linkedin,$btn-default-color);
 @include btn-contact(github,$github,$btn-default-color);
 @include btn-contact(bitbucket,$bitbucket,$btn-default-color);
+
+// Apply similar style to subsequent block-width items
+.btn-block+.btn-group-justified {
+  margin-top: 5px;
+}
