@@ -6,9 +6,15 @@
   background: $brand-primary;
 }
 
-.page-title {
+.page-title, .page-subtitle {
   font-weight: 100;
   text-align: center;
+}
+.page-title .page-subtitle {
+  display: block;
+}
+small.page-subtitle {
+  color: $text-color;
 }
 
 hr.header {
