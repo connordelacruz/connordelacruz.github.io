@@ -1,0 +1,22 @@
+// Contact button variants
+// Based on the one in Paper Bootswatch theme
+@mixin btn-contact($class,$bg,$color){
+  .btn-contact-#{$class} {
+    background-color: $bg;
+
+    &:focus {
+      background-color: $bg;
+    }
+
+    &:hover,
+    &:active:hover {
+      background-color: darken($bg, 6%);
+    }
+
+    &:active {
+      @include box-shadow(2px 2px 4px rgba(0,0,0,.4));
+    }
+
+    @include ripple($color);
+  }
+}
