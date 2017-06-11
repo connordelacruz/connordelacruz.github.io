@@ -40,18 +40,18 @@
 
 <body>
 
-<!-- Page Header -->
 <div class="page-header jumbotron" id="page-header">
     <h1 class="page-title">Connor de la Cruz</h1>
     <h3 class="page-subtitle">Software Developer</h3>
 </div>
 
-<!-- Navigation TODO: use justified nav buttons -->
+<!-- TODO: use justified nav buttons -->
 <div class="navbar-container" id="navbar-container">
     <nav class="navbar navbar-default" id="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle pull-left collapsed" data-toggle="collapse" data-target="#navbar-contents">
+                <button class="navbar-toggle pull-left collapsed" data-toggle="collapse" data-target="#navbar-contents"
+                        type="button">
                     <span class="icon-bar top-bar"></span>
                     <span class="icon-bar middle-bar"></span>
                     <span class="icon-bar bottom-bar"></span>
@@ -71,10 +71,11 @@
 
 <!-- Content -->
 <!-- About TODO: should there be a section header? -->
-<div id="about" class="container">
+<div class="container" id="about">
     <hr>
     <div class="well">
-        <img class="img-circle img-responsive center" src="res/img/placeholder/portrait-placeholder-square.jpg" id="about-photo">
+        <img class="img-circle img-responsive center" id="about-photo"
+             src="res/img/placeholder/portrait-placeholder-square.jpg">
         Hello, I'm Connor de la Cruz. I'm a software and web developer living in the Chicago area. I'm currently working
         as a programmer at Wheaton College. I develop in-house web applications for the college library and the IT
         service desk. I also help with configuration management in the computer science department.
@@ -82,7 +83,7 @@
 </div>
 
 <!-- Resume TODO: create resume page -->
-<div id="resume" class="container">
+<div class="container" id="resume">
     <hr>
     <h1 class="section-title">Resume</h1>
     <hr>
@@ -129,7 +130,7 @@
 <!-- TODO: projects section? -->
 
 <!-- Contact TODO: remove section? Most of this has been moved to resume section -->
-<div id="contact" class="container">
+<div class="container" id="contact">
     <hr>
     <h1 class="section-title">Contact</h1>
     <hr>
@@ -137,7 +138,7 @@
         <div>
             <!-- TODO: preface contact stuff here -->
         </div>
-        <div id="contact-btn-group" class="btn-group btn-group-justified">
+        <div class="btn-group btn-group-justified" id="contact-btn-group">
             <a class="btn btn-contact-email" href="mailto:contact@connordelacruz.com" target="_blank">
                 <img class="svg" src="res/svg/email.svg"><span class="contact-btn"> Email</span>
             </a>
