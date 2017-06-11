@@ -9,6 +9,11 @@ $(function () {
             top: navbar.offset().top
         }
     });
+    // Enable scrollspy
+    $('body').scrollspy({
+        target: '.navbar',
+        offset: 70
+    });
 
     // for smooth scrolling links
     navbar.find('a').click(function(event) {
