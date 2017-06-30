@@ -9,23 +9,25 @@ $(function () {
             top: navbar.offset().top
         }
     });
+    // Enable scrollspy
+    $('body').scrollspy({
+        target: '.navbar',
+        offset: 70
+    });
 
     // for smooth scrolling links
     navbar.find('a').click(function(event) {
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
-            // Prevent default anchor click behavior
             event.preventDefault();
 
-            // Store hash
             var hash = this.hash;
 
             // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
             $('html, body').animate({
                 // Subtract the size of navbar container (if not affixed will compensate for increased page height, if affixed compensates for navbar height)
                 scrollTop: $(hash).offset().top - $('#navbar-container').outerHeight()
-            }, 800, function() {
+            }, 400, function() {
 
                 // Add hash (#) to URL when done scrolling (default click behavior)
                 window.location.hash = hash;

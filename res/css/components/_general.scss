@@ -18,3 +18,10 @@ body {
   position: relative; // For parallax scrolling
   font-weight: 300; // default font is Roboto Light
 }
+
+// SVG
+.svg {
+  -webkit-filter: invert(1);
+  filter: invert(1); // TODO: color white instead?
+  vertical-align: bottom;
+}

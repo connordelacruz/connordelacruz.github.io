@@ -10,14 +10,15 @@ $res-directory: '..';
 @import "bootswatch/bootswatch";
 
 /* Mixins */
+@import "mixins/buttons";
 @import "mixins/transition";
 @import "mixins/effects";
 
 /* Components */
 @import "components/general";
+@import "components/buttons";
 @import "components/typography";
 @import "components/helper";
 @import "components/header";
 @import "components/navbar";
 @import "components/about";
-@import "components/contact";
