@@ -106,14 +106,15 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,700"
   @include transition(all 0.4s);
 
   &-link {
-    border-radius: $btn-border-radius-base;
+    border-radius: 0;
     @include box-shadow(none);
-    color: $btn-default-color;
+    color: transparentize($btn-default-color,0.5);
 
     &:hover,
     &:focus {
       @include box-shadow(none);
       color: $btn-default-color;
+      background-color: transparent;
       text-decoration: none;
     }
 

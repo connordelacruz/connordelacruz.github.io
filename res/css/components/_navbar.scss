@@ -6,6 +6,16 @@
   -moz-border-radius: 0;
   border-radius: 0;
   margin-bottom: 0;
+  @include box-shadow(none);
+
+  &.affix {
+    @include box-shadow($md-navbar-shadow);
+
+    .navbar-brand {
+      visibility: visible;
+      opacity:1;
+    }
+  }
 }
 
 // Navbar brand
@@ -16,10 +26,6 @@
   visibility: hidden;
   opacity: 0;
   @include transition(all 0.2s);
-}
-.navbar.affix .navbar-brand {
-  visibility: visible;
-  opacity:1;
 }
 
 // Ensure affixed elements appear above other elements
