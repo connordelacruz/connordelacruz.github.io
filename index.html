@@ -69,12 +69,12 @@
     </nav>
 </div>
 
-<!-- TODO: should there be a section header? -->
-<div class="container" id="about">
-    <hr>
-    <h1 class="section-title">About</h1>
-    <hr>
+<!-- TODO: Remove container class from each section and surround all sections with a single container div -->
+
+<!-- TODO: extract inline styling -->
+<div class="container" id="about" style="margin-top: 21px;">
     <div class="well">
+        <h1 class="section-title">About</h1>
         <img class="img-circle img-responsive center" id="about-photo"
              src="res/img/placeholder/portrait-placeholder-square.jpg">
         Hello, I'm Connor de la Cruz. I'm a software and web developer living in the Chicago area. I'm currently working
@@ -85,9 +85,7 @@
 
 <!-- TODO: create resume page -->
 <div class="container" id="resume">
-    <hr>
     <h1 class="section-title">Resume</h1>
-    <hr>
     <div class="well">
         <h2 class="subsection-title">Technical Skills</h2>
         <b>Programming:</b> PHP, JavaScript, HTML/CSS, Java, C, Python, JQuery, Ajax, Bootstrap, Batch, Bash, VBScript<br>
@@ -162,15 +160,11 @@
 
 </div>
 
-<!-- TODO: projects section? -->
-
 <div class="container" id="contact">
-    <hr>
-    <h1 class="section-title">Contact</h1>
-    <hr>
     <div class="well">
+        <h1 class="section-title">Contact</h1>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-sm-6">
                 <a class="btn btn-link btn-block" href="mailto:contact@connordelacruz.com" target="_blank">
                     <img class="svg" src="res/svg/email.svg"><span> Email</span>
                 </a>
@@ -178,7 +172,7 @@
                     <img class="svg" src="res/svg/linkedin-box.svg"><span> LinkedIn</span>
                 </a>
             </div>
-            <div class="col-md-6">
+            <div class="col-sm-6">
                 <a class="btn btn-link btn-block" href="https://github.com/connordelacruz" target="_blank">
                     <img class="svg" src="res/svg/github-box.svg"><span> GitHub</span>
                 </a>
