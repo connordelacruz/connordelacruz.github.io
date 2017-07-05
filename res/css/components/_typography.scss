@@ -4,6 +4,10 @@
 .section-title {
   font-weight: 300;
   text-align: center;
+  margin-top: 10.5px;
+  margin-bottom: 21px;
+  padding-bottom: 12px;
+  border-bottom: $hr-border solid 2px;
 }
 
 // Class to underline text with brand-secondary

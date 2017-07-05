@@ -25,7 +25,7 @@ $email-btn-bg: #d14836;
 // Misc
 // --------------------------------------------------
 
-// Add top margin to subsequent block-width items
-.btn-block+.btn-group-justified {
-  margin-top: 5px;
+// Remove top margin to subsequent block-width items
+.btn-block + .btn-block {
+  margin-top: 0;
 }

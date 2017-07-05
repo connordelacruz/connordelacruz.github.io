@@ -25,3 +25,12 @@ body {
   filter: invert(1); // TODO: color white instead?
   vertical-align: bottom;
 }
+
+
+// Content divs
+.content {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  // TODO: increase top margin for better spacing?
+}
