@@ -97,10 +97,9 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,700"
 @include btn(info,$btn-info-bg,$btn-info-color);
 @include btn(warning,$btn-warning-bg,$btn-warning-color);
 @include btn(danger,$btn-danger-bg,$btn-danger-color);
-@include btn(link,#fff,$btn-default-color);
+@include btn(link,$gray-dark,$btn-default-color);
 
 .btn {
-  //text-transform: uppercase;
   border: none;
   @include box-shadow(1px 1px 4px rgba(0,0,0,.4));
   @include transition(all 0.4s);
@@ -108,13 +107,13 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,700"
   &-link {
     border-radius: 0;
     @include box-shadow(none);
-    color: transparentize($btn-default-color,0.5);
+    color: transparentize($btn-default-color,0.3);
 
     &:hover,
     &:focus {
       @include box-shadow(none);
+      background-color: lighten($gray-dark,6%);
       color: $btn-default-color;
-      background-color: transparent;
       text-decoration: none;
     }
 
