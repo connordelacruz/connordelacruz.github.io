@@ -8,25 +8,39 @@
   margin-bottom: 0;
   @include box-shadow(none);
 
+  // Hide navbar-brand when not affixed
+  .navbar-brand {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .navbar-nav li {
+    // Hide nav links when not affixed on wide viewports
+    @media (min-width: $grid-float-breakpoint) {
+      visibility: hidden;
+      opacity: 0;
+    }
+    // Keep them visible on narrow viewports
+    visibility: visible;
+    opacity: 1;
+  }
+
   &.affix {
     @include box-shadow($md-navbar-shadow);
 
-    .navbar-brand {
+    .navbar-brand, .navbar-nav li {
       visibility: visible;
       opacity:1;
     }
   }
 }
 
-// Navbar brand
+
 .navbar-brand {
   font-family: "Roboto", sans-serif !important;
   font-weight: 300;
-  // Hide navbar-brand when not affixed
-  visibility: hidden;
-  opacity: 0;
   @include transition(all 0.2s);
 }
+
 
 // Ensure affixed elements appear above other elements
 .affix {
