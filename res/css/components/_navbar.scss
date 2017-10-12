@@ -61,6 +61,11 @@ div.navbar-container {
   display: table;
 }
 
+// Add top margin to first section after navbar container
+div.navbar-container + div {
+  margin-top: 21px;
+}
+
 // Animated navbar toggle
 .navbar-toggle {
   border: none;
