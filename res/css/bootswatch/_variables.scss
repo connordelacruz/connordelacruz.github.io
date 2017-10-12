@@ -8,15 +8,15 @@ $bootstrap-sass-asset-helper: false !default;
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-base:              #000000 !default;
-$gray-darker:            #212121 !default;
-$gray-dark:              #303030 !default;
-$gray:                   #424242 !default;
-$gray-light:             #9E9E9E !default;
-$gray-lighter:           #E0E0E0 !default;
+$gray-base:              #0e1e27 !default;
+$gray-darker:            #1B2B34 !default;
+$gray-dark:              #343D46 !default;
+$gray:                   #4F5B66 !default;
+$gray-light:             #A7ADBA !default;
+$gray-lighter:           #D8DEE9 !default;
 
-$brand-primary:         #3F51B5 !default;
-$brand-success:         #4CAF50 !default;
+$brand-primary:         #1565C0 !default;
+$brand-success:         #06C189 !default;
 $brand-info:            #009688 !default;
 $brand-warning:         #ff9800 !default;
 $brand-danger:          #F44336 !default;
@@ -27,9 +27,9 @@ $brand-danger:          #F44336 !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               $gray-darker !default;
+$body-bg:               $gray-base !default;
 //** Global text color on `<body>`.
-$text-color:            #fff !default;
+$text-color:            $gray-lighter !default;
 
 //** Global textual link color. TODO: use something other than white
 $link-color:            white !default;
@@ -103,9 +103,9 @@ $padding-xs-horizontal:     5px !default;
 $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5 !default;
 
-$border-radius-base:        3px !default;
-$border-radius-large:       3px !default;
-$border-radius-small:       3px !default;
+$border-radius-base:        2px !default;
+$border-radius-large:       2px !default;
+$border-radius-small:       2px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color:    #fff !default;
@@ -410,7 +410,7 @@ $navbar-inverse-brand-hover-bg:             transparent !default;
 
 // Inverted navbar toggle
 $navbar-inverse-toggle-hover-bg:            darken($navbar-inverse-bg, 10%) !default;
-$navbar-inverse-toggle-icon-bar-bg:         #fff !default;
+$navbar-inverse-toggle-icon-bar-bg:         $gray-lighter !default;
 $navbar-inverse-toggle-border-color:        darken($navbar-inverse-bg, 10%) !default;
 
 
@@ -760,7 +760,7 @@ $thumbnail-caption-padding:   9px !default;
 //
 //##
 
-$well-bg:                     $gray-dark !default;
+$well-bg:                     $gray-darker !default;
 $well-border:                 transparent !default;
 
 

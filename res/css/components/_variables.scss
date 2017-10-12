@@ -1,8 +1,30 @@
 /* Variable declarations */
 
 /* Colors */
-$brand-secondary: #304FFE;
+$brand-secondary: #06C189;
 $selection-bg: transparentize($brand-secondary, 0.5);
+
+// Palette URL: http://paletton.com/#uid=53B0u0kuXEejdKRoOGBDotOEQn7 */
+// TODO: implement these colors
+
+$color-primary-0: #1566C0;	// Main Primary color */
+$color-primary-1: #5E95D2;
+$color-primary-2: #397CC7;
+$color-primary-3: #094E9B;
+$color-primary-4: #073C78;
+
+$color-secondary-1-0: #3021C8;	// Main Secondary color (1) */
+$color-secondary-1-1: #7268D8;
+$color-secondary-1-2: #5044CE;
+$color-secondary-1-3: #1E11A5;
+$color-secondary-1-4: #170C80;
+
+$color-secondary-2-0: #06C189;	// Main Secondary color (2) */
+$color-secondary-2-1: #54D3AD;
+$color-secondary-2-2: #2DC899;
+$color-secondary-2-3: #009D6D;
+$color-secondary-2-4: #007A55;
+
 
 /* Shadows */
 $md-content-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
