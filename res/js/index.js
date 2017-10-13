@@ -1,4 +1,10 @@
 
+/* Variables */
+
+// TODO: declare list of contact section urls and icons to be added to the page
+
+/* Functions */
+
 function showCopyright() {
     $('.copyright').html('&copy; ' + new Date().getFullYear());
 }
