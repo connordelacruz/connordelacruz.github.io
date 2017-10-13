@@ -5,12 +5,13 @@
   border: none;
   background: $brand-primary;
 
+  // Row of link icons in header
   .contact-icons {
     text-align: center;
 
     .btn-link {
       opacity: 0.5;
-      &:hover {
+      &:hover, &:focus {
         opacity: 1;
         background-color: transparent;
       }
