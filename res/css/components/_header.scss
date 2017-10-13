@@ -4,6 +4,19 @@
   margin: 0;
   border: none;
   background: $brand-primary;
+
+  .contact-icons {
+    text-align: center;
+
+    .btn-link {
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+        background-color: transparent;
+      }
+    }
+
+  }
 }
 
 .page-title, .page-subtitle {
