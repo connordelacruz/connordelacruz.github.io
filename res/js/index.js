@@ -1,4 +1,7 @@
 
+function showCopyright() {
+    $('.copyright').html('&copy; ' + new Date().getFullYear());
+}
 
 
 $(function () {
@@ -44,4 +47,6 @@ $(function () {
             $('button.navbar-toggle').click();
         }
     });
+
+    showCopyright();
 });

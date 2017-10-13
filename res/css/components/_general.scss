@@ -34,3 +34,11 @@ body {
   margin-right: auto;
   // TODO: increase top margin for better spacing?
 }
+
+footer {
+  background-color: $gray-darker;
+  color: $text-muted;
+  font-size: 13px;
+  text-align: center;
+  padding: 19px;
+}
