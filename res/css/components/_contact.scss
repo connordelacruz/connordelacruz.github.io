@@ -1,0 +1,16 @@
+/* Styles for contact sections */
+
+// Contact buttons
+// --------------------------------------------------
+
+// Container for contact icon button groups
+.contact-icons {
+  text-align: center;
+
+  .btn-link {
+    opacity: 0.5;
+    &:hover, &:focus {
+      opacity: 1;
+    }
+  }
+}

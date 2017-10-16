@@ -1,28 +1,5 @@
 /* Styling for buttons */
 
-// Contact buttons
-// --------------------------------------------------
-
-// Container for contact icon button groups
-.contact-icons {
-  text-align: center;
-
-  .btn-link {
-    opacity: 0.5;
-    &:hover, &:focus {
-      opacity: 1;
-    }
-  }
-}
-
-// Contact button text
-.btn span.contact-btn-text {
-  // make text invisible on xs screen widths
-  @media #{$xs-query} {
-    display: none;
-  }
-}
-
 // Misc
 // --------------------------------------------------
 
