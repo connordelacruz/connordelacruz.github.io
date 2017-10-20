@@ -3,6 +3,14 @@
 // Photo TODO: make this class generic?
 #about-photo {
   width: 10em; // TODO: use different units
-  margin-bottom: 10px;
+  margin-bottom: 21px;
   @include box-shadow($md-content-shadow);
+}
+
+#about {
+  p {
+    font-size: 17px;
+    padding-left: $jumbotron-padding;
+    padding-right: $jumbotron-padding;
+  }
 }
