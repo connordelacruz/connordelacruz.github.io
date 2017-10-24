@@ -105,14 +105,13 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,700"
     @include ripple($btn-default-color);
     background-color: transparent;
     border-radius: 0;
-    // TODO: use accent color instead
-    color: transparentize($btn-default-color, 0.3);
+    color: $link-color;
 
     &:hover,
     &:focus {
       @include box-shadow(none);
       background-color: transparent;
-      color: $btn-default-color;
+      color: $link-hover-color;
       text-decoration: none;
     }
 
