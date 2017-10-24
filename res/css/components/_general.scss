@@ -21,8 +21,6 @@ body {
 
 // SVG
 .svg {
-  -webkit-filter: invert(1);
-  filter: invert(1); // TODO: color white instead?
   vertical-align: bottom;
 }
 
@@ -33,4 +31,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   // TODO: increase top margin for better spacing?
+}
+
+footer {
+  background-color: $gray-darker;
+  color: $text-muted;
+  font-size: 13px;
+  text-align: center;
+  padding: 19px;
 }

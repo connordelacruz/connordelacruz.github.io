@@ -94,7 +94,6 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,700"
 @include btn(info,$btn-info-bg,$btn-info-color);
 @include btn(warning,$btn-warning-bg,$btn-warning-color);
 @include btn(danger,$btn-danger-bg,$btn-danger-color);
-@include btn(link,$gray-dark,$btn-default-color);
 
 .btn {
   border: none;
@@ -102,15 +101,17 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,700"
   @include transition(all 0.4s);
 
   &-link {
-    border-radius: 0;
     @include box-shadow(none);
-    color: transparentize($btn-default-color,0.3);
+    @include ripple($btn-default-color);
+    background-color: transparent;
+    border-radius: 0;
+    color: $link-color;
 
     &:hover,
     &:focus {
       @include box-shadow(none);
-      background-color: lighten($gray-dark,6%);
-      color: $btn-default-color;
+      background-color: transparent;
+      color: $link-hover-color;
       text-decoration: none;
     }
 
@@ -119,7 +120,6 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,700"
     fieldset[disabled] & {
       &:hover,
       &:active:hover {
-        background-color: #fff;
         color: $btn-default-color;
       }
     }

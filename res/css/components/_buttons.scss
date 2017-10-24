@@ -1,27 +1,5 @@
 /* Styling for buttons */
 
-// Contact buttons
-// --------------------------------------------------
-
-// Contact button background colors
-$github-btn-gb: #464545;
-$linkedin-btn-bg: #008CC9;
-$bitbucket-btn-bg: #205081;
-$email-btn-bg: #d14836;
-
-@include btn-contact(email, $email-btn-bg,$btn-default-color);
-@include btn-contact(linkedin, $linkedin-btn-bg,$btn-default-color);
-@include btn-contact(github, $github-btn-gb,$btn-default-color);
-@include btn-contact(bitbucket, $bitbucket-btn-bg,$btn-default-color);
-
-// Contact button text
-.btn span.contact-btn-text {
-  // make text invisible on xs screen widths
-  @media #{$xs-query} {
-    display: none;
-  }
-}
-
 // Misc
 // --------------------------------------------------
 
