@@ -6,10 +6,3 @@
   margin-bottom: 21px;
   @include box-shadow($md-content-shadow);
 }
-
-#about {
-  p {
-    padding-left: $jumbotron-padding;
-    padding-right: $jumbotron-padding;
-  }
-}
