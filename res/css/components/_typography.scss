@@ -1,8 +1,12 @@
 /* Styling for typography */
 
+// Use Roboto Condensed to bold tags
+b {
+  font-family: $headings-font-family;
+}
+
 // Center section titles
 .section-title {
-  font-weight: 300;
   text-align: center;
   margin-top: 10.5px;
   margin-bottom: 21px;
