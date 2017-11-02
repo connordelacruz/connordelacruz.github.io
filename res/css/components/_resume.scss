@@ -2,10 +2,11 @@
 
 // Job listing in experience section
 .job {
+  font-family: $headings-font-family;
   margin-bottom: 1.25em;
 
   .job-title {
-    font-weight: bold;
+    font-weight: 400;
     text-align: left;
     float: left;
   }
