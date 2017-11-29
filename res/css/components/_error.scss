@@ -1,0 +1,10 @@
+/* Styles for error pages (e.g. 404) */
+
+.error-body, body.error-body {
+  background-color: $brand-primary;
+
+  .jumbotron {
+    background: transparent;
+  }
+
+}
