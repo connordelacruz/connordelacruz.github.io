@@ -5,6 +5,18 @@ b {
   font-family: $headings-font-family;
 }
 
+blockquote {
+  font-style: italic;
+  background-color: transparentize($gray-base, 0.9);
+  border-left: none;
+  margin: $line-height-computed 0;
+
+  footer, small, .small {
+    font-style: normal;
+    color: transparentize($text-color, 0.25);
+  }
+}
+
 // Center section titles
 .section-title {
   text-align: center;

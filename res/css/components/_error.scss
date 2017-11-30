@@ -1,0 +1,32 @@
+/* Styles for error pages (e.g. 404) */
+
+.error-body, body.error-body {
+  background-color: $brand-primary;
+
+  .jumbotron {
+    background: transparent;
+  }
+
+  .error-quote {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  .return-container {
+    color: transparentize($text-color, 0.25);
+
+    a {
+      color: $gray-lighter;
+      padding-bottom: 1px;
+      text-decoration: none;
+      border-bottom: 1px solid $gray-lighter;
+
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 2px solid #fff;
+      }
+    }
+  }
+
+}
