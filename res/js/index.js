@@ -54,5 +54,7 @@ $(function () {
         }
     });
 
+    $('#about-photo').on('dragstart', function(event) { event.preventDefault(); });
+
     showCopyright();
 });
