@@ -32,10 +32,30 @@ body {
   margin-right: auto;
 }
 
+// Links with arrow-right.svg after link text
+.arrow-link {
+  &:after {
+    @include transition(all 0.2s);
+    position: relative;
+    bottom: 2px;
+    // TODO: best practices on relative paths in SASS
+    content: url('../svg/arrow-right-primary.svg');
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &:hover {
+    &:after {
+      // TODO: vendor prefixes
+      transform: translate(5px);
+    }
+  }
+}
+
 body > footer {
   background-color: $gray-darker;
   color: $text-muted;
   font-size: 13px;
-  text-align: center;
   padding: 19px;
 }

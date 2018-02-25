@@ -1,9 +1,45 @@
 
+/* Objects */
+
+/**
+ *
+ * @param {string} name Site name
+ * @param {string} url URL to site
+ * @param {string} svg Name of the .svg file for icon (assumes the file is located in res/svg/)
+ * @constructor
+ */
+function ContactLinkObject(name, url, svg) {
+    this.name = name;
+    this.url = url;
+    this.svg = 'res/svg/' + svg;
+}
+
 /* Variables */
 
-// TODO: declare list of contact section urls and icons to be added to the page
+var contactLinks = [
+    new ContactLinkObject('GitHub', 'https://github.com/connordelacruz', 'github.svg'),
+    new ContactLinkObject('LinkedIn', 'http://www.linkedin.com/in/connordelacruz', 'linkedin.svg'),
+    new ContactLinkObject('Email', 'mailto:connor.c.delacruz@gmail.com', 'email.svg'),
+    new ContactLinkObject('Tumblr', 'https://connordelacruz.tumblr.com', 'tumblr.svg'),
+    new ContactLinkObject('Instagram', 'https://www.instagram.com/delachrome', 'instagram.svg')
+];
 
 /* Functions */
+
+function buildContactLinksContainer(contactLinks) {
+    var contactLinksContainer = '<div class="btn-group">';
+    $.each(contactLinks, function (i, contactLink) {
+        contactLinksContainer += buildContactLink(contactLink);
+    });
+    contactLinksContainer += '</div>';
+    return contactLinksContainer;
+}
+
+function buildContactLink(contactLink) {
+    return '<a class="btn btn-link" href="' + contactLink.url + '" target="_blank">' +
+        '<img class="svg" src="' + contactLink.svg + '"/>' +
+        '</a>';
+}
 
 function showCopyright() {
     $('.copyright').html('&copy; ' + new Date().getFullYear());
@@ -11,6 +47,11 @@ function showCopyright() {
 
 
 $(function () {
+    // Populate contact links
+    // TODO: fade in on create (and set container height to avoid jumping)
+    var contactLinksMarkup = buildContactLinksContainer(contactLinks);
+    $('.contact-icons').html(contactLinksMarkup);
+
     var navbar = $('#navbar');
     // Enable affixed navbar
     navbar.affix({
@@ -53,6 +94,8 @@ $(function () {
             $('button.navbar-toggle').click();
         }
     });
+
+    $('#about-photo').on('dragstart', function(event) { event.preventDefault(); });
 
     showCopyright();
 });

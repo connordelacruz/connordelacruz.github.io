@@ -104,7 +104,6 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,40
 
   &-link {
     @include box-shadow(none);
-    @include ripple($btn-default-color);
     background-color: transparent;
     border-radius: 0;
     color: $link-color;
@@ -114,7 +113,7 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,40
       @include box-shadow(none);
       background-color: transparent;
       color: $link-hover-color;
-      text-decoration: none;
+      text-decoration: $link-hover-decoration;
     }
 
     .disabled, // Although btn-link is intended for buttons, which want to look like link, I include here a.disable for the sake of consistency
