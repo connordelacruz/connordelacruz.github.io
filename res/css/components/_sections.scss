@@ -45,14 +45,19 @@
 // --------------------------------------------------
 
 .project {
-  margin-bottom: 1.25em;
+  padding-bottom: 12px;
+  margin-bottom: $line-height-computed;
+  border-bottom: $hr-border solid 1px;
   .project-title {
     font-weight: 300;
-    border-bottom: $hr-border solid 1px;
   }
   .project-image {
     img {
       width: 60%;
+      // Use larger width on smaller viewports
+      @media (max-width: $screen-xs-min) {
+        width: 75%;
+      }
     }
   }
 }
