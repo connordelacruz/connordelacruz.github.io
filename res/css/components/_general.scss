@@ -34,6 +34,7 @@ body {
 
 // Links with arrow-right.svg after link text
 .arrow-link {
+  color: $text-color;
   &:after {
     @include transition(all 0.2s);
     position: relative;

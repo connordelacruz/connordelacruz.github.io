@@ -41,6 +41,21 @@
   }
 }
 
+// Projects section
+// --------------------------------------------------
+
+.project {
+  margin-bottom: 1.25em;
+  .project-title {
+    font-weight: 300;
+    border-bottom: $hr-border solid 1px;
+  }
+  /*.project-description {
+  }
+  .project-footer {
+  }*/
+}
+
 // Contact section
 // --------------------------------------------------
 

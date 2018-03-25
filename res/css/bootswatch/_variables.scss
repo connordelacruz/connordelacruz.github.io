@@ -32,11 +32,11 @@ $body-bg:               $gray-base !default;
 $text-color:            $gray-lighter !default;
 
 //** Global textual link color.
-$link-color:            $text-color !default;
+$link-color:            $oceanic-next-blue !default;
 //** Link hover color.
 $link-hover-color:      lighten($link-color, 25%) !default;
 //** Link hover decoration.
-$link-hover-decoration: none !default;
+$link-hover-decoration: underline !default;
 
 
 //== Typography
