@@ -24,6 +24,18 @@ body {
   vertical-align: bottom;
 }
 
+// Responsive centered images
+
+.img-center-responsive {
+  // Center
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  // Responsive
+  max-width: 100%;
+  height: auto;
+}
+
 
 // Content divs
 .content {

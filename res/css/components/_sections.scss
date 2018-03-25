@@ -3,8 +3,8 @@
 // About section
 // --------------------------------------------------
 
-// Photo TODO: make this class generic?
-#about-photo {
+.about-photo {
+  border-radius: 50%;
   width: 10em; // TODO: use different units
   margin-bottom: 21px;
   @include box-shadow($md-content-shadow);
@@ -49,6 +49,11 @@
   .project-title {
     font-weight: 300;
     border-bottom: $hr-border solid 1px;
+  }
+  .project-image {
+    img {
+      width: 60%;
+    }
   }
 }
 
