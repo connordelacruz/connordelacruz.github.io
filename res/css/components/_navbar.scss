@@ -73,6 +73,9 @@ div.navbar-container + div {
 
 // Animated navbar toggle
 .navbar-toggle {
+  float: left;
+  margin-left: $navbar-padding-horizontal;
+  margin-right: 0;
   border: none;
   background: transparent !important;
 
