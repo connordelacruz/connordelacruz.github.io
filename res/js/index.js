@@ -48,9 +48,8 @@ function showCopyright() {
 
 $(function () {
     // Populate contact links
-    // TODO: fade in on create (and set container height to avoid jumping)
     var contactLinksMarkup = buildContactLinksContainer(contactLinks);
-    $('.contact-icons').html(contactLinksMarkup);
+    $('.contact-icons').html(contactLinksMarkup).addClass('in');
 
     var navbar = $('#navbar');
     // Enable affixed navbar
