@@ -76,11 +76,7 @@ $(function () {
             $('html, body').animate({
                 // Subtract the size of navbar container (if not affixed will compensate for increased page height, if affixed compensates for navbar height)
                 scrollTop: $(hash).offset().top - $('#navbar-container').outerHeight()
-            }, 400, function() {
-                // Add hash (#) to URL when done scrolling (default click behavior)
-                // TODO: causes page to jump to hash in Chrome so omitting for now
-                // window.location.hash = hash;
-            });
+            }, 400);
         }
     });
 
