@@ -58,6 +58,12 @@
       @media (max-width: $screen-xs-min) {
         width: 75%;
       }
+
+      &.image-shadow {
+        margin-top: 30px;
+        margin-bottom: 45px;
+        box-shadow: $md-image-shadow;
+      }
     }
   }
 }
