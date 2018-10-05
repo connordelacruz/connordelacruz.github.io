@@ -1,3 +1,24 @@
+// Legacy BS3 Variables
+// TODO: re-work and remove
+$gray-base: $black !default;
+$gray-darker: $gray-900 !default;
+$gray-lighter: $gray-100 !default;
+
+$brand-primary: $primary !default;
+
+$text-color: $body-color !default;
+
+$line-height-computed: floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+$hr-border: $hr-border-color !default;
+
+$grid-float-breakpoint: map-get($grid-breakpoints, "sm") !default;
+$screen-xs-min: map-get($grid-breakpoints, "xs") !default;
+
+$navbar-padding-horizontal: $navbar-padding-x !default;
+
+
+
 // BS4 Variable Overrides
 //
 

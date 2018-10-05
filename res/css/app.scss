@@ -1,5 +1,28 @@
-// BS4 Variable Overrides
-@import "variables";
+
+// Used handle relative paths in partials
+$res-directory: '..';
 
 // BS4
 @import "bootstrap4/bootstrap";
+
+// BS4 Variable Overrides TODO: import before bootstrap after fixing
+@import "variables";
+
+// Custom Variables
+@import "components/variables";
+
+// Mixins
+@import "mixins/buttons";
+@import "mixins/transition";
+@import "mixins/effects";
+@import "mixins/vendor-prefixes";
+
+// Components
+@import "components/general";
+@import "components/typography";
+@import "components/header";
+@import "components/navbar";
+@import "components/sections";
+
+// Misc
+@import "components/error";
