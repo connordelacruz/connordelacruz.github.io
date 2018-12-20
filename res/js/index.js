@@ -20,7 +20,6 @@ var contactLinks = [
     new ContactLinkObject('GitHub', 'https://github.com/connordelacruz', 'github.svg'),
     new ContactLinkObject('LinkedIn', 'http://www.linkedin.com/in/connordelacruz', 'linked.svg'),
     new ContactLinkObject('Email', 'mailto:connor.c.delacruz@gmail.com', 'email.svg'),
-    new ContactLinkObject('Tumblr', 'https://connordelacruz.tumblr.com', 'tumblr.svg'),
     new ContactLinkObject('Instagram', 'https://www.instagram.com/delachrome', 'gram.svg')
 ];
 
