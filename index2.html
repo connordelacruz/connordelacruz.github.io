@@ -12,6 +12,7 @@
     </script>
 
     <title>Connor de la Cruz</title>
+    <!-- TODO: update old meta tags, add seo tags -->
     <meta name="description" content="Connor de la Cruz's personal site."/>
     <meta name="keywords"
           content="developer, HTML, PHP, JavaScript, jQuery, Bootstrap, Java, Python, Android, Windows, Linux, software, deployment, development, programmer, design"/>
@@ -31,10 +32,7 @@
     <!-- TODO: move to res/css/ -->
     <link rel="stylesheet" href="res/scss/app.css?v=12.20.18">
 
-    <!-- TODO: update -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" -->
-    <!--         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <!-- TODO: verify content, basic styling (e.g. margins, unstyled elements), js, theming -->
 
     <!-- TODO: uncomment -->
     <!-- <script src="res/js/index.js?v=12.20.18"></script> -->
@@ -166,7 +164,111 @@
         </div>
     </div>
 
-    <!-- TODO: projects -->
+    <div class="card" id="projects">
+        <h2 class="card-header">Personal Projects</h2>
+
+        <div class="card-body">
+            <h3 class="card-title">Selenium WebDriver Test Tools</h3>
+            <p class="card-text">
+                Utilities for writing front-end test suites using <a
+                    href="https://www.seleniumhq.org/docs/03_webdriver.jsp" target="_blank">Selenium WebDriver</a>
+                and Python unit tests.
+            </p>
+            <a class="card-link btn btn-info"
+               href="https://github.com/connordelacruz/webdriver-test-tools" target="_blank">GitHub</a>
+            <a class="card-link btn btn-info"
+               href="https://pypi.python.org/pypi/webdriver-test-tools" target="_blank">PyPI</a>
+            <a class="card-link btn btn-info"
+               href="http://connordelacruz.com/webdriver-test-tools/" target="_blank">Docs</a>
+        </div>
+        
+        <div class="card-body">
+            <h3 class="card-title">Python Random User Generator</h3>
+            <p class="card-text">
+                A Python class for generating random user information using the
+                <a href="https://randomuser.me/" target="_blank">randomuser.me</a> API.
+            </p>
+            <a class="card-link btn btn-info"
+               href="https://github.com/connordelacruz/python-randomuser" target="_blank">GitHub</a>
+            <a class="card-link btn btn-info"
+               href="https://pypi.python.org/pypi/randomuser" target="_blank">PyPI</a>
+            <a class="card-link btn btn-info"
+               href="http://connordelacruz.com/python-randomuser/" target="_blank">Docs</a>
+        </div>
+
+        <div class="card-body">
+            <h3 class="card-title">Python Lorem Ipsum Generator</h3>
+            <p class="card-text">
+                Python module for generating placeholder text using the
+                <a href="https://loripsum.net/" target="_blank">loripsum.net</a> API.
+            </p>
+            <a class="card-link btn btn-info"
+               href="https://github.com/connordelacruz/py-loremipsum" target="_blank">GitHub</a>
+            <a class="card-link btn btn-info"
+               href="https://pypi.python.org/pypi/py-loremipsum" target="_blank">PyPI</a>
+            <a class="card-link btn btn-info"
+               href="http://connordelacruz.com/py-loremipsum/" target="_blank">Docs</a>
+        </div>
+
+        <div class="card-body">
+            <h3 class="card-title">Chicago ASCII Art</h3>
+            <img class="card-img" src="res/img/projects/chicago-ascii/chicago-ascii0.png">
+            <p class="card-text">
+                Bash scripts for displaying ASCII art of Chicago flag/skyline in the terminal.
+            </p>
+            <a class="card-link btn btn-info"
+               href="https://github.com/connordelacruz/chicago-ascii.sh" target="_blank">GitHub</a>
+        </div>
+
+        <div class="card-body">
+            <h3 class="card-title">iTerm2 Tab Color</h3>
+            <img class="card-img" src="res/img/projects/iterm2-tab-color/example.png">
+            <p class="card-text">
+                Bash functions for setting the iTerm 2 tab/title bar color using their
+                <a href="https://www.iterm2.com/documentation-escape-codes.html" target="_blank">proprietary
+                    escape codes</a>.
+            </p>
+            <a class="card-link btn btn-info"
+               href="https://github.com/connordelacruz/iterm2-tab-color" target="_blank">GitHub</a>
+        </div>
+
+        <div class="card-body">
+            <h3 class="card-title">Channel Shift</h3>
+            <img class="card-img" src="res/img/projects/channelshift/example.png">
+            <p class="card-text">
+                <a href="https://processing.org/" target="_blank">Processing</a> sketch that randomly shifts and
+                swaps an image's color channels.
+            </p>
+            <a class="card-link btn btn-info"
+               href="https://github.com/connordelacruz/ChannelShift" target="_blank">GitHub</a>
+        </div>
+
+        <div class="card-body">
+            <h3 class="card-title">Vim Runtime</h3>
+            <p class="card-text">
+                My runtime configurations for vim and <a href="https://neovim.io/" target="_blank">neovim</a>.
+            </p>
+            <a class="card-link btn btn-info"
+               href="https://github.com/connordelacruz/vim_runtime" target="_blank">GitHub</a>
+        </div>
+
+        <div class="card-body">
+            <h3 class="card-title">Bash Runtime</h3>
+            <p class="card-text">
+                My bashrc setup, designed to keep runtime configurations consistent across different bash
+                versions, terminal emulators, and operating systems.
+            </p>
+            <a class="card-link btn btn-info"
+               href="https://github.com/connordelacruz/bash_config" target="_blank">GitHub</a>
+        </div>
+
+        <div class="card-footer">
+            <!-- TODO: styling (.arrow-link) -->
+            <a class="btn btn-link btn-lg btn-block"
+               href="https://github.com/connordelacruz" target="_blank">View More on GitHub</a>
+        </div>
+        
+    </div>
 
     <div class="card" id="contact">
         <h2 class="card-header">Contact</h2>
@@ -185,7 +287,6 @@
 
 </div>
 
-<!-- TODO: styling -->
 <footer class="container-fluid text-center">
     <span class="copyright">&copy; 2012-&infin;</span> Connor de la Cruz
 </footer>
