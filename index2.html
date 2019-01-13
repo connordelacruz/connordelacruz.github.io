@@ -32,14 +32,20 @@
     <!-- TODO: move to res/css/ -->
     <link rel="stylesheet" href="res/scss/app.css?v=12.20.18">
 
-    <!-- TODO: verify content, basic styling (e.g. margins, unstyled elements), js, theming -->
+    <!-- TODO:
+            - verify content
+            - basic styling (e.g. margins, unstyled elements)
+            - custom component styles
+            - js
+            -theming
+         -->
 
     <!-- TODO: uncomment -->
     <!-- <script src="res/js/index.js?v=12.20.18"></script> -->
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <div class="jumbotron jumbotron-fluid" id="page-header">
     <div class="container">
@@ -49,7 +55,7 @@
 </div>
 
 <!-- TODO: bg color -->
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
     <a class="navbar-brand" href="#">Connor de la Cruz</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
         <span class="navbar-toggler-icon"></span>
