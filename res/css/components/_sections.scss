@@ -74,6 +74,10 @@
 // Container for contact icon button groups
 .contact-icons {
   text-align: center;
+  // Delay fade in
+  &.fade {
+    transition-delay: .15s;
+  }
 
   .btn-link {
     .svg {
