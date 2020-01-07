@@ -8,6 +8,7 @@ $bootstrap-sass-asset-helper: false !default;
 //
 //## Gray and brand colors for use across Bootstrap.
 
+$black: #050A0C !default;
 $gray-base:              #081116 !default;
 $gray-darker:            #0e1e27 !default;
 $gray-dark:              #1B2B34 !default;
@@ -15,8 +16,8 @@ $gray:                   #4F5B66 !default;
 $gray-light:             #A7ADBA !default;
 $gray-lighter:           #D8DEE9 !default;
 
-$brand-primary:         #1565C0 !default;
-$brand-success:         #06C189 !default;
+$brand-primary:         #2A45DE !default;
+$brand-success:         #E32465 !default;
 $brand-info:            #009688 !default;
 $brand-warning:         #ff9800 !default;
 $brand-danger:          #F44336 !default;
@@ -32,9 +33,9 @@ $body-bg:               $gray-base !default;
 $text-color:            $gray-lighter !default;
 
 //** Global textual link color.
-$link-color:            $oceanic-next-blue !default;
+$link-color:            $brand-success !default;
 //** Link hover color.
-$link-hover-color:      lighten($link-color, 25%) !default;
+$link-hover-color:      lighten($link-color, 10%) !default;
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
 
