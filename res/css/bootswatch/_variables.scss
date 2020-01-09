@@ -670,9 +670,9 @@ $progress-bar-info-bg:        $brand-info !default;
 //##
 
 //** Background color on `.list-group-item`
-$list-group-bg:                 $gray-dark !default;
+$list-group-bg:                 $gray-darker !default;
 //** `.list-group-item` border color
-$list-group-border:             $gray !default;
+$list-group-border:             $gray-dark !default;
 //** List group border radius
 $list-group-border-radius:      $border-radius-base !default;
 
@@ -703,7 +703,7 @@ $list-group-link-heading-color: darken($link-color, 5%) !default;
 //
 //##
 
-$panel-bg:                    $gray-dark !default;
+$panel-bg:                    $gray-darker !default;
 $panel-body-padding:          15px !default;
 $panel-heading-padding:       10px 15px !default;
 $panel-footer-padding:        $panel-heading-padding !default;
