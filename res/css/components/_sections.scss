@@ -35,25 +35,7 @@
   }
 }
 
-// TODO: clean up redundant styles
 // Job listing in experience section
-.job {
-  font-family: $headings-font-family;
-  margin-bottom: 1.25em;
-
-  .job-dates {
-    font-weight: 400;
-    text-align: right;
-    float: right;
-    // Display below .job-title on its own line on small screens
-    @media (max-width: $screen-xs-min) {
-      width: 100%;
-      text-align: left;
-      float: left;
-    }
-  }
-}
-
 .job-title, .job-dates, .job-location {
   font-family: $headings-font-family;
 }
@@ -65,26 +47,20 @@
 }
 
 .job-dates {
-  font-weight: 400;
-  text-align: right;
-  float: right;
+  font-weight: 300;
+  text-align: left;
+  float: left;
+  width: 100%;
   // Display below .job-title on its own line on small screens
-  @media (max-width: $screen-xs-min) {
-    width: 100%;
-    text-align: left;
-    float: left;
+  @media (min-width: $screen-sm) {
+    text-align: right;
+    float: right;
+    width: auto;
   }
 }
 
-.job-heading-top {
-  border-bottom: 1px solid rgba(#fff, 0.25);
-  padding-bottom: 3px;
-  margin-bottom: 4px;
-}
-
 .job-location {
-  font-weight: 400;
-  //color: transparentize($text-color, 0.1);
+  font-weight: 300;
 }
 
 // Projects section
