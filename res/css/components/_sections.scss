@@ -36,30 +36,31 @@
 }
 
 // Job listing in experience section
-.job {
+.job-title, .job-dates, .job-location {
   font-family: $headings-font-family;
-  margin-bottom: 1.25em;
+}
 
-  .job-title {
-    font-weight: 400;
-    text-align: left;
-    float: left;
-  }
-  .job-dates {
-    font-weight: 400;
+.job-title {
+  font-weight: 400;
+  text-align: left;
+  float: left;
+}
+
+.job-dates {
+  font-weight: 300;
+  text-align: left;
+  float: left;
+  width: 100%;
+  // Display below .job-title on its own line on small screens
+  @media (min-width: $screen-sm) {
     text-align: right;
     float: right;
-    // Display below .job-title on its own line on small screens
-    @media (max-width: $screen-xs-min) {
-      width: 100%;
-      text-align: left;
-      float: left;
-    }
+    width: auto;
   }
-  .job-location {
-    font-weight: 400;
-    color: $text-muted;
-  }
+}
+
+.job-location {
+  font-weight: 300;
 }
 
 // Projects section
