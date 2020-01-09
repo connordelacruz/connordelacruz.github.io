@@ -53,14 +53,17 @@
     }
   }
 }
-.job-title, .job-dates {
+
+.job-title, .job-dates, .job-location {
   font-family: $headings-font-family;
 }
+
 .job-title {
   font-weight: 400;
   text-align: left;
   float: left;
 }
+
 .job-dates {
   font-weight: 400;
   text-align: right;
@@ -72,9 +75,16 @@
     float: left;
   }
 }
+
+.job-heading-top {
+  border-bottom: 1px solid rgba(#fff, 0.25);
+  padding-bottom: 3px;
+  margin-bottom: 4px;
+}
+
 .job-location {
   font-weight: 400;
-  color: transparentize($text-color, 0.1);
+  //color: transparentize($text-color, 0.1);
 }
 
 // Projects section
