@@ -17,14 +17,14 @@
 // Skills panels
 .skills-row, .row.skills-row {
   // Use flexbox to ensure panels in row have the same height (wide viewports)
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-sm) {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
 
-    & > .col-md-4 {
+    & > .col-sm-4 {
       display: flex;
       flex-direction: column;
 
