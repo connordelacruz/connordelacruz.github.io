@@ -92,10 +92,10 @@
 <div class="container">
 
     <div class="well content" id="about">
-        <h1 class="section-title">About</h1>
-        <img class="about-photo img-center-responsive" src="res/img/profile/profile1.jpg">
+<!--        <h1 class="section-title">About</h1>-->
+<!--        <img class="about-photo img-center-responsive" src="res/img/profile/profile1.jpg">-->
         <p class="h3 text-center">
-            I'm Connor de la Cruz, a full stack web developer in Chicago.
+            Hi! I'm Connor de la Cruz. I'm a full stack developer in Chicago.
         </p>
     </div>
 
@@ -160,26 +160,32 @@
         <hr/>
 
         <h2 class="subsection-title">Experience</h2>
+        <!-- TODO better phrasing, you can't "click" on a phone -->
+        <p>Click headings to expand.</p>
 
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <div class="clearfix job-heading-top">
-                    <span class="job-title panel-title">Full Stack Developer</span>
-                    <span class="job-dates">Jan 2018 &ndash; Oct 2019</span>
-                </div>
-                <div class="job-location">Schafer Condon Carter</div>
+                <a class="job-details-toggle panel-title collapsed" data-toggle="collapse" data-target="#job-details-0">
+                    <div class="clearfix job-heading-top">
+                        <span class="job-title">Full Stack Developer</span>
+                        <span class="job-dates">Jan 2018 &ndash; Oct 2019</span>
+                    </div>
+                    <div class="job-location">Schafer Condon Carter</div>
+                </a>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    Developed a boilerplate framework for building websites using the Wagtail CMS.
-                </li>
-                <li class="list-group-item">
-                    Created a framework for front end test automation using Python and Selenium WebDriver.
-                </li>
-                <li class="list-group-item">
-                    Developed and managed sites using Django, Wagtail, and Adobe Experience Manager.
-                </li>
-            </ul>
+            <div class="panel-collapse collapse" id="job-details-0">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Developed a boilerplate framework for building websites using the Wagtail CMS.
+                    </li>
+                    <li class="list-group-item">
+                        Created a framework for front end test automation using Python and Selenium WebDriver.
+                    </li>
+                    <li class="list-group-item">
+                        Developed and managed sites using Django, Wagtail, and Adobe Experience Manager.
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="panel panel-primary">
