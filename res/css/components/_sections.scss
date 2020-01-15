@@ -41,8 +41,9 @@
 }
 
 // Panel heading button to collapse/expand experience details
-// TODO extract variables
+// Variables
 // Toggle chevron sizes
+// TODO just use mobile?
 $job-toggle-size: 5px !default;
 $job-toggle-size-mobile: 7px !default;
 // Mixins
@@ -52,7 +53,7 @@ $job-toggle-size-mobile: 7px !default;
   border-right: $size solid transparent;
   border-bottom: $size solid;
 }
-
+// Styles
 .job-details-toggle {
   display: block;
   color: inherit;
@@ -84,12 +85,14 @@ $job-toggle-size-mobile: 7px !default;
   }
 }
 
+// Job title
 .job-title {
   font-weight: 400;
   text-align: left;
   float: left;
 }
 
+// Job date range
 .job-dates {
   font-weight: 300;
   text-align: left;
@@ -103,8 +106,14 @@ $job-toggle-size-mobile: 7px !default;
   }
 }
 
+// Job location
 .job-location {
   font-weight: 300;
+  // Add border and padding between job location and toggle chevron
+  border-bottom: 1px solid;
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  // TODO wide viewport padding?
 }
 
 // Projects section
