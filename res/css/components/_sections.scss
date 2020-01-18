@@ -11,10 +11,8 @@
   @include user-select(none);
 }
 
-// Resume section
+// Skills
 // --------------------------------------------------
-
-// Skills panels
 .skills-row, .row.skills-row {
   // Use flexbox to ensure panels in row have the same height (wide viewports)
   @media (min-width: $screen-sm) {
@@ -35,17 +33,27 @@
   }
 }
 
-// Job listing in experience section
-.job-title, .job-dates, .job-location {
+// Experience
+// --------------------------------------------------
+
+.job-title {
+  font-weight: 400;
+}
+.job-dates, .job-location {
   font-family: $headings-font-family;
+  font-size: $font-size-base;
+  font-weight: 300;
+}
+.job-location {
+  &:before {
+    content: '@ ';
+  }
 }
 
 // Panel heading button to collapse/expand experience details
 // Variables
-// Toggle chevron sizes
-// TODO just use mobile?
-$job-toggle-size: 5px !default;
-$job-toggle-size-mobile: 7px !default;
+// Toggle chevron size
+$job-toggle-size: 7px !default;
 // Mixins
 @mixin job-toggle-chevron($size) {
   // Create upward arrow using borders
@@ -74,10 +82,7 @@ $job-toggle-size-mobile: 7px !default;
     margin: 0 auto;
     @include transition(all 0.3s ease);
     // Create upward arrow using borders
-    @include job-toggle-chevron($job-toggle-size-mobile);
-    @media (min-width: $screen-sm) {
-      @include job-toggle-chevron($job-toggle-size);
-    }
+    @include job-toggle-chevron($job-toggle-size);
   }
   &.collapsed:after {
     // Rotate arrow when collapsed
@@ -85,36 +90,6 @@ $job-toggle-size-mobile: 7px !default;
   }
 }
 
-// Job title
-.job-title {
-  font-weight: 400;
-  text-align: left;
-  float: left;
-}
-
-// Job date range
-.job-dates {
-  font-weight: 300;
-  text-align: left;
-  float: left;
-  width: 100%;
-  // Display below .job-title on its own line on small screens
-  @media (min-width: $screen-sm) {
-    text-align: right;
-    float: right;
-    width: auto;
-  }
-}
-
-// Job location
-.job-location {
-  font-weight: 300;
-  // Add border and padding between job location and toggle chevron
-  border-bottom: 1px solid;
-  margin-bottom: 6px;
-  padding-bottom: 4px;
-  // TODO wide viewport padding?
-}
 
 // Projects section
 // --------------------------------------------------
