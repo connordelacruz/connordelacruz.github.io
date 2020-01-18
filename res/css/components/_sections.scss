@@ -71,10 +71,13 @@ $job-toggle-size: 7px !default;
   &:hover {
     text-decoration: none;
     color: inherit;
+
+    .job-title {
+      text-decoration: underline;
+    }
   }
 
   // Show expand/collapse chevron
-  // TODO add padding for mobile, better indication that you can expand items
   &:after {
     content: "";
     width: 0; height: 0;
