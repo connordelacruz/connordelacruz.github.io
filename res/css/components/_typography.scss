@@ -1,6 +1,7 @@
 /* Styling for typography */
 
 // Use Roboto Condensed to bold tags
+// TODO REMOVE
 b {
   font-family: $headings-font-family;
 }
@@ -29,5 +30,4 @@ blockquote {
 
 .subsection-title {
   font-weight: 300;
-  //border-bottom: $hr-border solid 1px;
 }
