@@ -29,22 +29,22 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="res/img/favicon/apple-touch-icon.png?v=01.09.20">
-    <link rel="icon" type="image/png" sizes="32x32" href="res/img/favicon/favicon-32x32.png?v=01.09.20">
-    <link rel="icon" type="image/png" sizes="16x16" href="res/img/favicon/favicon-16x16.png?v=01.09.20">
-    <link rel="manifest" href="res/img/favicon/manifest.json?v=01.09.20">
-    <link rel="mask-icon" href="res/img/favicon/safari-pinned-tab.svg?v=01.09.20" color="#2A45DE">
-    <link rel="shortcut icon" href="res/img/favicon/favicon.ico?v=01.09.20">
-    <meta name="msapplication-config" content="res/img/favicon/browserconfig.xml?v=01.09.20">
+    <link rel="apple-touch-icon" sizes="180x180" href="res/img/favicon/apple-touch-icon.png?v=01.21.20">
+    <link rel="icon" type="image/png" sizes="32x32" href="res/img/favicon/favicon-32x32.png?v=01.21.20">
+    <link rel="icon" type="image/png" sizes="16x16" href="res/img/favicon/favicon-16x16.png?v=01.21.20">
+    <link rel="manifest" href="res/img/favicon/manifest.json?v=01.21.20">
+    <link rel="mask-icon" href="res/img/favicon/safari-pinned-tab.svg?v=01.21.20" color="#2A45DE">
+    <link rel="shortcut icon" href="res/img/favicon/favicon.ico?v=01.21.20">
+    <meta name="msapplication-config" content="res/img/favicon/browserconfig.xml?v=01.21.20">
     <meta name="theme-color" content="#2A45DE">
 
-    <link rel="stylesheet" href="res/css/global.css?v=01.09.20">
+    <link rel="stylesheet" href="res/css/global.css?v=01.21.20">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script src="res/js/index.js?v=01.09.20"></script>
+    <script src="res/js/index.js?v=01.21.20"></script>
 
 </head>
 
@@ -92,10 +92,9 @@
 <div class="container">
 
     <div class="well content" id="about">
-        <h1 class="section-title">About</h1>
-        <img class="about-photo img-center-responsive" src="res/img/profile/profile1.jpg">
+<!--        <img class="about-photo img-center-responsive" src="res/img/profile/profile1.jpg">-->
         <p class="h3 text-center">
-            I'm Connor de la Cruz, a full stack web developer in Chicago.
+            Hi! I'm Connor de la Cruz. I'm a full stack developer in Chicago.
         </p>
     </div>
 
@@ -160,137 +159,154 @@
         <hr/>
 
         <h2 class="subsection-title">Experience</h2>
+        <p>Click headings to expand.</p>
 
-        <div class="panel panel-primary">
+        <div class="panel panel-primary job-panel">
             <div class="panel-heading">
-                <div class="clearfix job-heading-top">
-                    <span class="job-title panel-title">Full Stack Developer</span>
-                    <span class="job-dates">Jan 2018 &ndash; Oct 2019</span>
-                </div>
-                <div class="job-location">Schafer Condon Carter</div>
+                <a class="job-details-toggle panel-title collapsed" data-toggle="collapse" data-target="#job-details-0">
+                    <div class="job-title">Full Stack Developer</div>
+                    <div class="job-location">Schafer Condon Carter</div>
+                    <div class="job-dates">Jan 2018 &ndash; Oct 2019</div>
+                </a>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    Developed a boilerplate framework for building websites using the Wagtail CMS.
-                </li>
-                <li class="list-group-item">
-                    Created a framework for front end test automation using Python and Selenium WebDriver.
-                </li>
-                <li class="list-group-item">
-                    Developed and managed sites using Django, Wagtail, and Adobe Experience Manager.
-                </li>
-            </ul>
+            <div class="panel-collapse collapse" id="job-details-0">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Developed a boilerplate framework for building websites using the Wagtail CMS.
+                    </li>
+                    <li class="list-group-item">
+                        Created a framework for front end test automation using Python and Selenium WebDriver.
+                    </li>
+                    <li class="list-group-item">
+                        Developed and managed sites using Django, Wagtail, and Adobe Experience Manager.
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="panel panel-primary">
+        <div class="panel panel-primary job-panel">
             <div class="panel-heading">
-                <div class="clearfix job-heading-top">
-                    <span class="job-title panel-title">Configuration Management Intern</span>
-                    <span class="job-dates">May 2017 &ndash; Nov 2017</span>
-                </div>
-                <div class="job-location">Wheaton College Computer Science</div>
+                <a class="job-details-toggle panel-title collapsed" data-toggle="collapse" data-target="#job-details-1">
+                    <div class="job-title">Configuration Management Intern</div>
+                    <div class="job-location">Wheaton College Computer Science</div>
+                    <div class="job-dates">May 2017 &ndash; Nov 2017</div>
+                </a>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    Implemented SaltStack as a configuration management system for the Computer Science lab.
-                </li>
-                <li class="list-group-item">
-                    Collaborated with the Computer Science lab system administrator using Git, Bitbucket, and Trello.
-                </li>
-                <li class="list-group-item">
-                    Made contributions to the SaltStack open source project on GitHub.
-                </li>
-            </ul>
+            <div class="panel-collapse collapse" id="job-details-1">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Implemented SaltStack as a configuration management system for the Computer Science lab.
+                    </li>
+                    <li class="list-group-item">
+                        Collaborated with the Computer Science lab system administrator using Git, Bitbucket, and
+                        Trello.
+                    </li>
+                    <li class="list-group-item">
+                        Made contributions to the SaltStack open source project on GitHub.
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="panel panel-primary">
+        <div class="panel panel-primary job-panel">
             <div class="panel-heading">
-                <div class="clearfix job-heading-top">
-                    <span class="job-title panel-title">Web Application Developer</span>
-                    <span class="job-dates">Aug 2016 &ndash; Jan 2018</span>
-                </div>
-                <div class="job-location">Buswell Memorial Library</div>
+                <a class="job-details-toggle panel-title collapsed" data-toggle="collapse" data-target="#job-details-2">
+                    <div class="job-title">Web Application Developer</div>
+                    <div class="job-location">Buswell Memorial Library</div>
+                    <div class="job-dates">Aug 2016 &ndash; Jan 2018</div>
+                </a>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    Created responsive web applications using HTML, CSS/Sass, Bootstrap, JavaScript, and jQuery.
-                </li>
-                <li class="list-group-item">
-                    Used PHP, MySQL, and Apache for backend development and Ajax to coordinate with front end.
-                </li>
-            </ul>
+            <div class="panel-collapse collapse" id="job-details-2">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Created responsive web applications using HTML, CSS/Sass, Bootstrap, JavaScript, and jQuery.
+                    </li>
+                    <li class="list-group-item">
+                        Used PHP, MySQL, and Apache for backend development and Ajax to coordinate with front end.
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="panel panel-primary">
+        <div class="panel panel-primary job-panel">
             <div class="panel-heading">
-                <div class="clearfix job-heading-top">
-                    <span class="job-title panel-title">Student Tech Supervisor</span>
-                    <span class="job-dates">Jan 2017 &ndash; Aug 2017</span>
-                </div>
-                <div class="job-location">Wheaton College AIT Department</div>
+                <a class="job-details-toggle panel-title collapsed" data-toggle="collapse" data-target="#job-details-3">
+                    <div class="job-title">Student Tech Supervisor</div>
+                    <div class="job-location">Wheaton College AIT Department</div>
+                    <div class="job-dates">Jan 2017 &ndash; Aug 2017</div>
+                </a>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    Responsible for supervising and assisting student techs at the IT service desk.
-                </li>
-                <li class="list-group-item">
-                    Provided training for newer student techs on troubleshooting and office procedures.
-                </li>
-            </ul>
+            <div class="panel-collapse collapse" id="job-details-3">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Responsible for supervising and assisting student techs at the IT service desk.
+                    </li>
+                    <li class="list-group-item">
+                        Provided training for newer student techs on troubleshooting and office procedures.
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="panel panel-primary">
+        <div class="panel panel-primary job-panel">
             <div class="panel-heading">
-                <div class="clearfix job-heading-top">
-                    <span class="job-title panel-title">IT Developer</span>
-                    <span class="job-dates">Sept 2016 &ndash; Aug 2017</span>
-                </div>
-                <div class="job-location">Wheaton College AIT Department</div>
+                <a class="job-details-toggle panel-title collapsed" data-toggle="collapse" data-target="#job-details-4">
+                    <div class="job-title">IT Developer</div>
+                    <div class="job-location">Wheaton College AIT Department</div>
+                    <div class="job-dates">Sept 2016 &ndash; Aug 2017</div>
+                </a>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    Created a dashboard web application to display system statuses, messages, and appointments.
-                </li>
-                <li class="list-group-item">
-                    Developed scripts to automate support procedures commonly performed by service desk technicians.
-                </li>
-            </ul>
+            <div class="panel-collapse collapse" id="job-details-4">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Created a dashboard web application to display system statuses, messages, and appointments.
+                    </li>
+                    <li class="list-group-item">
+                        Developed scripts to automate support procedures commonly performed by service desk technicians.
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="panel panel-primary">
+        <div class="panel panel-primary job-panel">
             <div class="panel-heading">
-                <div class="clearfix job-heading-top">
-                    <span class="job-title panel-title">Software Deployment Intern</span>
-                    <span class="job-dates">May 2015 &ndash; Aug 2015</span>
-                </div>
-                <div class="job-location">Wheaton College AIT Department</div>
+                <a class="job-details-toggle panel-title collapsed" data-toggle="collapse" data-target="#job-details-5">
+                    <div class="job-title">Software Deployment Intern</div>
+                    <div class="job-location">Wheaton College AIT Department</div>
+                    <div class="job-dates">May 2015 &ndash; Aug 2015</div>
+                </a>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    Packaged and deployed software for automated installation on college-owned computers.
-                </li>
-                <li class="list-group-item">
-                    Managed campus computers using Microsoft System Center Configuration Manager 2012.
-                </li>
-            </ul>
+            <div class="panel-collapse collapse" id="job-details-5">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Packaged and deployed software for automated installation on college-owned computers.
+                    </li>
+                    <li class="list-group-item">
+                        Managed campus computers using Microsoft System Center Configuration Manager 2012.
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="panel panel-primary">
+        <div class="panel panel-primary job-panel">
             <div class="panel-heading">
-                <div class="clearfix job-heading-top">
-                    <span class="job-title panel-title">IT Support Technician</span>
-                    <span class="job-dates">Oct 2014 &ndash; Jan 2017</span>
-                </div>
-                <div class="job-location">Wheaton College AIT Department</div>
+                <a class="job-details-toggle panel-title collapsed" data-toggle="collapse" data-target="#job-details-6">
+                    <div class="job-title">IT Support Technician</div>
+                    <div class="job-location">Wheaton College AIT Department</div>
+                    <div class="job-dates">Oct 2014 &ndash; Jan 2017</div>
+                </a>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    Provided technical support for faculty and students over the phone, through email, and in person.
-                </li>
-                <li class="list-group-item">
-                    Worked with clients to troubleshoot and resolve hardware, software, and network issues.
-                </li>
-            </ul>
+            <div class="panel-collapse collapse" id="job-details-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Provided technical support for faculty and students over the phone, through email, and in
+                        person.
+                    </li>
+                    <li class="list-group-item">
+                        Worked with clients to troubleshoot and resolve hardware, software, and network issues.
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <hr>
@@ -440,8 +456,8 @@
 
     <div class="well content" id="contact">
         <h1 class="section-title">Contact</h1>
-        <p class="text-center">
-            If you're looking to hire, collaborate on a project, or just want to say hello, feel free to get in touch.
+        <p class="h3 text-center">
+            If you're looking to hire or just want to say hello, feel free to reach out.
         </p>
         <div class="text-center">
             <a class="btn btn-block btn-lg btn-success" href="mailto:connor.c.delacruz@gmail.com" target="_blank">

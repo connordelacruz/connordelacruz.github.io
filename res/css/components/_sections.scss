@@ -11,10 +11,8 @@
   @include user-select(none);
 }
 
-// Resume section
+// Skills
 // --------------------------------------------------
-
-// Skills panels
 .skills-row, .row.skills-row {
   // Use flexbox to ensure panels in row have the same height (wide viewports)
   @media (min-width: $screen-sm) {
@@ -35,33 +33,66 @@
   }
 }
 
-// Job listing in experience section
-.job-title, .job-dates, .job-location {
-  font-family: $headings-font-family;
-}
+// Experience
+// --------------------------------------------------
 
 .job-title {
   font-weight: 400;
-  text-align: left;
-  float: left;
 }
-
-.job-dates {
+.job-dates, .job-location {
+  font-family: $headings-font-family;
+  font-size: $font-size-base;
   font-weight: 300;
-  text-align: left;
-  float: left;
-  width: 100%;
-  // Display below .job-title on its own line on small screens
-  @media (min-width: $screen-sm) {
-    text-align: right;
-    float: right;
-    width: auto;
+}
+.job-location {
+  &:before {
+    content: '@ ';
   }
 }
 
-.job-location {
-  font-weight: 300;
+// Panel heading button to collapse/expand experience details
+// Variables
+// Toggle chevron size
+$job-toggle-size: 7px !default;
+// Mixins
+@mixin job-toggle-chevron($size) {
+  // Create upward arrow using borders
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-bottom: $size solid;
 }
+// Styles
+.job-details-toggle {
+  display: block;
+  color: inherit;
+  @include user-select(none);
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+    // Underline job title on hover
+    .job-title {
+      text-decoration: underline;
+    }
+  }
+
+  // Show expand/collapse chevron
+  &:after {
+    content: "";
+    width: 0; height: 0;
+    display: block;
+    margin: 0 auto;
+    @include transition(all 0.3s ease);
+    // Create upward arrow using borders
+    @include job-toggle-chevron($job-toggle-size);
+  }
+  &.collapsed:after {
+    // Flip arrow when collapsed
+    transform: scaleY(-1);
+  }
+}
+
 
 // Projects section
 // --------------------------------------------------
