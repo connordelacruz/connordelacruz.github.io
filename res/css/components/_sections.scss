@@ -71,7 +71,7 @@ $job-toggle-size: 7px !default;
   &:hover {
     text-decoration: none;
     color: inherit;
-
+    // Underline job title on hover
     .job-title {
       text-decoration: underline;
     }
@@ -88,8 +88,8 @@ $job-toggle-size: 7px !default;
     @include job-toggle-chevron($job-toggle-size);
   }
   &.collapsed:after {
-    // Rotate arrow when collapsed
-    transform: rotate(180deg);
+    // Flip arrow when collapsed
+    transform: scaleY(-1);
   }
 }
 
