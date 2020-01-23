@@ -1,9 +1,13 @@
 /* Styling for typography */
 
-// Use Roboto Condensed to bold tags
-// TODO REMOVE
-b {
-  font-family: $headings-font-family;
+// Large text that doesn't use heading font
+.text-large {
+  font-size: $font-size-h3;
+  font-weight: 300;
+
+  b {
+    font-weight: 500;
+  }
 }
 
 blockquote {
