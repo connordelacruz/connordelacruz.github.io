@@ -27,7 +27,7 @@
   &.affix, &.navbar-fixed-top {
     @include box-shadow($md-navbar-shadow);
 
-    .navbar-brand, .navbar-nav li {
+    .navbar-brand, .navbar-nav li, .navbar-toggle {
       visibility: visible;
       opacity:1;
     }
@@ -78,6 +78,10 @@ div.navbar-container + div {
   margin-right: 0;
   border: none;
   background: transparent !important;
+  @include transition(all 0.2s);
+  // Hide when not affixed
+  visibility: hidden;
+  opacity: 0;
 
   &:hover {
     background: transparent !important;
