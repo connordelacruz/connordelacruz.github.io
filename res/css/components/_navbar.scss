@@ -8,11 +8,12 @@
   margin-bottom: 0;
   @include box-shadow(none);
 
-  // Hide navbar-brand when not affixed
   .navbar-brand {
+    // Hide navbar-brand when not affixed
     visibility: hidden;
     opacity: 0;
   }
+
   .navbar-nav li {
     // Hide nav links when not affixed on wide viewports
     @media (min-width: $grid-float-breakpoint) {
@@ -22,6 +23,51 @@
     // Keep them visible on narrow viewports
     visibility: visible;
     opacity: 1;
+  }
+
+  // Animated navbar toggle
+  .navbar-toggle {
+    float: left;
+    margin-left: $navbar-padding-horizontal;
+    margin-right: 0;
+    border: none;
+    background: transparent !important;
+    @include transition(all 0.2s);
+    // Hide when not affixed
+    visibility: hidden;
+    opacity: 0;
+
+    &:hover {
+      background: transparent !important;
+    }
+
+    .icon-bar {
+      width: 22px;
+      transition: all 0.2s;
+    }
+    .top-bar {
+      transform: rotate(45deg);
+      transform-origin: 10% 10%;
+    }
+    .middle-bar {
+      opacity: 0;
+    }
+    .bottom-bar {
+      transform: rotate(-45deg);
+      transform-origin: 10% 90%;
+    }
+
+    &.collapsed {
+      .top-bar {
+        transform: rotate(0);
+      }
+      .middle-bar {
+        opacity: 1;
+      }
+      .bottom-bar {
+        transform: rotate(0);
+      }
+    }
   }
 
   &.affix, &.navbar-fixed-top {
@@ -71,47 +117,3 @@ div.navbar-container + div {
   margin-top: 21px;
 }
 
-// Animated navbar toggle
-.navbar-toggle {
-  float: left;
-  margin-left: $navbar-padding-horizontal;
-  margin-right: 0;
-  border: none;
-  background: transparent !important;
-  @include transition(all 0.2s);
-  // Hide when not affixed
-  visibility: hidden;
-  opacity: 0;
-
-  &:hover {
-    background: transparent !important;
-  }
-
-  .icon-bar {
-    width: 22px;
-    transition: all 0.2s;
-  }
-  .top-bar {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
-  }
-  .middle-bar {
-    opacity: 0;
-  }
-  .bottom-bar {
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
-  }
-
-  &.collapsed {
-    .top-bar {
-      transform: rotate(0);
-    }
-    .middle-bar {
-      opacity: 1;
-    }
-    .bottom-bar {
-      transform: rotate(0);
-    }
-  }
-}
