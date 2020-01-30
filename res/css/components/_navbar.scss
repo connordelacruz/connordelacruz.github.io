@@ -24,7 +24,7 @@
     opacity: 1;
   }
 
-  &.affix {
+  &.affix, &.navbar-fixed-top {
     @include box-shadow($md-navbar-shadow);
 
     .navbar-brand, .navbar-nav li {
