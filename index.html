@@ -28,32 +28,32 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="res/img/favicon/apple-touch-icon.png?v=01.22.20">
-    <link rel="icon" type="image/png" sizes="32x32" href="res/img/favicon/favicon-32x32.png?v=01.22.20">
-    <link rel="icon" type="image/png" sizes="16x16" href="res/img/favicon/favicon-16x16.png?v=01.22.20">
-    <link rel="manifest" href="res/img/favicon/manifest.json?v=01.22.20">
-    <link rel="mask-icon" href="res/img/favicon/safari-pinned-tab.svg?v=01.22.20" color="#2A45DE">
-    <link rel="shortcut icon" href="res/img/favicon/favicon.ico?v=01.22.20">
-    <meta name="msapplication-config" content="res/img/favicon/browserconfig.xml?v=01.22.20">
+    <link rel="apple-touch-icon" sizes="180x180" href="res/img/favicon/apple-touch-icon.png?v=02.06.20">
+    <link rel="icon" type="image/png" sizes="32x32" href="res/img/favicon/favicon-32x32.png?v=02.06.20">
+    <link rel="icon" type="image/png" sizes="16x16" href="res/img/favicon/favicon-16x16.png?v=02.06.20">
+    <link rel="manifest" href="res/img/favicon/manifest.json?v=02.06.20">
+    <link rel="mask-icon" href="res/img/favicon/safari-pinned-tab.svg?v=02.06.20" color="#2A45DE">
+    <link rel="shortcut icon" href="res/img/favicon/favicon.ico?v=02.06.20">
+    <meta name="msapplication-config" content="res/img/favicon/browserconfig.xml?v=02.06.20">
     <meta name="theme-color" content="#2A45DE">
 
-    <link rel="stylesheet" href="res/css/global.css?v=01.22.20">
+    <link rel="stylesheet" href="res/css/global.css?v=02.06.20">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script src="res/js/index.js?v=01.22.20"></script>
+    <script src="res/js/index.js?v=02.06.20"></script>
 
 </head>
 
 <body>
 
 <div class="page-header jumbotron" id="page-header">
-    <h1 class="page-title">Connor de la Cruz</h1>
-    <div class="contact-icons fade">
-        <span class="btn btn-link"><img class="svg" src="res/svg/dots-horizontal.svg"></span>
-    </div>
+    <h1 class="page-title">
+        <small>Hi, my name is</small><br/>
+        Connor de la Cruz
+    </h1>
 </div>
 
 <div class="navbar-container" id="navbar-container">
@@ -66,21 +66,21 @@
                     <span class="icon-bar middle-bar"></span>
                     <span class="icon-bar bottom-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Connor de la Cruz</a>
+                <a class="navbar-brand link" href="#">Connor de la Cruz</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-contents">
                 <ul class="nav navbar-nav">
                     <li data-toggle="collapse" data-target=".navbar-collapse.in">
-                        <a href="#about">About</a>
+                        <a class="link" href="#about">About</a>
                     </li>
                     <li data-toggle="collapse" data-target=".navbar-collapse.in">
-                        <a href="#resume">Resume</a>
+                        <a class="link" href="#resume">Resume</a>
                     </li>
                     <li data-toggle="collapse" data-target=".navbar-collapse.in">
-                        <a href="#projects">Projects</a>
+                        <a class="link" href="#projects">Projects</a>
                     </li>
                     <li data-toggle="collapse" data-target=".navbar-collapse.in">
-                        <a href="#contact">Contact</a>
+                        <a class="link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -92,18 +92,20 @@
 
     <div class="well content" id="about">
         <h1 class="section-title">
-            <small>Hi, my name is</small><br/>
-            Connor de la Cruz.
+            About
         </h1>
         <div class="text-large">
             <p>
-                I'm a full stack software engineer in Chicago. I build websites, applications, libraries, and
-                tools.
+                I'm a full stack software engineer in Chicago. I build websites, apps, libraries, and tools.
             </p>
             <p>
-                I'm currently available for hire! Feel free to send me an
-                <a href="mailto:connor.c.delacruz@gmail.com" target="_blank">email</a> if you want to get in touch.
+                I'm currently available for hire! Feel free to send me an email if you want to get in touch.
             </p>
+            <div class="text-center">
+                <a class="btn btn-block btn-lg btn-success" href="mailto:connor.c.delacruz@gmail.com" target="_blank">
+                    <img class="svg" src="res/svg/email.svg"> connor.c.delacruz@gmail.com
+                </a>
+            </div>
         </div>
     </div>
 
@@ -332,11 +334,11 @@
             <h3 class="project-title">Selenium WebDriver Test Tools</h3>
             <div class="project-description">
                 <p>
-                    Utilities for writing front-end test suites using <a
+                    Utilities for writing front-end test suites using <a class="link"
                         href="https://www.seleniumhq.org/docs/03_webdriver.jsp" target="_blank">Selenium WebDriver</a>
                     and Python unit tests. Supports all major browsers, mobile
                     layout emulation, headless browsers, and running tests on
-                    <a href="https://www.browserstack.com/"
+                    <a class="link" href="https://www.browserstack.com/"
                        target="_blank">BrowserStack</a>.
                 </p>
             </div>
@@ -354,7 +356,7 @@
             <div class="project-description">
                 <p>
                     A Python class for generating random user information using the
-                    <a href="https://randomuser.me/" target="_blank">randomuser.me</a> API.
+                    <a class="link" href="https://randomuser.me/" target="_blank">randomuser.me</a> API.
                 </p>
             </div>
             <div class="project-footer">
@@ -371,7 +373,7 @@
             <div class="project-description">
                 <p>
                     Python module for generating placeholder text using the
-                    <a href="https://loripsum.net/"
+                    <a class="link" href="https://loripsum.net/"
                       target="_blank">loripsum.net</a> API. Includes a command
                     line tool to generate text from the terminal and copy it to
                     the clipboard.
@@ -393,7 +395,9 @@
             </div>
             <div class="project-description">
                 <p>
-                    <a href="https://processing.org/" target="_blank">Processing</a> sketch that provides a GUI interface for <a href="https://en.wikipedia.org/wiki/Databending" target="_blank">datamoshing</a> images by manipulating RGB color channels.
+                    <a class="link" href="https://processing.org/" target="_blank">Processing</a> sketch that provides
+                    a GUI interface for <a class="link" href="https://en.wikipedia.org/wiki/Databending"
+                                           target="_blank">datamoshing</a> images by manipulating RGB color channels.
                 </p>
             </div>
             <div class="project-footer">
@@ -409,7 +413,7 @@
             <div class="project-description">
                 <p>
                     Bash functions for setting the iTerm 2 tab/title bar color using their
-                    <a href="https://www.iterm2.com/documentation-escape-codes.html" target="_blank">proprietary
+                    <a class="link" href="https://www.iterm2.com/documentation-escape-codes.html" target="_blank">proprietary
                         escape codes</a>.
                 </p>
             </div>
@@ -437,7 +441,7 @@
             <h3 class="project-title">Vim Runtime</h3>
             <div class="project-description">
                 <p>
-                    My runtime configurations for vim and <a href="https://neovim.io/" target="_blank">neovim</a>.
+                    My runtime configurations for vim and <a class="link" href="https://neovim.io/" target="_blank">neovim</a>.
                 </p>
             </div>
             <div class="project-footer">
