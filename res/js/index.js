@@ -36,7 +36,7 @@ function buildContactLinksContainer(contactLinks) {
 
 function buildContactLink(contactLink) {
   return '<a class="btn btn-link" href="' + contactLink.url + '" target="_blank">' +
-    '<img class="svg" src="' + contactLink.svg + '"/>' +
+    '<img class="svg" src="' + contactLink.svg + '" alt="' + contactLink.name + '"/>' +
     '</a>';
 }
 
