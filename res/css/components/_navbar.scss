@@ -33,9 +33,6 @@
     border: none;
     background: transparent !important;
     @include transition(all 0.2s);
-    // Hide when not affixed
-    visibility: hidden;
-    opacity: 0;
 
     &:hover {
       background: transparent !important;
@@ -43,7 +40,7 @@
 
     .icon-bar {
       width: 22px;
-      transition: all 0.2s;
+      transition: all 0.2s ease-out;
     }
     .top-bar {
       transform: rotate(45deg);
@@ -73,9 +70,9 @@
   &.affix, &.navbar-fixed-top {
     @include box-shadow($md-navbar-shadow);
 
-    .navbar-brand, .navbar-nav li, .navbar-toggle {
+    .navbar-brand, .navbar-nav li {
       visibility: visible;
-      opacity:1;
+      opacity: 1;
     }
   }
 }
