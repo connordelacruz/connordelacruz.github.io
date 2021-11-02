@@ -10,7 +10,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:300,400,500");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&family=Roboto:wght@300;400;500&display=swap");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -1497,8 +1497,8 @@ hr {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Roboto Condensed", "Roboto", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-family: "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-weight: 400;
   line-height: 1.1;
   color: inherit;
 }
@@ -1882,7 +1882,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 code {
@@ -7549,8 +7549,8 @@ td.visible-print {
 }
 
 .btn {
-  font-family: "Roboto Condensed", "Roboto", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 500;
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -7969,7 +7969,6 @@ body > footer {
 /* Styling for typography */
 .text-large {
   font-size: 28px;
-  font-weight: 300;
 }
 .text-large b {
   font-weight: 500;
@@ -7993,10 +7992,6 @@ blockquote footer, blockquote small, blockquote .small {
   border-bottom: #E32465 solid 2px;
 }
 
-.subsection-title {
-  font-weight: 300;
-}
-
 /* page header */
 #page-header {
   margin: 0;
@@ -8004,26 +7999,10 @@ blockquote footer, blockquote small, blockquote .small {
   background: #2A45DE;
 }
 
-.page-title, .page-subtitle {
+.page-title {
+  font-weight: 400;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-weight: 300;
   text-align: center;
-}
-
-.page-title .page-subtitle {
-  display: block;
-}
-
-small.page-subtitle {
-  color: #D8DEE9;
-}
-
-hr.header {
-  border: none;
-  background-color: white;
-  height: 1px;
-  margin: auto;
-  max-width: 1050px;
 }
 
 /* Styles for navbar */
@@ -8106,7 +8085,7 @@ hr.header {
 }
 
 .nav > li > a {
-  font-family: "Roboto Condensed", "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .affix {
@@ -8160,13 +8139,13 @@ div.navbar-container + div {
 }
 
 .job-title {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .job-dates, .job-location {
-  font-family: "Roboto Condensed", "Roboto", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
+  color: #D8DEE9;
 }
 
 .job-location:before {
@@ -8194,7 +8173,7 @@ div.navbar-container + div {
   width: 0;
   height: 0;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto 0;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -8211,9 +8190,6 @@ div.navbar-container + div {
   padding-bottom: 12px;
   margin-bottom: 22px;
   border-bottom: #E32465 solid 1px;
-}
-.project .project-title {
-  font-weight: 300;
 }
 .project .project-image img {
   width: 60%;

@@ -37,12 +37,13 @@
 // --------------------------------------------------
 
 .job-title {
-  font-weight: 400;
+  font-weight: 500;
 }
 .job-dates, .job-location {
-  font-family: $headings-font-family;
+  // font-family: $headings-font-family;
   font-size: $font-size-base;
-  font-weight: 300;
+  font-weight: 400;
+  color: $text-color;
 }
 .job-location {
   &:before {
@@ -82,7 +83,7 @@ $job-toggle-size: 7px !default;
     content: "";
     width: 0; height: 0;
     display: block;
-    margin: 0 auto;
+    margin: 10px auto 0;
     @include transition(all 0.3s ease);
     // Create upward arrow using borders
     @include job-toggle-chevron($job-toggle-size);
@@ -101,9 +102,6 @@ $job-toggle-size: 7px !default;
   padding-bottom: 12px;
   margin-bottom: $line-height-computed;
   border-bottom: $hr-border solid 1px;
-  .project-title {
-    font-weight: 300;
-  }
   .project-image {
     img {
       width: 60%;
