@@ -1,4 +1,14 @@
-import { Box, Container, createTheme, CssBaseline, Divider, ThemeProvider, Typography } from '@mui/material'
+import {
+  Box,
+  Container,
+  createTheme,
+  CssBaseline,
+  Divider,
+  Paper,
+  Stack,
+  ThemeProvider,
+  Typography
+} from '@mui/material'
 import { SocialLink } from './components/SocialLink.jsx'
 import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
 
@@ -12,12 +22,27 @@ function App() {
     palette: {
       mode: 'dark',
     },
-    // Components
+    // Components / Default Props
     components: {
+      // Typography
       MuiTypography: {
-        gutterBottom: true,
+        defaultProps: {
+          gutterBottom: true,
+        },
       },
-      // Baseline style overrides
+      // Paper
+      MuiPaper: {
+        defaultProps: {
+          variant: 'outlined',
+        },
+        styleOverrides: {
+          root: ({theme}) =>
+            theme.unstable_sx({
+              p: 2,
+            }),
+        },
+      },
+      // Baseline styles
       MuiCssBaseline: {
         styleOverrides: (themeParam) => `
         h2 {
@@ -97,11 +122,49 @@ function App() {
           </Divider>
         </Box>
 
-        {/*TODO: content*/}
         <Box>
           <Typography variant="h2">Resume</Typography>
-          <Typography variant="h3">Skills</Typography>
-          <Typography variant="h3">Experience</Typography>
+
+          <Box
+            sx={{
+              // TODO: turn this into a stack? that way we don't gotta explicitly define spacing between
+              mb: 4,
+            }}
+          >
+            <Typography variant="h3">Skills</Typography>
+            <Stack
+              direction={{xs: 'column', sm: 'row'}}
+              spacing={2}
+              // TODO: dividers? justifyContent? account for breakpoints
+            >
+              <Paper>
+                <Typography variant="h6">Programming</Typography>
+                <Typography variant="body1">
+                  Python, PHP, JavaScript (ES2015+), CSS, Sass, HTML, Java, Bash, Groovy
+                </Typography>
+              </Paper>
+              <Paper>
+                <Typography variant="h6">Libraries & Frameworks</Typography>
+                <Typography variant="body1">
+                  React, Material UI, P5.js, Processing, Django, Cypress, Selenium
+                </Typography>
+              </Paper>
+              <Paper>
+                <Typography variant="h6">Tools & Software</Typography>
+                <Typography variant="body1">
+                  Git, GitHub, MySQL, Docker, Jenkins, Node.js, JetBrains IDEs, vim
+                </Typography>
+              </Paper>
+            </Stack>
+          </Box>
+
+          <Box
+            sx={{
+              mb: 4,
+            }}
+          >
+            <Typography variant="h3">Experience</Typography>
+          </Box>
         </Box>
       </Container>
 
