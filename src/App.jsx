@@ -11,6 +11,7 @@ import {
 } from '@mui/material'
 import { SocialLink } from './components/SocialLink.jsx'
 import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
+import { ExperienceCard } from './components/ExperienceCard.jsx'
 
 function App() {
 
@@ -62,10 +63,11 @@ function App() {
 
       {/*TODO: app bar */}
 
-      <Container id="section-top" maxWidth="md">
+      <Container id="page-wrapper" maxWidth="md">
 
         { /* Hero Banner */}
         <Box
+          id="section-about"
           sx={{
             mt: 16,
             mb: 4,
@@ -88,7 +90,7 @@ function App() {
 
           <Divider sx={{my: 4}}/>
 
-          <Box id="section-about">
+          <Box>
             <Typography variant="h5" component="p">
               I'm a software engineer based in Chicago.
               TODO: put some cool stuff in here about how great I am at learning new things, writing elegant code,
@@ -127,7 +129,7 @@ function App() {
 
           <Box
             sx={{
-              // TODO: turn this into a stack? that way we don't gotta explicitly define spacing between
+              // TODO: wrap these boxes in a stack? that way we don't gotta explicitly define spacing between
               mb: 4,
             }}
           >
@@ -164,6 +166,32 @@ function App() {
             }}
           >
             <Typography variant="h3">Experience</Typography>
+            <Stack
+              spacing={2}
+            >
+              <ExperienceCard
+                jobTitle="Software Engineer"
+                company="Wellspring"
+                startDate="June 2020"
+                endDate="Present"
+                bullets={[
+                  'Developed client-focused software solutions in PHP, collaborating with project managers and the QA team to ensure quality and timely delivery.',
+                  'Streamlined development workflows by creating Jenkins jobs and command line tools with Python.',
+                  'Authored extensive documentation and engaged in peer programming to enhance team collaboration and knowledge sharing.',
+                ]}
+              />
+              <ExperienceCard
+                jobTitle="Full-Stack Developer"
+                company="Schafer Condon Carter"
+                startDate="January 2018"
+                endDate="November 2019"
+                bullets={[
+                  'Created a framework and CMS system for building websites using Sass, JavaScript, and Python.',
+                  'Developed a cross-browser automated testing system to streamline QA using Python and Selenium.',
+                  'Built and managed client websites using Django, Wagtail, and Adobe Experience Manager.',
+                ]}
+              />
+            </Stack>
           </Box>
         </Box>
       </Container>
