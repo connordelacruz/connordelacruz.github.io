@@ -12,8 +12,20 @@ function App() {
     palette: {
       mode: 'dark',
     },
-    // Component Props
-    components: {},
+    // Components
+    components: {
+      MuiTypography: {
+        gutterBottom: true,
+      },
+      // Baseline style overrides
+      MuiCssBaseline: {
+        styleOverrides: (themeParam) => `
+        h2 {
+          color: ${themeParam.palette.primary.main};
+        }
+      `,
+      },
+    },
   })
 
   // ================================================================================
@@ -36,12 +48,11 @@ function App() {
         >
           <Typography
             variant="h3"
-            sx={{
-              fontWeight: 300,
-            }}
+            sx={{fontWeight: 300}}
           >
             Hi, my name is
           </Typography>
+          {/*TODO: make sure name scales nicely, breaks well on narrow views (damn this 3 word last name)*/}
           <Typography
             variant="h1"
             color="primary"
@@ -49,19 +60,12 @@ function App() {
           >
             Connor de la Cruz.
           </Typography>
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: 300,
-            }}
-          >
-            I'm a software engineer.
-          </Typography>
 
           <Divider sx={{my: 4}}/>
 
           <Box id="section-about">
-            <Typography variant="h5" component="p" mb={2}>
+            <Typography variant="h5" component="p">
+              I'm a software engineer based in Chicago.
               TODO: put some cool stuff in here about how great I am at learning new things, writing elegant code,
               collaborating, and mooore
             </Typography>
@@ -73,30 +77,32 @@ function App() {
           </Box>
 
           <Divider sx={{mt: 2}}>
+            {/*TODO: urls*/}
             <SocialLink
               label="Email"
               iconComponent={<Email/>}
-              color="error"
             />
             <SocialLink
               label="GitHub"
               iconComponent={<GitHub/>}
-              color="success"
             />
             <SocialLink
               label="LinkedIn"
               iconComponent={<LinkedIn/>}
-              color="info"
             />
             <SocialLink
               label="Instagram"
               iconComponent={<Instagram/>}
-              color="warning"
             />
           </Divider>
         </Box>
 
         {/*TODO: content*/}
+        <Box>
+          <Typography variant="h2">Resume</Typography>
+          <Typography variant="h3">Skills</Typography>
+          <Typography variant="h3">Experience</Typography>
+        </Box>
       </Container>
 
     </ThemeProvider>

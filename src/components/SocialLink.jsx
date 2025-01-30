@@ -4,6 +4,7 @@ export const SocialLink = ({
                              url,
                              label,
                              iconComponent,
+                             color = 'primary',
                              ...props
                            }) => {
   return (
@@ -14,6 +15,7 @@ export const SocialLink = ({
       sx={{
         mx: 3,
       }}
+      color={color}
       {...props}
     >
       {iconComponent}
