@@ -10,6 +10,9 @@ export const ExperienceCard = ({
   const listElements = bullets.map((text, i) =>
     <li key={i}>{text}</li>
   )
+
+  // TODO: chips for languages/frameworks to display at the bottom, see https://brittanychiang.com/#experience
+
   return (
     <Card>
       <CardContent>

@@ -13,6 +13,7 @@ import {
 import { SocialLink } from './components/SocialLink.jsx'
 import { Description, Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
 import { ExperienceCard } from './components/ExperienceCard.jsx'
+import { ProjectCard } from './components/ProjectCard.jsx'
 
 function App() {
 
@@ -43,6 +44,20 @@ function App() {
               p: 2,
             }),
         },
+      },
+      // Slightly Less Based Button Component
+      MuiButton: {
+        defaultProps: {
+          // Disable elevation everywhere
+          disableElevation: true,
+        }
+      },
+      // Button Groups
+      MuiButtonGroup: {
+        defaultProps: {
+          // Disable elevation everywhere
+          disableElevation: true,
+        }
       },
       // Baseline styles
       MuiCssBaseline: {
@@ -273,7 +288,19 @@ function App() {
         <Box id="section-projects">
           <Typography variant="h2">Projects</Typography>
 
-          {/*TODO: ProjectCard component*/}
+          <Stack
+            spacing={2}
+          >
+            <ProjectCard
+              title="Channel ⇄ Shift"
+              imgSrc="images/projects/channel-shift.png"
+              bigButtonContent={{text: 'Visit Channel Shift Site', link: 'https://cheezwhiz.biz'}}
+            >
+              A web app for creating "glitch art" by shifting and swapping an image's RGB color channels, developed as a
+              web app with an intuitive UI to make it easily accessible for anyone to use. Built with React and P5.js.
+              Click the button below to try it out!
+            </ProjectCard>
+          </Stack>
         </Box>
       </Container>
 
