@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   createTheme,
   CssBaseline,
@@ -10,7 +11,7 @@ import {
   Typography
 } from '@mui/material'
 import { SocialLink } from './components/SocialLink.jsx'
-import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
+import { Description, Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
 import { ExperienceCard } from './components/ExperienceCard.jsx'
 
 function App() {
@@ -200,7 +201,13 @@ function App() {
           </Divider>
         </Box>
 
-        <Box>
+        <Box
+          id="section-resume"
+          sx={{
+            // TODO: make section margins consistent
+            mb: 4,
+          }}
+        >
           <Typography variant="h2">Resume</Typography>
 
           <Box
@@ -248,6 +255,25 @@ function App() {
               {experienceCards}
             </Stack>
           </Box>
+
+          {/*TODO: link to resume pdf*/}
+          <Box>
+            <Button
+              variant="contained"
+              color="primary"
+              startIcon={<Description/>}
+              size="large"
+              fullWidth
+            >
+              View Full Resume
+            </Button>
+          </Box>
+        </Box>
+
+        <Box id="section-projects">
+          <Typography variant="h2">Projects</Typography>
+
+          {/*TODO: ProjectCard component*/}
         </Box>
       </Container>
 
