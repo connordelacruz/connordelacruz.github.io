@@ -55,6 +55,82 @@ function App() {
   })
 
   // ================================================================================
+  // Content
+  // ================================================================================
+
+  // Experience section content.
+  const experienceContent = [
+    {
+      jobTitle: 'Software Engineer',
+      company: 'Wellspring',
+      startDate: 'June 2020',
+      endDate: 'Present',
+      bullets: [
+        'Developed client-focused software solutions in PHP, collaborating with project managers and the QA team to ensure quality and timely delivery.',
+        'Streamlined development workflows by creating Jenkins jobs and command line tools with Python.',
+        'Authored extensive documentation and engaged in peer programming to enhance team collaboration and knowledge sharing.',
+      ],
+    },
+    {
+      jobTitle: 'Full-Stack Developer',
+      company: 'Schafer Condon Carter',
+      startDate: 'January 2018',
+      endDate: 'November 2019',
+      bullets: [
+        'Created a framework and CMS system for building websites using Sass, JavaScript, and Python.',
+        'Developed a cross-browser automated testing system to streamline QA using Python and Selenium.',
+        'Built and managed client websites using Django, Wagtail, and Adobe Experience Manager.',
+      ],
+    },
+    {
+      jobTitle: 'CS Lab Configuration Management Intern',
+      company: 'Wheaton College Computer Science',
+      startDate: 'May 2017',
+      endDate: 'November 2017',
+      bullets: [
+        'Collaborated with the CS lab system admin to implement the Salt configuration management system.',
+        'Contributed to the Salt open source project with bug fixes and feature implementations.',
+      ],
+    },
+    {
+      jobTitle: 'Web Application Developer',
+      company: 'Buswell Memorial Library',
+      startDate: 'August 2016',
+      endDate: 'January 2018',
+      bullets: [
+        'Built bespoke, responsive web apps to streamline workflows for various departments.',
+        'Developed features, fixed bugs, and created unit tests for the Coral open source project.',
+      ],
+    },
+    {
+      jobTitle: 'IT Developer & Software Deployment Engineer',
+      company: 'Wheaton College Academic & Institutional Technology',
+      startDate: 'May 2015',
+      endDate: 'August 2017',
+      bullets: [
+        'Built a dashboard web app for the service desk to display important information for technicians.',
+        'Developed scripts to automate support procedures and streamline service desk workflows.',
+        'Packaged and deployed software for automated installation on campus computers.',
+      ],
+    },
+    {
+      jobTitle: 'Service Desk Supervisor',
+      company: 'Wheaton College Academic & Institutional Technology',
+      startDate: 'October 2014',
+      endDate: 'August 2017',
+      bullets: [
+        'Provided tech support to students and staff for hardware, software, and network issues.',
+        'Trained, supervised, and assisted service desk technicians.',
+      ],
+    },
+  ]
+
+  // Experience section components.
+  const experienceCards = experienceContent.map((props, i) =>
+    <ExperienceCard key={i} {...props}/>
+  )
+
+  // ================================================================================
   // Render
   // ================================================================================
   return (
@@ -169,28 +245,7 @@ function App() {
             <Stack
               spacing={2}
             >
-              <ExperienceCard
-                jobTitle="Software Engineer"
-                company="Wellspring"
-                startDate="June 2020"
-                endDate="Present"
-                bullets={[
-                  'Developed client-focused software solutions in PHP, collaborating with project managers and the QA team to ensure quality and timely delivery.',
-                  'Streamlined development workflows by creating Jenkins jobs and command line tools with Python.',
-                  'Authored extensive documentation and engaged in peer programming to enhance team collaboration and knowledge sharing.',
-                ]}
-              />
-              <ExperienceCard
-                jobTitle="Full-Stack Developer"
-                company="Schafer Condon Carter"
-                startDate="January 2018"
-                endDate="November 2019"
-                bullets={[
-                  'Created a framework and CMS system for building websites using Sass, JavaScript, and Python.',
-                  'Developed a cross-browser automated testing system to streamline QA using Python and Selenium.',
-                  'Built and managed client websites using Django, Wagtail, and Adobe Experience Manager.',
-                ]}
-              />
+              {experienceCards}
             </Stack>
           </Box>
         </Box>
