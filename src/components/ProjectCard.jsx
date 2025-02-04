@@ -4,7 +4,7 @@ const ProjectImage = ({src, alt}) => {
   return (
     <Box
       sx={{
-        mb: 2,
+        mb: 4,
       }}
     >
       <img
@@ -23,8 +23,32 @@ export const ProjectCard = ({
                               smallButtonsContent = [],
                               children,
                             }) => {
-  // TODO: smaller button list?
-  // TODO: figure out image styling...
+  // Big button component (if applicable)
+  const bigButton = bigButtonContent.text ?
+    <Button
+      variant="contained"
+      color="primary"
+      size="large"
+      fullWidth
+      href={bigButtonContent.link}
+      target="_blank"
+    >
+      {bigButtonContent.text}
+    </Button>
+    : null
+  // Small buttons (if applicable)
+  const smallButtons = smallButtonsContent.map((smallButtonContent, i) =>
+    <Button
+      key={i}
+      variant="contained"
+      color="primary"
+      href={smallButtonContent.link}
+      target="_blank"
+    >
+      {smallButtonContent.text}
+    </Button>
+  )
+
   return (
     <Card>
       <CardHeader
@@ -42,20 +66,10 @@ export const ProjectCard = ({
           {children}
         </Typography>
       </CardContent>
-      {bigButtonContent.text &&
-        <CardActions>
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            fullWidth
-            href={bigButtonContent.link}
-            target="_blank"
-          >
-            {bigButtonContent.text}
-          </Button>
-        </CardActions>
-      }
+      <CardActions>
+        {smallButtons}
+        {bigButton}
+      </CardActions>
     </Card>
   )
 }

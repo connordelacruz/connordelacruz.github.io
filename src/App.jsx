@@ -302,10 +302,40 @@ function App() {
                 web app with an intuitive UI to make it easily accessible for anyone to use. Built with React and P5.js.
                 Click the button below to try it out!
               </ProjectCard>
+              <ProjectCard
+                title="React Counter App"
+                imgSrc="images/projects/react-counter.png"
+                bigButtonContent={{
+                  text: 'Visit React Counter Site',
+                  link: 'https://connordelacruz.com/react-counter/'
+                }}
+              >
+                A simple web app for creating customizable counters. Each counter can have a custom name, color,
+                increment/decrement value, and reset value. Counters can easily be reordered by clicking and dragging
+                them into place. Data is saved locally, so your counters will persist any time you come back to the
+                page. Created using React and MUI’s Material UI library.
+              </ProjectCard>
+              <ProjectCard
+                title="Channel ⇄ Shift Classic"
+                imgSrc="images/projects/channel-shift-classic.png"
+                smallButtonsContent={[
+                  {
+                    text: 'GitHub',
+                    link: 'https://github.com/connordelacruz/ChannelShiftGUI'
+                  }
+                ]}
+              >
+                An older version of the Channel Shift tool created with Processing. Includes some experimental features
+                that haven't been ported to the web app yet.
+              </ProjectCard>
             </Stack>
           </Box>
 
-          {/*TODO contact section*/}
+          {/*Contact*/}
+          <Box id="section-contact">
+            <Typography variant="h2">Contact</Typography>
+            {/*TODO contact copy, big email button, social links*/}
+          </Box>
 
         </Stack>
       </Container>
