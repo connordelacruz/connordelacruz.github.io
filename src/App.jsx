@@ -216,92 +216,98 @@ function App() {
           </Divider>
         </Box>
 
-        <Box
-          id="section-resume"
-          sx={{
-            // TODO: make section margins consistent
-            mb: 4,
-          }}
+        {/* Content */}
+        <Stack
+          id="sections-stack"
+          spacing={4}
+          divider={<Divider/>}
         >
-          <Typography variant="h2">Resume</Typography>
+          {/* Resume */}
+          <Box id="section-resume">
+            <Typography variant="h2">Resume</Typography>
 
-          <Box
-            sx={{
-              // TODO: wrap these boxes in a stack? that way we don't gotta explicitly define spacing between
-              mb: 4,
-            }}
-          >
-            <Typography variant="h3">Skills</Typography>
             <Stack
-              direction={{xs: 'column', sm: 'row'}}
+              id="resume-stack"
               spacing={2}
-              // TODO: dividers? justifyContent? account for breakpoints
             >
-              <Paper>
-                <Typography variant="h6">Programming</Typography>
-                <Typography variant="body1">
-                  Python, PHP, JavaScript (ES2015+), CSS, Sass, HTML, Java, Bash, Groovy
-                </Typography>
-              </Paper>
-              <Paper>
-                <Typography variant="h6">Libraries & Frameworks</Typography>
-                <Typography variant="body1">
-                  React, Material UI, P5.js, Processing, Django, Cypress, Selenium
-                </Typography>
-              </Paper>
-              <Paper>
-                <Typography variant="h6">Tools & Software</Typography>
-                <Typography variant="body1">
-                  Git, GitHub, MySQL, Docker, Jenkins, Node.js, JetBrains IDEs, vim
-                </Typography>
-              </Paper>
+              <Box id="resume-skills">
+                <Typography variant="h3">Skills</Typography>
+                <Stack
+                  direction={{xs: 'column', sm: 'row'}}
+                  spacing={2}
+                  // TODO: dividers? justifyContent? account for breakpoints
+                >
+                  <Paper>
+                    <Typography variant="h6">Programming</Typography>
+                    <Typography variant="body1">
+                      Python, PHP, JavaScript (ES2015+), CSS, Sass, HTML, Java, Bash, Groovy
+                    </Typography>
+                  </Paper>
+                  <Paper>
+                    <Typography variant="h6">Libraries & Frameworks</Typography>
+                    <Typography variant="body1">
+                      React, Material UI, P5.js, Processing, Django, Cypress, Selenium
+                    </Typography>
+                  </Paper>
+                  <Paper>
+                    <Typography variant="h6">Tools & Software</Typography>
+                    <Typography variant="body1">
+                      Git, GitHub, MySQL, Docker, Jenkins, Node.js, JetBrains IDEs, vim
+                    </Typography>
+                  </Paper>
+                </Stack>
+              </Box>
+
+              <Box id="resume-experience">
+                <Typography variant="h3">Experience</Typography>
+                <Stack spacing={2}>
+                  {experienceCards}
+                </Stack>
+              </Box>
+
+              {/*TODO: link to resume pdf*/}
+              <Box id="resume-pdf">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  startIcon={<Description/>}
+                  size="large"
+                  fullWidth
+                >
+                  View Full Resume
+                </Button>
+              </Box>
+
             </Stack>
           </Box>
 
-          <Box
-            sx={{
-              mb: 4,
-            }}
-          >
-            <Typography variant="h3">Experience</Typography>
+          {/* Projects */}
+          <Box id="section-projects">
+            <Typography variant="h2">Projects</Typography>
+
             <Stack
+              id="projects-stack"
               spacing={2}
             >
-              {experienceCards}
+              <ProjectCard
+                title="Channel ⇄ Shift"
+                imgSrc="images/projects/channel-shift.png"
+                bigButtonContent={{
+                  text: 'Visit Channel Shift Site',
+                  link: 'https://cheezwhiz.biz'
+                }}
+              >
+                A web app for creating "glitch art" by shifting and swapping an image's RGB color channels, developed as
+                a
+                web app with an intuitive UI to make it easily accessible for anyone to use. Built with React and P5.js.
+                Click the button below to try it out!
+              </ProjectCard>
             </Stack>
           </Box>
 
-          {/*TODO: link to resume pdf*/}
-          <Box>
-            <Button
-              variant="contained"
-              color="primary"
-              startIcon={<Description/>}
-              size="large"
-              fullWidth
-            >
-              View Full Resume
-            </Button>
-          </Box>
-        </Box>
+          {/*TODO contact section*/}
 
-        <Box id="section-projects">
-          <Typography variant="h2">Projects</Typography>
-
-          <Stack
-            spacing={2}
-          >
-            <ProjectCard
-              title="Channel ⇄ Shift"
-              imgSrc="images/projects/channel-shift.png"
-              bigButtonContent={{text: 'Visit Channel Shift Site', link: 'https://cheezwhiz.biz'}}
-            >
-              A web app for creating "glitch art" by shifting and swapping an image's RGB color channels, developed as a
-              web app with an intuitive UI to make it easily accessible for anyone to use. Built with React and P5.js.
-              Click the button below to try it out!
-            </ProjectCard>
-          </Stack>
-        </Box>
+        </Stack>
       </Container>
 
     </ThemeProvider>

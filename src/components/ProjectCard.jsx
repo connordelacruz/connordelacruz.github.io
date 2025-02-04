@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material'
+import { Box, Button, Card, CardActions, CardContent, CardHeader, Typography } from '@mui/material'
 
 const ProjectImage = ({src, alt}) => {
   return (
@@ -27,27 +27,35 @@ export const ProjectCard = ({
   // TODO: figure out image styling...
   return (
     <Card>
+      <CardHeader
+        title={title}
+        slotProps={{
+          title: {
+            variant: 'h4',
+            color: 'primary',
+          }
+        }}
+      />
       <CardContent>
-        <Typography variant="h4" color="primary">{title}</Typography>
         {imgSrc && <ProjectImage src={imgSrc}/>}
         <Typography variant="body1">
           {children}
         </Typography>
-        {bigButtonContent.text &&
-          <CardActions>
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              fullWidth
-              href={bigButtonContent.link}
-              target="_blank"
-            >
-              {bigButtonContent.text}
-            </Button>
-          </CardActions>
-        }
       </CardContent>
+      {bigButtonContent.text &&
+        <CardActions>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            fullWidth
+            href={bigButtonContent.link}
+            target="_blank"
+          >
+            {bigButtonContent.text}
+          </Button>
+        </CardActions>
+      }
     </Card>
   )
 }
