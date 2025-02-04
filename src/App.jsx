@@ -325,9 +325,125 @@ function App() {
                   }
                 ]}
               >
+                {/*TODO: explain project being no longer maintained but also why it's worth using still?*/}
                 An older version of the Channel Shift tool created with Processing. Includes some experimental features
                 that haven't been ported to the web app yet.
               </ProjectCard>
+              <ProjectCard
+                title="Chicago ASCII Art"
+                imgSrc="images/projects/chicago-ascii-art.png"
+                smallButtonsContent={[
+                  {
+                    text: 'GitHub',
+                    link: 'https://github.com/connordelacruz/chicago-ascii.sh'
+                  }
+                ]}
+              >
+                Bash scripts for displaying color ASCII art of Chicago flag/skyline in the terminal.
+              </ProjectCard>
+              <ProjectCard
+                title="iTerm2 Tab Color Commands"
+                imgSrc="images/projects/iterm2-tab-color.png"
+                smallButtonsContent={[
+                  {
+                    text: 'GitHub',
+                    link: 'https://github.com/connordelacruz/iterm2-tab-color'
+                  }
+                ]}
+              >
+                Bash commands for setting the iTerm2 tab/title bar colors. Pairs well with base16 shell themes.
+              </ProjectCard>
+              <ProjectCard
+                title="Git Workflow Tools"
+                smallButtonsContent={[
+                  {
+                    text: 'GitHub',
+                    link: 'https://github.com/connordelacruz/git-workflow'
+                  },
+                  {
+                    text: 'PyPI',
+                    link: 'https://pypi.org/project/git-workflow/'
+                  }
+                ]}
+              >
+                Command line tools to streamline our team's Git workflow. Written in Python.
+              </ProjectCard>
+              <ProjectCard
+                title="Python Random User Generator"
+                smallButtonsContent={[
+                  {
+                    text: 'GitHub',
+                    link: 'https://github.com/connordelacruz/python-randomuser'
+                  },
+                  {
+                    text: 'PyPI',
+                    link: 'https://pypi.org/pypi/randomuser'
+                  },
+                  {
+                    text: 'Docs',
+                    link: 'http://connordelacruz.com/python-randomuser/'
+                  }
+                ]}
+              >
+                A Python class for generating random user information using the randomuser.me API.
+              </ProjectCard>
+              <ProjectCard
+                title="Python Lorem Ipsum Generator"
+                smallButtonsContent={[
+                  {
+                    text: 'GitHub',
+                    link: 'https://github.com/connordelacruz/py-loremipsum'
+                  },
+                  {
+                    text: 'PyPI',
+                    link: 'https://pypi.org/pypi/py-loremipsum'
+                  },
+                  {
+                    text: 'Docs',
+                    link: 'http://connordelacruz.com/py-loremipsum/'
+                  }
+                ]}
+              >
+                A Python module for generating placeholder text using the loripsum.net API. Includes a command line tool
+                to generate text from the terminal and copy it to the clipboard.
+              </ProjectCard>
+              <ProjectCard
+                title="Vim Runtime"
+                smallButtonsContent={[
+                  {
+                    text: 'GitHub',
+                    link: 'https://github.com/connordelacruz/vim_runtime'
+                  }
+                ]}
+              >
+                Dot files for my vim/neovim setup.
+              </ProjectCard>
+              <ProjectCard
+                title="Bash Runtime"
+                smallButtonsContent={[
+                  {
+                    text: 'GitHub',
+                    link: 'https://github.com/connordelacruz/bash_config'
+                  }
+                ]}
+              >
+                Dot files for my bash setup, designed to keep runtime configurations consistent across different bash
+                versions, terminal emulators, and operating systems.
+              </ProjectCard>
+
+              <Box id="github-link">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  startIcon={<GitHub/>}
+                  size="large"
+                  fullWidth
+                  href="https://github.com/connordelacruz"
+                  target="_blank"
+                >
+                  View More on GitHub
+                </Button>
+              </Box>
             </Stack>
           </Box>
 

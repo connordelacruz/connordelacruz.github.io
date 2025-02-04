@@ -55,7 +55,7 @@ export const ProjectCard = ({
         title={title}
         slotProps={{
           title: {
-            variant: 'h4',
+            variant: 'h5',
             color: 'primary',
           }
         }}
