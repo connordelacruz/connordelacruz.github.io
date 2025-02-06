@@ -1,4 +1,39 @@
-import { Card, CardContent, Typography } from '@mui/material'
+import { Card, CardContent, CardHeader, Typography } from '@mui/material'
+
+
+export const SkillCard = ({
+                            title,
+                            children
+                          }) => {
+  return (
+    <Card
+      sx={{
+        p: 0,
+        height: '100%',
+      }}
+    >
+      <CardHeader
+        title={title}
+        slotProps={{
+          title: {
+            variant: 'h6',
+            color: 'primary',
+            mb: 0,
+          }
+        }}
+        sx={{
+          pb: 0,
+        }}
+      />
+      <CardContent>
+        <Typography variant="body1">
+          {children}
+        </Typography>
+      </CardContent>
+    </Card>
+  )
+}
+
 
 export const ExperienceCard = ({
                                  jobTitle,

@@ -7,15 +7,16 @@ import {
   createTheme,
   CssBaseline,
   Divider,
-  Paper,
   Stack,
   ThemeProvider,
   Typography
 } from '@mui/material'
+import Grid from '@mui/material/Grid2'
 import { SocialLink } from './components/SocialLink.jsx'
 import { Description, Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
-import { ExperienceCard } from './components/ExperienceCard.jsx'
+import { ExperienceCard, SkillCard } from './components/ResumeSection.jsx'
 import { ProjectCard } from './components/ProjectCard.jsx'
+import { SectionHeader } from './components/SectionHeader.jsx'
 
 function App() {
 
@@ -171,7 +172,10 @@ function App() {
         >
           <Typography
             variant="h3"
-            sx={{fontWeight: 300}}
+            sx={{
+              fontWeight: 300,
+              textAlign: 'center',
+            }}
           >
             Hi, my name is
           </Typography>
@@ -179,27 +183,15 @@ function App() {
           <Typography
             variant="h1"
             color="primary"
-            sx={{fontWeight: 400}}
+            sx={{
+              fontWeight: 400,
+              textAlign: 'center',
+            }}
           >
             Connor de la Cruz.
           </Typography>
 
-          <Divider sx={{my: 4}}/>
-
-          <Box>
-            <Typography variant="h5" component="p">
-              I'm a software engineer based in Chicago.
-              TODO: put some cool stuff in here about how great I am at learning new things, writing elegant code,
-              collaborating, and mooore
-            </Typography>
-            <Typography variant="h5" component="p">
-              When I'm not crankin' out dope ass code, I enjoy exploring creative outlets, tinkering with old tech
-              (iPods,
-              Gameboys, VHS tapes, and moooore), and chillin' tf out with my badass dog Kiwi.
-            </Typography>
-          </Box>
-
-          <Divider sx={{mt: 2}}>
+          <Divider sx={{my: 4}}>
             <SocialLink
               label="Email"
               iconComponent={<Email/>}
@@ -221,17 +213,29 @@ function App() {
               url="https://www.instagram.com/delachrome"
             />
           </Divider>
+
+          <Box>
+            <Typography variant="h5" component="p">
+              I'm a software engineer based in Chicago.
+              TODO: put some cool stuff in here about how great I am at learning new things, writing elegant code,
+              collaborating, and mooore
+            </Typography>
+            <Typography variant="h5" component="p">
+              When I'm not crankin' out dope ass code, I enjoy exploring creative outlets, tinkering with old tech
+              (iPods,
+              Gameboys, VHS tapes, and moooore), and chillin' tf out with my badass dog Kiwi.
+            </Typography>
+          </Box>
         </Box>
 
         {/* Content */}
         <Stack
           id="sections-stack"
           spacing={4}
-          divider={<Divider/>}
         >
           {/* Resume */}
           <Box id="section-resume">
-            <Typography variant="h2">Resume</Typography>
+            <SectionHeader>Resume</SectionHeader>
 
             <Stack
               id="resume-stack"
@@ -239,30 +243,31 @@ function App() {
             >
               <Box id="resume-skills">
                 <Typography variant="h3">Skills</Typography>
-                <Stack
-                  direction={{xs: 'column', sm: 'row'}}
+                <Grid
+                  container
                   spacing={2}
-                  // TODO: dividers? justifyContent? account for breakpoints
+                  direction={{xs: 'column', sm: 'row'}}
+                  sx={{
+                    justifyContent: "space-evenly",
+                    alignItems: "stretch",
+                  }}
                 >
-                  <Paper>
-                    <Typography variant="h6">Programming</Typography>
-                    <Typography variant="body1">
+                  <Grid size={{xs: 12, sm: 4}}>
+                    <SkillCard title="Programming">
                       Python, PHP, JavaScript (ES2015+), CSS, Sass, HTML, Java, Bash, Groovy
-                    </Typography>
-                  </Paper>
-                  <Paper>
-                    <Typography variant="h6">Libraries & Frameworks</Typography>
-                    <Typography variant="body1">
+                    </SkillCard>
+                  </Grid>
+                  <Grid size={{xs: 12, sm: 4}}>
+                    <SkillCard title="Libraries & Frameworks">
                       React, Material UI, P5.js, Processing, Django, Cypress, Selenium
-                    </Typography>
-                  </Paper>
-                  <Paper>
-                    <Typography variant="h6">Tools & Software</Typography>
-                    <Typography variant="body1">
+                    </SkillCard>
+                  </Grid>
+                  <Grid size={{xs: 12, sm: 4}}>
+                    <SkillCard title="Tools & Software">
                       Git, GitHub, MySQL, Docker, Jenkins, Node.js, JetBrains IDEs, vim
-                    </Typography>
-                  </Paper>
-                </Stack>
+                    </SkillCard>
+                  </Grid>
+                </Grid>
               </Box>
 
               <Box id="resume-experience">
@@ -290,7 +295,7 @@ function App() {
 
           {/* Projects */}
           <Box id="section-projects">
-            <Typography variant="h2">Projects</Typography>
+            <SectionHeader>Projects</SectionHeader>
 
             <Stack
               id="projects-stack"
@@ -434,7 +439,7 @@ function App() {
 
           {/*Contact*/}
           <Box id="section-contact">
-            <Typography variant="h2">Contact</Typography>
+            <SectionHeader>Contact</SectionHeader>
             <Card>
               <CardContent>
                 <Typography variant="h5" component="p">
@@ -467,7 +472,8 @@ function App() {
           color="textSecondary"
           sx={{
             textAlign: 'center',
-            py: 2
+            py: 2,
+            mt: 2,
           }}
         >
           © {new Date().getFullYear()} Connor de la Cruz
