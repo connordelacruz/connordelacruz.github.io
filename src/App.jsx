@@ -1,6 +1,8 @@
 import {
   Box,
   Button,
+  Card,
+  CardContent,
   Container,
   createTheme,
   CssBaseline,
@@ -74,7 +76,9 @@ function App() {
   // Content
   // ================================================================================
 
-  // Experience section content.
+  // --------------------------------------------------------------------------------
+  // Experience section
+  // --------------------------------------------------------------------------------
   const experienceContent = [
     {
       jobTitle: 'Software Engineer',
@@ -196,22 +200,25 @@ function App() {
           </Box>
 
           <Divider sx={{mt: 2}}>
-            {/*TODO: urls*/}
             <SocialLink
               label="Email"
               iconComponent={<Email/>}
+              url="mailto:connor.c.delacruz@gmail.com"
             />
             <SocialLink
               label="GitHub"
               iconComponent={<GitHub/>}
+              url="https://github.com/connordelacruz"
             />
             <SocialLink
               label="LinkedIn"
               iconComponent={<LinkedIn/>}
+              url="http://www.linkedin.com/in/connordelacruz"
             />
             <SocialLink
               label="Instagram"
               iconComponent={<Instagram/>}
+              url="https://www.instagram.com/delachrome"
             />
           </Divider>
         </Box>
@@ -407,30 +414,8 @@ function App() {
                 A Python module for generating placeholder text using the loripsum.net API. Includes a command line tool
                 to generate text from the terminal and copy it to the clipboard.
               </ProjectCard>
-              <ProjectCard
-                title="Vim Runtime"
-                smallButtonsContent={[
-                  {
-                    text: 'GitHub',
-                    link: 'https://github.com/connordelacruz/vim_runtime'
-                  }
-                ]}
-              >
-                Dot files for my vim/neovim setup.
-              </ProjectCard>
-              <ProjectCard
-                title="Bash Runtime"
-                smallButtonsContent={[
-                  {
-                    text: 'GitHub',
-                    link: 'https://github.com/connordelacruz/bash_config'
-                  }
-                ]}
-              >
-                Dot files for my bash setup, designed to keep runtime configurations consistent across different bash
-                versions, terminal emulators, and operating systems.
-              </ProjectCard>
 
+              {/*View more button*/}
               <Box id="github-link">
                 <Button
                   variant="contained"
@@ -450,12 +435,44 @@ function App() {
           {/*Contact*/}
           <Box id="section-contact">
             <Typography variant="h2">Contact</Typography>
-            {/*TODO contact copy, big email button, social links*/}
+            <Card>
+              <CardContent>
+                <Typography variant="h5" component="p">
+                  {/*TODO contact copy*/}
+                  Hit me up if u tryna do dope shit :)
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  startIcon={<Email/>}
+                  size="large"
+                  fullWidth
+                  href="mailto:connor.c.delacruz@gmail.com"
+                  target="_blank"
+                >
+                  connor.c.delacruz@gmail.com
+                </Button>
+              </CardContent>
+            </Card>
           </Box>
 
         </Stack>
+
       </Container>
 
+      <Box>
+        <Typography
+          variant="overline"
+          component="p"
+          color="textSecondary"
+          sx={{
+            textAlign: 'center',
+            py: 2
+          }}
+        >
+          © {new Date().getFullYear()} Connor de la Cruz
+        </Typography>
+      </Box>
     </ThemeProvider>
   )
 }
