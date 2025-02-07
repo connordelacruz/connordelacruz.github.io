@@ -1,0 +1,14 @@
+// ================================================================================
+// Breakpoints
+// ================================================================================
+@use 'sass:map';
+
+// Making this consistent with Material UI:
+// https://mui.com/material-ui/customization/breakpoints/#default-breakpoints
+$breakpoints: (
+        'xs': '0px',
+        'sm': '600px',
+        'md': '900px',
+        'lg': '1200px',
+        'xl': '1536px'
+);

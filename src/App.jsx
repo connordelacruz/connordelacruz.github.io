@@ -6,7 +6,6 @@ import {
   Container,
   createTheme,
   CssBaseline,
-  Divider,
   Stack,
   ThemeProvider,
   Typography
@@ -163,17 +162,17 @@ function App() {
       <Container id="page-wrapper" maxWidth="md">
 
         { /* Hero Banner */}
-        <Box
-          id="section-top"
-          sx={{
-            mt: 16,
-            mb: 8,
-          }}
+        <Box id="section-top"
+             sx={{
+               mt: 24,
+             }}
         >
+
+          {/*Content*/}
+
           {/*Header Text*/}
           <Box
             sx={{
-              mt: 16,
               mb: 8,
             }}
           >
@@ -194,33 +193,37 @@ function App() {
               sx={{
                 fontWeight: 400,
               }}
+              gutterBottom={false}
             >
               Connor de la Cruz.
             </Typography>
           </Box>
 
-          <Divider sx={{mb: 4}}>
-            {/* Profile */}
-            <Box
-              sx={{
-                mb: 4,
-              }}
-            >
-              <img
-                src="images/about/profile.jpg"
-                className="project-image"
-              />
-            </Box>
-          </Divider>
+          {/* Profile */}
+          {/*<Box*/}
+          {/*  sx={{*/}
+          {/*    my: 8,*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  <img*/}
+          {/*    src="images/about/profile.jpg"*/}
+          {/*    className="profile-image"*/}
+          {/*  />*/}
+          {/*</Box>*/}
 
           {/*Subheader Text*/}
           <Box>
             <Typography variant="h4" component="p">
-              <i>I'm a software engineer with a passion for creative problem solving and learning new things.</i>
+              I'm a software engineer with a passion for creative problem solving and learning new things.
             </Typography>
 
             {/*Socials*/}
-            <Divider sx={{mt: 4}}>
+            <Box
+              sx={{
+                my: 8,
+                textAlign: 'center',
+              }}
+            >
               <SocialLink
                 label="Email"
                 iconComponent={<Email/>}
@@ -241,34 +244,33 @@ function App() {
                 iconComponent={<Instagram/>}
                 url="https://www.instagram.com/delachrome"
               />
-            </Divider>
+            </Box>
 
           </Box>
-        </Box>
 
-        {/*TODO: remove?*/}
-        {/*/!* Profile *!/*/}
-        {/*<Box*/}
-        {/*  sx={{*/}
-        {/*    mb: 4,*/}
-        {/*  }}*/}
-        {/*>*/}
-        {/*  <img*/}
-        {/*    src="images/about/profile.jpg"*/}
-        {/*    className="project-image"*/}
-        {/*  />*/}
-        {/*</Box>*/}
+        </Box>
 
         {/* Content */}
         <Stack
           id="sections-stack"
-          spacing={4}
+          spacing={8}
         >
 
-          {/*TODO: profile photo (somewhere, idk if in the hero or here)*/}
+
           {/* About */}
           <Box id="section-about">
             <SectionHeader>About Me</SectionHeader>
+
+            <Box
+              sx={{
+                my: 8,
+              }}
+            >
+              <img
+                src="images/about/profile.jpg"
+                className="profile-image"
+              />
+            </Box>
 
             <Stack
               id="about-content"

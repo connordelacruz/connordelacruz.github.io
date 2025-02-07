@@ -1,0 +1,24 @@
+// ================================================================================
+// Images
+// ================================================================================
+@use 'breakpoints' as *;
+
+// Common (centered/block display)
+@mixin img-common {
+  display: block;
+  margin: 0 auto;
+}
+
+// Profile image
+img.profile-image {
+  @include img-common;
+  width: 30%;
+  border-radius: 4px;
+}
+
+// Project images
+img.project-image {
+  @include img-common;
+  // TODO: make smaller on wide viewports, figure out how to get breakpoints
+  width: 60%;
+}
