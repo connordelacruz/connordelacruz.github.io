@@ -1,6 +1,6 @@
 import { Box, Button, Card, CardActions, CardContent, CardHeader, Typography } from '@mui/material'
 
-const ProjectImage = ({src, alt}) => {
+export const ProjectImage = ({src, alt}) => {
   return (
     <Box
       sx={{

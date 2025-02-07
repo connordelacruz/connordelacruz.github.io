@@ -164,75 +164,131 @@ function App() {
 
         { /* Hero Banner */}
         <Box
-          id="section-about"
+          id="section-top"
           sx={{
             mt: 16,
-            mb: 4,
+            mb: 8,
           }}
         >
-          <Typography
-            variant="h3"
+          {/*Header Text*/}
+          <Box
             sx={{
-              fontWeight: 300,
-              textAlign: 'center',
+              mt: 16,
+              mb: 8,
             }}
           >
-            Hi, my name is
-          </Typography>
-          {/*TODO: make sure name scales nicely, breaks well on narrow views (damn this 3 word last name)*/}
-          <Typography
-            variant="h1"
-            color="primary"
-            sx={{
-              fontWeight: 400,
-              textAlign: 'center',
-            }}
-          >
-            Connor de la Cruz.
-          </Typography>
-
-          <Divider sx={{my: 4}}>
-            <SocialLink
-              label="Email"
-              iconComponent={<Email/>}
-              url="mailto:connor.c.delacruz@gmail.com"
-            />
-            <SocialLink
-              label="GitHub"
-              iconComponent={<GitHub/>}
-              url="https://github.com/connordelacruz"
-            />
-            <SocialLink
-              label="LinkedIn"
-              iconComponent={<LinkedIn/>}
-              url="http://www.linkedin.com/in/connordelacruz"
-            />
-            <SocialLink
-              label="Instagram"
-              iconComponent={<Instagram/>}
-              url="https://www.instagram.com/delachrome"
-            />
-          </Divider>
-
-          <Box>
-            <Typography variant="h5" component="p">
-              I'm a software engineer based in Chicago.
-              TODO: put some cool stuff in here about how great I am at learning new things, writing elegant code,
-              collaborating, and mooore
+            <Typography
+              variant="h4"
+              color="textSecondary"
+              sx={{
+                fontWeight: 400,
+              }}
+              gutterBottom={false}
+            >
+              Hi, my name is
             </Typography>
-            <Typography variant="h5" component="p">
-              When I'm not crankin' out dope ass code, I enjoy exploring creative outlets, tinkering with old tech
-              (iPods,
-              Gameboys, VHS tapes, and moooore), and chillin' tf out with my badass dog Kiwi.
+            {/*TODO: make sure name scales nicely, breaks well on narrow views (damn this 3 word last name)*/}
+            <Typography
+              variant="h1"
+              color="primary"
+              sx={{
+                fontWeight: 400,
+              }}
+            >
+              Connor de la Cruz.
             </Typography>
           </Box>
+
+          <Divider sx={{mb: 4}}>
+            {/* Profile */}
+            <Box
+              sx={{
+                mb: 4,
+              }}
+            >
+              <img
+                src="images/about/profile.jpg"
+                className="project-image"
+              />
+            </Box>
+          </Divider>
+
+          {/*Subheader Text*/}
+          <Box>
+            <Typography variant="h4" component="p">
+              <i>I'm a software engineer with a passion for creative problem solving and learning new things.</i>
+            </Typography>
+
+            {/*Socials*/}
+            <Divider sx={{mt: 4}}>
+              <SocialLink
+                label="Email"
+                iconComponent={<Email/>}
+                url="mailto:connor.c.delacruz@gmail.com"
+              />
+              <SocialLink
+                label="GitHub"
+                iconComponent={<GitHub/>}
+                url="https://github.com/connordelacruz"
+              />
+              <SocialLink
+                label="LinkedIn"
+                iconComponent={<LinkedIn/>}
+                url="http://www.linkedin.com/in/connordelacruz"
+              />
+              <SocialLink
+                label="Instagram"
+                iconComponent={<Instagram/>}
+                url="https://www.instagram.com/delachrome"
+              />
+            </Divider>
+
+          </Box>
         </Box>
+
+        {/*TODO: remove?*/}
+        {/*/!* Profile *!/*/}
+        {/*<Box*/}
+        {/*  sx={{*/}
+        {/*    mb: 4,*/}
+        {/*  }}*/}
+        {/*>*/}
+        {/*  <img*/}
+        {/*    src="images/about/profile.jpg"*/}
+        {/*    className="project-image"*/}
+        {/*  />*/}
+        {/*</Box>*/}
 
         {/* Content */}
         <Stack
           id="sections-stack"
           spacing={4}
         >
+
+          {/*TODO: profile photo (somewhere, idk if in the hero or here)*/}
+          {/* About */}
+          <Box id="section-about">
+            <SectionHeader>About Me</SectionHeader>
+
+            <Stack
+              id="about-content"
+              spacing={2}
+            >
+              <Typography variant="h5" component="p">
+                {/*TODO: Some cool stuff about how I'm capable of thriving with any code stack.*/}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita nemo beato beatior. Traditur, inquit, ab
+                Epicuro ratio neglegendi doloris. Si id dicis, vicimus. Quamquam id quidem licebit iis existimare, qui
+                legerint.
+              </Typography>
+              <Typography variant="h5" component="p">
+                {/*TODO: Some cool stuff I do when I'm not working.*/}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ille pellit, qui permulcet sensum voluptate.
+                Sed quot homines, tot sententiae; Occultum facinus esse potuerit, gaudebit; Bonum integritas corporis:
+                misera debilitas. Immo videri fortasse.
+              </Typography>
+            </Stack>
+          </Box>
+
           {/* Resume */}
           <Box id="section-resume">
             <SectionHeader>Resume</SectionHeader>

@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, Typography } from '@mui/material'
 
 
+// TODO: make a nicely formatted list of these, maybe with chips or using the List component
 export const SkillCard = ({
                             title,
                             children
