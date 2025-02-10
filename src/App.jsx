@@ -161,24 +161,24 @@ function App() {
 
       <Container id="page-wrapper" maxWidth="md">
 
-        { /* Hero Banner */}
+        { /* Hero Banner Container */}
         <Box id="section-top"
              sx={{
-               mt: 24,
+               mt: {
+                 xs: 12,
+                 sm: 24,
+               },
              }}
         >
-
-          {/*Content*/}
-
           {/*Header Text*/}
           <Box
             sx={{
-              mb: 8,
+              textAlign: 'center',
             }}
           >
             <Typography
               variant="h4"
-              color="textSecondary"
+              color="primary"
               sx={{
                 fontWeight: 400,
               }}
@@ -189,9 +189,15 @@ function App() {
             {/*TODO: make sure name scales nicely, breaks well on narrow views (damn this 3 word last name)*/}
             <Typography
               variant="h1"
-              color="primary"
               sx={{
                 fontWeight: 400,
+                // Handle line breaks in the title a bit smoother by shrinking font size on small viewports
+                fontSize: {
+                  // TODO: figure out the best numbers here, scale subheader to look nice too
+                  xs: '3rem',
+                  sm: '4rem',
+                  md: '6rem',
+                },
               }}
               gutterBottom={false}
             >
@@ -199,71 +205,11 @@ function App() {
             </Typography>
           </Box>
 
-          {/* Profile */}
-          {/*<Box*/}
-          {/*  sx={{*/}
-          {/*    my: 8,*/}
-          {/*  }}*/}
-          {/*>*/}
-          {/*  <img*/}
-          {/*    src="images/about/profile.jpg"*/}
-          {/*    className="profile-image"*/}
-          {/*  />*/}
-          {/*</Box>*/}
-
-          {/*Subheader Text*/}
-          <Box>
-            <Typography variant="h4" component="p">
-              I'm a software engineer with a passion for creative problem solving and learning new things.
-            </Typography>
-
-            {/*Socials*/}
-            <Box
-              sx={{
-                my: 8,
-                textAlign: 'center',
-              }}
-            >
-              <SocialLink
-                label="Email"
-                iconComponent={<Email/>}
-                url="mailto:connor.c.delacruz@gmail.com"
-              />
-              <SocialLink
-                label="GitHub"
-                iconComponent={<GitHub/>}
-                url="https://github.com/connordelacruz"
-              />
-              <SocialLink
-                label="LinkedIn"
-                iconComponent={<LinkedIn/>}
-                url="http://www.linkedin.com/in/connordelacruz"
-              />
-              <SocialLink
-                label="Instagram"
-                iconComponent={<Instagram/>}
-                url="https://www.instagram.com/delachrome"
-              />
-            </Box>
-
-          </Box>
-
-        </Box>
-
-        {/* Content */}
-        <Stack
-          id="sections-stack"
-          spacing={8}
-        >
-
-
           {/* About */}
           <Box id="section-about">
-            <SectionHeader>About Me</SectionHeader>
-
             <Box
               sx={{
-                my: 8,
+                my: 4,
               }}
             >
               <img
@@ -275,12 +221,14 @@ function App() {
             <Stack
               id="about-content"
               spacing={2}
+              // TODO: maybe scale text down on narrow viewports relative to the header size
+              sx={{
+                px: 4,
+              }}
             >
               <Typography variant="h5" component="p">
                 {/*TODO: Some cool stuff about how I'm capable of thriving with any code stack.*/}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita nemo beato beatior. Traditur, inquit, ab
-                Epicuro ratio neglegendi doloris. Si id dicis, vicimus. Quamquam id quidem licebit iis existimare, qui
-                legerint.
+                I'm a software engineer with a passion for creative problem solving and learning new things.
               </Typography>
               <Typography variant="h5" component="p">
                 {/*TODO: Some cool stuff I do when I'm not working.*/}
@@ -291,6 +239,41 @@ function App() {
             </Stack>
           </Box>
 
+          {/*Socials*/}
+          <Box
+            sx={{
+              my: 8,
+              textAlign: 'center',
+            }}
+          >
+            <SocialLink
+              label="Email"
+              iconComponent={<Email/>}
+              url="mailto:connor.c.delacruz@gmail.com"
+            />
+            <SocialLink
+              label="GitHub"
+              iconComponent={<GitHub/>}
+              url="https://github.com/connordelacruz"
+            />
+            <SocialLink
+              label="LinkedIn"
+              iconComponent={<LinkedIn/>}
+              url="http://www.linkedin.com/in/connordelacruz"
+            />
+            <SocialLink
+              label="Instagram"
+              iconComponent={<Instagram/>}
+              url="https://www.instagram.com/delachrome"
+            />
+          </Box>
+        </Box>
+
+        {/* Content */}
+        <Stack
+          id="sections-stack"
+          spacing={8}
+        >
           {/* Resume */}
           <Box id="section-resume">
             <SectionHeader>Resume</SectionHeader>

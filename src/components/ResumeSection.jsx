@@ -54,7 +54,7 @@ export const ExperienceCard = ({
       <CardContent>
         <Typography variant="h6" color="primary">{jobTitle}</Typography>
         <Typography variant="subtitle1" color="text.secondary">{company} · {startDate}–{endDate}</Typography>
-        <Typography variant="body1">
+        <Typography variant="body1" component="div">
           <ul>
             {listElements}
           </ul>
