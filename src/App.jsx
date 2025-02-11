@@ -1,77 +1,13 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  Container,
-  createTheme,
-  CssBaseline,
-  Stack,
-  ThemeProvider,
-  Typography
-} from '@mui/material'
+import { Box, Button, Card, CardContent, Container, CssBaseline, Stack, ThemeProvider, Typography } from '@mui/material'
 import Grid from '@mui/material/Grid2'
-import { SocialLink } from './components/SocialLink.jsx'
 import { Description, Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
+import { theme } from './components/Theme.jsx'
+import { SocialLink } from './components/SocialLink.jsx'
 import { ExperienceCard, SkillCard } from './components/ResumeSection.jsx'
 import { ProjectCard } from './components/ProjectCard.jsx'
 import { SectionHeader } from './components/SectionHeader.jsx'
 
 function App() {
-
-  // ================================================================================
-  // Theme
-  // ================================================================================
-  const theme = createTheme({
-    // Colors
-    palette: {
-      mode: 'dark',
-    },
-    // Components / Default Props
-    components: {
-      // Typography
-      MuiTypography: {
-        defaultProps: {
-          gutterBottom: true,
-        },
-      },
-      // Paper
-      MuiPaper: {
-        defaultProps: {
-          variant: 'outlined',
-        },
-        styleOverrides: {
-          root: ({theme}) =>
-            theme.unstable_sx({
-              p: 2,
-            }),
-        },
-      },
-      // Slightly Less Based Button Component
-      MuiButton: {
-        defaultProps: {
-          // Disable elevation everywhere
-          disableElevation: true,
-        }
-      },
-      // Button Groups
-      MuiButtonGroup: {
-        defaultProps: {
-          // Disable elevation everywhere
-          disableElevation: true,
-        }
-      },
-      // Baseline styles
-      MuiCssBaseline: {
-        styleOverrides: (themeParam) => `
-        h2 {
-          color: ${themeParam.palette.primary.main};
-        }
-      `,
-      },
-    },
-  })
-
   // ================================================================================
   // Content
   // ================================================================================
@@ -162,13 +98,14 @@ function App() {
       <Container id="page-wrapper" maxWidth="md">
 
         { /* Hero Banner Container */}
-        <Box id="section-top"
-             sx={{
-               mt: {
-                 xs: 12,
-                 sm: 24,
-               },
-             }}
+        <Box
+          id="section-top"
+          sx={{
+            mt: {
+              xs: 12,
+              sm: 24,
+            },
+          }}
         >
           {/*Header Text*/}
           <Box
@@ -226,15 +163,28 @@ function App() {
                 px: 4,
               }}
             >
-              <Typography variant="h5" component="p">
-                {/*TODO: Some cool stuff about how I'm capable of thriving with any code stack.*/}
-                I'm a software engineer with a passion for creative problem solving and learning new things.
+              {/*TODO: default styles for h6 variant?*/}
+              <Typography
+                variant="h6"
+                component="p"
+                sx={{
+                  fontWeight: 400,
+                }}
+              >
+                I'm a software engineer with a passion for creative problem solving and learning new things. Whether
+                it's full-stack web dev, creating command line tools, or even dabbling in design work, I love taking on
+                new challenges and building things I can be proud of.
               </Typography>
-              <Typography variant="h5" component="p">
-                {/*TODO: Some cool stuff I do when I'm not working.*/}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ille pellit, qui permulcet sensum voluptate.
-                Sed quot homines, tot sententiae; Occultum facinus esse potuerit, gaudebit; Bonum integritas corporis:
-                misera debilitas. Immo videri fortasse.
+              <Typography
+                variant="h6"
+                component="p"
+                sx={{
+                  fontWeight: 400,
+                }}
+              >
+                When I'm not writing code, I like exploring new creative outlets. My latest hobby has been refurbishing
+                and modding old iPods and Gameboys to breathe new life into some of my favorite pieces of retro tech.
+                And when I'm not diving into personal projects, I love going on adventures with my dog Kiwi 🥝 .
               </Typography>
             </Stack>
           </Box>
