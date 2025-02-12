@@ -1,4 +1,15 @@
-import { Box, Button, Card, CardContent, Container, CssBaseline, Stack, ThemeProvider, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Container,
+  CssBaseline,
+  Paper,
+  Stack,
+  ThemeProvider,
+  Typography
+} from '@mui/material'
 import Grid from '@mui/material/Grid2'
 import { Description, Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
 import { theme } from './components/Theme.jsx'
@@ -442,9 +453,14 @@ function App() {
             <SectionHeader>Contact</SectionHeader>
             <Card>
               <CardContent>
-                <Typography variant="h5" component="p">
-                  {/*TODO contact copy*/}
-                  Hit me up if u tryna do dope shit :)
+                <Typography
+                  variant="h5"
+                  component="p"
+                  sx={{
+                    mb: 2,
+                  }}
+                >
+                  If you're looking to hire, collaborate, or just want to say hello, feel free to reach out!
                 </Typography>
                 <Button
                   variant="contained"
@@ -465,20 +481,26 @@ function App() {
 
       </Container>
 
-      <Box>
+      {/*Footer*/}
+      <Paper
+        sx={{
+          mt: 4,
+          py: 2,
+          borderWidth: '1px 0 0',
+        }}
+      >
         <Typography
           variant="overline"
           component="p"
           color="textSecondary"
           sx={{
             textAlign: 'center',
-            py: 2,
-            mt: 2,
           }}
+          gutterBottom={false}
         >
-          © {new Date().getFullYear()} Connor de la Cruz
+          Designed and Developed by Connor de la Cruz © {new Date().getFullYear()}
         </Typography>
-      </Box>
+      </Paper>
     </ThemeProvider>
   )
 }
