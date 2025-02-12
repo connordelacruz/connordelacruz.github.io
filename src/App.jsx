@@ -6,6 +6,7 @@ import { SocialLink } from './components/SocialLink.jsx'
 import { ExperienceCard, SkillCard } from './components/ResumeSection.jsx'
 import { ProjectCard } from './components/ProjectCard.jsx'
 import { SectionHeader } from './components/SectionHeader.jsx'
+import { NavBar } from './components/NavBar.jsx'
 
 function App() {
   // ================================================================================
@@ -94,6 +95,7 @@ function App() {
       <CssBaseline/>
 
       {/*TODO: app bar */}
+      <NavBar/>
 
       <Container id="page-wrapper" maxWidth="md">
 
@@ -102,8 +104,8 @@ function App() {
           id="section-top"
           sx={{
             mt: {
-              xs: 12,
-              sm: 24,
+              xs: 10,
+              sm: 20,
             },
           }}
         >
