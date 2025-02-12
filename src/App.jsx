@@ -94,9 +94,16 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline/>
 
-      {/*TODO: app bar */}
-      <NavBar/>
+      {/*Nav Bar*/}
+      <NavBar
+        sectionLinks={[
+          {text: 'Resume', href: '#section-resume'},
+          {text: 'Projects', href: '#section-projects'},
+          {text: 'Contact', href: '#section-contact'},
+        ]}
+      />
 
+      {/*Content*/}
       <Container id="page-wrapper" maxWidth="md">
 
         { /* Hero Banner Container */}
@@ -201,22 +208,22 @@ function App() {
             <SocialLink
               label="Email"
               iconComponent={<Email/>}
-              url="mailto:connor.c.delacruz@gmail.com"
+              href="mailto:connor.c.delacruz@gmail.com"
             />
             <SocialLink
               label="GitHub"
               iconComponent={<GitHub/>}
-              url="https://github.com/connordelacruz"
+              href="https://github.com/connordelacruz"
             />
             <SocialLink
               label="LinkedIn"
               iconComponent={<LinkedIn/>}
-              url="http://www.linkedin.com/in/connordelacruz"
+              href="http://www.linkedin.com/in/connordelacruz"
             />
             <SocialLink
               label="Instagram"
               iconComponent={<Instagram/>}
-              url="https://www.instagram.com/delachrome"
+              href="https://www.instagram.com/delachrome"
             />
           </Box>
         </Box>

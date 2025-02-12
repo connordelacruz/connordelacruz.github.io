@@ -1,7 +1,7 @@
 import { IconButton } from '@mui/material'
 
 export const SocialLink = ({
-                             url,
+                             href,
                              label,
                              iconComponent,
                              color = 'primary',
@@ -10,7 +10,7 @@ export const SocialLink = ({
   return (
     <IconButton
       aria-label={label}
-      href={url}
+      href={href}
       target="_blank"
       sx={{
         mx: 3,
