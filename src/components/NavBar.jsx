@@ -1,18 +1,44 @@
 // ================================================================================
 // Nav Bar Component
 // ================================================================================
-
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import { Menu as MenuIcon } from '@mui/icons-material'
+import React from 'react'
 
+/**
+ * Nav bar component.
+ *
+ * @param sectionLinks Array of objects with props text and href to use for link text and href respectively.
+ *
+ * @return {Element}
+ * @constructor
+ */
 export const NavBar = ({
                          sectionLinks = [],
                        }) => {
-  // TODO: hide name until scrolling past hero?
-  // TODO: shorten logo to "Cd" on narrow?
-  // TODO: figure out how we wanna display responsive menu
-  // TODO: mirror the menu open/closed animation on current site
-  // TODO: smooth scrolling + account for nav height on section link click
+  // TODO: logo:
+  //       - hide name until scrolling past hero?
+  //       - shorten logo to "Cd" on narrow?
+  // TODO: responsive menu:
+  //       - figure out how we wanna display responsive menu
+  //       - mirror the menu open/closed icon animation on current site
+  //       - width and positioning
+  //       - break at sm instead of xs?
+  // TODO: clicking links:
+  //       - smooth scrolling + account for nav height on section link click
+
+  // Responsive nav menu state
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const menuOpen = Boolean(anchorEl)
+
+  // Responsive nav menu handlers
+  const handleMenuClick = (e) => {
+    setAnchorEl(e.currentTarget)
+  }
+  const handleMenuClose = () => {
+    setAnchorEl(null)
+  }
+
   return (
     <AppBar
       position="sticky"
@@ -36,16 +62,43 @@ export const NavBar = ({
             flexGrow: 1,
           }}
         >
-         <IconButton
-           size="large"
-           aria-label="Navigation menu"
-           aria-controls="menu-appbar"
-//           TODO: uhh what dis:
-           aria-haspopup="true"
-//           TODO: onclick
-          color="inherit">
-           <MenuIcon/>
-         </IconButton>
+          <IconButton
+            size="large"
+            aria-label="Navigation menu"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleMenuClick}
+            color="inherit"
+          >
+            <MenuIcon/>
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorEl}
+            open={menuOpen}
+            onClose={handleMenuClose}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            keepMounted
+          >
+            {sectionLinks.map((sectionLink, i) => (
+              <MenuItem
+                key={i}
+                component="a"
+                href={sectionLink.href}
+                onClick={handleMenuClose}
+              >
+                {sectionLink.text}
+              </MenuItem>
+            ))}
+          </Menu>
+
         </Box>
 
         {/*Logo*/}
