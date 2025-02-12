@@ -28,12 +28,20 @@ export const theme = createTheme({
           }),
       },
     },
-    // Slightly Less Based Button Component
+    // Button Component
     MuiButton: {
       defaultProps: {
         // Disable elevation everywhere
         disableElevation: true,
-      }
+      },
+      styleOverrides: {
+        root: {
+          // TODO: uncomment to make text not all caps, then maybe increase text size?
+//          textTransform: 'initial',
+//          fontSize: '1rem',
+//          fontWeight: 'bold',
+        },
+      },
     },
     // Button Groups
     MuiButtonGroup: {

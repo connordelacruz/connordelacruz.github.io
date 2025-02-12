@@ -45,20 +45,20 @@ export const NavBar = ({
       color="inherit"
       elevation={0}
       sx={{
-        py: {xs: 1, sm: 0},
+        py: 0,
         borderWidth: '0 0 1px',
       }}
     >
       <Toolbar
         sx={{
-          px: 2,
+          px: {xs: 0, md: 2},
         }}
         disableGutters
       >
         {/*Responsive Menu*/}
         <Box
           sx={{
-            display: {xs: 'flex', sm: 'none'},
+            display: {xs: 'flex', md: 'none'},
             flexGrow: 1,
           }}
         >
@@ -108,10 +108,10 @@ export const NavBar = ({
           component="a"
           href="#"
           sx={{
-            mr: 2,
             display: 'flex',
             flexGrow: 1,
             textDecoration: 'none',
+            mr: 2,
           }}
           noWrap
           gutterBottom={false}
@@ -122,7 +122,7 @@ export const NavBar = ({
         {/*Wide Viewport Links*/}
         <Box
           sx={{
-            display: {xs: 'none', sm: 'block'},
+            display: {xs: 'none', md: 'block'},
           }}
         >
           {sectionLinks.map((sectionLink, i) => (

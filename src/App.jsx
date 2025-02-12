@@ -163,50 +163,55 @@ function App() {
           </Box>
 
           {/* About */}
-          <Box id="section-about">
-            <Box
-              sx={{
-                my: 4,
-              }}
+          <Box
+            id="section-about"
+            sx={{mt: 12}}
+          >
+            <Grid
+              container
+              spacing={{xs: 4, md: 2}}
+              direction={{xs: 'column', md: 'row'}}
+              alignItems="center"
             >
-              <img
-                src="images/about/profile.jpg"
-                className="profile-image"
-              />
-            </Box>
+              <Grid size={{xs: 12, md: 4}}>
+                <Box>
+                  <img
+                    src="images/about/profile.jpg"
+                    className="profile-image"
+                  />
+                </Box>
+              </Grid>
 
-            <Stack
-              id="about-content"
-              spacing={2}
-              // TODO: maybe scale text down on narrow viewports relative to the header size
-              sx={{
-                px: 4,
-              }}
-            >
-              {/*TODO: default styles for h6 variant?*/}
-              <Typography
-                variant="h6"
-                component="p"
-                sx={{
-                  fontWeight: 400,
-                }}
-              >
-                I'm a software engineer with a passion for creative problem solving and learning new things. Whether
-                it's full-stack web dev, creating command line tools, or even dabbling in design work, I love taking on
-                new challenges and building things I can be proud of.
-              </Typography>
-              <Typography
-                variant="h6"
-                component="p"
-                sx={{
-                  fontWeight: 400,
-                }}
-              >
-                When I'm not writing code, I like exploring new creative outlets. My latest hobby has been refurbishing
-                and modding old iPods and Gameboys to breathe new life into some of my favorite pieces of retro tech.
-                And when I'm not diving into personal projects, I love going on adventures with my dog Kiwi 🥝 .
-              </Typography>
-            </Stack>
+              <Grid size={{xs: 12, md: 8}}>
+                <Stack
+                  id="about-content"
+                  spacing={2}
+                  sx={{
+                    px: 4,
+                  }}
+                >
+                  <Typography
+                    variant="body1"
+                    component="p"
+                  >
+                    I'm a software engineer with a passion for creative problem solving and learning new things. Whether
+                    it's full-stack web dev, creating command line tools, or even dabbling in design work, I love taking
+                    on
+                    new challenges and building things I can be proud of.
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    component="p"
+                  >
+                    When I'm not writing code, I like exploring new creative outlets. My latest hobby has been
+                    refurbishing
+                    and modding old iPods and Gameboys to breathe new life into some of my favorite pieces of retro
+                    tech.
+                    And when I'm not diving into personal projects, I love going on adventures with my dog Kiwi 🥝 .
+                  </Typography>
+                </Stack>
+              </Grid>
+            </Grid>
           </Box>
 
           {/*Socials*/}
@@ -485,12 +490,12 @@ function App() {
       <Paper
         sx={{
           mt: 4,
-          py: 2,
+          py: 3,
           borderWidth: '1px 0 0',
         }}
       >
         <Typography
-          variant="overline"
+          variant="body2"
           component="p"
           color="textSecondary"
           sx={{
