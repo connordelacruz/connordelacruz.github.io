@@ -108,9 +108,9 @@ function App() {
       {/*Nav Bar*/}
       <NavBar
         sectionLinks={[
-          {text: 'Resume', href: '#section-resume'},
-          {text: 'Projects', href: '#section-projects'},
-          {text: 'Contact', href: '#section-contact'},
+          {text: 'Resume', hash: 'section-resume'},
+          {text: 'Projects', hash: 'section-projects'},
+          {text: 'Contact', hash: 'section-contact'},
         ]}
       />
 
@@ -462,6 +462,7 @@ function App() {
                   variant="h5"
                   component="p"
                   sx={{
+                    py: 8,
                     mb: 2,
                   }}
                 >

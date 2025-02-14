@@ -4,11 +4,12 @@
 import { AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import { Menu as MenuIcon } from '@mui/icons-material'
 import React from 'react'
+import useScrollSpy from '../utils/useScrollSpy.js'
 
 /**
  * Nav bar component.
  *
- * @param sectionLinks Array of objects with props text and href to use for link text and href respectively.
+ * @param sectionLinks Array of objects with props text (link text) and hash (id of section omitting '#').
  *
  * @return {Element}
  * @constructor
@@ -17,13 +18,11 @@ export const NavBar = ({
                          sectionLinks = [],
                        }) => {
   // TODO: logo:
-  //       - hide name until scrolling past hero?
   //       - shorten logo to "Cd" on narrow?
   // TODO: responsive menu:
   //       - figure out how we wanna display responsive menu
   //       - mirror the menu open/closed icon animation on current site
   //       - width and positioning
-  //       - break at sm instead of xs?
   // TODO: clicking links:
   //       - smooth scrolling + account for nav height on section link click
 
@@ -39,6 +38,9 @@ export const NavBar = ({
     setAnchorEl(null)
   }
 
+  // ScrollSpy to keep track of section currently scrolled into view.
+  const activeHash = useScrollSpy({items: sectionLinks})
+
   return (
     <AppBar
       position="sticky"
@@ -46,7 +48,8 @@ export const NavBar = ({
       elevation={0}
       sx={{
         py: 0,
-        borderWidth: '0 0 1px',
+        borderWidth: '0 0 2px',
+        // TODO: figure out how to hide border until you scroll a tiny bit
       }}
     >
       <Toolbar
@@ -91,8 +94,9 @@ export const NavBar = ({
               <MenuItem
                 key={i}
                 component="a"
-                href={sectionLink.href}
+                href={'#' + sectionLink.hash}
                 onClick={handleMenuClose}
+                selected={activeHash === sectionLink.hash ? true : false}
               >
                 {sectionLink.text}
               </MenuItem>
@@ -108,6 +112,9 @@ export const NavBar = ({
           component="a"
           href="#"
           sx={{
+            transition: 'opacity 0.3s',
+            // Fade in when not at top of page
+            opacity: activeHash === null ? 0 : 1,
             display: 'flex',
             flexGrow: 1,
             textDecoration: 'none',
@@ -128,8 +135,12 @@ export const NavBar = ({
           {sectionLinks.map((sectionLink, i) => (
             <Button
               key={i}
-              variant="text"
-              href={sectionLink.href}
+              component="a"
+              href={'#' + sectionLink.hash}
+              variant={activeHash === sectionLink.hash ? 'contained' : 'outlined'}
+              sx={{
+                ml: 1,
+              }}
             >
               {sectionLink.text}
             </Button>
