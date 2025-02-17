@@ -1,10 +1,23 @@
 // ================================================================================
 // Nav Bar Component
 // ================================================================================
-import { AppBar, Box, IconButton, Menu, MenuItem, Tab, Tabs, Toolbar, Typography } from '@mui/material'
+import {
+  AppBar,
+  Box,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  Tab,
+  Tabs,
+  Toolbar,
+  Typography
+} from '@mui/material'
 import { Menu as MenuIcon } from '@mui/icons-material'
 import React from 'react'
 import useScrollSpy from '../utils/useScrollSpy.js'
+
 
 /**
  * Nav bar component.
@@ -19,12 +32,13 @@ export const NavBar = ({
                        }) => {
   // TODO: logo:
   //       - shorten logo to "Cd" on narrow?
+  //       - Figure out styling on narrow regardless, it's a real weird size and not centered nicely
   // TODO: responsive menu:
-  //       - figure out how we wanna display responsive menu
   //       - mirror the menu open/closed icon animation on current site
-  //       - width and positioning
   // TODO: nav tabs:
   //       - style similarly to channelshift with full height indicator?
+  // TODO: nav bar:
+  //       - figure out how to hide border until you scroll a tiny bit?
 
   // Offset scroll height for links by this value
   const navLinksScrollOffset = 85
@@ -49,16 +63,17 @@ export const NavBar = ({
     history.pushState({}, '', '#')
   }
 
-  // Responsive nav menu state
-  const [anchorEl, setAnchorEl] = React.useState(null)
-  const menuOpen = Boolean(anchorEl)
+  // Responsive nav drawer state
+  const [drawerOpen, setDrawerOpen] = React.useState(false)
 
-  // Responsive nav menu handlers
-  const handleMenuClick = (e) => {
-    setAnchorEl(e.currentTarget)
+  // Menu button onClick
+  const handleMenuButtonClick = (e) => {
+    setDrawerOpen(true)
   }
-  const handleMenuClose = () => {
-    setAnchorEl(null)
+
+  // Drawer onClose
+  const handleDrawerOnClose = () => {
+    setDrawerOpen(false)
   }
 
   // ScrollSpy to keep track of section currently scrolled into view.
@@ -72,7 +87,6 @@ export const NavBar = ({
       sx={{
         py: 0,
         borderWidth: '0 0 2px',
-        // TODO: figure out how to hide border until you scroll a tiny bit
       }}
     >
       <Toolbar
@@ -88,43 +102,57 @@ export const NavBar = ({
             flexGrow: 1,
           }}
         >
+          {/*Menu Button*/}
           <IconButton
             size="large"
             aria-label="Navigation menu"
-            aria-controls="menu-appbar"
+            aria-controls="nav-drawer"
             aria-haspopup="true"
-            onClick={handleMenuClick}
+            onClick={handleMenuButtonClick}
             color="inherit"
           >
             <MenuIcon/>
           </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorEl}
-            open={menuOpen}
-            onClose={handleMenuClose}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-            keepMounted
+          {/*Menu Contents*/}
+          <Drawer
+            id="nav-drawer"
+            open={drawerOpen}
+            onClose={handleDrawerOnClose}
+            // TODO: accessibility stuff (component nav)
+            // TODO: swipeable? sounds like it comes with a performance dip...
+            // TODO: header list item
+            // TODO: close button
           >
-            {sectionLinks.map((sectionLink, i) => (
-              <MenuItem
-                key={i}
-                component="a"
-                href={'#' + sectionLink.hash}
-                onClick={createSmoothScrollToSectionHandler(sectionLink.hash, handleMenuClose)}
-                selected={activeHash === sectionLink.hash ? true : false}
-              >
-                {sectionLink.text}
-              </MenuItem>
-            ))}
-          </Menu>
+            <Box
+              role="presentation"
+              // TODO: onClick close drawer?
+              sx={{
+                width: 250,
+              }}
+            >
+              <List>
+                {/*Drawer Menu Items*/}
+                {sectionLinks.map((sectionLink, i) => (
+                  <ListItem
+                    key={i}
+                    disablePadding
+                  >
+                    <ListItemButton
+                      component="a"
+                      href={'#' + sectionLink.hash}
+                      onClick={createSmoothScrollToSectionHandler(sectionLink.hash, handleDrawerOnClose)}
+                      selected={activeHash === sectionLink.hash}
+                      sx={{
+                        py: 2,
+                      }}
+                    >
+                      {sectionLink.text}
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
+          </Drawer>
 
         </Box>
 
@@ -137,9 +165,10 @@ export const NavBar = ({
           onClick={handleLogoClick}
           sx={{
             // Fade in when not at top of page
+            // TODO: make unclickable when hidden?
             opacity: activeHash === null ? 0 : 1,
-            // TODO: make transition timing consistent with tabs
             transition: 'opacity 0.3s',
+            transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
             display: 'flex',
             flexGrow: 1,
             textDecoration: 'none',
