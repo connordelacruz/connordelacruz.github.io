@@ -23,8 +23,31 @@ export const NavBar = ({
   //       - figure out how we wanna display responsive menu
   //       - mirror the menu open/closed icon animation on current site
   //       - width and positioning
-  // TODO: clicking links:
-  //       - smooth scrolling + account for nav height on section link click https://css-tricks.com/snippets/jquery/smooth-scrolling/
+  // TODO: nav tabs:
+  //       - style similarly to channelshift with full height indicator?
+
+  // Offset scroll height for links by this value
+  const navLinksScrollOffset = 85
+
+  // Smooth scroll link handlers
+  const createSmoothScrollToSectionHandler = (hash, callback = null) => {
+    return (e) => {
+      e.preventDefault()
+      const y = document.getElementById(hash).getBoundingClientRect().top + window.scrollY - navLinksScrollOffset
+      window.scrollTo({top: y, behavior: 'smooth'})
+      // Update url hash
+      history.pushState({}, '', '#' + hash)
+      callback && callback()
+    }
+  }
+
+  // Smooth scroll logo link handler
+  const handleLogoClick = (e) => {
+    e.preventDefault()
+    window.scrollTo({top: 0, behavior: 'smooth'})
+    // Update url hash
+    history.pushState({}, '', '#')
+  }
 
   // Responsive nav menu state
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -95,7 +118,7 @@ export const NavBar = ({
                 key={i}
                 component="a"
                 href={'#' + sectionLink.hash}
-                onClick={handleMenuClose}
+                onClick={createSmoothScrollToSectionHandler(sectionLink.hash, handleMenuClose)}
                 selected={activeHash === sectionLink.hash ? true : false}
               >
                 {sectionLink.text}
@@ -111,10 +134,11 @@ export const NavBar = ({
           color="inherit"
           component="a"
           href="#"
+          onClick={handleLogoClick}
           sx={{
             // Fade in when not at top of page
             opacity: activeHash === null ? 0 : 1,
-            // TODO: make transition timing consistent with buttons
+            // TODO: make transition timing consistent with tabs
             transition: 'opacity 0.3s',
             display: 'flex',
             flexGrow: 1,
@@ -141,6 +165,7 @@ export const NavBar = ({
                 label={sectionLink.text}
                 value={sectionLink.hash}
                 href={'#' + sectionLink.hash}
+                onClick={createSmoothScrollToSectionHandler(sectionLink.hash)}
                 sx={{
                   ml: 1,
                 }}
