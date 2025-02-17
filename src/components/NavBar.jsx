@@ -1,7 +1,7 @@
 // ================================================================================
 // Nav Bar Component
 // ================================================================================
-import { AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, IconButton, Menu, MenuItem, Tab, Tabs, Toolbar, Typography } from '@mui/material'
 import { Menu as MenuIcon } from '@mui/icons-material'
 import React from 'react'
 import useScrollSpy from '../utils/useScrollSpy.js'
@@ -24,7 +24,7 @@ export const NavBar = ({
   //       - mirror the menu open/closed icon animation on current site
   //       - width and positioning
   // TODO: clicking links:
-  //       - smooth scrolling + account for nav height on section link click
+  //       - smooth scrolling + account for nav height on section link click https://css-tricks.com/snippets/jquery/smooth-scrolling/
 
   // Responsive nav menu state
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -112,9 +112,10 @@ export const NavBar = ({
           component="a"
           href="#"
           sx={{
-            transition: 'opacity 0.3s',
             // Fade in when not at top of page
             opacity: activeHash === null ? 0 : 1,
+            // TODO: make transition timing consistent with buttons
+            transition: 'opacity 0.3s',
             display: 'flex',
             flexGrow: 1,
             textDecoration: 'none',
@@ -132,19 +133,20 @@ export const NavBar = ({
             display: {xs: 'none', md: 'block'},
           }}
         >
-          {sectionLinks.map((sectionLink, i) => (
-            <Button
-              key={i}
-              component="a"
-              href={'#' + sectionLink.hash}
-              variant={activeHash === sectionLink.hash ? 'contained' : 'outlined'}
-              sx={{
-                ml: 1,
-              }}
-            >
-              {sectionLink.text}
-            </Button>
-          ))}
+          <Tabs value={activeHash ? activeHash : false}>
+            {sectionLinks.map((sectionLink, i) => (
+              <Tab
+                key={i}
+                component="a"
+                label={sectionLink.text}
+                value={sectionLink.hash}
+                href={'#' + sectionLink.hash}
+                sx={{
+                  ml: 1,
+                }}
+              />
+            ))}
+          </Tabs>
         </Box>
 
       </Toolbar>
