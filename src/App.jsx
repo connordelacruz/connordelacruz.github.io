@@ -20,6 +20,8 @@ import { SectionHeader } from './components/SectionHeader.jsx'
 import { NavBar } from './components/NavBar.jsx'
 
 function App() {
+  // TODO:
+  //    - Pagination on projects? resume? https://mui.com/material-ui/react-pagination/
   // ================================================================================
   // Content
   // ================================================================================
