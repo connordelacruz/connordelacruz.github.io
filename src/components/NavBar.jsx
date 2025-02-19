@@ -128,6 +128,8 @@ export const NavBar = ({
               // TODO: onClick close drawer?
               sx={{
                 width: 250,
+                // TODO: figure out padding, make links big n juicy and a bit closer to vertical center
+                pt: 4,
               }}
             >
               <List>
@@ -159,7 +161,7 @@ export const NavBar = ({
         {/*Logo*/}
         <Typography
           variant="h6"
-          color="inherit"
+          color="primary"
           component="a"
           href="#"
           onClick={handleLogoClick}
@@ -172,7 +174,6 @@ export const NavBar = ({
             display: 'flex',
             flexGrow: 1,
             textDecoration: 'none',
-            mr: 2,
           }}
           noWrap
           gutterBottom={false}

@@ -123,22 +123,18 @@ function App() {
         <Box
           id="section-top"
           sx={{
-            mt: {
-              xs: 8,
-              sm: 16,
-            },
-            mb: 8,
+            my: 8,
           }}
         >
           {/*Profile Photo*/}
           <Box
             sx={{
               maxWidth: {
-                xs: '60%',
+                xs: '50%',
                 sm: '40%',
               },
               margin: '0 auto',
-              mb: 8,
+              mb: 4,
             }}
           >
             <img
@@ -218,13 +214,12 @@ function App() {
               mt: 4,
             }}
           >
-            <Stack
+            <Paper
               id="about-content"
-              spacing={2}
               sx={{
-                px: {
-                  xs: 0,
-                  sm: 2,
+                p: {
+                  xs: 2,
+                  sm: 4,
                 },
               }}
             >
@@ -233,7 +228,8 @@ function App() {
                 component="p"
                 sx={{
                   fontSize: {
-                    xs: '1rem',
+                    // TODO: looks a little funky on xs... (maybe it's cuz it's too wordy idk)
+                    xs: '1.15rem',
                     sm: '1.5rem',
                   },
                 }}
@@ -254,7 +250,7 @@ function App() {
               {/*  tech.*/}
               {/*  And when I'm not diving into personal projects, I love going on adventures with my dog Kiwi 🥝 .*/}
               {/*</Typography>*/}
-            </Stack>
+            </Paper>
           </Box>
         </Box>
 
