@@ -14,10 +14,9 @@
 // Profile image
 img.profile-image {
   @include img-common;
-  width: 50%;
-  @include md {
-    width: 100%;
-  }
+  // Profile image should be contained in an element that has a maxWidth set based on the breakpoint.
+  // (Makes it less messy that way)
+  width: 100%;
   border-radius: 4px;
 }
 

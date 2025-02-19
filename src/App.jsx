@@ -119,16 +119,34 @@ function App() {
       {/*Content*/}
       <Container id="page-wrapper" maxWidth="md">
 
-        { /* Hero Banner Container */}
+        { /* Header */}
         <Box
           id="section-top"
           sx={{
             mt: {
-              xs: 10,
-              sm: 20,
+              xs: 8,
+              sm: 16,
             },
+            mb: 8,
           }}
         >
+          {/*Profile Photo*/}
+          <Box
+            sx={{
+              maxWidth: {
+                xs: '60%',
+                sm: '40%',
+              },
+              margin: '0 auto',
+              mb: 8,
+            }}
+          >
+            <img
+              src="images/about/profile.jpg"
+              className="profile-image"
+            />
+          </Box>
+
           {/*Header Text*/}
           <Box
             sx={{
@@ -164,62 +182,10 @@ function App() {
             </Typography>
           </Box>
 
-          {/* About */}
-          <Box
-            id="section-about"
-            sx={{mt: 12}}
-          >
-            <Grid
-              container
-              spacing={{xs: 4, md: 2}}
-              direction={{xs: 'column', md: 'row'}}
-              alignItems="center"
-            >
-              <Grid size={{xs: 12, md: 4}}>
-                <Box>
-                  <img
-                    src="images/about/profile.jpg"
-                    className="profile-image"
-                  />
-                </Box>
-              </Grid>
-
-              <Grid size={{xs: 12, md: 8}}>
-                <Stack
-                  id="about-content"
-                  spacing={2}
-                  sx={{
-                    px: 4,
-                  }}
-                >
-                  <Typography
-                    variant="body1"
-                    component="p"
-                  >
-                    I'm a software engineer with a passion for creative problem solving and learning new things. Whether
-                    it's full-stack web dev, creating command line tools, or even dabbling in design work, I love taking
-                    on
-                    new challenges and building things I can be proud of.
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    component="p"
-                  >
-                    When I'm not writing code, I like exploring new creative outlets. My latest hobby has been
-                    refurbishing
-                    and modding old iPods and Gameboys to breathe new life into some of my favorite pieces of retro
-                    tech.
-                    And when I'm not diving into personal projects, I love going on adventures with my dog Kiwi 🥝 .
-                  </Typography>
-                </Stack>
-              </Grid>
-            </Grid>
-          </Box>
-
           {/*Socials*/}
           <Box
             sx={{
-              my: 8,
+              mt: 4,
               textAlign: 'center',
             }}
           >
@@ -244,9 +210,55 @@ function App() {
               href="https://www.instagram.com/delachrome"
             />
           </Box>
+
+          {/* About */}
+          <Box
+            id="section-about"
+            sx={{
+              mt: 4,
+            }}
+          >
+            <Stack
+              id="about-content"
+              spacing={2}
+              sx={{
+                px: {
+                  xs: 0,
+                  sm: 2,
+                },
+              }}
+            >
+              <Typography
+                variant="h5"
+                component="p"
+                sx={{
+                  fontSize: {
+                    xs: '1rem',
+                    sm: '1.5rem',
+                  },
+                }}
+              >
+                I'm a software engineer with a passion for creative problem solving and learning new things. Whether
+                it's full-stack web dev, creating command line tools, or even dabbling in design work, I love taking
+                on
+                new challenges and building things I can be proud of.
+              </Typography>
+              {/*TODO: omit or move?*/}
+              {/*<Typography*/}
+              {/*  variant="body1"*/}
+              {/*  component="p"*/}
+              {/*>*/}
+              {/*  When I'm not writing code, I like exploring new creative outlets. My latest hobby has been*/}
+              {/*  refurbishing*/}
+              {/*  and modding old iPods and Gameboys to breathe new life into some of my favorite pieces of retro*/}
+              {/*  tech.*/}
+              {/*  And when I'm not diving into personal projects, I love going on adventures with my dog Kiwi 🥝 .*/}
+              {/*</Typography>*/}
+            </Stack>
+          </Box>
         </Box>
 
-        {/* Content */}
+        {/* Page Content */}
         <Stack
           id="sections-stack"
           spacing={8}
