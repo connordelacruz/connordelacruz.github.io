@@ -3,12 +3,22 @@
 // ================================================================================
 import { createTheme } from '@mui/material'
 
-export const theme = createTheme({
-  // Colors
+// TODO: use 'let', create initial theme then create again for custom colors like:
+//      https://mui.com/material-ui/customization/palette/#generate-tokens-using-augmentcolor-utility
+// TODO: might need to use 'const' and call it like baseTheme, then 'const' theme below with custom colors
+// ================================================================================
+// Base Theme Overrides
+// ================================================================================
+const baseTheme = createTheme({
+  // --------------------------------------------------------------------------------
+  // Palette
+  // --------------------------------------------------------------------------------
   palette: {
     mode: 'dark',
   },
+  // --------------------------------------------------------------------------------
   // Components / Default Props
+  // --------------------------------------------------------------------------------
   components: {
     // Typography
     MuiTypography: {
@@ -59,6 +69,52 @@ export const theme = createTheme({
           color: ${themeParam.palette.primary.main};
         }
       `,
+    },
+  },
+})
+
+// ================================================================================
+// Full Theme with Custom Palette
+// ================================================================================
+export const theme = createTheme(baseTheme, {
+  palette: {
+    // --------------------------------------------------------------------------------
+    // Brand Colors
+    // --------------------------------------------------------------------------------
+    // Blue
+    brandBlue: baseTheme.palette.augmentColor({
+      color: {
+        main: '#1F78FF',
+      },
+      name: 'brandBlue',
+    }),
+    // Red
+    brandRed: baseTheme.palette.augmentColor({
+      color: {
+        main: '#F7263B',
+      },
+      name: 'brandRed',
+    }),
+    // Yellow
+    brandYellow: baseTheme.palette.augmentColor({
+      color: {
+        main: '#FFD417',
+      },
+      name: 'brandYellow',
+    }),
+    // Green
+    brandGreen: baseTheme.palette.augmentColor({
+      color: {
+        main: '#00CC8B',
+      },
+      name: 'brandGreen',
+    }),
+    // --------------------------------------------------------------------------------
+    // Background
+    // --------------------------------------------------------------------------------
+    background: {
+      default: '#000',
+      paper: '#000',
     },
   },
 })
