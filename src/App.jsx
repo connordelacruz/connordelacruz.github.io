@@ -178,35 +178,6 @@ function App() {
             </Typography>
           </Box>
 
-          {/*Socials*/}
-          <Box
-            sx={{
-              mt: 4,
-              textAlign: 'center',
-            }}
-          >
-            <SocialLink
-              label="Email"
-              iconComponent={<Email/>}
-              href="mailto:connor.c.delacruz@gmail.com"
-            />
-            <SocialLink
-              label="GitHub"
-              iconComponent={<GitHub/>}
-              href="https://github.com/connordelacruz"
-            />
-            <SocialLink
-              label="LinkedIn"
-              iconComponent={<LinkedIn/>}
-              href="http://www.linkedin.com/in/connordelacruz"
-            />
-            <SocialLink
-              label="Instagram"
-              iconComponent={<Instagram/>}
-              href="https://www.instagram.com/delachrome"
-            />
-          </Box>
-
           {/* About */}
           <Box
             id="section-about"
@@ -251,6 +222,35 @@ function App() {
               {/*  And when I'm not diving into personal projects, I love going on adventures with my dog Kiwi 🥝 .*/}
               {/*</Typography>*/}
             </Paper>
+          </Box>
+
+          {/*Socials*/}
+          <Box
+            sx={{
+              mt: 4,
+              textAlign: 'center',
+            }}
+          >
+            <SocialLink
+              label="Email"
+              iconComponent={<Email/>}
+              href="mailto:connor.c.delacruz@gmail.com"
+            />
+            <SocialLink
+              label="GitHub"
+              iconComponent={<GitHub/>}
+              href="https://github.com/connordelacruz"
+            />
+            <SocialLink
+              label="LinkedIn"
+              iconComponent={<LinkedIn/>}
+              href="http://www.linkedin.com/in/connordelacruz"
+            />
+            <SocialLink
+              label="Instagram"
+              iconComponent={<Instagram/>}
+              href="https://www.instagram.com/delachrome"
+            />
           </Box>
         </Box>
 
