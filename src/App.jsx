@@ -501,8 +501,8 @@ function App() {
       <Paper
         sx={{
           mt: 4,
-          py: 3,
-          borderWidth: '1px 0 0',
+          py: 4,
+          borderWidth: '2px 0 0',
         }}
       >
         <Typography

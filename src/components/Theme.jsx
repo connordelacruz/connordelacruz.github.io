@@ -35,6 +35,7 @@ const baseTheme = createTheme({
         root: ({theme}) =>
           theme.unstable_sx({
             p: 2,
+            borderWidth: 2,
           }),
       },
     },
@@ -60,6 +61,7 @@ const baseTheme = createTheme({
         disableElevation: true,
       }
     },
+    // TODO: border width for Dividers
     // Baseline styles
     // TODO: can we use defaultProps instead? gotta figure out how to specify for variants
     //    https://mui.com/material-ui/customization/typography/#variants

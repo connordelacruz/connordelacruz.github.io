@@ -5,7 +5,14 @@ export const SectionHeader = ({
                                 ...props
                               }) => {
   return (
-    <Divider sx={{mb: 4}}>
+    <Divider
+      sx={{
+        mb: 4,
+        '&::before, &::after': {
+          borderTopWidth: 2,
+        },
+      }}
+    >
       <Typography variant="h2" gutterBottom={false}>
         {children}
       </Typography>
