@@ -43,6 +43,12 @@ export const NavBar = ({
   // Offset scroll height for links by this value
   const navLinksScrollOffset = 85
 
+  // Map of section link hashes to their theme colors
+  const sectionHashToColor = []
+  sectionLinks.map((sectionLink) =>{
+    sectionHashToColor[sectionLink.hash] = sectionLink.color + '.main'
+  })
+
   // Smooth scroll link handlers
   const createSmoothScrollToSectionHandler = (hash, callback = null) => {
     return (e) => {
@@ -87,6 +93,10 @@ export const NavBar = ({
       sx={{
         py: 0,
         borderWidth: '0 0 2px',
+        // TODO: idk if i like this or not:
+        borderBottomColor: activeHash ? 'default' : 'rgba(0,0,0,0)',
+        transition: 'border-bottom-color 0.3s',
+        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
       }}
     >
       <Toolbar
@@ -125,7 +135,6 @@ export const NavBar = ({
           >
             <Box
               role="presentation"
-              // TODO: onClick close drawer?
               sx={{
                 width: 250,
                 // TODO: figure out padding, make links big n juicy and a bit closer to vertical center
@@ -134,6 +143,7 @@ export const NavBar = ({
             >
               <List>
                 {/*Drawer Menu Items*/}
+                {/*TODO: colors*/}
                 {sectionLinks.map((sectionLink, i) => (
                   <ListItem
                     key={i}
@@ -161,7 +171,7 @@ export const NavBar = ({
         {/*Logo*/}
         <Typography
           variant="h6"
-          color="primary"
+          color="inherit"
           component="a"
           href="#"
           onClick={handleLogoClick}
@@ -187,7 +197,18 @@ export const NavBar = ({
             display: {xs: 'none', md: 'block'},
           }}
         >
-          <Tabs value={activeHash ? activeHash : false}>
+          <Tabs
+            value={activeHash ? activeHash : false}
+            sx={{
+              '& .MuiTabs-indicator': {
+                // Full height indicator
+                height: '100%',
+                borderRadius: 1,
+                // indicatorColor prop doesn't work with custom palettes, so leveraging sx
+                backgroundColor: activeHash ? sectionHashToColor[activeHash] : 'inherit',
+              },
+            }}
+          >
             {sectionLinks.map((sectionLink, i) => (
               <Tab
                 key={i}
@@ -198,6 +219,18 @@ export const NavBar = ({
                 onClick={createSmoothScrollToSectionHandler(sectionLink.hash)}
                 sx={{
                   ml: 1,
+                  // TODO: maybe make all button text styles bold?
+                  fontWeight: 700,
+                  // Make sure text appears above full-height tab indicator
+                  zIndex: 1,
+                  // While the Tabs textColor prop does work with custom palettes, it throws errors if you use anything
+                  // other than the default ones, so I guess we're going with sx instead
+                  // TODO: transition timing for text color such that it changes after the indicator moves?
+                  color: sectionLink.color + '.main',
+                  '&.Mui-selected': {
+                    // Set a contrasting color so it sticks out over the indicator
+                    color: 'background.default',
+                  },
                 }}
               />
             ))}

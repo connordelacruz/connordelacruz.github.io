@@ -110,9 +110,21 @@ function App() {
       {/*Nav Bar*/}
       <NavBar
         sectionLinks={[
-          {text: 'Resume', hash: 'section-resume'},
-          {text: 'Projects', hash: 'section-projects'},
-          {text: 'Contact', hash: 'section-contact'},
+          {
+            text: 'Resume',
+            hash: 'section-resume',
+            color: 'brandRed',
+          },
+          {
+            text: 'Projects',
+            hash: 'section-projects',
+            color: 'brandYellow',
+          },
+          {
+            text: 'Contact',
+            hash: 'section-contact',
+            color: 'brandBlue',
+          },
         ]}
       />
 
