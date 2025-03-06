@@ -64,7 +64,7 @@ const NavTabs = ({
             onClick={createSmoothScrollToSectionHandler(sectionLink.hash)}
             sx={{
               ml: 1,
-              // TODO: maybe make all button text styles bold?
+              // TODO: make all button text styles bold!
               fontWeight: 700,
               // Make sure text appears above full-height tab indicator
               zIndex: 1,
@@ -102,7 +102,7 @@ const NavMenu = ({
                  }) => {
   // TODO: responsive menu:
   //       - mirror the menu open/closed icon animation on current site
-  //       - each line a different color?
+  //       - each line of menu button a different color?
 
   // Responsive nav drawer state
   const [drawerOpen, setDrawerOpen] = React.useState(false)
@@ -149,13 +149,11 @@ const NavMenu = ({
           role="presentation"
           sx={{
             width: 250,
-            // TODO: figure out padding, make links big n juicy and a bit closer to vertical center
             pt: 4,
           }}
         >
           <List>
             {/*Drawer Menu Items*/}
-            {/*TODO: colors*/}
             {sectionLinks.map((sectionLink, i) => (
               <ListItem
                 key={i}
@@ -168,9 +166,24 @@ const NavMenu = ({
                   selected={activeHash === sectionLink.hash}
                   sx={{
                     py: 2,
+                    borderRadius: 1,
+                    color: sectionLink.color + '.main',
+                    '&.Mui-selected': {
+                      backgroundColor: sectionLink.color + '.main',
+                      color: 'background.default',
+                    },
                   }}
                 >
-                  {sectionLink.text}
+                  <Typography
+                    variant="button"
+                    gutterBottom={false}
+                    sx={{
+//                       TODO: make all button text styles bold!
+                      fontWeight: 700,
+                    }}
+                  >
+                    {sectionLink.text}
+                  </Typography>
                 </ListItemButton>
               </ListItem>
             ))}
@@ -238,6 +251,8 @@ const NavLogo = ({activeHash}) => {
 export const NavBar = ({
                          sectionLinks = [],
                        }) => {
+  // TODO:
+  //    - bg transparent when no activeHash? (gotta account for nav tabs on md+)
   // ================================================================================
   // Constants
   // ================================================================================

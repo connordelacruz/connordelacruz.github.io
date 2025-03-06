@@ -23,6 +23,7 @@ const baseTheme = createTheme({
     // Typography
     MuiTypography: {
       defaultProps: {
+        // TODO: only for headers if you can figure that out:
         gutterBottom: true,
       },
     },
