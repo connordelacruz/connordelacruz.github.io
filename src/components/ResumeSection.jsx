@@ -2,12 +2,21 @@ import { Card, CardContent, CardHeader, List, ListItem, ListItemIcon, ListItemTe
 import { PlayArrow } from '@mui/icons-material'
 
 
-// TODO: make a nicely formatted list of these, maybe with chips or using the List component
+/**
+ * Card component listing professional skills.
+ *
+ * @param title
+ * @param titleColor
+ * @param children
+ * @return {JSX.Element}
+ * @constructor
+ */
 export const SkillCard = ({
                             title,
                             titleColor = 'inherit',
                             children
                           }) => {
+// TODO: make a nicely formatted list of these, maybe with chips or using the List component
   return (
     <Card
       sx={{
@@ -69,6 +78,17 @@ const ExperienceList = ({bullets}) => {
 }
 
 
+/**
+ * Card component listing a previous job + experience bullets.
+ *
+ * @param jobTitle
+ * @param company
+ * @param startDate
+ * @param endDate
+ * @param bullets
+ * @return {JSX.Element}
+ * @constructor
+ */
 export const ExperienceCard = ({
                                  jobTitle,
                                  company,

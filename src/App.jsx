@@ -13,7 +13,7 @@ import {
 import Grid from '@mui/material/Grid2'
 import { Description, Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
 import { theme } from './components/Theme.jsx'
-import { SocialLink } from './components/SocialLink.jsx'
+import { SocialLinks } from './components/SocialLinks.jsx'
 import { ExperienceCard, SkillCard } from './components/ResumeSection.jsx'
 import { ProjectCard } from './components/ProjectCard.jsx'
 import { SectionHeader } from './components/SectionHeader.jsx'
@@ -22,9 +22,45 @@ import { NavBar } from './components/NavBar.jsx'
 function App() {
   // TODO:
   //    - Pagination on projects? resume? https://mui.com/material-ui/react-pagination/
+
+  // ================================================================================
+  // Constants
+  // ================================================================================
+  // Theme
+  const COLOR_HEADER = 'brandBlue'
+  const COLOR_RESUME = 'brandRed'
+  const COLOR_PROJECTS = 'brandYellow'
+  const COLOR_CONTACT = COLOR_HEADER
+
   // ================================================================================
   // Content
   // ================================================================================
+
+  // --------------------------------------------------------------------------------
+  // Socials
+  // --------------------------------------------------------------------------------
+  const socialLinkProps = [
+    {
+      label: 'Email',
+      iconComponent: <Email/>,
+      href: 'mailto:connor.c.delacruz@gmail.com',
+    },
+    {
+      label: 'GitHub',
+      iconComponent: <GitHub/>,
+      href: 'https://github.com/connordelacruz',
+    },
+    {
+      label: 'LinkedIn',
+      iconComponent: <LinkedIn/>,
+      href: 'http://www.linkedin.com/in/connordelacruz',
+    },
+    {
+      label: 'Instagram',
+      iconComponent: <Instagram/>,
+      href: 'https://www.instagram.com/delachrome',
+    },
+  ]
 
   // --------------------------------------------------------------------------------
   // Experience section
@@ -100,14 +136,6 @@ function App() {
   const experienceCards = experienceContent.map((props, i) =>
     <ExperienceCard key={i} {...props}/>
   )
-
-  // ================================================================================
-  // Theming
-  // ================================================================================
-  const COLOR_HEADER = 'brandBlue'
-  const COLOR_RESUME = 'brandRed'
-  const COLOR_PROJECTS = 'brandYellow'
-  const COLOR_CONTACT = COLOR_HEADER
 
   // ================================================================================
   // Render
@@ -213,7 +241,6 @@ function App() {
                 p: {
                   xs: 2,
                   sm: 4,
-//                  borderColor: theme.palette[COLOR_NAME].main,
                 },
               }}
             >
@@ -237,37 +264,7 @@ function App() {
           </Box>
 
           {/*Socials*/}
-          <Box
-            sx={{
-              mt: 4,
-              textAlign: 'center',
-            }}
-          >
-            <SocialLink
-              label="Email"
-              iconComponent={<Email/>}
-              href="mailto:connor.c.delacruz@gmail.com"
-              color={COLOR_HEADER}
-            />
-            <SocialLink
-              label="GitHub"
-              iconComponent={<GitHub/>}
-              href="https://github.com/connordelacruz"
-              color={COLOR_HEADER}
-            />
-            <SocialLink
-              label="LinkedIn"
-              iconComponent={<LinkedIn/>}
-              href="http://www.linkedin.com/in/connordelacruz"
-              color={COLOR_HEADER}
-            />
-            <SocialLink
-              label="Instagram"
-              iconComponent={<Instagram/>}
-              href="https://www.instagram.com/delachrome"
-              color={COLOR_HEADER}
-            />
-          </Box>
+          <SocialLinks linkProps={socialLinkProps} color={COLOR_CONTACT}/>
         </Box>
 
         {/* Page Content */}
