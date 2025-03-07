@@ -10,11 +10,10 @@ import {
   ThemeProvider,
   Typography
 } from '@mui/material'
-import Grid from '@mui/material/Grid2'
 import { Description, Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
 import { theme } from './components/Theme.jsx'
 import { SocialLinks } from './components/SocialLinks.jsx'
-import { ExperienceCard, SkillCard } from './components/ResumeSection.jsx'
+import { ExperienceCard, SkillCards } from './components/ResumeSection.jsx'
 import { ProjectCard } from './components/ProjectCard.jsx'
 import { SectionHeader } from './components/SectionHeader.jsx'
 import { NavBar } from './components/NavBar.jsx'
@@ -63,8 +62,25 @@ function App() {
   ]
 
   // --------------------------------------------------------------------------------
-  // Experience section
+  // Resume
   // --------------------------------------------------------------------------------
+  // Skills
+  const skillsContent = [
+    {
+      title: 'Programming',
+      skills: 'Python, PHP, JavaScript (ES2015+), CSS, Sass, HTML, Java, Bash, Groovy',
+    },
+    {
+      title: 'Libraries & Frameworks',
+      skills: 'React, Material UI, P5.js, Processing, Django, Cypress, Selenium',
+    },
+    {
+      title: 'Tools & Software',
+      skills: 'Git, GitHub, MySQL, Docker, Jenkins, Node.js, JetBrains IDEs, vim',
+    },
+  ]
+
+  // Experience
   const experienceContent = [
     {
       jobTitle: 'Software Engineer',
@@ -130,12 +146,6 @@ function App() {
       ],
     },
   ]
-
-  // Experience section components.
-  // TODO: move to inline for consistency
-  const experienceCards = experienceContent.map((props, i) =>
-    <ExperienceCard key={i} {...props}/>
-  )
 
   // ================================================================================
   // Render
@@ -280,49 +290,15 @@ function App() {
               id="resume-stack"
               spacing={2}
             >
-              <Box id="resume-skills">
-                <Typography variant="h3">Skills</Typography>
-                {/*TODO: extract skills section, pass in a data structure similar to experience*/}
-                <Grid
-                  container
-                  spacing={2}
-                  direction={{xs: 'column', sm: 'row'}}
-                  sx={{
-                    justifyContent: "space-evenly",
-                    alignItems: "stretch",
-                  }}
-                >
-                  <Grid size={{xs: 12, sm: 4}}>
-                    <SkillCard
-                      title="Programming"
-                      titleColor={COLOR_RESUME}
-                    >
-                      Python, PHP, JavaScript (ES2015+), CSS, Sass, HTML, Java, Bash, Groovy
-                    </SkillCard>
-                  </Grid>
-                  <Grid size={{xs: 12, sm: 4}}>
-                    <SkillCard
-                      title="Libraries & Frameworks"
-                      titleColor={COLOR_RESUME}
-                    >
-                      React, Material UI, P5.js, Processing, Django, Cypress, Selenium
-                    </SkillCard>
-                  </Grid>
-                  <Grid size={{xs: 12, sm: 4}}>
-                    <SkillCard
-                      title="Tools & Software"
-                      titleColor={COLOR_RESUME}
-                    >
-                      Git, GitHub, MySQL, Docker, Jenkins, Node.js, JetBrains IDEs, vim
-                    </SkillCard>
-                  </Grid>
-                </Grid>
-              </Box>
+              {/*Skills*/}
+              <SkillCards skillCardProps={skillsContent} color={COLOR_RESUME}/>
 
               <Box id="resume-experience">
                 <Typography variant="h3">Experience</Typography>
                 <Stack spacing={2}>
-                  {experienceCards}
+                  {experienceContent.map((props, i) =>
+                    <ExperienceCard key={i} color={COLOR_RESUME} {...props}/>
+                  )}
                 </Stack>
               </Box>
 

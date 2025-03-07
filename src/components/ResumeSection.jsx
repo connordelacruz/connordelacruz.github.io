@@ -1,5 +1,16 @@
-import { Card, CardContent, CardHeader, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material'
+import {
+  Box,
+  Card,
+  CardContent,
+  CardHeader,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Typography
+} from '@mui/material'
 import { PlayArrow } from '@mui/icons-material'
+import Grid from '@mui/material/Grid2'
 
 
 /**
@@ -7,16 +18,17 @@ import { PlayArrow } from '@mui/icons-material'
  *
  * @param title
  * @param titleColor
- * @param children
+ * @param skills
  * @return {JSX.Element}
  * @constructor
  */
 export const SkillCard = ({
                             title,
                             titleColor = 'inherit',
-                            children
+                            skills,
                           }) => {
 // TODO: make a nicely formatted list of these, maybe with chips or using the List component
+
   return (
     <Card
       sx={{
@@ -39,15 +51,46 @@ export const SkillCard = ({
       />
       <CardContent>
         <Typography variant="body1">
-          {children}
+          {skills}
         </Typography>
       </CardContent>
     </Card>
   )
 }
 
+// TODO DOC:
+export const SkillCards = ({
+                             skillCardProps,
+                             color,
+                           }) => {
+  return (
+    <Box>
+      <Typography variant="h3">Skills</Typography>
+      <Grid
+        container
+        spacing={2}
+        direction={{xs: 'column', sm: 'row'}}
+        sx={{
+          justifyContent: "space-evenly",
+          alignItems: "stretch",
+        }}
+      >
+        {skillCardProps.map((props, i) =>
+          <Grid size={{xs: 12, sm: 4}}>
+            <SkillCard key={i} titleColor={color} {...props}/>
+          </Grid>
+        )}
+      </Grid>
+    </Box>
+  )
+}
 
-const ExperienceList = ({bullets}) => {
+
+// TODO DOC
+const ExperienceList = ({
+                          bullets,
+                          color,
+                        }) => {
   return (
     <List
       disablePadding
@@ -61,6 +104,7 @@ const ExperienceList = ({bullets}) => {
           <ListItemIcon>
             <PlayArrow
               fontSize="small"
+              color={color}
             />
           </ListItemIcon>
           <ListItemText
@@ -86,6 +130,7 @@ const ExperienceList = ({bullets}) => {
  * @param startDate
  * @param endDate
  * @param bullets
+ * @param color
  * @return {JSX.Element}
  * @constructor
  */
@@ -95,6 +140,7 @@ export const ExperienceCard = ({
                                  startDate,
                                  endDate,
                                  bullets,
+                                 color,
                                }) => {
   // TODO: chips for languages/frameworks to display at the bottom, see https://brittanychiang.com/#experience
 
@@ -105,10 +151,12 @@ export const ExperienceCard = ({
       }}
     >
       <CardContent>
-        <Typography variant="h6" color="primary">{jobTitle}</Typography>
+        <Typography variant="h6" color={color}>{jobTitle}</Typography>
         <Typography variant="subtitle1" color="text.secondary">{company} · {startDate}–{endDate}</Typography>
-        <ExperienceList bullets={bullets}/>
+        <ExperienceList bullets={bullets} color={color}/>
       </CardContent>
     </Card>
   )
 }
+
+// TODO: finish extracting section into components

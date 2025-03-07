@@ -48,6 +48,7 @@ export const SocialLink = ({
  * @constructor
  */
 export const SocialLinks = ({
+                              // TODO: better name for this?
                               linkProps,
                               color = 'inherit',
                             }) => {
