@@ -5,6 +5,7 @@ import { PlayArrow } from '@mui/icons-material'
 // TODO: make a nicely formatted list of these, maybe with chips or using the List component
 export const SkillCard = ({
                             title,
+                            titleColor = 'inherit',
                             children
                           }) => {
   return (
@@ -19,7 +20,7 @@ export const SkillCard = ({
         slotProps={{
           title: {
             variant: 'h6',
-            color: 'primary',
+            color: titleColor,
             mb: 0,
           }
         }}

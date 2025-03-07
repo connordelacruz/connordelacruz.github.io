@@ -3,9 +3,19 @@
 // ================================================================================
 import { createTheme } from '@mui/material'
 
-// TODO: use 'let', create initial theme then create again for custom colors like:
-//      https://mui.com/material-ui/customization/palette/#generate-tokens-using-augmentcolor-utility
-// TODO: might need to use 'const' and call it like baseTheme, then 'const' theme below with custom colors
+// ================================================================================
+// Theme Constants
+// ================================================================================
+
+// --------------------------------------------------------------------------------
+// Colors
+// --------------------------------------------------------------------------------
+const COLOR_BLUE = '#4D79FF'
+const COLOR_TEAL = '#00CC8B'
+const COLOR_PINK = '#FF5C95'
+const COLOR_YELO = '#FFB217'
+const COLOR_BACK = '#000014'
+
 // ================================================================================
 // Base Theme Overrides
 // ================================================================================
@@ -26,7 +36,21 @@ const baseTheme = createTheme({
         // TODO: only for headers if you can figure that out:
         gutterBottom: true,
       },
+      styleOverrides: {
+        root: {
+          variants: [
+            // h2
+            {
+              props: {variant: 'h2'},
+              style: {
+                fontWeight: 400,
+              },
+            },
+          ],
+        },
+      },
     },
+
     // Paper
     MuiPaper: {
       defaultProps: {
@@ -51,7 +75,7 @@ const baseTheme = createTheme({
           // TODO: uncomment to make text not all caps, then maybe increase text size?
 //          textTransform: 'initial',
 //          fontSize: '1rem',
-//          fontWeight: 'bold',
+          fontWeight: 'bold',
         },
       },
     },
@@ -66,13 +90,14 @@ const baseTheme = createTheme({
     // Baseline styles
     // TODO: can we use defaultProps instead? gotta figure out how to specify for variants
     //    https://mui.com/material-ui/customization/typography/#variants
-    MuiCssBaseline: {
-      styleOverrides: (themeParam) => `
-        h2 {
-          color: ${themeParam.palette.primary.main};
-        }
-      `,
-    },
+    // TODO: remove?
+//    MuiCssBaseline: {
+//      styleOverrides: (themeParam) => `
+//        h2 {
+//          color: ${themeParam.palette.primary.main};
+//        }
+//      `,
+//    },
   },
 })
 
@@ -87,28 +112,30 @@ export const theme = createTheme(baseTheme, {
     // Blue
     brandBlue: baseTheme.palette.augmentColor({
       color: {
-        main: '#1F78FF',
+        main: COLOR_BLUE,
+        // TODO: find a way to ensure these values align with defaults
+        contrastText: 'rgba(0, 0, 0, 0.87)',
       },
       name: 'brandBlue',
     }),
     // Red
     brandRed: baseTheme.palette.augmentColor({
       color: {
-        main: '#F7263B',
+        main: COLOR_PINK,
       },
       name: 'brandRed',
     }),
     // Yellow
     brandYellow: baseTheme.palette.augmentColor({
       color: {
-        main: '#FFD417',
+        main: COLOR_YELO,
       },
       name: 'brandYellow',
     }),
     // Green
     brandGreen: baseTheme.palette.augmentColor({
       color: {
-        main: '#00CC8B',
+        main: COLOR_TEAL,
       },
       name: 'brandGreen',
     }),
@@ -116,8 +143,8 @@ export const theme = createTheme(baseTheme, {
     // Background
     // --------------------------------------------------------------------------------
     background: {
-      default: '#000',
-      paper: '#000',
+      default: COLOR_BACK,
+      paper: COLOR_BACK,
     },
   },
 })

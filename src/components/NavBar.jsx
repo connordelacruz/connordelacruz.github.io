@@ -97,7 +97,6 @@ const NavTabs = ({
 const NavMenu = ({
                    sectionLinks,
                    activeHash,
-                   getActiveHashColor,
                    createSmoothScrollToSectionHandler,
                  }) => {
   // TODO: responsive menu:
@@ -199,10 +198,14 @@ const NavMenu = ({
  * Nav logo component.
  *
  * @param activeHash
+ * @param color
  * @return {Element}
  * @constructor
  */
-const NavLogo = ({activeHash}) => {
+const NavLogo = ({
+                   activeHash,
+                   color,
+                 }) => {
   // TODO: logo:
   //       - shorten logo to "Cd" on narrow?
   //       - Figure out styling on narrow regardless, it's a real weird size and not centered nicely
@@ -218,7 +221,7 @@ const NavLogo = ({activeHash}) => {
   return (
     <Typography
       variant="h6"
-      color="inherit"
+      color={color}
       component="a"
       href="#"
       onClick={handleLogoClick}
@@ -250,6 +253,7 @@ const NavLogo = ({activeHash}) => {
  */
 export const NavBar = ({
                          sectionLinks = [],
+                         logoColor = 'inherit',
                        }) => {
   // TODO:
   //    - bg transparent when no activeHash? (gotta account for nav tabs on md+)
@@ -322,7 +326,10 @@ export const NavBar = ({
         />
 
         {/*Logo*/}
-        <NavLogo activeHash={activeHash}/>
+        <NavLogo
+          activeHash={activeHash}
+          color={logoColor}
+        />
 
         {/*Wide Viewport Links*/}
         <NavTabs

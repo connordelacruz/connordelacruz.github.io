@@ -96,9 +96,18 @@ function App() {
   ]
 
   // Experience section components.
+  // TODO: move to inline for consistency
   const experienceCards = experienceContent.map((props, i) =>
     <ExperienceCard key={i} {...props}/>
   )
+
+  // ================================================================================
+  // Theming
+  // ================================================================================
+  const COLOR_HEADER = 'brandBlue'
+  const COLOR_RESUME = 'brandRed'
+  const COLOR_PROJECTS = 'brandYellow'
+  const COLOR_CONTACT = COLOR_HEADER
 
   // ================================================================================
   // Render
@@ -113,17 +122,17 @@ function App() {
           {
             text: 'Resume',
             hash: 'section-resume',
-            color: 'brandRed',
+            color: COLOR_RESUME,
           },
           {
             text: 'Projects',
             hash: 'section-projects',
-            color: 'brandYellow',
+            color: COLOR_PROJECTS,
           },
           {
             text: 'Contact',
             hash: 'section-contact',
-            color: 'brandBlue',
+            color: COLOR_CONTACT,
           },
         ]}
       />
@@ -163,7 +172,7 @@ function App() {
           >
             <Typography
               variant="h4"
-              color="primary"
+              color="text.secondary"
               sx={{
                 fontWeight: 400,
               }}
@@ -174,6 +183,7 @@ function App() {
             {/*TODO: make sure name scales nicely, breaks well on narrow views (damn this 3 word last name)*/}
             <Typography
               variant="h1"
+              color={COLOR_HEADER}
               sx={{
                 fontWeight: 400,
                 // Handle line breaks in the title a bit smoother by shrinking font size on small viewports
@@ -203,6 +213,7 @@ function App() {
                 p: {
                   xs: 2,
                   sm: 4,
+//                  borderColor: theme.palette[COLOR_NAME].main,
                 },
               }}
             >
@@ -222,17 +233,6 @@ function App() {
                 on
                 new challenges and building things I can be proud of.
               </Typography>
-              {/*TODO: omit or move?*/}
-              {/*<Typography*/}
-              {/*  variant="body1"*/}
-              {/*  component="p"*/}
-              {/*>*/}
-              {/*  When I'm not writing code, I like exploring new creative outlets. My latest hobby has been*/}
-              {/*  refurbishing*/}
-              {/*  and modding old iPods and Gameboys to breathe new life into some of my favorite pieces of retro*/}
-              {/*  tech.*/}
-              {/*  And when I'm not diving into personal projects, I love going on adventures with my dog Kiwi 🥝 .*/}
-              {/*</Typography>*/}
             </Paper>
           </Box>
 
@@ -247,21 +247,25 @@ function App() {
               label="Email"
               iconComponent={<Email/>}
               href="mailto:connor.c.delacruz@gmail.com"
+              color={COLOR_HEADER}
             />
             <SocialLink
               label="GitHub"
               iconComponent={<GitHub/>}
               href="https://github.com/connordelacruz"
+              color={COLOR_HEADER}
             />
             <SocialLink
               label="LinkedIn"
               iconComponent={<LinkedIn/>}
               href="http://www.linkedin.com/in/connordelacruz"
+              color={COLOR_HEADER}
             />
             <SocialLink
               label="Instagram"
               iconComponent={<Instagram/>}
               href="https://www.instagram.com/delachrome"
+              color={COLOR_HEADER}
             />
           </Box>
         </Box>
@@ -273,7 +277,7 @@ function App() {
         >
           {/* Resume */}
           <Box id="section-resume">
-            <SectionHeader>Resume</SectionHeader>
+            <SectionHeader color={COLOR_RESUME}>Resume</SectionHeader>
 
             <Stack
               id="resume-stack"
@@ -281,6 +285,7 @@ function App() {
             >
               <Box id="resume-skills">
                 <Typography variant="h3">Skills</Typography>
+                {/*TODO: extract skills section, pass in a data structure similar to experience*/}
                 <Grid
                   container
                   spacing={2}
@@ -291,17 +296,26 @@ function App() {
                   }}
                 >
                   <Grid size={{xs: 12, sm: 4}}>
-                    <SkillCard title="Programming">
+                    <SkillCard
+                      title="Programming"
+                      titleColor={COLOR_RESUME}
+                    >
                       Python, PHP, JavaScript (ES2015+), CSS, Sass, HTML, Java, Bash, Groovy
                     </SkillCard>
                   </Grid>
                   <Grid size={{xs: 12, sm: 4}}>
-                    <SkillCard title="Libraries & Frameworks">
+                    <SkillCard
+                      title="Libraries & Frameworks"
+                      titleColor={COLOR_RESUME}
+                    >
                       React, Material UI, P5.js, Processing, Django, Cypress, Selenium
                     </SkillCard>
                   </Grid>
                   <Grid size={{xs: 12, sm: 4}}>
-                    <SkillCard title="Tools & Software">
+                    <SkillCard
+                      title="Tools & Software"
+                      titleColor={COLOR_RESUME}
+                    >
                       Git, GitHub, MySQL, Docker, Jenkins, Node.js, JetBrains IDEs, vim
                     </SkillCard>
                   </Grid>
@@ -319,7 +333,7 @@ function App() {
               <Box id="resume-pdf">
                 <Button
                   variant="contained"
-                  color="primary"
+                  color={COLOR_RESUME}
                   startIcon={<Description/>}
                   size="large"
                   fullWidth
@@ -333,7 +347,7 @@ function App() {
 
           {/* Projects */}
           <Box id="section-projects">
-            <SectionHeader>Projects</SectionHeader>
+            <SectionHeader color={COLOR_PROJECTS}>Projects</SectionHeader>
 
             <Stack
               id="projects-stack"
@@ -462,7 +476,7 @@ function App() {
               <Box id="github-link">
                 <Button
                   variant="contained"
-                  color="primary"
+                  color={COLOR_PROJECTS}
                   startIcon={<GitHub/>}
                   size="large"
                   fullWidth
@@ -477,7 +491,7 @@ function App() {
 
           {/*Contact*/}
           <Box id="section-contact">
-            <SectionHeader>Contact</SectionHeader>
+            <SectionHeader color={COLOR_CONTACT}>Contact</SectionHeader>
             <Card>
               <CardContent>
                 <Typography
@@ -492,7 +506,7 @@ function App() {
                 </Typography>
                 <Button
                   variant="contained"
-                  color="primary"
+                  color={COLOR_CONTACT}
                   startIcon={<Email/>}
                   size="large"
                   fullWidth

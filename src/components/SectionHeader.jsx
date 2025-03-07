@@ -2,6 +2,7 @@ import { Divider, Typography } from '@mui/material'
 
 export const SectionHeader = ({
                                 children,
+                                color,
                                 ...props
                               }) => {
   return (
@@ -13,7 +14,11 @@ export const SectionHeader = ({
         },
       }}
     >
-      <Typography variant="h2" gutterBottom={false}>
+      <Typography
+        color={color}
+        variant="h2"
+        gutterBottom={false}
+      >
         {children}
       </Typography>
     </Divider>

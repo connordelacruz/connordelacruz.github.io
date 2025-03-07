@@ -4,7 +4,7 @@ export const SocialLink = ({
                              href,
                              label,
                              iconComponent,
-                             color = 'primary',
+                             color = 'inherit',
                              ...props
                            }) => {
   return (
