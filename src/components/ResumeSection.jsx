@@ -58,11 +58,19 @@ export const SkillCard = ({
   )
 }
 
-// TODO DOC:
+/**
+ * Card with list of skills.
+ *
+ * @param skillCardProps
+ * @param color
+ * @return {JSX.Element}
+ * @constructor
+ */
 export const SkillCards = ({
                              skillCardProps,
                              color,
                            }) => {
+  // TODO: format skills nicely, maybe List?
   return (
     <Box>
       <Typography variant="h3">Skills</Typography>
