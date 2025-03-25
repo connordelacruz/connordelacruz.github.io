@@ -86,7 +86,14 @@ export const SkillCards = ({
 }
 
 
-// TODO DOC
+/**
+ * Bullets for experience cards.
+ *
+ * @param bullets
+ * @param color
+ * @return {JSX.Element}
+ * @constructor
+ */
 const ExperienceList = ({
                           bullets,
                           color,
@@ -98,7 +105,6 @@ const ExperienceList = ({
       {bullets.map((bullet, i) =>
         <ListItem
           key={i}
-          diablePadding
           disableGutters
         >
           <ListItemIcon>
