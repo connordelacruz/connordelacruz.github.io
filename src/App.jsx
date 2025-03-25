@@ -12,16 +12,13 @@ import {
 } from '@mui/material'
 import { Description, Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
 import { theme } from './components/Theme.jsx'
-import { SocialLinks } from './components/SocialLinks.jsx'
 import { ExperienceCard, SkillCards } from './components/ResumeSection.jsx'
 import { ProjectCard } from './components/ProjectCard.jsx'
 import { SectionHeader } from './components/SectionHeader.jsx'
 import { NavBar } from './components/NavBar.jsx'
+import { PageHeader } from './components/PageHeader.jsx'
 
 function App() {
-  // TODO:
-  //    - Pagination on projects? resume? https://mui.com/material-ui/react-pagination/
-
   // ================================================================================
   // Constants
   // ================================================================================
@@ -34,6 +31,7 @@ function App() {
   // ================================================================================
   // Content
   // ================================================================================
+  // TODO: move these to their respective components to clean up this file?
 
   // --------------------------------------------------------------------------------
   // Socials
@@ -175,118 +173,14 @@ function App() {
         ]}
       />
 
-      {/*Content*/}
+      { /* Header */}
+      <PageHeader
+        color={COLOR_HEADER}
+        socialLinkProps={socialLinkProps}
+      />
+
+      {/* Page Content */}
       <Container id="page-wrapper" maxWidth="md">
-
-        { /* Header */}
-        <Box
-          id="section-top"
-          sx={{
-            my: {
-              xs: 2,
-              md: 6,
-            },
-          }}
-        >
-
-          {/*Header Text*/}
-          <Box
-            sx={{
-              textAlign: 'center',
-            }}
-          >
-            <Typography
-              variant="h4"
-              color={COLOR_HEADER}
-              sx={{
-                fontWeight: 400,
-              }}
-            >
-              Hi, my name is
-            </Typography>
-            {/*TODO: make sure name scales nicely, breaks well on narrow views (damn this 3 word last name)*/}
-            <Typography
-              variant="h1"
-              color={COLOR_HEADER}
-              sx={{
-                fontWeight: 500,
-                // Handle line breaks in the title a bit smoother by shrinking font size on small viewports
-                fontSize: {
-                  // TODO: figure out the best numbers here, scale subheader to look nice too
-                  xs: '3rem',
-                  sm: '4rem',
-                  md: '6rem',
-                },
-                color: COLOR_HEADER + '.contrastText',
-                backgroundColor: COLOR_HEADER + '.main',
-                // TODO: make sure this padding doesn't break mobile
-                px: 0,
-                py: 2,
-                borderRadius: 16,
-              }}
-              gutterBottom={false}
-            >
-              Connor de la Cruz
-            </Typography>
-          </Box>
-
-          {/* About */}
-          <Box
-            id="section-about"
-            sx={{
-              mt: 4,
-            }}
-          >
-            <Paper
-              id="about-content"
-              sx={{
-                p: {
-                  xs: 2,
-                  sm: 4,
-                },
-              }}
-            >
-
-              {/*Profile Photo*/}
-              <Box
-                sx={{
-                  maxWidth: {
-                    xs: '50%',
-                    sm: '40%',
-                  },
-                  margin: '0 auto',
-                  my: 4,
-                }}
-              >
-                <img
-                  src="images/about/profile.jpg"
-                  className="profile-image"
-                />
-              </Box>
-              <Typography
-                variant="h5"
-                component="p"
-                sx={{
-                  fontSize: {
-                    // TODO: looks a little funky on xs... (maybe it's cuz it's too wordy idk)
-                    xs: '1.25rem',
-                    sm: '1.5rem',
-                  },
-                }}
-              >
-                I'm a software engineer with a passion for creative problem solving and learning new things. Whether
-                it's full-stack web dev, creating command line tools, or even dabbling in design work, I love taking
-                on
-                new challenges and building things I can be proud of.
-              </Typography>
-            </Paper>
-          </Box>
-
-          {/*Socials*/}
-          <SocialLinks linkProps={socialLinkProps} color={COLOR_CONTACT}/>
-        </Box>
-
-        {/* Page Content */}
         <Stack
           id="sections-stack"
           spacing={4}
