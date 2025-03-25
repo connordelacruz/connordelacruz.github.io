@@ -22,8 +22,9 @@ export const SectionHeader = ({
         sx={{
           color: 'background.default',
           backgroundColor: color + '.main',
-          px: 4,
-          py: 1,
+          // TODO: reign in these values for mobile...
+          px: 3,
+          py: 0.5,
           borderRadius: 16,
         }}
       >

@@ -27,8 +27,8 @@ function App() {
   // ================================================================================
   // Theme
   const COLOR_HEADER = 'brandBlue'
-  const COLOR_RESUME = 'brandRed'
-  const COLOR_PROJECTS = 'brandYellow'
+  const COLOR_RESUME = 'brandYellow'
+  const COLOR_PROJECTS = 'brandRed'
   const COLOR_CONTACT = COLOR_HEADER
 
   // ================================================================================
@@ -182,25 +182,12 @@ function App() {
         <Box
           id="section-top"
           sx={{
-            my: 8,
+            my: {
+              xs: 2,
+              md: 6,
+            },
           }}
         >
-          {/*Profile Photo*/}
-          <Box
-            sx={{
-              maxWidth: {
-                xs: '50%',
-                sm: '40%',
-              },
-              margin: '0 auto',
-              mb: 4,
-            }}
-          >
-            <img
-              src="images/about/profile.jpg"
-              className="profile-image"
-            />
-          </Box>
 
           {/*Header Text*/}
           <Box
@@ -210,11 +197,10 @@ function App() {
           >
             <Typography
               variant="h4"
-              color="text.secondary"
+              color={COLOR_HEADER}
               sx={{
                 fontWeight: 400,
               }}
-              gutterBottom={false}
             >
               Hi, my name is
             </Typography>
@@ -231,15 +217,16 @@ function App() {
                   sm: '4rem',
                   md: '6rem',
                 },
-                color: 'background.default',
+                color: COLOR_HEADER + '.contrastText',
                 backgroundColor: COLOR_HEADER + '.main',
-                px: 4,
+                // TODO: make sure this padding doesn't break mobile
+                px: 0,
                 py: 2,
                 borderRadius: 16,
               }}
               gutterBottom={false}
             >
-              Connor de la Cruz.
+              Connor de la Cruz
             </Typography>
           </Box>
 
@@ -259,13 +246,30 @@ function App() {
                 },
               }}
             >
+
+              {/*Profile Photo*/}
+              <Box
+                sx={{
+                  maxWidth: {
+                    xs: '50%',
+                    sm: '40%',
+                  },
+                  margin: '0 auto',
+                  my: 4,
+                }}
+              >
+                <img
+                  src="images/about/profile.jpg"
+                  className="profile-image"
+                />
+              </Box>
               <Typography
                 variant="h5"
                 component="p"
                 sx={{
                   fontSize: {
                     // TODO: looks a little funky on xs... (maybe it's cuz it's too wordy idk)
-                    xs: '1.15rem',
+                    xs: '1.25rem',
                     sm: '1.5rem',
                   },
                 }}
@@ -285,7 +289,7 @@ function App() {
         {/* Page Content */}
         <Stack
           id="sections-stack"
-          spacing={8}
+          spacing={4}
         >
           {/* Resume */}
           <Box id="section-resume">

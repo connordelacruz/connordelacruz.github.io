@@ -76,8 +76,8 @@ export const SkillCards = ({
         }}
       >
         {skillCardProps.map((props, i) =>
-          <Grid size={{xs: 12, sm: 4}}>
-            <SkillCard key={i} titleColor={color} {...props}/>
+          <Grid key={i} size={{xs: 12, sm: 4}}>
+            <SkillCard titleColor={color} {...props}/>
           </Grid>
         )}
       </Grid>
@@ -152,6 +152,7 @@ export const ExperienceCard = ({
     >
       <CardContent>
         <Typography variant="h6" color={color}>{jobTitle}</Typography>
+        {/*TODO: below md, line break instead of dot*/}
         <Typography variant="subtitle1" color="text.secondary">{company} · {startDate}–{endDate}</Typography>
         <ExperienceList bullets={bullets} color={color}/>
       </CardContent>

@@ -97,6 +97,7 @@ const NavTabs = ({
 const NavMenu = ({
                    sectionLinks,
                    activeHash,
+                   getActiveHashColor,
                    createSmoothScrollToSectionHandler,
                  }) => {
   // TODO: responsive menu:
@@ -130,9 +131,14 @@ const NavMenu = ({
         aria-controls="nav-drawer"
         aria-haspopup="true"
         onClick={handleMenuButtonClick}
-        color="inherit"
       >
-        <MenuIcon/>
+        <MenuIcon
+          sx={{
+            color: getActiveHashColor(),
+            transition: 'color 0.3s',
+            transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          }}
+        />
       </IconButton>
       {/*Menu Contents*/}
       <Drawer
@@ -328,6 +334,7 @@ export const NavBar = ({
         {/*Logo*/}
         <NavLogo
           activeHash={activeHash}
+          getActiveHashColor={getActiveHashColor}
           color={logoColor}
         />
 

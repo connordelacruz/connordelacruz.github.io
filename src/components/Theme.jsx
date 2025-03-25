@@ -14,7 +14,7 @@ const COLOR_BLUE = '#4D79FF'
 const COLOR_TEAL = '#00CC8B'
 const COLOR_PINK = '#FF5C95'
 const COLOR_YELO = '#FFB217'
-const COLOR_BACK = '#000014'
+const COLOR_BACK = '#020202'
 
 // ================================================================================
 // Base Theme Overrides
