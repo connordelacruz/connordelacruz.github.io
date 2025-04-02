@@ -253,7 +253,7 @@ const NavLogo = ({
  * Nav bar component.
  *
  * @param sectionLinks Array of objects with props text (link text) and hash (id of section omitting '#').
- *
+ * @param logoColor
  * @return {Element}
  * @constructor
  */
@@ -311,9 +311,12 @@ export const NavBar = ({
       sx={{
         py: 0,
         borderWidth: '0 0 2px',
+        // TODO: color full navbar instead??:
+//        backgroundColor: getActiveHashColor(headerColor + '.main'),
         // TODO: idk if i like this or not:
-        borderBottomColor: activeHash ? 'default' : 'rgba(0,0,0,0)',
-        transition: 'border-bottom-color 0.3s',
+//        borderBottomColor: activeHash ? 'default' : 'rgba(0,0,0,0)',
+        transitionProperty: 'background-color, border-bottom-color',
+        transitionDuration: '0.3s',
         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
       }}
     >

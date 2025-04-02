@@ -1,6 +1,27 @@
 import { Box, Container, Paper, Typography } from '@mui/material'
 import { SocialLinks } from './SocialLinks.jsx'
 
+
+const ProfilePhoto = () => {
+  return (
+    <Box
+      sx={{
+        maxWidth: {
+          xs: '50%',
+          sm: '40%',
+        },
+        margin: '0 auto',
+        my: 4,
+      }}
+    >
+      <img
+        src="images/about/profile.jpg"
+        className="profile-image"
+      />
+    </Box>
+  )
+}
+
 /**
  * Page header component.
  *
@@ -20,12 +41,6 @@ export const PageHeader = ({
       maxWidth={false}
       disableGutters
       sx={{
-        // TODO: use upscaled image
-        // TODO: fallback color?
-//          backgroundImage: 'url("./images/header/background.png")',
-        // TODO: width 100% wide, height 100% narrow?
-//          backgroundSize: '100%',
-        // TODO: no repeat?
       }}
     >
 
@@ -34,7 +49,7 @@ export const PageHeader = ({
         maxWidth="md"
         id="section-top"
         sx={{
-          my: {
+          py: {
             xs: 2,
             md: 6,
             textAlign: 'center',
@@ -44,17 +59,14 @@ export const PageHeader = ({
         {/*Header Text*/}
         <Typography
           variant="h4"
-          color={color}
           sx={{
             fontWeight: 400,
           }}
         >
           Hi, my name is
         </Typography>
-        {/*TODO: make sure name scales nicely, breaks well on narrow views (damn this 3 word last name)*/}
         <Typography
           variant="h1"
-          color={color}
           sx={{
             fontWeight: 500,
             // Handle line breaks in the title a bit smoother by shrinking font size on small viewports
@@ -90,25 +102,14 @@ export const PageHeader = ({
                 xs: 2,
                 sm: 4,
               },
+              borderColor: color + '.main',
             }}
           >
 
             {/*Profile Photo*/}
-            <Box
-              sx={{
-                maxWidth: {
-                  xs: '50%',
-                  sm: '40%',
-                },
-                margin: '0 auto',
-                my: 4,
-              }}
-            >
-              <img
-                src="images/about/profile.jpg"
-                className="profile-image"
-              />
-            </Box>
+            <ProfilePhoto/>
+
+            {/*About Copy*/}
             <Typography
               variant="h5"
               component="p"
