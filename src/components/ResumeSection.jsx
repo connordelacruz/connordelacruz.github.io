@@ -178,7 +178,15 @@ export const ExperienceCard = ({
 }
 
 
-// TODO DOC
+/**
+ * Resume section component.
+ *
+ * @param skillsContent
+ * @param experienceContent
+ * @param color
+ * @return {JSX.Element}
+ * @constructor
+ */
 export const ResumeSection = ({
                                 skillsContent,
                                 experienceContent,

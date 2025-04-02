@@ -1,15 +1,4 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  Container,
-  CssBaseline,
-  Paper,
-  Stack,
-  ThemeProvider,
-  Typography
-} from '@mui/material'
+import { Box, Button, Container, CssBaseline, Paper, Stack, ThemeProvider, Typography } from '@mui/material'
 import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
 import { theme } from './components/Theme.jsx'
 import { ResumeSection } from './components/ResumeSection.jsx'
@@ -17,6 +6,7 @@ import { ProjectCard } from './components/ProjectCard.jsx'
 import { SectionHeader } from './components/SectionHeader.jsx'
 import { NavBar } from './components/NavBar.jsx'
 import { PageHeader } from './components/PageHeader.jsx'
+import { ContactSection } from './components/ContactSection.jsx'
 
 function App() {
   // ================================================================================
@@ -321,6 +311,7 @@ function App() {
 
               {/*View more button*/}
               <Box id="github-link">
+                {/*TODO: big juicy CTA buttons*/}
                 <Button
                   variant="contained"
                   color={COLOR_PROJECTS}
@@ -337,35 +328,7 @@ function App() {
           </Box>
 
           {/*Contact*/}
-          <Box id="section-contact">
-            <SectionHeader color={COLOR_CONTACT}>Contact</SectionHeader>
-            <Card>
-              <CardContent>
-                <Typography
-                  variant="h5"
-                  component="p"
-                  sx={{
-                    py: 8,
-                    mb: 2,
-                  }}
-                >
-                  If you're looking to hire, collaborate, or just want to say hello, feel free to reach out!
-                </Typography>
-                {/*TODO: big juicy CTA buttons*/}
-                <Button
-                  variant="contained"
-                  color={COLOR_CONTACT}
-                  startIcon={<Email/>}
-                  size="large"
-                  fullWidth
-                  href="mailto:connor.c.delacruz@gmail.com"
-                  target="_blank"
-                >
-                  connor.c.delacruz@gmail.com
-                </Button>
-              </CardContent>
-            </Card>
-          </Box>
+          <ContactSection color={COLOR_CONTACT}/>
 
         </Stack>
 
