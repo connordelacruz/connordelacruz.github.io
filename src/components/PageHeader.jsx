@@ -26,14 +26,12 @@ const ProfilePhoto = () => {
  * Page header component.
  *
  * @param color Theme color for header section.
- * @param socialLinkProps props to use on SocialLinks component.
  *
  * @return {JSX.Element}
  * @constructor
  */
 export const PageHeader = ({
                              color,
-                             socialLinkProps,
                            }) => {
   return (
     <Container
@@ -130,7 +128,7 @@ export const PageHeader = ({
         </Box>
 
         {/*Socials*/}
-        <SocialLinks linkProps={socialLinkProps} color={color}/>
+        <SocialLinks color={color}/>
       </Container>
     </Container>
   )

@@ -1,5 +1,5 @@
 import { Box, Button, Container, CssBaseline, Paper, Stack, ThemeProvider, Typography } from '@mui/material'
-import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
+import { GitHub } from '@mui/icons-material'
 import { theme } from './components/Theme.jsx'
 import { ResumeSection } from './components/ResumeSection.jsx'
 import { ProjectCard } from './components/ProjectCard.jsx'
@@ -22,32 +22,6 @@ function App() {
   // Content
   // ================================================================================
   // TODO: move these to their respective components to clean up this file?
-
-  // --------------------------------------------------------------------------------
-  // Socials
-  // --------------------------------------------------------------------------------
-  const socialLinkProps = [
-    {
-      label: 'Email',
-      iconComponent: <Email/>,
-      href: 'mailto:connor.c.delacruz@gmail.com',
-    },
-    {
-      label: 'GitHub',
-      iconComponent: <GitHub/>,
-      href: 'https://github.com/connordelacruz',
-    },
-    {
-      label: 'LinkedIn',
-      iconComponent: <LinkedIn/>,
-      href: 'http://www.linkedin.com/in/connordelacruz',
-    },
-    {
-      label: 'Instagram',
-      iconComponent: <Instagram/>,
-      href: 'https://www.instagram.com/delachrome',
-    },
-  ]
 
   // --------------------------------------------------------------------------------
   // Resume
@@ -166,7 +140,6 @@ function App() {
       { /* Header */}
       <PageHeader
         color={COLOR_HEADER}
-        socialLinkProps={socialLinkProps}
       />
 
       {/* Page Content */}

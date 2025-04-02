@@ -1,4 +1,36 @@
 import { Box, IconButton } from '@mui/material'
+import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
+
+// ================================================================================
+// Content
+// ================================================================================
+
+const socialLinkProps = [
+  {
+    label: 'Email',
+    iconComponent: <Email/>,
+    href: 'mailto:connor.c.delacruz@gmail.com',
+  },
+  {
+    label: 'GitHub',
+    iconComponent: <GitHub/>,
+    href: 'https://github.com/connordelacruz',
+  },
+  {
+    label: 'LinkedIn',
+    iconComponent: <LinkedIn/>,
+    href: 'http://www.linkedin.com/in/connordelacruz',
+  },
+  {
+    label: 'Instagram',
+    iconComponent: <Instagram/>,
+    href: 'https://www.instagram.com/delachrome',
+  },
+]
+
+// ================================================================================
+// Components
+// ================================================================================
 
 /**
  * An icon link to a social media platform.
@@ -49,7 +81,7 @@ export const SocialLink = ({
  */
 export const SocialLinks = ({
                               // TODO: better name for this?
-                              linkProps,
+                              linkProps = socialLinkProps,
                               color = 'inherit',
                             }) => {
   return (
