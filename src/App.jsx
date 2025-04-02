@@ -10,9 +10,9 @@ import {
   ThemeProvider,
   Typography
 } from '@mui/material'
-import { Description, Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
+import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
 import { theme } from './components/Theme.jsx'
-import { ExperienceCard, SkillCards } from './components/ResumeSection.jsx'
+import { ResumeSection } from './components/ResumeSection.jsx'
 import { ProjectCard } from './components/ProjectCard.jsx'
 import { SectionHeader } from './components/SectionHeader.jsx'
 import { NavBar } from './components/NavBar.jsx'
@@ -186,40 +186,11 @@ function App() {
           spacing={4}
         >
           {/* Resume */}
-          <Box id="section-resume">
-            <SectionHeader color={COLOR_RESUME}>Resume</SectionHeader>
-
-            <Stack
-              id="resume-stack"
-              spacing={2}
-            >
-              {/*Skills*/}
-              <SkillCards skillCardProps={skillsContent} color={COLOR_RESUME}/>
-
-              <Box id="resume-experience">
-                <Typography variant="h3">Experience</Typography>
-                <Stack spacing={2}>
-                  {experienceContent.map((props, i) =>
-                    <ExperienceCard key={i} color={COLOR_RESUME} {...props}/>
-                  )}
-                </Stack>
-              </Box>
-
-              {/*TODO: link to resume pdf*/}
-              <Box id="resume-pdf">
-                <Button
-                  variant="contained"
-                  color={COLOR_RESUME}
-                  startIcon={<Description/>}
-                  size="large"
-                  fullWidth
-                >
-                  View Full Resume
-                </Button>
-              </Box>
-
-            </Stack>
-          </Box>
+          <ResumeSection
+            skillsContent={skillsContent}
+            experienceContent={experienceContent}
+            color={COLOR_RESUME}
+          />
 
           {/* Projects */}
           <Box id="section-projects">
@@ -380,6 +351,7 @@ function App() {
                 >
                   If you're looking to hire, collaborate, or just want to say hello, feel free to reach out!
                 </Typography>
+                {/*TODO: big juicy CTA buttons*/}
                 <Button
                   variant="contained"
                   color={COLOR_CONTACT}

@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   CardContent,
   CardHeader,
@@ -7,10 +8,12 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Stack,
   Typography
 } from '@mui/material'
-import { PlayArrow } from '@mui/icons-material'
+import { Description, PlayArrow } from '@mui/icons-material'
 import Grid from '@mui/material/Grid2'
+import { SectionHeader } from './SectionHeader.jsx'
 
 
 /**
@@ -174,4 +177,49 @@ export const ExperienceCard = ({
   )
 }
 
-// TODO: finish extracting section into components
+
+// TODO DOC
+export const ResumeSection = ({
+                                skillsContent,
+                                experienceContent,
+                                color,
+                              }) => {
+  return (
+    <Box id="section-resume">
+      <SectionHeader color={color}>Resume</SectionHeader>
+
+      <Stack
+        id="resume-stack"
+        spacing={2}
+      >
+        {/*Skills*/}
+        <SkillCards skillCardProps={skillsContent} color={color}/>
+
+        <Box id="resume-experience">
+          <Typography variant="h3">Experience</Typography>
+          <Stack spacing={2}>
+            {experienceContent.map((props, i) =>
+              <ExperienceCard key={i} color={color} {...props}/>
+            )}
+          </Stack>
+        </Box>
+
+        <Box id="resume-pdf">
+          {/*TODO: big juicy CTA buttons*/}
+          <Button
+            href="files/Connor de la Cruz Resume.pdf"
+            variant="contained"
+            color={color}
+            startIcon={<Description/>}
+            size="large"
+            fullWidth
+            download
+          >
+            View Full Resume
+          </Button>
+        </Box>
+
+      </Stack>
+    </Box>
+  )
+}
