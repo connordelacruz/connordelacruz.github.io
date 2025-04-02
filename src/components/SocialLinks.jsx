@@ -5,7 +5,7 @@ import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
 // Content
 // ================================================================================
 
-const socialLinkProps = [
+const socials = [
   {
     label: 'Email',
     iconComponent: <Email/>,
@@ -81,7 +81,7 @@ export const SocialLink = ({
  */
 export const SocialLinks = ({
                               // TODO: better name for this?
-                              linkProps = socialLinkProps,
+                              linkProps = socials,
                               color = 'inherit',
                             }) => {
   return (
