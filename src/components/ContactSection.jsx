@@ -1,5 +1,5 @@
 import { Box, Button, Card, CardContent, Typography } from '@mui/material'
-import { SectionHeader } from './SectionHeader.jsx'
+import { SectionHeader } from './common/SectionHeader.jsx'
 import { Email } from '@mui/icons-material'
 
 /**

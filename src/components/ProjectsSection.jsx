@@ -1,5 +1,5 @@
 import { Box, Button, Card, CardActions, CardContent, CardHeader, Stack, Typography } from '@mui/material'
-import { SectionHeader } from './SectionHeader.jsx'
+import { SectionHeader } from './common/SectionHeader.jsx'
 import { GitHub } from '@mui/icons-material'
 
 // ================================================================================

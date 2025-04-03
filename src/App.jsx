@@ -1,9 +1,9 @@
 import { Container, CssBaseline, Paper, Stack, ThemeProvider, Typography } from '@mui/material'
 import { theme } from './components/Theme.jsx'
+import { NavBar } from './components/NavBar.jsx'
+import { HeaderSection } from './components/HeaderSection.jsx'
 import { ResumeSection } from './components/ResumeSection.jsx'
 import { ProjectsSection } from './components/ProjectsSection.jsx'
-import { NavBar } from './components/NavBar.jsx'
-import { PageHeader } from './components/PageHeader.jsx'
 import { ContactSection } from './components/ContactSection.jsx'
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
       />
 
       { /* Header */}
-      <PageHeader color={COLOR_HEADER}/>
+      <HeaderSection color={COLOR_HEADER}/>
 
       {/* Page Content */}
       <Container id="page-wrapper" maxWidth="md">

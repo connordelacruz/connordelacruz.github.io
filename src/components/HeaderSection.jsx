@@ -1,5 +1,5 @@
 import { Box, Container, Paper, Typography } from '@mui/material'
-import { SocialLinks } from './SocialLinks.jsx'
+import { SocialLinks } from './common/SocialLinks.jsx'
 
 
 const ProfilePhoto = () => {
@@ -30,7 +30,7 @@ const ProfilePhoto = () => {
  * @return {JSX.Element}
  * @constructor
  */
-export const PageHeader = ({
+export const HeaderSection = ({
                              color,
                            }) => {
   return (

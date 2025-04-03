@@ -13,7 +13,7 @@ import {
 } from '@mui/material'
 import { Description, PlayArrow } from '@mui/icons-material'
 import Grid from '@mui/material/Grid2'
-import { SectionHeader } from './SectionHeader.jsx'
+import { SectionHeader } from './common/SectionHeader.jsx'
 
 // ================================================================================
 // Content

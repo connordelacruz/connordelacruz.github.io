@@ -100,9 +100,7 @@ const NavMenu = ({
                    getActiveHashColor,
                    createSmoothScrollToSectionHandler,
                  }) => {
-  // TODO: responsive menu:
-  //       - mirror the menu open/closed icon animation on current site
-  //       - each line of menu button a different color?
+  // TODO: chip or icon button (contained/outlined) with name of current section?
 
   // Responsive nav drawer state
   const [drawerOpen, setDrawerOpen] = React.useState(false)
