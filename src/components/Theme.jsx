@@ -125,6 +125,7 @@ const baseTheme = createTheme({
           theme.unstable_sx({
             p: 2,
             borderWidth: 2,
+            borderRadius: 4,
           }),
       },
     },
@@ -208,8 +209,10 @@ export const theme = createTheme(baseTheme, {
     // --------------------------------------------------------------------------------
     // TODO: update for mat you?
     background: {
-      default: COLOR_BACK,
-      paper: COLOR_BACK,
+//      default: COLOR_BACK,
+//      paper: COLOR_BACK,
+      default: COLORS_MATERIAL_YOU.background,
+      paper: COLORS_MATERIAL_YOU.surface,
     },
   },
 })

@@ -147,6 +147,11 @@ const NavMenu = ({
         // TODO: swipeable? sounds like it comes with a performance dip...
         // TODO: header list item
         // TODO: close button
+        PaperProps={{
+          sx: {
+            borderRadius: 0,
+          },
+        }}
       >
         <Box
           role="presentation"
@@ -312,6 +317,7 @@ export const NavBar = ({
       sx={{
         py: 0,
         borderWidth: '0 0 2px',
+        borderRadius: 0,
         // TODO: color full navbar instead??:
 //        backgroundColor: getActiveHashColor(headerColor + '.main'),
         borderBottomColor: getActiveHashColor('default'),

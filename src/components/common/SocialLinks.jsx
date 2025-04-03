@@ -87,7 +87,6 @@ export const SocialLinks = ({
   return (
     <Box
       sx={{
-        mt: 4,
         textAlign: 'center',
       }}
     >
