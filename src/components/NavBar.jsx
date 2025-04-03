@@ -204,12 +204,14 @@ const NavMenu = ({
  * Nav logo component.
  *
  * @param activeHash
+ * @param getActiveHashColor
  * @param color
  * @return {Element}
  * @constructor
  */
 const NavLogo = ({
                    activeHash,
+                   getActiveHashColor,
                    color,
                  }) => {
   // TODO: logo:
@@ -227,7 +229,7 @@ const NavLogo = ({
   return (
     <Typography
       variant="h6"
-      color={color}
+      color={getActiveHashColor()}
       component="a"
       href="#"
       onClick={handleLogoClick}
@@ -235,7 +237,8 @@ const NavLogo = ({
         // Fade in when not at top of page
         // TODO: make unclickable when hidden?
         opacity: activeHash === null ? 0 : 1,
-        transition: 'opacity 0.3s',
+        transitionProperty: 'opacity, color',
+        transitionDuration: '0.3s',
         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
         display: 'flex',
         flexGrow: 1,
@@ -313,8 +316,7 @@ export const NavBar = ({
         borderWidth: '0 0 2px',
         // TODO: color full navbar instead??:
 //        backgroundColor: getActiveHashColor(headerColor + '.main'),
-        // TODO: idk if i like this or not:
-//        borderBottomColor: activeHash ? 'default' : 'rgba(0,0,0,0)',
+        borderBottomColor: getActiveHashColor('default'),
         transitionProperty: 'background-color, border-bottom-color',
         transitionDuration: '0.3s',
         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',

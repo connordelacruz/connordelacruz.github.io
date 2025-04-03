@@ -4,7 +4,7 @@ import { Email } from '@mui/icons-material'
 
 /**
  * Contact section component.
- * 
+ *
  * @param color
  * @return {*}
  * @constructor
@@ -13,7 +13,11 @@ export const ContactSection = ({color}) => {
   return (
     <Box id="section-contact">
       <SectionHeader color={color}>Contact</SectionHeader>
-      <Card>
+      <Card
+        sx={{
+          borderColor: color + '.main',
+        }}
+      >
         <CardContent>
           <Typography
             variant="h5"

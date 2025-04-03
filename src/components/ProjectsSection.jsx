@@ -148,6 +148,7 @@ const ProjectImage = ({src, alt}) => {
  * @param smallButtonsContent
  * @param body
  * @param children
+ * @param color
  * @return {JSX.Element}
  * @constructor
  */
@@ -158,12 +159,13 @@ const ProjectCard = ({
                        smallButtonsContent = [],
                        body = null,
                        children = null,
+                       color,
                      }) => {
   // Big button component (if applicable)
   const bigButton = bigButtonContent.text ?
     <Button
       variant="contained"
-      color="primary"
+      color={color}
       size="large"
       fullWidth
       href={bigButtonContent.link}
@@ -177,7 +179,7 @@ const ProjectCard = ({
     <Button
       key={i}
       variant="contained"
-      color="primary"
+      color={color}
       href={smallButtonContent.link}
       target="_blank"
     >
@@ -186,13 +188,17 @@ const ProjectCard = ({
   )
 
   return (
-    <Card>
+    <Card
+      sx={{
+        borderColor: color + '.main',
+      }}
+    >
       <CardHeader
         title={title}
         slotProps={{
           title: {
             variant: 'h5',
-            color: 'primary',
+            color: color,
           }
         }}
       />
@@ -214,15 +220,19 @@ const ProjectCard = ({
  * List of ProjectCard components.
  *
  * @param projectCardProps
+ * @param color
  * @return {JSX.Element}
  * @constructor
  */
-const ProjectCards = ({projectCardProps = projects}) => {
+const ProjectCards = ({
+                        projectCardProps = projects,
+                        color,
+                      }) => {
   return (
     <>
       {
         projectCardProps.map((cardProps, i) =>
-          <ProjectCard key={i} {...cardProps}/>
+          <ProjectCard key={i} color={color} {...cardProps}/>
         )
       }
     </>
@@ -241,7 +251,7 @@ export const ProjectsSection = ({color}) => {
     <Box id="section-projects">
       <SectionHeader color={color}>Projects</SectionHeader>
       <Stack spacing={2}>
-        <ProjectCards/>
+        <ProjectCards color={color}/>
         {/*View more button*/}
         <Box id="github-link">
           {/*TODO: big juicy CTA buttons*/}
