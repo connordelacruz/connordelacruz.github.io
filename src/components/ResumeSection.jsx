@@ -110,14 +110,14 @@ const experience = [
  * Card component listing professional skills.
  *
  * @param title
- * @param titleColor
+ * @param color
  * @param skills
  * @return {JSX.Element}
  * @constructor
  */
 export const SkillCard = ({
                             title,
-                            titleColor = 'inherit',
+                            color = 'inherit',
                             skills,
                           }) => {
 // TODO: make a nicely formatted list of these, maybe with chips or using the List component
@@ -127,6 +127,7 @@ export const SkillCard = ({
       sx={{
         p: 0,
         height: '100%',
+        borderColor: color + '.main',
       }}
     >
       <CardHeader
@@ -134,7 +135,7 @@ export const SkillCard = ({
         slotProps={{
           title: {
             variant: 'h6',
-            color: titleColor,
+            color: color,
             mb: 0,
           }
         }}
@@ -178,7 +179,7 @@ export const SkillCards = ({
       >
         {skillCardProps.map((props, i) =>
           <Grid key={i} size={{xs: 12, sm: 4}}>
-            <SkillCard titleColor={color} {...props}/>
+            <SkillCard color={color} {...props}/>
           </Grid>
         )}
       </Grid>
@@ -255,6 +256,7 @@ export const ExperienceCard = ({
     <Card
       sx={{
         py: 0,
+        borderColor: color + '.main',
       }}
     >
       <CardContent>
