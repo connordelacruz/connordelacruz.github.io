@@ -39,6 +39,7 @@ const socials = [
  * @param label
  * @param iconComponent
  * @param color
+ * @param sx
  * @param props
  * @return {JSX.Element}
  * @constructor
@@ -48,6 +49,7 @@ export const SocialLink = ({
                              label,
                              iconComponent,
                              color = 'inherit',
+                             sx = {},
                              ...props
                            }) => {
   return (
@@ -57,6 +59,7 @@ export const SocialLink = ({
       target="_blank"
       sx={{
         mx: 3,
+        ...sx
       }}
       color={color}
       {...props}
@@ -76,22 +79,27 @@ export const SocialLink = ({
  *                  - label
  *                  - iconComponent
  * @param color
+ * @param sx
  * @return {JSX.Element}
  * @constructor
  */
 export const SocialLinks = ({
-                              // TODO: better name for this?
                               linkProps = socials,
                               color = 'inherit',
+                              containerSx = {},
+                              linkSx = {},
                             }) => {
+  // TODO: figure out how to achieve gradient!!
+  //      Prob need to do something like this for the link icon components: https://stackoverflow.com/questions/54273615/passing-props-in-a-component-that-is-stored-in-a-variable
   return (
     <Box
       sx={{
         textAlign: 'center',
+        ...containerSx
       }}
     >
       {linkProps.map((props, i) =>
-        <SocialLink key={i} {...props} color={color}/>
+        <SocialLink key={i} sx={{...linkSx}} {...props} color={color}/>
       )}
     </Box>
   )

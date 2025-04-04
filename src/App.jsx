@@ -1,5 +1,5 @@
 import { Container, CssBaseline, Paper, Stack, ThemeProvider, Typography } from '@mui/material'
-import { theme } from './components/Theme.jsx'
+import { theme, THEME_GRADIENT_TEXT_SX } from './components/Theme.jsx'
 import { NavBar } from './components/NavBar.jsx'
 import { HeaderSection } from './components/HeaderSection.jsx'
 import { ResumeSection } from './components/ResumeSection.jsx'
@@ -69,17 +69,19 @@ function App() {
       {/*Footer*/}
       <Paper
         sx={{
-          mt: 4,
-          py: 4,
+          mt: 6,
+          py: 3,
           borderWidth: '2px 0 0',
+          borderRadius: 0,
         }}
       >
         <Typography
-          variant="body2"
+          variant="body1"
           component="p"
           color="textSecondary"
           sx={{
             textAlign: 'center',
+            ...THEME_GRADIENT_TEXT_SX,
           }}
           gutterBottom={false}
         >

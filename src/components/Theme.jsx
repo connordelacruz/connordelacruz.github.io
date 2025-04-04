@@ -15,7 +15,9 @@ const COLOR_BLUE = '#4D79FF'
 const COLOR_PINK = '#FF5C95'
 const COLOR_YELO = '#FFB217'
 const COLOR_TEAL = '#00CC8B' // TODO: remove?
-const COLOR_BACK = '#020202'
+const COLOR_BLCK = '#11131B'
+
+// TODO: decide if you even wanna do anything with material you, delete what u don't use
 // Material You Variants (https://material-foundation.github.io/material-theme-builder/)
 const COLORS_MATERIAL_YOU = {
   // Blue
@@ -78,6 +80,24 @@ const COLORS_MATERIAL_YOU = {
   // Idk lol
   shadow: '#000000',
   scrim: '#000000',
+}
+
+// --------------------------------------------------------------------------------
+// Gradients
+// --------------------------------------------------------------------------------
+// Gradient between the 3 theme colors
+export const THEME_GRADIENT = `linear-gradient(140deg, ${COLOR_BLUE} 11%, ${COLOR_PINK} 50%, ${COLOR_YELO} 89%)`
+// Styles to make text color gradient
+export const THEME_GRADIENT_TEXT_SX = {
+  background: THEME_GRADIENT,
+  backgroundClip: 'text',
+  color: 'rgba(0,0,0,0)',
+}
+// Hack to create gradient borders (https://codyhouse.co/nuggets/css-gradient-borders)
+export const THEME_GRADIENT_BORDERS_BG = `linear-gradient(${COLOR_BLCK}, ${COLOR_BLCK}) padding-box, ${THEME_GRADIENT} border-box`
+export const THEME_GRADIENT_BORDERS_SX = {
+  background: THEME_GRADIENT_BORDERS_BG,
+  borderColor: 'transparent',
 }
 
 // ================================================================================
@@ -209,10 +229,8 @@ export const theme = createTheme(baseTheme, {
     // --------------------------------------------------------------------------------
     // TODO: update for mat you?
     background: {
-//      default: COLOR_BACK,
-//      paper: COLOR_BACK,
-      default: COLORS_MATERIAL_YOU.background,
-      paper: COLORS_MATERIAL_YOU.surface,
+      default: COLOR_BLCK,
+      paper: COLOR_BLCK,
     },
   },
 })

@@ -17,6 +17,7 @@ import {
 import { Menu as MenuIcon } from '@mui/icons-material'
 import React from 'react'
 import useScrollSpy from '../utils/useScrollSpy.js'
+import { THEME_GRADIENT_BORDERS_SX } from './Theme.jsx'
 
 
 /**
@@ -132,6 +133,7 @@ const NavMenu = ({
       >
         <MenuIcon
           sx={{
+            // TODO: figure out how to
             color: getActiveHashColor(),
             transition: 'color 0.3s',
             transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -150,6 +152,8 @@ const NavMenu = ({
         PaperProps={{
           sx: {
             borderRadius: 0,
+            borderWidth: '0 2px 0 0',
+            ...THEME_GRADIENT_BORDERS_SX
           },
         }}
       >
@@ -215,10 +219,8 @@ const NavMenu = ({
 const NavLogo = ({
                    activeHash,
                    getActiveHashColor,
-                   color,
                  }) => {
   // TODO: logo:
-  //       - shorten logo to "Cd" on narrow?
   //       - Figure out styling on narrow regardless, it's a real weird size and not centered nicely
 
   // Smooth scroll logo link handler
@@ -246,6 +248,7 @@ const NavLogo = ({
         display: 'flex',
         flexGrow: 1,
         textDecoration: 'none',
+        // TODO: animated gradient bg https://codepen.io/P1N2O/pen/pyBNzX
       }}
       noWrap
       gutterBottom={false}
@@ -265,6 +268,7 @@ const NavLogo = ({
  */
 export const NavBar = ({
                          sectionLinks = [],
+  // TODO: remove
                          logoColor = 'inherit',
                        }) => {
   // TODO:
@@ -318,12 +322,15 @@ export const NavBar = ({
         py: 0,
         borderWidth: '0 0 2px',
         borderRadius: 0,
-        // TODO: color full navbar instead??:
-//        backgroundColor: getActiveHashColor(headerColor + '.main'),
-        borderBottomColor: getActiveHashColor('default'),
-        transitionProperty: 'background-color, border-bottom-color',
+        // TODO: REMOVE
+        // Change border color based on active hash, default to transparent so we can use a gradient border
+//        borderBottomColor: getActiveHashColor('transparent'),
+        // Apply gradient border background if we're at the top
+//        background: activeHash ? 'default' : THEME_GRADIENT_BORDERS_BG,
+        transitionProperty: 'border-bottom-color',
         transitionDuration: '0.3s',
         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        ...THEME_GRADIENT_BORDERS_SX
       }}
     >
       <Toolbar
@@ -344,7 +351,6 @@ export const NavBar = ({
         <NavLogo
           activeHash={activeHash}
           getActiveHashColor={getActiveHashColor}
-          color={logoColor}
         />
 
         {/*Wide Viewport Links*/}

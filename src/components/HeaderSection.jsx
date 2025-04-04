@@ -1,5 +1,6 @@
-import { Box, Container, Paper, Typography } from '@mui/material'
+import { Box, Container, Divider, Paper, Typography } from '@mui/material'
 import { SocialLinks } from './common/SocialLinks.jsx'
+import { THEME_GRADIENT_BORDERS_SX, THEME_GRADIENT_TEXT_SX } from './Theme.jsx'
 
 
 const ProfilePhoto = () => {
@@ -31,15 +32,13 @@ const ProfilePhoto = () => {
  * @constructor
  */
 export const HeaderSection = ({
-                             color,
-                           }) => {
+                                color,
+                              }) => {
   return (
     <Container
       id="header-wrapper"
       maxWidth={false}
       disableGutters
-      sx={{
-      }}
     >
 
       { /* Header */}
@@ -49,7 +48,7 @@ export const HeaderSection = ({
         sx={{
           py: {
             xs: 2,
-            md: 6,
+            md: 8,
             textAlign: 'center',
           },
         }}
@@ -58,15 +57,16 @@ export const HeaderSection = ({
         <Typography
           variant="h4"
           sx={{
-            fontWeight: 400,
+            fontWeight: 500,
           }}
+          gutterBottom={false}
         >
           Hi, my name is
         </Typography>
         <Typography
           variant="h1"
           sx={{
-            fontWeight: 500,
+            fontWeight: 700,
             // Handle line breaks in the title a bit smoother by shrinking font size on small viewports
             fontSize: {
               // TODO: figure out the best numbers here, scale subheader to look nice too
@@ -74,12 +74,12 @@ export const HeaderSection = ({
               sm: '4rem',
               md: '6rem',
             },
-            color: color + '.contrastText',
-            backgroundColor: color + '.main',
             // TODO: make sure this padding doesn't break mobile
             px: 0,
             py: 2,
             borderRadius: 16,
+            // Gradient text
+            ...THEME_GRADIENT_TEXT_SX
           }}
           gutterBottom={false}
         >
@@ -100,12 +100,25 @@ export const HeaderSection = ({
                 xs: 2,
                 sm: 4,
               },
-              borderColor: color + '.main',
+              // Gradient border
+              ...THEME_GRADIENT_BORDERS_SX
             }}
           >
 
             {/*Profile Photo*/}
             <ProfilePhoto/>
+            {/*Socials*/}
+            <Divider
+              sx={{
+                my: 4,
+                '&::before, &::after': {
+                  borderTopWidth: 2,
+                  ...THEME_GRADIENT_BORDERS_SX
+                },
+              }}
+            >
+              <SocialLinks/>
+            </Divider>
 
             {/*About Copy*/}
             <Typography
@@ -124,11 +137,9 @@ export const HeaderSection = ({
               on
               new challenges and building things I can be proud of.
             </Typography>
+
           </Paper>
         </Box>
-
-        {/*Socials*/}
-        <SocialLinks color={color}/>
       </Container>
     </Container>
   )
