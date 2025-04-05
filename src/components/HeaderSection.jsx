@@ -26,14 +26,10 @@ const ProfilePhoto = () => {
 /**
  * Page header component.
  *
- * @param color Theme color for header section.
- *
  * @return {JSX.Element}
  * @constructor
  */
-export const HeaderSection = ({
-                                color,
-                              }) => {
+export const HeaderSection = () => {
   return (
     <Container
       id="header-wrapper"
