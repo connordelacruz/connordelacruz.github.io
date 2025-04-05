@@ -23,12 +23,14 @@ const COLOR_BLCK = '#11131B'
 export const THEME_GRADIENT = `linear-gradient(140deg, ${COLOR_BLUE} 11%, ${COLOR_PINK} 50%, ${COLOR_YELO} 89%)`
 // Styles to make text color gradient
 export const THEME_GRADIENT_TEXT_SX = {
+  // Apply gradient
   background: THEME_GRADIENT,
-  // TODO !!!
-  // TODO: HAVE  A FALLBACK!!!!! THIS ISN'T SUPPORTED EVERYWHERE:
-  // TODO !!!
+  // Set text to transparent
+  WebkitTextFillColor: 'transparent',
+  // This is the magic bit that makes the text color gradient
   backgroundClip: 'text',
-  color: 'rgba(0,0,0,0)',
+  // Fallback for browsers that don't support background-clip: text
+  color: 'white',
 }
 // Hack to create gradient borders (https://codyhouse.co/nuggets/css-gradient-borders)
 export const THEME_GRADIENT_BORDERS_BG = `linear-gradient(${COLOR_BLCK}, ${COLOR_BLCK}) padding-box, ${THEME_GRADIENT} border-box`
