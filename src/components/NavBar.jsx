@@ -322,14 +322,6 @@ export const NavBar = ({
         py: 0,
         borderWidth: '0 0 2px',
         borderRadius: 0,
-        // TODO: REMOVE
-        // Change border color based on active hash, default to transparent so we can use a gradient border
-//        borderBottomColor: getActiveHashColor('transparent'),
-        // Apply gradient border background if we're at the top
-//        background: activeHash ? 'default' : THEME_GRADIENT_BORDERS_BG,
-        transitionProperty: 'border-bottom-color',
-        transitionDuration: '0.3s',
-        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
         ...THEME_GRADIENT_BORDERS_SX
       }}
     >

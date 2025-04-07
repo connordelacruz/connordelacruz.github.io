@@ -11,10 +11,9 @@ function App() {
   // Constants
   // ================================================================================
   // Theme
-  const COLOR_HEADER = 'brandBlue'
-  const COLOR_RESUME = 'brandYellow'
-  const COLOR_PROJECTS = 'brandRed'
-  const COLOR_CONTACT = COLOR_HEADER
+  const COLOR_RESUME = 'brandBlue'
+  const COLOR_PROJECTS = 'brandYellow'
+  const COLOR_CONTACT = 'brandRed'
 
   // ================================================================================
   // Render
@@ -45,7 +44,7 @@ function App() {
       />
 
       { /* Header */}
-      <HeaderSection color={COLOR_HEADER}/>
+      <HeaderSection/>
 
       {/* Page Content */}
       <Container id="page-wrapper" maxWidth="md">

@@ -23,10 +23,15 @@ export const ContactSection = ({color}) => {
             variant="h5"
             component="p"
             sx={{
+              textAlign: 'center',
+              fontWeight: 400,
+              // Make sure lines have a pretty even distribution of words
+              textWrap: 'balance',
               py: 8,
               mb: 2,
             }}
           >
+            {/*TODO: you gotta re-work this copy and also figure out text wrap*/}
             If you're looking to hire, collaborate, or just want to say hello, feel free to reach out!
           </Typography>
           {/*TODO: big juicy CTA buttons*/}

@@ -1,3 +1,3 @@
 // TODO: @import is deprecated and we wanna do this right, so read up on the new system:
 //    https://sass-lang.com/blog/the-module-system-is-launched/
-@import "styles/images";
+@use "styles/images" as *;

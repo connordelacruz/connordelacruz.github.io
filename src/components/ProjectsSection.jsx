@@ -190,6 +190,7 @@ const ProjectCard = ({
   return (
     <Card
       sx={{
+        pt: 0,
         borderColor: color + '.main',
       }}
     >

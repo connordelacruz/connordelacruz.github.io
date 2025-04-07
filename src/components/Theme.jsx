@@ -11,10 +11,12 @@ import { createTheme } from '@mui/material'
 // Colors
 // --------------------------------------------------------------------------------
 // Base Colors
-const COLOR_BLUE = '#4D79FF'
-const COLOR_PINK = '#FF5C95'
+const COLOR_BLUE = '#668AFF'
+//const COLOR_BLUE = '#4D79FF' // TODO: remove?
+const COLOR_PINK = '#FE5C9C'
+//const COLOR_PINK = '#FF5C95' // TODO: remove?
 const COLOR_YELO = '#FFB217'
-const COLOR_BLCK = '#11131B'
+const COLOR_BLCK = '#101010'
 
 // --------------------------------------------------------------------------------
 // Gradients
@@ -67,6 +69,20 @@ const baseTheme = createTheme({
               props: {variant: 'h2'},
               style: {
                 fontWeight: 400,
+              },
+            },
+            // h5
+            {
+              props: {variant: 'h5'},
+              style: {
+                fontWeight: 700,
+              },
+            },
+            // h6
+            {
+              props: {variant: 'h6'},
+              style: {
+                fontWeight: 700,
               },
             },
           ],

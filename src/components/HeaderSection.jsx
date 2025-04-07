@@ -121,11 +121,16 @@ export const HeaderSection = () => {
               variant="h5"
               component="p"
               sx={{
+                // TODO: merge these styles w/ contact section
+                textAlign: 'center',
+                fontWeight: 400,
                 fontSize: {
                   // TODO: looks a little funky on xs... (maybe it's cuz it's too wordy idk)
                   xs: '1.25rem',
                   sm: '1.5rem',
                 },
+                // Make sure lines have a pretty even distribution of words
+                textWrap: 'balance',
               }}
             >
               I'm a software engineer with a passion for creative problem solving and learning new things. Whether
