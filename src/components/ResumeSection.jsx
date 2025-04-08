@@ -81,7 +81,7 @@ const experience = [
   },
   {
     jobTitle: 'IT Developer & Software Deployment Engineer',
-    company: 'Wheaton College Academic & Institutional Technology',
+    company: 'Wheaton College AIT',
     startDate: 'May 2015',
     endDate: 'August 2017',
     bullets: [
@@ -92,7 +92,7 @@ const experience = [
   },
   {
     jobTitle: 'Service Desk Supervisor',
-    company: 'Wheaton College Academic & Institutional Technology',
+    company: 'Wheaton College AIT',
     startDate: 'October 2014',
     endDate: 'August 2017',
     bullets: [
@@ -209,7 +209,13 @@ const ExperienceList = ({
           key={i}
           disableGutters
         >
-          <ListItemIcon>
+          <ListItemIcon
+            sx={{
+              // Disable aggressive min width, use a margin for spacing instead
+              minWidth: 0,
+              mr: 2,
+            }}
+          >
             <PlayArrow
               fontSize="small"
               color={color}
@@ -252,17 +258,45 @@ export const ExperienceCard = ({
                                }) => {
   // TODO: chips for languages/frameworks to display at the bottom, see https://brittanychiang.com/#experience
 
+  const subtitleProps = {
+    variant: 'subtitle1',
+    component: 'span',
+    color: 'text.secondary',
+    gutterBottom: false,
+  }
+
+  const subtitleSx = {
+    display: {
+      xs: 'block',
+      md: 'inline',
+    },
+  }
+
   return (
     <Card
       sx={{
         py: 0,
         borderColor: color + '.main',
+        px: {
+          xs: 1,
+          md: 2,
+        },
       }}
     >
       <CardContent>
-        <Typography variant="h6" color={color}>{jobTitle}</Typography>
-        {/*TODO: below md, line break instead of dot*/}
-        <Typography variant="subtitle1" color="text.secondary">{company} · {startDate}–{endDate}</Typography>
+        <Typography
+          variant="h6"
+          color={color}
+          gutterBottom={false}
+          sx={{
+            textWrap: 'balance',
+          }}
+        >
+          {jobTitle}
+        </Typography>
+        <Typography {...subtitleProps} {...subtitleSx}>{company}</Typography>
+        <Typography {...subtitleProps} sx={{display: {xs: 'none', md: 'inline'}}}> · </Typography>
+        <Typography {...subtitleProps} {...subtitleSx}>{startDate} – {endDate}</Typography>
         <ExperienceList bullets={bullets} color={color}/>
       </CardContent>
     </Card>

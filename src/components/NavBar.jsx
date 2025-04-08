@@ -119,8 +119,10 @@ const NavMenu = ({
     <Box
       sx={{
         // Hide on md and above
-        display: {xs: 'flex', md: 'none'},
-        flexGrow: 1,
+        display: {xs: 'block', md: 'none'},
+        // Affix it to the left side (use absolute display so logo can be centered)
+        position: 'absolute',
+        left: 0,
       }}
     >
       {/*Menu Button*/}
@@ -133,7 +135,6 @@ const NavMenu = ({
       >
         <MenuIcon
           sx={{
-            // TODO: figure out how to
             color: getActiveHashColor(),
             transition: 'color 0.3s',
             transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -146,7 +147,6 @@ const NavMenu = ({
         open={drawerOpen}
         onClose={handleDrawerOnClose}
         // TODO: accessibility stuff (component nav)
-        // TODO: swipeable? sounds like it comes with a performance dip...
         // TODO: header list item
         // TODO: close button
         PaperProps={{
@@ -220,9 +220,6 @@ const NavLogo = ({
                    activeHash,
                    getActiveHashColor,
                  }) => {
-  // TODO: logo:
-  //       - Figure out styling on narrow regardless, it's a real weird size and not centered nicely
-
   // Smooth scroll logo link handler
   const handleLogoClick = (e) => {
     e.preventDefault()
@@ -239,6 +236,7 @@ const NavLogo = ({
       href="#"
       onClick={handleLogoClick}
       sx={{
+        textDecoration: 'none',
         // Fade in when not at top of page
         // TODO: make unclickable when hidden?
         opacity: activeHash === null ? 0 : 1,
@@ -246,8 +244,11 @@ const NavLogo = ({
         transitionDuration: '0.3s',
         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
         display: 'flex',
-        flexGrow: 1,
-        textDecoration: 'none',
+        // Set to 0 on xs so it gets centered
+        flexGrow: {
+          xs: 0,
+          md: 1,
+        },
         // TODO: animated gradient bg https://codepen.io/P1N2O/pen/pyBNzX
       }}
       noWrap
@@ -262,14 +263,11 @@ const NavLogo = ({
  * Nav bar component.
  *
  * @param sectionLinks Array of objects with props text (link text) and hash (id of section omitting '#').
- * @param logoColor
  * @return {Element}
  * @constructor
  */
 export const NavBar = ({
                          sectionLinks = [],
-  // TODO: remove
-                         logoColor = 'inherit',
                        }) => {
   // TODO:
   //    - bg transparent when no activeHash? (gotta account for nav tabs on md+)
@@ -328,6 +326,8 @@ export const NavBar = ({
       <Toolbar
         sx={{
           px: {xs: 0, md: 2},
+          // TODO: make super sure that this doesn't cause goofy stuff on wide viewports
+          justifyContent: 'center',
         }}
         disableGutters
       >
