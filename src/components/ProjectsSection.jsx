@@ -10,6 +10,7 @@ const projects = [
   {
     title: "Channel ⇄ Shift",
     imgSrc: "images/projects/channel-shift.png",
+    imgIsPortrait: true,
     bigButtonContent: {
       text: 'Visit Channel Shift Site',
       link: 'https://cheezwhiz.biz',
@@ -19,6 +20,7 @@ const projects = [
   {
     title: "React Counter App",
     imgSrc: "images/projects/react-counter.png",
+    imgIsPortrait: true,
     bigButtonContent: {
       text: 'Visit React Counter Site',
       link: 'https://connordelacruz.com/react-counter/'
@@ -119,11 +121,15 @@ const projects = [
  *
  * @param src
  * @param alt
+ * @param imgIsPortrait
  * @return {JSX.Element}
  * @constructor
  */
-const ProjectImage = ({src, alt}) => {
-  // TODO: size differently for horizontal/vertical
+const ProjectImage = ({
+                        src,
+                        alt,
+                        imgIsPortrait = false
+                      }) => {
   return (
     <Box
       sx={{
@@ -133,7 +139,7 @@ const ProjectImage = ({src, alt}) => {
       <img
         src={src}
         alt={alt}
-        className="project-image"
+        className={`project-image ${imgIsPortrait ? 'portrait' : ''}`}
       />
     </Box>
   )
@@ -144,6 +150,7 @@ const ProjectImage = ({src, alt}) => {
  *
  * @param title
  * @param imgSrc
+ * @param imgIsPortrait
  * @param bigButtonContent
  * @param smallButtonsContent
  * @param body
@@ -155,6 +162,7 @@ const ProjectImage = ({src, alt}) => {
 const ProjectCard = ({
                        title,
                        imgSrc = null,
+                       imgIsPortrait = false,
                        bigButtonContent = {text: '', link: ''},
                        smallButtonsContent = [],
                        body = null,
@@ -198,14 +206,19 @@ const ProjectCard = ({
         title={title}
         slotProps={{
           title: {
-            variant: 'h5',
+            variant: 'h6',
             color: color,
           }
         }}
+        sx={{
+          pb: 0,
+        }}
       />
       <CardContent>
-        {imgSrc && <ProjectImage src={imgSrc}/>}
-        <Typography variant="body1">
+        {imgSrc && <ProjectImage src={imgSrc} imgIsPortrait={imgIsPortrait}/>}
+        <Typography
+          variant="body1"
+        >
           {children ? children : body}
         </Typography>
       </CardContent>

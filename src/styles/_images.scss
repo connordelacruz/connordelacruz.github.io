@@ -23,11 +23,29 @@ img.profile-image {
 // Project images
 img.project-image {
   @include img-common;
-  // TODO: maybe have additional classes for portrait vs landscape images, landscape is kinda small at these sizes
-  // TODO: assume container element like profile pic?
-  width: 70%;
   border-radius: 16px;
+
+  // Sizes for landscape images
+  @include xs {
+    width: 70%;
+  }
   @include sm {
-    width: 40%;
+    width: 60%;
+  }
+  @include md {
+    width: 50%;
+  }
+
+  // Sizes for portrait images
+  &.portrait {
+    @include xs {
+      width: 50%;
+    }
+    @include sm {
+      width: 40%;
+    }
+    @include md {
+      width: 30%;
+    }
   }
 }
