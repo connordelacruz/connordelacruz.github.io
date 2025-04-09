@@ -1,6 +1,8 @@
-import { Box, Button, Card, CardContent, Typography } from '@mui/material'
+import { Box, CardContent, Typography } from '@mui/material'
 import { SectionHeader } from './common/SectionHeader.jsx'
 import { Email } from '@mui/icons-material'
+import { CtaButton } from './common/CtaButton.jsx'
+import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
 
 /**
  * Contact section component.
@@ -13,11 +15,20 @@ export const ContactSection = ({color}) => {
   return (
     <Box id="section-contact">
       <SectionHeader color={color}>Contact</SectionHeader>
-      <Card
-        sx={{
-          borderColor: color + '.main',
-        }}
+      <ContentCard
+        color={color}
       >
+        <ContentCardHeader
+          title="Hit Me Up!"
+          color={color}
+          slotProps={{
+            title: {
+              variant: 'h3',
+              textAlign: 'center',
+              color: color,
+            },
+          }}
+          />
         <CardContent>
           <Typography
             variant="h5"
@@ -34,21 +45,16 @@ export const ContactSection = ({color}) => {
             {/*TODO: you gotta re-work this copy and also figure out text wrap*/}
             If you're looking to hire, collaborate, or just want to say hello, feel free to reach out!
           </Typography>
-          {/*TODO: big juicy CTA buttons*/}
-          <Button
-            variant="contained"
+          <CtaButton
             color={color}
             startIcon={<Email/>}
-            size="large"
-            fullWidth
             href="mailto:connor.c.delacruz@gmail.com"
-            target="_blank"
           >
             connor.c.delacruz@gmail.com
-          </Button>
+          </CtaButton>
           {/*TODO: socials*/}
         </CardContent>
-      </Card>
+      </ContentCard>
     </Box>
   )
 }
