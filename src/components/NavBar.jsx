@@ -14,7 +14,7 @@ import {
   Toolbar,
   Typography
 } from '@mui/material'
-import { Menu as MenuIcon } from '@mui/icons-material'
+import { Close, Menu as MenuIcon } from '@mui/icons-material'
 import React from 'react'
 import useScrollSpy from '../utils/useScrollSpy.js'
 import { THEME_GRADIENT_BORDERS_SX, THEME_GRADIENT_TEXT_SX, THEME_TRANSITION_DURATION_AND_TIMING_SX } from './Theme.jsx'
@@ -100,8 +100,6 @@ const NavMenu = ({
                    getActiveHashColor,
                    createSmoothScrollToSectionHandler,
                  }) => {
-  // TODO: chip or icon button (contained/outlined) with name of current section?
-
   // Responsive nav drawer state
   const [drawerOpen, setDrawerOpen] = React.useState(false)
 
@@ -141,6 +139,7 @@ const NavMenu = ({
           }}
         />
       </IconButton>
+
       {/*Menu Contents*/}
       <Drawer
         id="nav-drawer"
@@ -148,7 +147,6 @@ const NavMenu = ({
         onClose={handleDrawerOnClose}
         // TODO: accessibility stuff (component nav)
         // TODO: header list item
-        // TODO: close button
         PaperProps={{
           sx: {
             borderRadius: 0,
@@ -164,9 +162,22 @@ const NavMenu = ({
             pt: 4,
           }}
         >
+          {/*Close Button*/}
+          <IconButton
+            aria-label="close"
+            onClick={handleDrawerOnClose}
+            sx={{
+              position: 'absolute',
+              right: 8,
+              top: 8,
+              opacity: 0.75,
+            }}
+          >
+            <Close/>
+          </IconButton>
+          {/*Drawer Menu Items*/}
           <List>
             {/*TODO: nav logo but disable opacity stuff and flex grow*/}
-            {/*Drawer Menu Items*/}
             {sectionLinks.map((sectionLink, i) => (
               <ListItem
                 key={i}
