@@ -171,14 +171,14 @@ export const SkillCards = ({
       <Grid
         container
         spacing={2}
-        direction={{xs: 'column', sm: 'row'}}
+        direction={{xs: 'column', md: 'row'}}
         sx={{
           justifyContent: "space-evenly",
           alignItems: "stretch",
         }}
       >
         {skillCardProps.map((props, i) =>
-          <Grid key={i} size={{xs: 12, sm: 4}}>
+          <Grid key={i} size={{xs: 12, md: 4}}>
             <SkillCard color={color} {...props}/>
           </Grid>
         )}
