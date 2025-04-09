@@ -57,11 +57,11 @@ export const SocialLink = ({
       aria-label={label}
       href={href}
       target="_blank"
+      color={color}
       sx={{
         mx: 3,
         ...sx
       }}
-      color={color}
       {...props}
     >
       {iconComponent}

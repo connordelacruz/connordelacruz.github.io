@@ -41,6 +41,16 @@ export const THEME_GRADIENT_BORDERS_SX = {
   borderColor: 'transparent',
 }
 
+// --------------------------------------------------------------------------------
+// Animations and Transitions
+// --------------------------------------------------------------------------------
+export const THEME_TRANSITION_DURATION = '0.3s'
+export const THEME_TRANSITION_TIMING_FUNCTION = 'cubic-bezier(0.4, 0, 0.2, 1)'
+export const THEME_TRANSITION_DURATION_AND_TIMING_SX = {
+  transitionDuration: THEME_TRANSITION_DURATION,
+  transitionTimingFunction: THEME_TRANSITION_TIMING_FUNCTION,
+}
+
 // ================================================================================
 // Base Theme Overrides
 // ================================================================================
@@ -85,6 +95,13 @@ const baseTheme = createTheme({
                 fontWeight: 700,
               },
             },
+            // button
+            {
+              props: {variant: 'button'},
+              style: {
+                fontWeight: 700,
+              },
+            },
           ],
         },
       },
@@ -104,6 +121,7 @@ const baseTheme = createTheme({
           }),
       },
     },
+
     // Button Component
     MuiButton: {
       defaultProps: {
@@ -115,10 +133,11 @@ const baseTheme = createTheme({
           // TODO: uncomment to make text not all caps, then maybe increase text size?
 //          textTransform: 'initial',
 //          fontSize: '1rem',
-          fontWeight: 'bold',
+          fontWeight: 700,
         },
       },
     },
+
     // Button Groups
     MuiButtonGroup: {
       defaultProps: {
@@ -126,6 +145,16 @@ const baseTheme = createTheme({
         disableElevation: true,
       }
     },
+
+    // Tabs
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          fontWeight: 700,
+        },
+      },
+    },
+
     // TODO: border width for Dividers
     // Baseline styles
     // TODO: can we use defaultProps instead? gotta figure out how to specify for variants

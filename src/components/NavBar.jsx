@@ -17,7 +17,7 @@ import {
 import { Menu as MenuIcon } from '@mui/icons-material'
 import React from 'react'
 import useScrollSpy from '../utils/useScrollSpy.js'
-import { THEME_GRADIENT_BORDERS_SX } from './Theme.jsx'
+import { THEME_GRADIENT_BORDERS_SX, THEME_GRADIENT_TEXT_SX, THEME_TRANSITION_DURATION_AND_TIMING_SX } from './Theme.jsx'
 
 
 /**
@@ -65,18 +65,17 @@ const NavTabs = ({
             onClick={createSmoothScrollToSectionHandler(sectionLink.hash)}
             sx={{
               ml: 1,
-              // TODO: make all button text styles bold!
-              fontWeight: 700,
               // Make sure text appears above full-height tab indicator
               zIndex: 1,
               // While the Tabs textColor prop does work with custom palettes, it throws errors if you use anything
               // other than the default ones, so I guess we're going with sx instead
-              // TODO: transition timing for text color such that it changes after the indicator moves?
               color: sectionLink.color + '.main',
               '&.Mui-selected': {
                 // Set a contrasting color so it sticks out over the indicator
                 color: 'background.default',
               },
+              transitionProperty: 'color',
+              ...THEME_TRANSITION_DURATION_AND_TIMING_SX,
             }}
           />
         ))}
@@ -135,9 +134,10 @@ const NavMenu = ({
       >
         <MenuIcon
           sx={{
+            // Change color with active section
             color: getActiveHashColor(),
-            transition: 'color 0.3s',
-            transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+            transitionProperty: 'color',
+            ...THEME_TRANSITION_DURATION_AND_TIMING_SX,
           }}
         />
       </IconButton>
@@ -165,6 +165,7 @@ const NavMenu = ({
           }}
         >
           <List>
+            {/*TODO: nav logo but disable opacity stuff and flex grow*/}
             {/*Drawer Menu Items*/}
             {sectionLinks.map((sectionLink, i) => (
               <ListItem
@@ -189,10 +190,6 @@ const NavMenu = ({
                   <Typography
                     variant="button"
                     gutterBottom={false}
-                    sx={{
-//                       TODO: make all button text styles bold!
-                      fontWeight: 700,
-                    }}
                   >
                     {sectionLink.text}
                   </Typography>
@@ -211,14 +208,12 @@ const NavMenu = ({
  * Nav logo component.
  *
  * @param activeHash
- * @param getActiveHashColor
  * @param color
  * @return {Element}
  * @constructor
  */
 const NavLogo = ({
                    activeHash,
-                   getActiveHashColor,
                  }) => {
   // Smooth scroll logo link handler
   const handleLogoClick = (e) => {
@@ -229,33 +224,30 @@ const NavLogo = ({
   }
 
   return (
-    <Typography
-      variant="h6"
-      color={getActiveHashColor()}
-      component="a"
-      href="#"
-      onClick={handleLogoClick}
-      sx={{
-        textDecoration: 'none',
-        // Fade in when not at top of page
-        // TODO: make unclickable when hidden?
-        opacity: activeHash === null ? 0 : 1,
-        transitionProperty: 'opacity, color',
-        transitionDuration: '0.3s',
-        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-        display: 'flex',
-        // Set to 0 on xs so it gets centered
-        flexGrow: {
-          xs: 0,
-          md: 1,
-        },
-        // TODO: animated gradient bg https://codepen.io/P1N2O/pen/pyBNzX
-      }}
-      noWrap
-      gutterBottom={false}
-    >
-      Connor de la Cruz
-    </Typography>
+    <Box sx={{flexGrow: {xs: 0, md: 1}}}>
+      <Typography
+        variant="h6"
+        component="a"
+        href="#"
+        onClick={handleLogoClick}
+        sx={{
+          display: 'inline',
+          textDecoration: 'none',
+          // Fade in when not at top of page
+          opacity: activeHash === null ? 0 : 1,
+          transitionProperty: 'opacity, color',
+          ...THEME_TRANSITION_DURATION_AND_TIMING_SX,
+          // Hide pointer when not visible
+          pointerEvents: activeHash === null ? 'none' : 'initial',
+          // Gradient text
+          ...THEME_GRADIENT_TEXT_SX,
+        }}
+        noWrap
+        gutterBottom={false}
+      >
+        Connor de la Cruz
+      </Typography>
+    </Box>
   )
 }
 
@@ -269,8 +261,6 @@ const NavLogo = ({
 export const NavBar = ({
                          sectionLinks = [],
                        }) => {
-  // TODO:
-  //    - bg transparent when no activeHash? (gotta account for nav tabs on md+)
   // ================================================================================
   // Constants
   // ================================================================================
@@ -326,7 +316,6 @@ export const NavBar = ({
       <Toolbar
         sx={{
           px: {xs: 0, md: 2},
-          // TODO: make super sure that this doesn't cause goofy stuff on wide viewports
           justifyContent: 'center',
         }}
         disableGutters
@@ -342,7 +331,6 @@ export const NavBar = ({
         {/*Logo*/}
         <NavLogo
           activeHash={activeHash}
-          getActiveHashColor={getActiveHashColor}
         />
 
         {/*Wide Viewport Links*/}
