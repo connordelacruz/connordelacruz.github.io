@@ -1,20 +1,9 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  CardHeader,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Stack,
-  Typography
-} from '@mui/material'
+import { Box, Button, CardContent, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material'
 import { Description, PlayArrow } from '@mui/icons-material'
 import Grid from '@mui/material/Grid2'
 import { SectionHeader } from './common/SectionHeader.jsx'
 import { SkillChips } from './common/SkillChips.jsx'
+import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
 
 // ================================================================================
 // Content
@@ -124,27 +113,15 @@ export const SkillCard = ({
 // TODO: make a nicely formatted list of these, maybe with chips or using the List component
 
   return (
-    <Card
+    <ContentCard
+      color={color}
       sx={{
-        p: 0,
         height: '100%',
-        borderColor: color + '.main',
       }}
     >
-      <CardHeader
+      <ContentCardHeader
         title={title}
-        slotProps={{
-          title: {
-            variant: 'h6',
-            color: color,
-          }
-        }}
-        sx={{
-          pb: 1,
-          mb: 0,
-          borderBottom: 2,
-          borderColor: color + '.main',
-        }}
+        color={color}
       />
       <CardContent>
         <SkillChips
@@ -152,7 +129,7 @@ export const SkillCard = ({
           skills={skills.split(', ')}
         />
       </CardContent>
-    </Card>
+    </ContentCard>
   )
 }
 
@@ -268,32 +245,18 @@ export const ExperienceCard = ({
   // TODO: chips for languages/frameworks to display at the bottom, see https://brittanychiang.com/#experience
 
   return (
-    <Card
-      sx={{
-        p: 0,
-        borderColor: color + '.main',
-      }}
+    <ContentCard
+      color={color}
     >
-      <CardHeader
+      <ContentCardHeader
         title={jobTitle}
         subheader={<span><b>{company}</b><br/>{startDate} - {endDate}</span>}
-        slotProps={{
-          title: {
-            variant: 'h6',
-            color: color,
-          }
-        }}
-        sx={{
-          pb: 1,
-          mb: 0,
-          borderBottom: 2,
-          borderColor: color + '.main',
-        }}
+        color={color}
       />
       <CardContent>
         <ExperienceList bullets={bullets} color={color}/>
       </CardContent>
-    </Card>
+    </ContentCard>
   )
 }
 

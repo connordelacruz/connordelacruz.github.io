@@ -1,6 +1,7 @@
-import { Box, Button, Card, CardActions, CardContent, CardHeader, Stack, Typography } from '@mui/material'
+import { Box, Button, CardActions, CardContent, Stack, Typography } from '@mui/material'
 import { SectionHeader } from './common/SectionHeader.jsx'
 import { GitHub } from '@mui/icons-material'
+import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
 
 // ================================================================================
 // Content
@@ -200,26 +201,12 @@ const ProjectCard = ({
   )
 
   return (
-    <Card
-      sx={{
-        p: 0,
-        borderColor: color + '.main',
-      }}
+    <ContentCard
+      color={color}
     >
-      <CardHeader
+      <ContentCardHeader
         title={title}
-        slotProps={{
-          title: {
-            variant: 'h6',
-            color: color,
-          }
-        }}
-        sx={{
-          pb: 1,
-          mb: 1,
-          borderBottom: 2,
-          borderColor: color + '.main',
-        }}
+        color={color}
       />
       <CardContent>
         {imgSrc && <ProjectImage src={imgSrc} imgIsPortrait={imgIsPortrait}/>}
@@ -249,7 +236,7 @@ const ProjectCard = ({
         {smallButtons}
         {bigButton}
       </CardActions>
-    </Card>
+    </ContentCard>
   )
 }
 
