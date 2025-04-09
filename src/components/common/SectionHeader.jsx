@@ -8,9 +8,10 @@ export const SectionHeader = ({
   return (
     <Divider
       sx={{
-        my: 4,
+        mb: 4,
+        mt: 2,
         '&::before, &::after': {
-          borderTopWidth: 2,
+          borderTopWidth: 3,
           borderTopColor: color + '.main',
         },
       }}
@@ -20,12 +21,11 @@ export const SectionHeader = ({
         variant="h2"
         gutterBottom={false}
         sx={{
-          color: 'background.default',
-          backgroundColor: color + '.main',
+          fontWeight: 500,
+          color: color + '.main',
           // TODO: reign in these values for mobile...
-          px: 3,
+          px: 1,
           py: 0.5,
-          borderRadius: 16,
         }}
       >
         {children}

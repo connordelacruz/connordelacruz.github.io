@@ -1,4 +1,4 @@
-import { Card, CardHeader } from '@mui/material'
+import { Card, CardActions, CardHeader } from '@mui/material'
 
 /**
  * Card component with some common customizations used in various sections.
@@ -67,5 +67,36 @@ export const ContentCardHeader = ({
       }}
       {...props}
     />
+  )
+}
+
+/**
+ * CardActions component with some common customizations used in various sections.
+ *
+ * @param color
+ * @param sx
+ * @param children
+ * @param props
+ * @return {JSX.Element}
+ * @constructor
+ */
+export const ContentCardActions = ({
+                                     color,
+                                     sx = {},
+                                     children,
+                                     ...props
+                                   }) => {
+  return (
+    <CardActions
+      sx={{
+        p: 2,
+        borderTop: 2,
+        borderColor: color + '.main',
+        ...sx
+      }}
+      {...props}
+    >
+      {children}
+    </CardActions>
   )
 }

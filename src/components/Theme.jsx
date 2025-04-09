@@ -131,9 +131,10 @@ const baseTheme = createTheme({
       styleOverrides: {
         root: {
           // TODO: uncomment to make text not all caps, then maybe increase text size?
-//          textTransform: 'initial',
-//          fontSize: '1rem',
+          textTransform: 'initial',
+          fontSize: '1rem',
           fontWeight: 700,
+          borderRadius: '50rem',
         },
       },
     },

@@ -1,7 +1,7 @@
-import { Box, Button, CardActions, CardContent, Stack, Typography } from '@mui/material'
+import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
 import { SectionHeader } from './common/SectionHeader.jsx'
 import { GitHub } from '@mui/icons-material'
-import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
+import { ContentCard, ContentCardActions, ContentCardHeader } from './common/ContentCard.jsx'
 
 // ================================================================================
 // Content
@@ -226,16 +226,12 @@ const ProjectCard = ({
         {/*  </Box>*/}
         {/*}*/}
       </CardContent>
-      <CardActions
-        sx={{
-          p: 2,
-          borderTop: 2,
-          borderColor: color + '.main',
-        }}
+      <ContentCardActions
+        color={color}
       >
         {smallButtons}
         {bigButton}
-      </CardActions>
+      </ContentCardActions>
     </ContentCard>
   )
 }
