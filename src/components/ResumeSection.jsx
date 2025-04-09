@@ -1,9 +1,10 @@
-import { Box, Button, CardContent, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material'
+import { Box, CardContent, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material'
 import { Description, PlayArrow } from '@mui/icons-material'
 import Grid from '@mui/material/Grid2'
 import { SectionHeader } from './common/SectionHeader.jsx'
 import { SkillChips } from './common/SkillChips.jsx'
 import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
+import { CtaButton } from './common/CtaButton.jsx'
 
 // ================================================================================
 // Content
@@ -295,20 +296,14 @@ export const ResumeSection = ({
           </Stack>
         </Box>
 
-        <Box id="resume-pdf">
-          {/*TODO: big juicy CTA buttons*/}
-          <Button
-            href="files/Connor de la Cruz Resume.pdf"
-            variant="contained"
-            color={color}
-            startIcon={<Description/>}
-            size="large"
-            fullWidth
-            download
-          >
-            View Full Resume
-          </Button>
-        </Box>
+        <CtaButton
+          href="files/Connor de la Cruz Resume.pdf"
+          color={color}
+          startIcon={<Description/>}
+          download
+        >
+          View Full Resume
+        </CtaButton>
 
       </Stack>
     </Box>

@@ -2,6 +2,7 @@ import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
 import { SectionHeader } from './common/SectionHeader.jsx'
 import { GitHub } from '@mui/icons-material'
 import { ContentCard, ContentCardActions, ContentCardHeader } from './common/ContentCard.jsx'
+import { CtaButton } from './common/CtaButton.jsx'
 
 // ================================================================================
 // Content
@@ -274,18 +275,13 @@ export const ProjectsSection = ({color}) => {
         <ProjectCards color={color}/>
         {/*View more button*/}
         <Box id="github-link">
-          {/*TODO: big juicy CTA buttons*/}
-          <Button
-            variant="contained"
+          <CtaButton
             color={color}
             startIcon={<GitHub/>}
-            size="large"
-            fullWidth
             href="https://github.com/connordelacruz"
-            target="_blank"
           >
             View More on GitHub
-          </Button>
+          </CtaButton>
         </Box>
       </Stack>
     </Box>
