@@ -12,8 +12,8 @@ function App() {
   // ================================================================================
   // Theme
   const COLOR_RESUME = 'brandBlue'
-  const COLOR_PROJECTS = 'brandYellow'
-  const COLOR_CONTACT = 'brandRed'
+  const COLOR_PROJECTS = 'brandRed'
+  const COLOR_CONTACT = 'brandYellow'
 
   // ================================================================================
   // Render

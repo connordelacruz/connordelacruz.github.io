@@ -202,7 +202,7 @@ const ProjectCard = ({
   return (
     <Card
       sx={{
-        pt: 0,
+        p: 0,
         borderColor: color + '.main',
       }}
     >
@@ -241,7 +241,7 @@ const ProjectCard = ({
       </CardContent>
       <CardActions
         sx={{
-          pt: 3,
+          p: 2,
           borderTop: 2,
           borderColor: color + '.main',
         }}

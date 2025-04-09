@@ -137,11 +137,13 @@ export const SkillCard = ({
           title: {
             variant: 'h6',
             color: color,
-            mb: 0,
           }
         }}
         sx={{
-          pb: 0,
+          pb: 1,
+          mb: 0,
+          borderBottom: 2,
+          borderColor: color + '.main',
         }}
       />
       <CardContent>
@@ -268,7 +270,7 @@ export const ExperienceCard = ({
   return (
     <Card
       sx={{
-        py: 0,
+        p: 0,
         borderColor: color + '.main',
       }}
     >
