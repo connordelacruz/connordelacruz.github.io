@@ -11,6 +11,7 @@ const projects = [
     title: "Channel ⇄ Shift",
     imgSrc: "images/projects/channel-shift.png",
     imgIsPortrait: true,
+    skills: 'React, P5.js, Material UI, Node.js',
     bigButtonContent: {
       text: 'Visit Channel Shift Site',
       link: 'https://cheezwhiz.biz',
@@ -151,6 +152,7 @@ const ProjectImage = ({
  * @param title
  * @param imgSrc
  * @param imgIsPortrait
+ * @param skills
  * @param bigButtonContent
  * @param smallButtonsContent
  * @param body
@@ -163,8 +165,10 @@ const ProjectCard = ({
                        title,
                        imgSrc = null,
                        imgIsPortrait = false,
+                       skills = null,
                        bigButtonContent = {text: '', link: ''},
                        smallButtonsContent = [],
+                       // TODO: cleanup whichever one of these isn't getting used
                        body = null,
                        children = null,
                        color,
@@ -211,7 +215,10 @@ const ProjectCard = ({
           }
         }}
         sx={{
-          pb: 0,
+          pb: 1,
+          mb: 1,
+          borderBottom: 2,
+          borderColor: color + '.main',
         }}
       />
       <CardContent>
@@ -221,8 +228,24 @@ const ProjectCard = ({
         >
           {children ? children : body}
         </Typography>
+        {/*TODO: implement?*/}
+        {/*{skills &&*/}
+        {/*  <Box*/}
+        {/*    sx={{*/}
+        {/*      mt: 2,*/}
+        {/*    }}*/}
+        {/*  >*/}
+        {/*    {<SkillChips skills={skills.split(', ')} color={color}/>}*/}
+        {/*  </Box>*/}
+        {/*}*/}
       </CardContent>
-      <CardActions>
+      <CardActions
+        sx={{
+          pt: 3,
+          borderTop: 2,
+          borderColor: color + '.main',
+        }}
+      >
         {smallButtons}
         {bigButton}
       </CardActions>

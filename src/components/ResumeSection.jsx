@@ -14,6 +14,7 @@ import {
 import { Description, PlayArrow } from '@mui/icons-material'
 import Grid from '@mui/material/Grid2'
 import { SectionHeader } from './common/SectionHeader.jsx'
+import { SkillChips } from './common/SkillChips.jsx'
 
 // ================================================================================
 // Content
@@ -23,7 +24,7 @@ import { SectionHeader } from './common/SectionHeader.jsx'
 const skills = [
   {
     title: 'Programming',
-    skills: 'Python, PHP, JavaScript (ES2015+), CSS, Sass, HTML, Java, Bash, Groovy',
+    skills: 'Python, PHP, JavaScript, CSS, Sass, HTML, Java, Bash, Groovy',
   },
   {
     title: 'Libraries & Frameworks',
@@ -31,7 +32,7 @@ const skills = [
   },
   {
     title: 'Tools & Software',
-    skills: 'Git, GitHub, MySQL, Docker, Jenkins, Node.js, JetBrains IDEs, vim',
+    skills: 'Git, GitHub, MySQL, Docker, Jenkins, Node.js, JetBrains, vim',
   },
 ]
 
@@ -144,9 +145,10 @@ export const SkillCard = ({
         }}
       />
       <CardContent>
-        <Typography variant="body1">
-          {skills}
-        </Typography>
+        <SkillChips
+          color={color}
+          skills={skills.split(', ')}
+        />
       </CardContent>
     </Card>
   )
@@ -164,7 +166,6 @@ export const SkillCards = ({
                              skillCardProps,
                              color,
                            }) => {
-  // TODO: format skills nicely, maybe List?
   return (
     <Box>
       <Typography variant="h3">Skills</Typography>
@@ -208,6 +209,12 @@ const ExperienceList = ({
         <ListItem
           key={i}
           disableGutters
+          sx={{
+            pt: 0,
+            '&:last-child': {
+              pb: 0,
+            },
+          }}
         >
           <ListItemIcon
             sx={{
@@ -258,45 +265,30 @@ export const ExperienceCard = ({
                                }) => {
   // TODO: chips for languages/frameworks to display at the bottom, see https://brittanychiang.com/#experience
 
-  const subtitleProps = {
-    variant: 'subtitle1',
-    component: 'span',
-    color: 'text.secondary',
-    gutterBottom: false,
-  }
-
-  const subtitleSx = {
-    display: {
-      xs: 'block',
-      md: 'inline',
-    },
-  }
-
   return (
     <Card
       sx={{
         py: 0,
         borderColor: color + '.main',
-        px: {
-          xs: 1,
-          md: 2,
-        },
       }}
     >
+      <CardHeader
+        title={jobTitle}
+        subheader={<span><b>{company}</b><br/>{startDate} - {endDate}</span>}
+        slotProps={{
+          title: {
+            variant: 'h6',
+            color: color,
+          }
+        }}
+        sx={{
+          pb: 1,
+          mb: 0,
+          borderBottom: 2,
+          borderColor: color + '.main',
+        }}
+      />
       <CardContent>
-        <Typography
-          variant="h6"
-          color={color}
-          gutterBottom={false}
-          sx={{
-            textWrap: 'balance',
-          }}
-        >
-          {jobTitle}
-        </Typography>
-        <Typography {...subtitleProps} {...subtitleSx}>{company}</Typography>
-        <Typography {...subtitleProps} sx={{display: {xs: 'none', md: 'inline'}}}> · </Typography>
-        <Typography {...subtitleProps} {...subtitleSx}>{startDate} – {endDate}</Typography>
         <ExperienceList bullets={bullets} color={color}/>
       </CardContent>
     </Card>
