@@ -15,9 +15,13 @@ import {
   Typography
 } from '@mui/material'
 import { Close, Menu as MenuIcon } from '@mui/icons-material'
-import React from 'react'
 import useScrollSpy from '../utils/useScrollSpy.js'
-import { THEME_GRADIENT_BORDERS_SX, THEME_GRADIENT_TEXT_SX, THEME_TRANSITION_DURATION_AND_TIMING_SX } from './Theme.jsx'
+import {
+  THEME_GRADIENT_BORDERS_BG,
+  THEME_GRADIENT_BORDERS_SX,
+  THEME_GRADIENT_TEXT_SX,
+  THEME_TRANSITION_DURATION_AND_TIMING_SX
+} from './Theme.jsx'
 
 
 /**
@@ -321,7 +325,11 @@ export const NavBar = ({
         py: 0,
         borderWidth: '0 0 2px',
         borderRadius: 0,
-        ...THEME_GRADIENT_BORDERS_SX
+        // Gradient borders when at top of page, otherwise match color of active hash
+        background: THEME_GRADIENT_BORDERS_BG,
+        borderColor: getActiveHashColor('transparent'),
+        transitionProperty: 'border-color',
+        ...THEME_TRANSITION_DURATION_AND_TIMING_SX,
       }}
     >
       <Toolbar
