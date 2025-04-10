@@ -19,9 +19,9 @@ import useScrollSpy from '../utils/useScrollSpy.js'
 import {
   THEME_GRADIENT_BORDERS_BG,
   THEME_GRADIENT_BORDERS_SX,
-  THEME_GRADIENT_TEXT_SX,
   THEME_TRANSITION_DURATION_AND_TIMING_SX
 } from './Theme.jsx'
+import React from 'react'
 
 
 /**
@@ -150,7 +150,6 @@ const NavMenu = ({
         open={drawerOpen}
         onClose={handleDrawerOnClose}
         // TODO: accessibility stuff (component nav)
-        // TODO: header list item
         PaperProps={{
           sx: {
             borderRadius: 0,
@@ -181,7 +180,6 @@ const NavMenu = ({
           </IconButton>
           {/*Drawer Menu Items*/}
           <List>
-            {/*TODO: nav logo but disable opacity stuff and flex grow*/}
             {sectionLinks.map((sectionLink, i) => (
               <ListItem
                 key={i}
@@ -242,6 +240,7 @@ const NavLogo = ({
     <Box sx={{flexGrow: {xs: 0, md: 1}}}>
       <Typography
         variant="h6"
+        color="text.primary"
         component="a"
         href="#"
         onClick={handleLogoClick}
@@ -254,8 +253,6 @@ const NavLogo = ({
           ...THEME_TRANSITION_DURATION_AND_TIMING_SX,
           // Hide pointer when not visible
           pointerEvents: activeHash === null ? 'none' : 'initial',
-          // Gradient text
-          ...THEME_GRADIENT_TEXT_SX,
         }}
         noWrap
         gutterBottom={false}

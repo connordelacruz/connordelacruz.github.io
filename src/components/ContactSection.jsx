@@ -26,6 +26,7 @@ export const ContactSection = ({color}) => {
               variant: 'h3',
               textAlign: 'center',
               color: color,
+              gutterBottom: false,
             },
           }}
           />
