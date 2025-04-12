@@ -12,9 +12,7 @@ import { createTheme } from '@mui/material'
 // --------------------------------------------------------------------------------
 // Base Colors
 const COLOR_BLUE = '#668AFF'
-//const COLOR_BLUE = '#4D79FF' // TODO: remove?
 const COLOR_PINK = '#FE5C9C'
-//const COLOR_PINK = '#FF5C95' // TODO: remove?
 const COLOR_YELO = '#FFB217'
 const COLOR_BLCK = '#101010'
 
@@ -130,7 +128,6 @@ const baseTheme = createTheme({
       },
       styleOverrides: {
         root: {
-          // TODO: uncomment to make text not all caps, then maybe increase text size?
           textTransform: 'initial',
           fontSize: '1rem',
           fontWeight: 700,
@@ -157,17 +154,8 @@ const baseTheme = createTheme({
     },
 
     // TODO: border width for Dividers
-    // Baseline styles
     // TODO: can we use defaultProps instead? gotta figure out how to specify for variants
     //    https://mui.com/material-ui/customization/typography/#variants
-    // TODO: remove?
-//    MuiCssBaseline: {
-//      styleOverrides: (themeParam) => `
-//        h2 {
-//          color: ${themeParam.palette.primary.main};
-//        }
-//      `,
-//    },
   },
 })
 
@@ -183,7 +171,6 @@ export const theme = createTheme(baseTheme, {
     brandBlue: baseTheme.palette.augmentColor({
       color: {
         main: COLOR_BLUE,
-        // TODO: find a way to ensure these values align with defaults
         contrastText: 'rgba(0, 0, 0, 0.87)',
       },
       name: 'brandBlue',

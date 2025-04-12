@@ -65,12 +65,10 @@ export const HeaderSection = () => {
             fontWeight: 700,
             // Handle line breaks in the title a bit smoother by shrinking font size on small viewports
             fontSize: {
-              // TODO: figure out the best numbers here, scale subheader to look nice too
               xs: '3rem',
               sm: '4rem',
               md: '6rem',
             },
-            // TODO: make sure this padding doesn't break mobile
             px: 0,
             py: 2,
             borderRadius: 16,

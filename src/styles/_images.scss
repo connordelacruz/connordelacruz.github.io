@@ -9,8 +9,6 @@
   margin: 0 auto;
 }
 
-// TODO: use different units for responsive widths, percent gets weird
-
 // Profile image
 img.profile-image {
   @include img-common;

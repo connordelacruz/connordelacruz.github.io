@@ -111,8 +111,7 @@ export const SkillCard = ({
                             color = 'inherit',
                             skills,
                           }) => {
-// TODO: make a nicely formatted list of these, maybe with chips or using the List component
-
+  // TODO: are we married to skill chips?
   return (
     <ContentCard
       color={color}
