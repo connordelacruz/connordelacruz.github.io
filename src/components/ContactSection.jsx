@@ -3,6 +3,7 @@ import { SectionHeader } from './common/SectionHeader.jsx'
 import { Email } from '@mui/icons-material'
 import { CtaButton } from './common/CtaButton.jsx'
 import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
+import { SocialLinks } from './common/SocialLinks.jsx'
 
 /**
  * Contact section component.
@@ -53,7 +54,13 @@ export const ContactSection = ({color}) => {
           >
             connor.c.delacruz@gmail.com
           </CtaButton>
-          {/*TODO: socials*/}
+          <Box
+            sx={{
+              mt: 3,
+            }}
+          >
+            <SocialLinks color={color}/>
+          </Box>
         </CardContent>
       </ContentCard>
     </Box>

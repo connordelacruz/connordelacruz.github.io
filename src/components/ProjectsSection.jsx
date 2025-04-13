@@ -3,6 +3,7 @@ import { SectionHeader } from './common/SectionHeader.jsx'
 import { GitHub } from '@mui/icons-material'
 import { ContentCard, ContentCardActions, ContentCardHeader } from './common/ContentCard.jsx'
 import { CtaButton } from './common/CtaButton.jsx'
+import { SkillChips } from './common/SkillChips.jsx'
 
 // ================================================================================
 // Content
@@ -10,10 +11,22 @@ import { CtaButton } from './common/CtaButton.jsx'
 // TODO: spot check content
 const projects = [
   {
+    title: 'This Site!',
+    body: 'Built from the ground up using React and Material UI with a heavily customized theme.',
+    skills: 'JavaScript, React, Material UI, Node.js',
+    // TODO: update link to github once repo is migrated!
+    smallButtonsContent: [
+      {
+        text: 'GitHub',
+        link: 'https://github.com/connordelacruz/connordelacruz-react'
+      }
+    ],
+  },
+  {
     title: "Channel ⇄ Shift",
     imgSrc: "images/projects/channel-shift.png",
     imgIsPortrait: true,
-    skills: 'React, P5.js, Material UI, Node.js',
+    skills: 'JavaScript, React, P5.js, Material UI, Node.js',
     bigButtonContent: {
       text: 'Visit Channel Shift Site',
       link: 'https://cheezwhiz.biz',
@@ -24,6 +37,7 @@ const projects = [
     title: "React Counter App",
     imgSrc: "images/projects/react-counter.png",
     imgIsPortrait: true,
+    skills: 'JavaScript, React, Material UI, Node.js',
     bigButtonContent: {
       text: 'Visit React Counter Site',
       link: 'https://connordelacruz.com/react-counter/'
@@ -33,6 +47,7 @@ const projects = [
   {
     title: "Channel ⇄ Shift Classic",
     imgSrc: "images/projects/channel-shift-classic.png",
+    skills: 'Java, Processing',
     smallButtonsContent: [
       {
         text: 'GitHub',
@@ -44,6 +59,7 @@ const projects = [
   {
     title: "Chicago ASCII Art",
     imgSrc: "images/projects/chicago-ascii-art.png",
+    skills: 'Bash',
     smallButtonsContent: [
       {
         text: 'GitHub',
@@ -55,6 +71,7 @@ const projects = [
   {
     title: "iTerm2 Tab Color Commands",
     imgSrc: "images/projects/iterm2-tab-color.png",
+    skills: 'Bash, iTerm 2, Base16 Shell',
     smallButtonsContent: [
       {
         text: 'GitHub',
@@ -65,6 +82,7 @@ const projects = [
   },
   {
     title: "Git Workflow Tools",
+    skills: 'Python, Git',
     smallButtonsContent: [
       {
         text: 'GitHub',
@@ -79,6 +97,7 @@ const projects = [
   },
   {
     title: "Python Random User Generator",
+    skills: 'Python, randomuser.me',
     smallButtonsContent: [
       {
         text: 'GitHub',
@@ -97,6 +116,7 @@ const projects = [
   },
   {
     title: "Python Lorem Ipsum Generator",
+    skills: 'Python, loripsum.net',
     smallButtonsContent: [
       {
         text: 'GitHub',
@@ -217,15 +237,15 @@ const ProjectCard = ({
           {children ? children : body}
         </Typography>
         {/*TODO: implement?*/}
-        {/*{skills &&*/}
-        {/*  <Box*/}
-        {/*    sx={{*/}
-        {/*      mt: 2,*/}
-        {/*    }}*/}
-        {/*  >*/}
-        {/*    {<SkillChips skills={skills.split(', ')} color={color}/>}*/}
-        {/*  </Box>*/}
-        {/*}*/}
+        {skills &&
+          <Box
+            sx={{
+              mt: 2,
+            }}
+          >
+            {<SkillChips skills={skills.split(', ')} color={color}/>}
+          </Box>
+        }
       </CardContent>
       <ContentCardActions
         color={color}

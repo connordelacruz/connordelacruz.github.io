@@ -90,10 +90,8 @@ export const ContentCardActions = ({
     <CardActions
       sx={{
         p: 2,
-        pt: 0,
-        // TODO: remove probably:
-//        borderTop: 2,
-//        borderColor: color + '.main',
+        borderTop: 2,
+        borderColor: color + '.main',
         ...sx
       }}
       {...props}
