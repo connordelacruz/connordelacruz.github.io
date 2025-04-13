@@ -178,7 +178,6 @@ const ProjectImage = ({
  * @param bigButtonContent
  * @param smallButtonsContent
  * @param body
- * @param children
  * @param color
  * @return {JSX.Element}
  * @constructor
@@ -190,9 +189,7 @@ const ProjectCard = ({
                        skills = null,
                        bigButtonContent = {text: '', link: ''},
                        smallButtonsContent = [],
-                       // TODO: cleanup whichever one of these isn't getting used
-                       body = null,
-                       children = null,
+                       body,
                        color,
                      }) => {
   // Big button component (if applicable)
@@ -234,9 +231,8 @@ const ProjectCard = ({
         <Typography
           variant="body1"
         >
-          {children ? children : body}
+          {body}
         </Typography>
-        {/*TODO: implement?*/}
         {skills &&
           <Box
             sx={{

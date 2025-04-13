@@ -11,6 +11,7 @@ import { CtaButton } from './common/CtaButton.jsx'
 // ================================================================================
 
 // Skills
+// TODO: update to include anything that you put in experience/project sections that haven't been included
 const skills = [
   {
     title: 'Programming',
@@ -27,6 +28,7 @@ const skills = [
 ]
 
 // Experience
+// TODO: update resume then update these
 const experience = [
   {
     jobTitle: 'Software Engineer',
@@ -38,6 +40,7 @@ const experience = [
       'Streamlined development workflows by creating Jenkins jobs and command line tools with Python.',
       'Authored extensive documentation and engaged in peer programming to enhance team collaboration and knowledge sharing.',
     ],
+    skills: 'PHP, MySQL, Jenkins, Groovy, Python, Docker, Cypress, GitHub, Jira',
   },
   {
     jobTitle: 'Full-Stack Developer',
@@ -49,6 +52,7 @@ const experience = [
       'Developed a cross-browser automated testing system to streamline QA using Python and Selenium.',
       'Built and managed client websites using Django, Wagtail, and Adobe Experience Manager.',
     ],
+    skills: 'JavaScript, Python, Sass, CSS, MySQL, Selenium, Django, BitBucket, AEM',
   },
   {
     jobTitle: 'CS Lab Configuration Management Intern',
@@ -59,6 +63,7 @@ const experience = [
       'Collaborated with the CS lab system admin to implement the Salt configuration management system.',
       'Contributed to the Salt open source project with bug fixes and feature implementations.',
     ],
+    skills: 'Python, Bash, SaltStack, CentOS, GitHub',
   },
   {
     jobTitle: 'Web Application Developer',
@@ -69,6 +74,7 @@ const experience = [
       'Built bespoke, responsive web apps to streamline workflows for various departments.',
       'Developed features, fixed bugs, and created unit tests for the Coral open source project.',
     ],
+    skills: 'PHP, MySQL, JavaScript, CSS, GitHub',
   },
   {
     jobTitle: 'IT Developer & Software Deployment Engineer',
@@ -80,8 +86,10 @@ const experience = [
       'Developed scripts to automate support procedures and streamline service desk workflows.',
       'Packaged and deployed software for automated installation on campus computers.',
     ],
+    skills: 'PHP, MySQL, JavaScript, CSS, Microsoft SCCM, VBScript, Batch',
   },
   {
+    // TODO: remove? or figure out skills / way to spin this as beneficial for software dev
     jobTitle: 'Service Desk Supervisor',
     company: 'Wheaton College AIT',
     startDate: 'October 2014',
@@ -90,6 +98,7 @@ const experience = [
       'Provided tech support to students and staff for hardware, software, and network issues.',
       'Trained, supervised, and assisted service desk technicians.',
     ],
+    skills: 'Hardware / Software Troubleshooting, Customer Service, Windows, macOS',
   },
 ]
 
@@ -230,6 +239,7 @@ const ExperienceList = ({
  * @param startDate
  * @param endDate
  * @param bullets
+ * @param skills
  * @param color
  * @return {JSX.Element}
  * @constructor
@@ -240,10 +250,10 @@ export const ExperienceCard = ({
                                  startDate,
                                  endDate,
                                  bullets,
+                                 skills,
                                  color,
                                }) => {
-  // TODO: chips for languages/frameworks to display at the bottom, see https://brittanychiang.com/#experience
-
+  // TODO: make sure skill chips look ok on different viewports
   return (
     <ContentCard
       color={color}
@@ -255,6 +265,15 @@ export const ExperienceCard = ({
       />
       <CardContent>
         <ExperienceList bullets={bullets} color={color}/>
+        {skills &&
+          <Box
+            sx={{
+              mt: 2,
+            }}
+          >
+            {<SkillChips skills={skills.split(', ')} color={color}/>}
+          </Box>
+        }
       </CardContent>
     </ContentCard>
   )
