@@ -66,27 +66,37 @@ export const HeaderSection = () => {
         >
           Hi, my name is
         </Typography>
-        <Typography
-          variant="h1"
-          sx={{
-            fontWeight: 700,
-            // Handle line breaks in the title a bit smoother by shrinking font size on small viewports
-            fontSize: {
-              xs: '3rem',
-              sm: '4rem',
-              md: '6rem',
-            },
-            px: 0,
-            py: 2,
-            borderRadius: 16,
-            // Gradient text
-            ...THEME_GRADIENT_TEXT_SX
-          }}
-          gutterBottom={false}
-        >
-          Connor de la Cruz
-          <ZigZag color="gradient" sx={{ mt: 1, mb: 3 }}/>
-        </Typography>
+        <Box>
+          <Typography
+            variant="h1"
+            sx={{
+              // inline-block makes it so the zig zag is only as wide as the text
+              display: 'inline-block',
+              textWrap: 'nowrap',
+              fontWeight: 700,
+              // Handle line breaks in the title a bit smoother by shrinking font size on small viewports
+              fontSize: {
+                xs: '3rem',
+                sm: '4rem',
+                md: '6rem',
+              },
+              px: 0,
+              py: 2,
+              // Gradient text
+              ...THEME_GRADIENT_TEXT_SX
+            }}
+            gutterBottom={false}
+          >
+            Connor de la Cruz
+            <ZigZag
+              color="gradient"
+              sx={{
+                mt: 0,
+                mb: 4,
+              }}
+            />
+          </Typography>
+        </Box>
 
         {/* About */}
         <Box

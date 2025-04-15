@@ -1,6 +1,16 @@
 import { Box } from '@mui/material'
 import { THEME_GRADIENT } from '../Theme.jsx'
 
+// TODO IDEA 1: multiple components:
+//    - make function that handles calculations and returns {height: height, mask: mask}
+//    - make un-exported ZigZagRule component that is exactly what we have now
+//    - make ZigZagWithChildren, do something similar to Divider
+//    - finally, update ZigZag to conditionally render differently based on whether there's kids or not
+
+// TODO IDEA 2: just lump it all together babyyyy
+//    - store calculated sx in object
+//    - if no children, styles go on root element
+//    - if children, styles go before/after, then prob have a wrapper
 
 /**
  * ZigZag horizontal rule component.
@@ -17,13 +27,13 @@ import { THEME_GRADIENT } from '../Theme.jsx'
  * @constructor
  */
 export const ZigZag = ({
-                             color = 'default',
-                             angle = '90deg',
-                             size = '2rem',
-                             thiccness = '0.25rem',
-                             my = 2,
-                             sx = {},
-                           }) => {
+                         color = 'gradient',
+                         angle = '90deg',
+                         size = '2rem',
+                         thiccness = '0.25rem',
+                         my = 2,
+                         sx = {},
+                       }) => {
   // Calculations
   const height = `calc(${thiccness} + ${size} / (2 * tan(${angle} / 2)))`
   const g = `${size} repeat-x conic-gradient(from calc(${angle}/-2) at bottom,
@@ -38,7 +48,6 @@ export const ZigZag = ({
     colorSx.backgroundColor = color + '.main'
   }
 
-  // TODO: before/after container version
   return (
     <Box
       sx={{
