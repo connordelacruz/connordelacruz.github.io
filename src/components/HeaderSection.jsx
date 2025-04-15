@@ -1,8 +1,15 @@
 import { Box, Container, Divider, Paper, Typography } from '@mui/material'
 import { SocialLinks } from './common/SocialLinks.jsx'
 import { THEME_GRADIENT_BORDERS_SX, THEME_GRADIENT_TEXT_SX } from './Theme.jsx'
+import { ZigZag } from './common/ZigZag.jsx'
 
 
+/**
+ * Profile pic component.
+ *
+ * @return {JSX.Element}
+ * @constructor
+ */
 const ProfilePhoto = () => {
   return (
     <Box
@@ -12,7 +19,7 @@ const ProfilePhoto = () => {
           sm: '40%',
         },
         margin: '0 auto',
-        my: 4,
+        my: 3,
       }}
     >
       <img
@@ -78,21 +85,19 @@ export const HeaderSection = () => {
           gutterBottom={false}
         >
           Connor de la Cruz
+          <ZigZag color="gradient" sx={{ mt: 1, mb: 3 }}/>
         </Typography>
 
         {/* About */}
         <Box
           id="section-about"
-          sx={{
-            mt: 4,
-          }}
         >
           <Paper
             id="about-content"
             sx={{
               p: {
                 xs: 2,
-                sm: 4,
+                md: 4,
               },
               // Gradient border
               ...THEME_GRADIENT_BORDERS_SX
