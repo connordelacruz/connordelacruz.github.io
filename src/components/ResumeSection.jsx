@@ -156,7 +156,7 @@ export const SkillCards = ({
                            }) => {
   return (
     <Box>
-      <Typography variant="h3">Skills</Typography>
+      <Typography variant="h3" color={color}>Skills</Typography>
       <Grid
         container
         spacing={2}
@@ -306,7 +306,7 @@ export const ResumeSection = ({
         <SkillCards skillCardProps={skillsContent} color={color}/>
 
         <Box id="resume-experience">
-          <Typography variant="h3">Experience</Typography>
+          <Typography variant="h3" color={color}>Experience</Typography>
           <Stack spacing={2}>
             {experienceContent.map((props, i) =>
               <ExperienceCard key={i} color={color} {...props}/>

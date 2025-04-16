@@ -227,6 +227,7 @@ const NavMenu = ({
  */
 const NavLogo = ({
                    activeHash,
+                   getActiveHashColor,
                  }) => {
   // Smooth scroll logo link handler
   const handleLogoClick = (e) => {
@@ -240,11 +241,11 @@ const NavLogo = ({
     <Box sx={{flexGrow: {xs: 0, md: 1}}}>
       <Typography
         variant="h6"
-        color="text.primary"
         component="a"
         href="#"
         onClick={handleLogoClick}
         sx={{
+          color: getActiveHashColor(),
           display: 'inline',
           textDecoration: 'none',
           // Fade in when not at top of page
@@ -347,6 +348,7 @@ export const NavBar = ({
         {/*Logo*/}
         <NavLogo
           activeHash={activeHash}
+          getActiveHashColor={getActiveHashColor}
         />
 
         {/*Wide Viewport Links*/}

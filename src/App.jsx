@@ -1,10 +1,11 @@
-import { Container, CssBaseline, Paper, Stack, ThemeProvider, Typography } from '@mui/material'
+import { Box, Container, CssBaseline, Stack, ThemeProvider, Typography } from '@mui/material'
 import { theme, THEME_GRADIENT_TEXT_SX } from './components/Theme.jsx'
 import { NavBar } from './components/NavBar.jsx'
 import { HeaderSection } from './components/HeaderSection.jsx'
 import { ResumeSection } from './components/ResumeSection.jsx'
 import { ProjectsSection } from './components/ProjectsSection.jsx'
 import { ContactSection } from './components/ContactSection.jsx'
+import { ZigZag } from './components/common/ZigZag.jsx'
 
 function App() {
   // ================================================================================
@@ -66,12 +67,18 @@ function App() {
       </Container>
 
       {/*Footer*/}
-      <Paper
+      <ZigZag
         sx={{
-          mt: 6,
+          mt: 8,
+          mb: 0,
+        }}
+      />
+      <Box
+        sx={{
+//          mt: 6,
           py: 3,
-          borderWidth: '2px 0 0',
-          borderRadius: 0,
+//          borderWidth: '2px 0 0',
+//          borderRadius: 0,
         }}
       >
         <Typography
@@ -86,7 +93,7 @@ function App() {
         >
           Designed and Developed by Connor de la Cruz © {new Date().getFullYear()}
         </Typography>
-      </Paper>
+      </Box>
     </ThemeProvider>
   )
 }
