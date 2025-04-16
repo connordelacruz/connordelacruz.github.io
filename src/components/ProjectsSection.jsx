@@ -4,6 +4,7 @@ import { GitHub } from '@mui/icons-material'
 import { ContentCard, ContentCardActions, ContentCardHeader } from './common/ContentCard.jsx'
 import { CtaButton } from './common/CtaButton.jsx'
 import { SkillChips } from './common/SkillChips.jsx'
+import { THEME_CONTENT_STACK_SPACING } from './Theme.jsx'
 
 // ================================================================================
 // Content
@@ -287,7 +288,7 @@ export const ProjectsSection = ({color}) => {
   return (
     <Box id="section-projects">
       <SectionHeader color={color}>Projects</SectionHeader>
-      <Stack spacing={2}>
+      <Stack spacing={THEME_CONTENT_STACK_SPACING}>
         <ProjectCards color={color}/>
         {/*View more button*/}
         <Box id="github-link">

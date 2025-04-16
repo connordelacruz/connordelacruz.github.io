@@ -69,16 +69,13 @@ function App() {
       {/*Footer*/}
       <ZigZag
         sx={{
-          mt: 8,
+          mt: 6,
           mb: 0,
         }}
       />
       <Box
         sx={{
-//          mt: 6,
-          py: 3,
-//          borderWidth: '2px 0 0',
-//          borderRadius: 0,
+          py: 4,
         }}
       >
         <Typography

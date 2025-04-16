@@ -5,6 +5,7 @@ import { SectionHeader } from './common/SectionHeader.jsx'
 import { SkillChips } from './common/SkillChips.jsx'
 import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
 import { CtaButton } from './common/CtaButton.jsx'
+import { THEME_CONTENT_STACK_SPACING } from './Theme.jsx'
 
 // ================================================================================
 // Content
@@ -159,7 +160,7 @@ export const SkillCards = ({
       <Typography variant="h3" color={color}>Skills</Typography>
       <Grid
         container
-        spacing={2}
+        spacing={{xs: THEME_CONTENT_STACK_SPACING, md: 2}}
         direction={{xs: 'column', md: 'row'}}
         sx={{
           justifyContent: "space-evenly",
@@ -300,14 +301,14 @@ export const ResumeSection = ({
 
       <Stack
         id="resume-stack"
-        spacing={2}
+        spacing={THEME_CONTENT_STACK_SPACING}
       >
         {/*Skills*/}
         <SkillCards skillCardProps={skillsContent} color={color}/>
 
         <Box id="resume-experience">
           <Typography variant="h3" color={color}>Experience</Typography>
-          <Stack spacing={2}>
+          <Stack spacing={THEME_CONTENT_STACK_SPACING}>
             {experienceContent.map((props, i) =>
               <ExperienceCard key={i} color={color} {...props}/>
             )}
