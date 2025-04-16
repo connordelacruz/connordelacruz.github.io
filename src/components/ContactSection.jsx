@@ -1,9 +1,9 @@
 import { Box, CardContent, Typography } from '@mui/material'
-import { SectionHeader } from './common/SectionHeader.jsx'
 import { Email } from '@mui/icons-material'
 import { CtaButton } from './common/CtaButton.jsx'
 import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
 import { SocialLinks } from './common/SocialLinks.jsx'
+import { SectionHeader } from './common/SectionHeader.jsx'
 
 /**
  * Contact section component.
@@ -16,6 +16,7 @@ export const ContactSection = ({color}) => {
   return (
     <Box id="section-contact">
       <SectionHeader color={color}>Contact</SectionHeader>
+
       <ContentCard
         color={color}
       >

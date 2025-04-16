@@ -1,19 +1,24 @@
-import { Divider, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
+import { ZigZagContainer } from './ZigZag.jsx'
 
+/**
+ * Section header component.
+ *
+ * @param color
+ * @param children
+ * @return {JSX.Element}
+ * @constructor
+ */
 export const SectionHeader = ({
-                                children,
                                 color,
-                                ...props
+                                children,
                               }) => {
   return (
-    <Divider
+    <ZigZagContainer
+      color={color}
       sx={{
         mb: 4,
         mt: 2,
-        '&::before, &::after': {
-          borderTopWidth: 3,
-          borderTopColor: color + '.main',
-        },
       }}
     >
       <Typography
@@ -21,15 +26,13 @@ export const SectionHeader = ({
         variant="h2"
         gutterBottom={false}
         sx={{
-          fontWeight: 500,
-          color: color + '.main',
-          // TODO: reign in these values for mobile...
           px: 1,
           py: 0.5,
+          color: color + '.main',
         }}
       >
         {children}
       </Typography>
-    </Divider>
+    </ZigZagContainer>
   )
 }
