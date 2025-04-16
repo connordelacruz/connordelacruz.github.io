@@ -53,7 +53,7 @@ const NavTabs = ({
           '& .MuiTabs-indicator': {
             // Full height indicator
             height: '100%',
-            borderRadius: 1,
+            borderRadius: '50rem',
             // indicatorColor prop doesn't work with custom palettes, so leveraging sx
             backgroundColor: getActiveHashColor(),
           },
@@ -192,7 +192,7 @@ const NavMenu = ({
                   selected={activeHash === sectionLink.hash}
                   sx={{
                     py: 2,
-                    borderRadius: 1,
+                    borderRadius: '50rem',
                     color: sectionLink.color + '.main',
                     '&.Mui-selected': {
                       backgroundColor: sectionLink.color + '.main',

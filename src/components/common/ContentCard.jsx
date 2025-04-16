@@ -55,11 +55,12 @@ export const ContentCardHeader = ({
         title: {
           variant: 'h6',
           color: color,
+          gutterBottom: false,
         },
         ...slotProps
       }}
       sx={{
-        pb: 1,
+        py: 1,
         mb: 1,
         borderBottom: 2,
         borderColor: color + '.main',
@@ -89,7 +90,8 @@ export const ContentCardActions = ({
   return (
     <CardActions
       sx={{
-        p: 2,
+        px: 2,
+        py: 1.5,
         borderTop: 2,
         borderColor: color + '.main',
         ...sx

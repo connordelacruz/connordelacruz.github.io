@@ -19,11 +19,11 @@ const skills = [
     skills: 'Python, PHP, JavaScript, CSS, Sass, HTML, Java, Bash, Groovy',
   },
   {
-    title: 'Libraries & Frameworks',
+    title: 'Libraries',
     skills: 'React, Material UI, P5.js, Processing, Django, Cypress, Selenium',
   },
   {
-    title: 'Tools & Software',
+    title: 'Tools',
     skills: 'Git, GitHub, MySQL, Docker, Jenkins, Node.js, JetBrains, vim',
   },
 ]
@@ -121,7 +121,6 @@ export const SkillCard = ({
                             color = 'inherit',
                             skills,
                           }) => {
-  // TODO: are we married to skill chips?
   return (
     <ContentCard
       color={color}
@@ -133,7 +132,14 @@ export const SkillCard = ({
         title={title}
         color={color}
       />
-      <CardContent>
+      <CardContent
+        sx={{
+          p: {
+            xs: 2,
+            md: 1,
+          },
+        }}
+      >
         <SkillChips
           color={color}
           skills={skills.split(', ')}
