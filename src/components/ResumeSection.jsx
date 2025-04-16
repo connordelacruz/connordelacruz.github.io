@@ -1,11 +1,11 @@
 import { Box, CardContent, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material'
 import { Description, PlayArrow } from '@mui/icons-material'
 import Grid from '@mui/material/Grid2'
-import { SectionHeader } from './common/SectionHeader.jsx'
 import { SkillChips } from './common/SkillChips.jsx'
 import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
 import { CtaButton } from './common/CtaButton.jsx'
 import { THEME_CONTENT_STACK_SPACING } from './Theme.jsx'
+import { SectionContainer } from './common/SectionContainer.jsx'
 
 // ================================================================================
 // Content
@@ -302,9 +302,11 @@ export const ResumeSection = ({
                                 color,
                               }) => {
   return (
-    <Box id="section-resume">
-      <SectionHeader color={color}>Resume</SectionHeader>
-
+    <SectionContainer
+      id="section-resume"
+      headerText="Resume"
+      color={color}
+    >
       <Stack
         id="resume-stack"
         spacing={THEME_CONTENT_STACK_SPACING}
@@ -331,6 +333,6 @@ export const ResumeSection = ({
         </CtaButton>
 
       </Stack>
-    </Box>
+    </SectionContainer>
   )
 }

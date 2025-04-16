@@ -1,10 +1,10 @@
 import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
-import { SectionHeader } from './common/SectionHeader.jsx'
 import { GitHub } from '@mui/icons-material'
 import { ContentCard, ContentCardActions, ContentCardHeader } from './common/ContentCard.jsx'
 import { CtaButton } from './common/CtaButton.jsx'
 import { SkillChips } from './common/SkillChips.jsx'
 import { THEME_CONTENT_STACK_SPACING } from './Theme.jsx'
+import { SectionContainer } from './common/SectionContainer.jsx'
 
 // ================================================================================
 // Content
@@ -286,8 +286,11 @@ const ProjectCards = ({
  */
 export const ProjectsSection = ({color}) => {
   return (
-    <Box id="section-projects">
-      <SectionHeader color={color}>Projects</SectionHeader>
+    <SectionContainer
+      id="section-projects"
+      headerText="Projects"
+      color={color}
+    >
       <Stack spacing={THEME_CONTENT_STACK_SPACING}>
         <ProjectCards color={color}/>
         {/*View more button*/}
@@ -301,6 +304,6 @@ export const ProjectsSection = ({color}) => {
           </CtaButton>
         </Box>
       </Stack>
-    </Box>
+    </SectionContainer>
   )
 }
