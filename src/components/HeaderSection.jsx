@@ -147,8 +147,8 @@ export const HeaderSection = () => {
                 textWrap: 'balance',
               }}
             >
-              I'm a software engineer with a passion for creative problem solving and learning new things. Whether
-              it's front end, back end, or full stack dev, I love taking on new challenges and building things I can be proud of.
+              I'm a full-stack software engineer with a passion for creative problem solving and learning new things. Whether
+              it's front end, back end, or anything in between, I love tackling new challenges and building things I can be proud of.
             </Typography>
 
           </Paper>
