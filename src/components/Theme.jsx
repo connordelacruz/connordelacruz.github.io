@@ -55,6 +55,37 @@ export const THEME_TRANSITION_DURATION_AND_TIMING_SX = {
 export const THEME_CONTENT_STACK_SPACING = 3
 
 // ================================================================================
+// Utility Methods
+// ================================================================================
+
+/**
+ * Convert hex color string to rgba().
+ *
+ * @param hex
+ * @param a
+ * @return string
+ */
+export const hex2rgba = (hex, a = 1.0) => {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r}, ${g}, ${b}, ${a})`
+}
+
+/**
+ * convert rgb() color string to rgba().
+ *
+ * @param rgbString
+ * @param a
+ * @return string
+ */
+export const rgb2rgba = (rgbString, a = 1.0) => {
+  const expr = /rgb\((?<r>.*),\s*(?<g>.*),\s*(?<b>.*)\)/
+  const channels = expr.exec(rgbString).groups
+  return `rgba(${channels.r}, ${channels.g}, ${channels.b}, ${a})`
+}
+
+// ================================================================================
 // Base Theme Overrides
 // ================================================================================
 const baseTheme = createTheme({
