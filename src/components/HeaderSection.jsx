@@ -54,6 +54,7 @@ export const HeaderSection = () => {
             md: 8,
             textAlign: 'center',
           },
+          mb: 2,
         }}
       >
         {/*Header Text*/}
@@ -134,11 +135,10 @@ export const HeaderSection = () => {
               variant="h5"
               component="p"
               sx={{
-                // TODO: merge these styles w/ contact section
+                // TODO: merge these styles w/ contact section?
                 textAlign: 'center',
                 fontWeight: 400,
                 fontSize: {
-                  // TODO: looks a little funky on xs... (maybe it's cuz it's too wordy idk)
                   xs: '1.25rem',
                   sm: '1.5rem',
                 },
@@ -147,9 +147,7 @@ export const HeaderSection = () => {
               }}
             >
               I'm a software engineer with a passion for creative problem solving and learning new things. Whether
-              it's full-stack web dev, creating command line tools, or even dabbling in design work, I love taking
-              on
-              new challenges and building things I can be proud of.
+              it's front end, back end, or full stack dev, I love taking on new challenges and building things I can be proud of.
             </Typography>
 
           </Paper>
