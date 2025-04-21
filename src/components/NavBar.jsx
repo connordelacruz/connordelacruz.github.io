@@ -149,7 +149,6 @@ const NavMenu = ({
         id="nav-drawer"
         open={drawerOpen}
         onClose={handleDrawerOnClose}
-        // TODO: accessibility stuff (component nav)
         PaperProps={{
           sx: {
             borderRadius: 0,

@@ -117,6 +117,7 @@ export const HeaderSection = () => {
 
             {/*Profile Photo*/}
             <ProfilePhoto/>
+
             {/*Socials*/}
             <Divider
               sx={{
