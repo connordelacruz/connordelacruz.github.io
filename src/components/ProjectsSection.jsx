@@ -9,17 +9,15 @@ import { SectionContainer } from './common/SectionContainer.jsx'
 // ================================================================================
 // Content
 // ================================================================================
-// TODO: spot check content
 const projects = [
   {
     title: 'This Site!',
     body: 'Built from the ground up using React and Material UI with a heavily customized theme.',
     skills: 'JavaScript, React, Material UI, Node.js',
-    // TODO: update link to github once repo is migrated!
     smallButtonsContent: [
       {
         text: 'GitHub',
-        link: 'https://github.com/connordelacruz/connordelacruz-react'
+        link: 'https://github.com/connordelacruz/connordelacruz.github.io'
       }
     ],
   },
