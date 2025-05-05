@@ -244,6 +244,7 @@ const NavLogo = ({
         href="#"
         onClick={handleLogoClick}
         sx={{
+          // TODO: just use gradient text?
           color: getActiveHashColor(),
           display: 'inline',
           textDecoration: 'none',
@@ -322,11 +323,8 @@ export const NavBar = ({
         py: 0,
         borderWidth: '0 0 2px',
         borderRadius: 0,
-        // Gradient borders when at top of page, otherwise match color of active hash
         background: THEME_GRADIENT_BORDERS_BG,
-        borderColor: getActiveHashColor('transparent'),
-        transitionProperty: 'border-color',
-        ...THEME_TRANSITION_DURATION_AND_TIMING_SX,
+        borderColor: 'transparent',
       }}
     >
       <Toolbar
