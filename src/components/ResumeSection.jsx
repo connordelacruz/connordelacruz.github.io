@@ -272,15 +272,16 @@ export const ExperienceCard = ({
       />
       <CardContent>
         <ExperienceList bullets={bullets} color={color}/>
-        {skills &&
-          <Box
-            sx={{
-              mt: 2,
-            }}
-          >
-            {<SkillChips skills={skills.split(', ')} color={color}/>}
-          </Box>
-        }
+        {/*TODO: make this less messy and re-implement:*/}
+        {/*{skills &&*/}
+        {/*  <Box*/}
+        {/*    sx={{*/}
+        {/*      mt: 2,*/}
+        {/*    }}*/}
+        {/*  >*/}
+        {/*    {<SkillChips skills={skills.split(', ')} color={color}/>}*/}
+        {/*  </Box>*/}
+        {/*}*/}
       </CardContent>
     </ContentCard>
   )

@@ -2,7 +2,6 @@ import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
 import { GitHub } from '@mui/icons-material'
 import { ContentCard, ContentCardActions, ContentCardHeader } from './common/ContentCard.jsx'
 import { CtaButton } from './common/CtaButton.jsx'
-import { SkillChips } from './common/SkillChips.jsx'
 import { THEME_CONTENT_STACK_SPACING } from './Theme.jsx'
 import { SectionContainer } from './common/SectionContainer.jsx'
 
@@ -12,7 +11,7 @@ import { SectionContainer } from './common/SectionContainer.jsx'
 const projects = [
   {
     title: 'This Site!',
-    body: 'Built from the ground up using React and Material UI with a heavily customized theme.',
+    body: 'Designed and built from the scratch using React and Material UI.',
     skills: 'JavaScript, React, Material UI, Node.js',
     smallButtonsContent: [
       {
@@ -229,18 +228,26 @@ const ProjectCard = ({
         {imgSrc && <ProjectImage src={imgSrc} imgIsPortrait={imgIsPortrait}/>}
         <Typography
           variant="body1"
+          sx={{
+            // TODO: increase font size! at least on md/sm
+            px: 2,
+            // TODO: this is going to be supported in safari, idk about firefox. test and make sure this looks ok?
+            //       and/or figure out browser detection?
+            textWrap: 'pretty',
+          }}
         >
           {body}
         </Typography>
-        {skills &&
-          <Box
-            sx={{
-              mt: 2,
-            }}
-          >
-            {<SkillChips skills={skills.split(', ')} color={color}/>}
-          </Box>
-        }
+        {/*TODO: make this less messy and re-implement*/}
+        {/*{skills &&*/}
+        {/*  <Box*/}
+        {/*    sx={{*/}
+        {/*      mt: 2,*/}
+        {/*    }}*/}
+        {/*  >*/}
+        {/*    {<SkillChips skills={skills.split(', ')} color={color}/>}*/}
+        {/*  </Box>*/}
+        {/*}*/}
       </CardContent>
       <ContentCardActions
         color={color}
