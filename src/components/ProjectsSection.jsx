@@ -112,25 +112,6 @@ const projects = [
     ],
     body: 'A Python class for generating random user information using the randomuser.me API.',
   },
-  {
-    title: "Python Lorem Ipsum Generator",
-    skills: 'Python, loripsum.net',
-    smallButtonsContent: [
-      {
-        text: 'GitHub',
-        link: 'https://github.com/connordelacruz/py-loremipsum'
-      },
-      {
-        text: 'PyPI',
-        link: 'https://pypi.org/pypi/py-loremipsum'
-      },
-      {
-        text: 'Docs',
-        link: 'http://connordelacruz.com/py-loremipsum/'
-      }
-    ],
-    body: 'A Python module for generating placeholder text using the loripsum.net API. Includes a command line tool to generate text from the terminal and copy it to the clipboard.',
-  },
 ]
 
 // ================================================================================
