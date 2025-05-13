@@ -19,7 +19,8 @@ import useScrollSpy from '../utils/useScrollSpy.js'
 import {
   THEME_GRADIENT_BORDERS_BG,
   THEME_GRADIENT_BORDERS_SX,
-  THEME_TRANSITION_DURATION_AND_TIMING_SX
+  THEME_TRANSITION_DURATION_AND_TIMING_SX,
+  THEME_TRANSITION_TIMING_FUNCTION
 } from './Theme.jsx'
 import React from 'react'
 
@@ -323,8 +324,11 @@ export const NavBar = ({
         py: 0,
         borderWidth: '0 0 2px',
         borderRadius: 0,
+        // Gradient border when no active hash
         background: THEME_GRADIENT_BORDERS_BG,
-        borderColor: 'transparent',
+        borderColor: getActiveHashColor('transparent'),
+        transitionProperty: 'border-color',
+        transitionTimingFunction: THEME_TRANSITION_TIMING_FUNCTION,
       }}
     >
       <Toolbar
