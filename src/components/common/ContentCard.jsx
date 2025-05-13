@@ -90,10 +90,8 @@ export const ContentCardActions = ({
   return (
     <CardActions
       sx={{
+        pb: 2,
         px: 2,
-        py: 1.5,
-        borderTop: 2,
-        borderColor: color + '.main',
         ...sx
       }}
       {...props}

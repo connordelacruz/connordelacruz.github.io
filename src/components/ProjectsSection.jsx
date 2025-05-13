@@ -1,9 +1,10 @@
 import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
-import { GitHub } from '@mui/icons-material'
+import { GitHub, Launch, MenuBook, Terminal } from '@mui/icons-material'
 import { ContentCard, ContentCardActions, ContentCardHeader } from './common/ContentCard.jsx'
 import { CtaButton } from './common/CtaButton.jsx'
 import { THEME_CONTENT_STACK_SPACING } from './Theme.jsx'
 import { SectionContainer } from './common/SectionContainer.jsx'
+import { ButtonStack } from './common/ButtonStack.jsx'
 
 // ================================================================================
 // Content
@@ -16,7 +17,8 @@ const projects = [
     smallButtonsContent: [
       {
         text: 'GitHub',
-        link: 'https://github.com/connordelacruz/connordelacruz.github.io'
+        link: 'https://github.com/connordelacruz/connordelacruz.github.io',
+        startIcon: <GitHub/>
       }
     ],
   },
@@ -28,7 +30,15 @@ const projects = [
     bigButtonContent: {
       text: 'Visit Channel Shift Site',
       link: 'https://cheezwhiz.biz',
+      startIcon: <Launch/>
     },
+    smallButtonsContent: [
+      {
+        text: 'GitHub',
+        link: 'https://github.com/connordelacruz/react-p5-channel-shift',
+        startIcon: <GitHub/>
+      },
+    ],
     body: 'A web app for creating "glitch art" by shifting and swapping an image\'s RGB color channels, developed as a web app with an intuitive UI to make it easily accessible for anyone to use. Built with React and P5.js. Click the button below to try it out!',
   },
   {
@@ -38,8 +48,16 @@ const projects = [
     skills: 'JavaScript, React, Material UI, Node.js',
     bigButtonContent: {
       text: 'Visit React Counter Site',
-      link: 'https://connordelacruz.com/react-counter/'
+      link: 'https://connordelacruz.com/react-counter/',
+      startIcon: <Launch/>
     },
+    smallButtonsContent: [
+      {
+        text: 'GitHub',
+        link: 'https://github.com/connordelacruz/react-counter',
+        startIcon: <GitHub/>
+      },
+    ],
     body: 'A simple web app for creating customizable counters. Each counter can have a custom name, color, increment/decrement value, and reset value. Counters can easily be reordered by clicking and dragging them into place. Data is saved locally, so your counters will persist any time you come back to the page. Created using React and the Material UI library.',
   },
   {
@@ -49,7 +67,8 @@ const projects = [
     smallButtonsContent: [
       {
         text: 'GitHub',
-        link: 'https://github.com/connordelacruz/ChannelShiftGUI'
+        link: 'https://github.com/connordelacruz/ChannelShiftGUI',
+        startIcon: <GitHub/>
       }
     ],
     body: 'An older version of the Channel Shift tool created with Processing. Includes some experimental features that haven\'t been ported to the web app yet.',
@@ -61,7 +80,8 @@ const projects = [
     smallButtonsContent: [
       {
         text: 'GitHub',
-        link: 'https://github.com/connordelacruz/chicago-ascii.sh'
+        link: 'https://github.com/connordelacruz/chicago-ascii.sh',
+        startIcon: <GitHub/>
       }
     ],
     body: 'Bash scripts for displaying color ASCII art of Chicago flag/skyline in the terminal.',
@@ -73,7 +93,8 @@ const projects = [
     smallButtonsContent: [
       {
         text: 'GitHub',
-        link: 'https://github.com/connordelacruz/iterm2-tab-color'
+        link: 'https://github.com/connordelacruz/iterm2-tab-color',
+        startIcon: <GitHub/>
       }
     ],
     body: 'Bash commands for setting the iTerm2 tab/title bar colors. Integrates with base16 shell themes.',
@@ -84,11 +105,13 @@ const projects = [
     smallButtonsContent: [
       {
         text: 'GitHub',
-        link: 'https://github.com/connordelacruz/git-workflow'
+        link: 'https://github.com/connordelacruz/git-workflow',
+        startIcon: <GitHub/>
       },
       {
         text: 'PyPI',
-        link: 'https://pypi.org/project/git-workflow/'
+        link: 'https://pypi.org/project/git-workflow/',
+        startIcon: <Terminal/>
       }
     ],
     body: 'Command line tools to streamline our team\'s Git workflow. Written in Python.',
@@ -99,15 +122,18 @@ const projects = [
     smallButtonsContent: [
       {
         text: 'GitHub',
-        link: 'https://github.com/connordelacruz/python-randomuser'
+        link: 'https://github.com/connordelacruz/python-randomuser',
+        startIcon: <GitHub/>
       },
       {
         text: 'PyPI',
-        link: 'https://pypi.org/pypi/randomuser'
+        link: 'https://pypi.org/pypi/randomuser',
+        startIcon: <Terminal/>
       },
       {
         text: 'Docs',
-        link: 'http://connordelacruz.com/python-randomuser/'
+        link: 'http://connordelacruz.com/python-randomuser/',
+        startIcon: <MenuBook/>
       }
     ],
     body: 'A Python class for generating random user information using the randomuser.me API.',
@@ -175,27 +201,33 @@ const ProjectCard = ({
   const bigButton = bigButtonContent.text ?
     <Button
       variant="contained"
-      color={color}
       size="large"
       fullWidth
+      color={color}
       href={bigButtonContent.link}
+      startIcon={bigButtonContent.startIcon === undefined ? null : bigButtonContent.startIcon}
       target="_blank"
     >
       {bigButtonContent.text}
     </Button>
     : null
   // Small buttons (if applicable)
-  const smallButtons = smallButtonsContent.map((smallButtonContent, i) =>
-    <Button
-      key={i}
-      variant="contained"
-      color={color}
-      href={smallButtonContent.link}
-      target="_blank"
-    >
-      {smallButtonContent.text}
-    </Button>
-  )
+  const smallButtons = (Array.isArray(smallButtonsContent) && smallButtonsContent.length) ?
+    smallButtonsContent.map((smallButtonContent, i) =>
+      <Button
+        key={i}
+        variant="outlined"
+        size="large"
+        fullWidth
+        color={color}
+        href={smallButtonContent.link}
+        startIcon={smallButtonContent.startIcon === undefined ? null : smallButtonContent.startIcon}
+        target="_blank"
+      >
+        {smallButtonContent.text}
+      </Button>
+    )
+    : null
 
   return (
     <ContentCard
@@ -212,10 +244,9 @@ const ProjectCard = ({
           sx={{
             // TODO: increase font size! at least on md/sm
             px: 2,
-            // TODO: this is going to be supported in safari, idk about firefox. test and make sure this looks ok?
-            //       and/or figure out browser detection?
             textWrap: 'pretty',
           }}
+          gutterBottom={false}
         >
           {body}
         </Typography>
@@ -233,8 +264,10 @@ const ProjectCard = ({
       <ContentCardActions
         color={color}
       >
-        {smallButtons}
-        {bigButton}
+        <ButtonStack>
+          {bigButton}
+          {smallButtons}
+        </ButtonStack>
       </ContentCardActions>
     </ContentCard>
   )

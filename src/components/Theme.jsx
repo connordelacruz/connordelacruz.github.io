@@ -168,6 +168,35 @@ const baseTheme = createTheme({
           fontSize: '1rem',
           fontWeight: 700,
           borderRadius: '50rem',
+          // Variants
+          variants: [
+            {
+              // Outlined
+              props: {variant: 'outlined'},
+              style: {
+                borderWidth: 2,
+              },
+            },
+            // Set border color for outlined buttons (need to remove alpha)
+            {
+              props: {variant: 'outlined', color: 'brandBlue'},
+              style: {
+                borderColor: COLOR_BLUE,
+              },
+            },
+            {
+              props: {variant: 'outlined', color: 'brandRed'},
+              style: {
+                borderColor: COLOR_PINK,
+              },
+            },
+            {
+              props: {variant: 'outlined', color: 'brandYellow'},
+              style: {
+                borderColor: COLOR_YELO,
+              },
+            },
+          ],
         },
       },
     },
