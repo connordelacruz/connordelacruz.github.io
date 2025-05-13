@@ -19,6 +19,7 @@ import useScrollSpy from '../utils/useScrollSpy.js'
 import {
   THEME_GRADIENT_BORDERS_BG,
   THEME_GRADIENT_BORDERS_SX,
+  THEME_GRADIENT_TEXT_SX,
   THEME_TRANSITION_DURATION_AND_TIMING_SX,
   THEME_TRANSITION_TIMING_FUNCTION
 } from './Theme.jsx'
@@ -245,16 +246,24 @@ const NavLogo = ({
         href="#"
         onClick={handleLogoClick}
         sx={{
-          // TODO: just use gradient text?
-          color: getActiveHashColor(),
+          // (Wide viewports) Gradient text when no active hash
+          ...THEME_GRADIENT_TEXT_SX,
+          color: getActiveHashColor('transparent'),
+          WebkitTextFillColor: activeHash ? 'none' : 'transparent',
+          // (Narrow viewports) Hide when no active hash
+          opacity: {
+            xs: activeHash ? 1.0 : 0.0,
+            md: 1.0,
+          },
+          // (Narrow viewports) Hide pointer when not visible
+          pointerEvents: {
+            xs: activeHash === null ? 'none' : 'initial',
+            md: 'initial',
+          },
           display: 'inline',
           textDecoration: 'none',
-          // Fade in when not at top of page
-          opacity: activeHash === null ? 0 : 1,
-          transitionProperty: 'opacity, color',
+          transitionProperty: 'opacity, color, -webkit-text-fill-color',
           ...THEME_TRANSITION_DURATION_AND_TIMING_SX,
-          // Hide pointer when not visible
-          pointerEvents: activeHash === null ? 'none' : 'initial',
         }}
         noWrap
         gutterBottom={false}
