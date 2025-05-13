@@ -52,7 +52,7 @@ export const THEME_TRANSITION_DURATION_AND_TIMING_SX = {
 // --------------------------------------------------------------------------------
 // Spacing
 // --------------------------------------------------------------------------------
-export const THEME_CONTENT_STACK_SPACING = 4
+export const THEME_CONTENT_STACK_SPACING = 3
 
 // ================================================================================
 // Utility Methods
