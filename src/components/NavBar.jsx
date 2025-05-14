@@ -110,7 +110,7 @@ const NavMenu = ({
   const [drawerOpen, setDrawerOpen] = React.useState(false)
 
   // Menu button onClick
-  const handleMenuButtonClick = (e) => {
+  const handleMenuButtonClick = () => {
     setDrawerOpen(true)
   }
 
@@ -185,6 +185,9 @@ const NavMenu = ({
               <ListItem
                 key={i}
                 disablePadding
+                sx={{
+                  my: 1,
+                }}
               >
                 <ListItemButton
                   component="a"

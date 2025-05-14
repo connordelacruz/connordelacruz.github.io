@@ -2,7 +2,6 @@
 // Theme
 // ================================================================================
 import { createTheme, responsiveFontSizes } from '@mui/material'
-// TODO: also import bold?
 import FuturaMediumTtf from '../fonts/Futura-Medium.ttf'
 
 // ================================================================================
@@ -171,9 +170,7 @@ const baseTheme = createTheme({
             {
               props: {variant: 'button'},
               style: {
-                // TODO: Adjust nav menu text, it looks a little small with Futura
-                fontFamily: 'Futura-Medium',
-                fontWeight: 'normal',
+                fontWeight: 'bold',
               },
             },
           ],
@@ -254,9 +251,7 @@ const baseTheme = createTheme({
     MuiTab: {
       styleOverrides: {
         root: {
-          // TODO: tweak design, it looks kinda small
-          fontFamily: 'Futura-Medium',
-          fontWeight: 'normal',
+          fontWeight: 'bold',
         },
       },
     },
