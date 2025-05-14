@@ -104,6 +104,16 @@ const experience = [
 ]
 
 // ================================================================================
+// Constants
+// ================================================================================
+
+// Common styles for Resume sub-headers
+const RESUME_SUBHEADER_SX = {
+  textTransform: 'uppercase',
+  mb: 3,
+}
+
+// ================================================================================
 // Components
 // ================================================================================
 
@@ -163,7 +173,15 @@ export const SkillCards = ({
                            }) => {
   return (
     <Box>
-      <Typography variant="h3" color={color}>Skills</Typography>
+      <Typography
+        variant="h3"
+        color={color}
+        sx={{
+          ...RESUME_SUBHEADER_SX,
+        }}
+      >
+        Skills
+      </Typography>
       <Grid
         container
         spacing={{xs: THEME_CONTENT_STACK_SPACING, md: 2}}
@@ -315,8 +333,18 @@ export const ResumeSection = ({
         {/*Skills*/}
         <SkillCards skillCardProps={skillsContent} color={color}/>
 
-        <Box id="resume-experience">
-          <Typography variant="h3" color={color}>Experience</Typography>
+        <Box>
+          <Typography
+            variant="h3"
+            color={color}
+            sx={{
+              ...RESUME_SUBHEADER_SX,
+              // Little extra margin on top to separate it from skills section
+              mt: 2,
+            }}
+          >
+            Experience
+          </Typography>
           <Stack spacing={THEME_CONTENT_STACK_SPACING}>
             {experienceContent.map((props, i) =>
               <ExperienceCard key={i} color={color} {...props}/>

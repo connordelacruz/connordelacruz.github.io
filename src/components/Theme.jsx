@@ -1,7 +1,7 @@
 // ================================================================================
 // Theme
 // ================================================================================
-import { createTheme } from '@mui/material'
+import { createTheme, responsiveFontSizes } from '@mui/material'
 // TODO: also import bold?
 import FuturaMediumTtf from '../fonts/Futura-Medium.ttf'
 
@@ -264,9 +264,14 @@ const baseTheme = createTheme({
 })
 
 // ================================================================================
+// Responsive font sizes
+// ================================================================================
+const responsiveFontTheme = responsiveFontSizes(baseTheme)
+
+// ================================================================================
 // Full Theme with Custom Palette
 // ================================================================================
-export const theme = createTheme(baseTheme, {
+export const theme = createTheme(responsiveFontTheme, {
   palette: {
     // --------------------------------------------------------------------------------
     // Brand Colors
