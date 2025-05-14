@@ -15,14 +15,15 @@ import FuturaMediumTtf from '../fonts/Futura-Medium.ttf'
 // Base Colors
 const COLOR_BLUE = '#668AFF'
 const COLOR_PINK = '#FE5C9C'
-const COLOR_YELO = '#FFB217'
-const COLOR_BLCK = '#101010'
+const COLOR_YELLOW = '#FFB217'
+//const COLOR_TEAL = '#05ad98' // TODO: idk if we ditch the gradient maybe we can do this as a 4th color
+const COLOR_BLACK = '#101010'
 
 // --------------------------------------------------------------------------------
 // Gradients
 // --------------------------------------------------------------------------------
 // Gradient between the 3 theme colors
-export const THEME_GRADIENT = `linear-gradient(140deg, ${COLOR_BLUE} 11%, ${COLOR_PINK} 50%, ${COLOR_YELO} 89%)`
+export const THEME_GRADIENT = `linear-gradient(140deg, ${COLOR_BLUE}, ${COLOR_PINK}, ${COLOR_YELLOW})`
 // Styles to make text color gradient
 export const THEME_GRADIENT_TEXT_SX = {
   // Apply gradient
@@ -35,7 +36,7 @@ export const THEME_GRADIENT_TEXT_SX = {
   color: 'white',
 }
 // Hack to create gradient borders (https://codyhouse.co/nuggets/css-gradient-borders)
-export const THEME_GRADIENT_BORDERS_BG = `linear-gradient(${COLOR_BLCK}, ${COLOR_BLCK}) padding-box, ${THEME_GRADIENT} border-box`
+export const THEME_GRADIENT_BORDERS_BG = `linear-gradient(${COLOR_BLACK}, ${COLOR_BLACK}) padding-box, ${THEME_GRADIENT} border-box`
 export const THEME_GRADIENT_BORDERS_SX = {
   background: THEME_GRADIENT_BORDERS_BG,
   borderColor: 'transparent',
@@ -233,7 +234,7 @@ const baseTheme = createTheme({
             {
               props: {variant: 'outlined', color: 'brandYellow'},
               style: {
-                borderColor: COLOR_YELO,
+                borderColor: COLOR_YELLOW,
               },
             },
           ],
@@ -288,7 +289,7 @@ export const theme = createTheme(baseTheme, {
     // Yellow
     brandYellow: baseTheme.palette.augmentColor({
       color: {
-        main: COLOR_YELO,
+        main: COLOR_YELLOW,
       },
       name: 'brandYellow',
     }),
@@ -296,8 +297,8 @@ export const theme = createTheme(baseTheme, {
     // Background
     // --------------------------------------------------------------------------------
     background: {
-      default: COLOR_BLCK,
-      paper: COLOR_BLCK,
+      default: COLOR_BLACK,
+      paper: COLOR_BLACK,
     },
   },
 })
