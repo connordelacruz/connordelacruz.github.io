@@ -242,8 +242,7 @@ const ProjectCard = ({
         <Typography
           variant="body1"
           sx={{
-            // TODO: increase font size! at least on md/sm
-            px: 2,
+            px: 1,
             textWrap: 'pretty',
           }}
           gutterBottom={false}
