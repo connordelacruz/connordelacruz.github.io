@@ -16,10 +16,11 @@ const ProfilePhoto = () => {
         maxWidth: {
           xs: '50%',
           sm: '40%',
+          md: '35%',
         },
         margin: '0 auto',
         mb: {
-          xs: 4,
+          xs: 3,
           sm: 6,
         },
       }}
@@ -42,26 +43,26 @@ export const HeaderSection = () => {
   return (
     <Container
       maxWidth="md"
-      id="section-top"
       sx={{
-        py: {
+        mt: {
+          xs: 6,
+          md: 8,
+        },
+        mb: {
           xs: 4,
           md: 8,
         },
-        mb: 4,
       }}
     >
       {/*Header Text*/}
       <Box
         sx={{
+          mb: 1,
           textAlign: 'center',
         }}
       >
         <Typography
           variant="h4"
-          sx={{
-            fontWeight: 500,
-          }}
           gutterBottom={false}
         >
           Hi, my name is
@@ -88,7 +89,7 @@ export const HeaderSection = () => {
           <ZigZag
             color="gradient"
             sx={{
-              mt: 0,
+              mt: 1,
             }}
           />
         </Typography>
@@ -120,14 +121,12 @@ export const HeaderSection = () => {
               sm: 6,
               md: 8,
             },
+            fontFamily: 'Roboto',
             fontSize: {
               xs: '1.25rem',
               sm: '1.5rem',
             },
-            fontWeight: 400,
             textAlign: 'left',
-            // TODO: this is going to be supported in safari, idk about firefox. test and make sure this looks ok?
-            //       and/or figure out browser detection?
             textWrap: 'pretty',
           }}
           gutterBottom={false}

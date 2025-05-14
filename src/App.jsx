@@ -68,7 +68,7 @@ function App() {
       {/*Footer*/}
       <Paper
         sx={{
-          mt: 6,
+          mt: 4,
           py: 3,
           borderWidth: 0,
           borderTopWidth: 2,

@@ -278,7 +278,6 @@ export const ExperienceCard = ({
                                  skills,
                                  color,
                                }) => {
-  // TODO: make sure skill chips look ok on different viewports
   return (
     <ContentCard
       color={color}
