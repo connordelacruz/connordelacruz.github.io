@@ -72,7 +72,6 @@ export const HeaderSection = () => {
             // inline-block makes it so the zig zag is only as wide as the text
             display: 'inline-block',
             textWrap: 'nowrap',
-            fontWeight: 700,
             // Handle line breaks in the title a bit smoother by shrinking font size on small viewports
             fontSize: {
               xs: '3rem',

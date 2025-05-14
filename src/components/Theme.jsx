@@ -2,6 +2,8 @@
 // Theme
 // ================================================================================
 import { createTheme } from '@mui/material'
+// TODO: also import bold?
+import FuturaMediumTtf from '../fonts/Futura-Medium.ttf'
 
 // ================================================================================
 // Theme Constants
@@ -99,41 +101,78 @@ const baseTheme = createTheme({
   // Components / Default Props
   // --------------------------------------------------------------------------------
   components: {
+    // Baseline
+    MuiCssBaseline: {
+      // Futura font face definitions
+      styleOverrides: `
+        @font-face {
+          font-family: 'Futura-Medium';
+          font-style: normal;
+          font-weight: normal;
+          src: local('Futura-Medium'), url(${FuturaMediumTtf}) format('truetype');
+        }
+      `,
+    },
     // Typography
     MuiTypography: {
       defaultProps: {
-        // TODO: only for headers if you can figure that out:
+        // TODO: probably only for headers, see where you have it set to false and adjust accordingly to reduce overrides
         gutterBottom: true,
       },
       styleOverrides: {
         root: {
           variants: [
-            // h2
+            // TODO: Futura for body text??
+            // Headers
+            {
+              props: {variant: 'h1'},
+              style: {
+                fontFamily: 'Futura-Medium',
+                fontWeight: 'normal',
+              },
+            },
             {
               props: {variant: 'h2'},
               style: {
-                fontWeight: 400,
+                fontFamily: 'Futura-Medium',
+                fontWeight: 'normal',
               },
             },
-            // h5
+            {
+              props: {variant: 'h3'},
+              style: {
+                fontFamily: 'Futura-Medium',
+                fontWeight: 'normal',
+              },
+            },
+            {
+              props: {variant: 'h4'},
+              style: {
+                fontFamily: 'Futura-Medium',
+                fontWeight: 'normal',
+              },
+            },
             {
               props: {variant: 'h5'},
               style: {
-                fontWeight: 700,
+                fontFamily: 'Futura-Medium',
+                fontWeight: 'normal',
               },
             },
-            // h6
             {
               props: {variant: 'h6'},
               style: {
-                fontWeight: 700,
+                fontFamily: 'Futura-Medium',
+                fontWeight: 'normal',
               },
             },
-            // button
+            // Button-style Typography
             {
               props: {variant: 'button'},
               style: {
-                fontWeight: 700,
+                // TODO: Adjust nav menu text, it looks a little small with Futura
+                fontFamily: 'Futura-Medium',
+                fontWeight: 'normal',
               },
             },
           ],
@@ -164,9 +203,10 @@ const baseTheme = createTheme({
       },
       styleOverrides: {
         root: {
+          fontFamily: 'Futura-Medium',
+          fontWeight: 'normal',
           textTransform: 'initial',
           fontSize: '1rem',
-          fontWeight: 700,
           borderRadius: '50rem',
           // Variants
           variants: [
@@ -213,14 +253,12 @@ const baseTheme = createTheme({
     MuiTab: {
       styleOverrides: {
         root: {
-          fontWeight: 700,
+          // TODO: tweak design, it looks kinda small
+          fontFamily: 'Futura-Medium',
+          fontWeight: 'normal',
         },
       },
     },
-
-    // TODO: border width for Dividers
-    // TODO: can we use defaultProps instead? gotta figure out how to specify for variants
-    //    https://mui.com/material-ui/customization/typography/#variants
   },
 })
 
