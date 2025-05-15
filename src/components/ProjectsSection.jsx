@@ -1,4 +1,4 @@
-import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
+import { Box, Button, CardContent, CardMedia, Stack, Typography } from '@mui/material'
 import { GitHub, Launch, MenuBook, Terminal } from '@mui/icons-material'
 import { ContentCard, ContentCardActions, ContentCardHeader } from './common/ContentCard.jsx'
 import { CtaButton } from './common/CtaButton.jsx'
@@ -11,6 +11,7 @@ import { ButtonStack } from './common/ButtonStack.jsx'
 // ================================================================================
 const projects = [
   {
+    // TODO: update social banner then use that as an image here
     title: 'This Site!',
     body: 'Designed and built from the scratch using React and Material UI.',
     skills: 'JavaScript, React, Material UI, Node.js',
@@ -24,8 +25,9 @@ const projects = [
   },
   {
     title: "Channel ⇄ Shift",
+    // TODO: optimize image
     imgSrc: "images/projects/channel-shift.png",
-    imgIsPortrait: true,
+    imgBanner: true,
     skills: 'JavaScript, React, P5.js, Material UI, Node.js',
     bigButtonContent: {
       text: 'Visit Channel Shift Site',
@@ -43,8 +45,9 @@ const projects = [
   },
   {
     title: "React Counter App",
+    // TODO: optimize image
     imgSrc: "images/projects/react-counter.png",
-    imgIsPortrait: true,
+    imgBanner: true,
     skills: 'JavaScript, React, Material UI, Node.js',
     bigButtonContent: {
       text: 'Visit React Counter Site',
@@ -190,6 +193,9 @@ const ProjectImage = ({
 const ProjectCard = ({
                        title,
                        imgSrc = null,
+                       // TODO: default to true or remove once all your stuff has banner images
+                       imgBanner = false,
+                       // TODO: can prob remove below too:
                        imgIsPortrait = false,
                        skills = null,
                        bigButtonContent = {text: '', link: ''},
@@ -236,9 +242,27 @@ const ProjectCard = ({
       <ContentCardHeader
         title={title}
         color={color}
+        sx={{
+          // Remove bottom margin for cards with banners (TODO: just pad card content so margin is not required)
+          mb: imgBanner ? 0 : 1,
+        }}
       />
+      {/*Banner image*/}
+      {imgBanner && imgSrc &&
+        <CardMedia
+          image={imgSrc}
+          component="img"
+          sx={{
+            borderBottom: 2,
+            borderBottomColor: color + '.main',
+          }}
+        />
+      }
       <CardContent>
-        {imgSrc && <ProjectImage src={imgSrc} imgIsPortrait={imgIsPortrait}/>}
+        {/*Non-banner image*/}
+        {!imgBanner && imgSrc &&
+          <ProjectImage src={imgSrc} imgIsPortrait={imgIsPortrait}/>
+        }
         <Typography
           variant="body1"
           sx={{
