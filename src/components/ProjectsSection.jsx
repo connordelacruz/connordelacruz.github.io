@@ -66,6 +66,7 @@ const projects = [
   {
     title: "Channel ⇄ Shift Classic",
     imgSrc: "images/projects/channel-shift-classic.png",
+    imgBanner: true,
     skills: 'Java, Processing',
     smallButtonsContent: [
       {
@@ -251,8 +252,13 @@ const ProjectCard = ({
       {imgBanner && imgSrc &&
         <CardMedia
           image={imgSrc}
-          component="img"
           sx={{
+            height: {
+              // TODO: make sure you're happy with these values
+              xs: 300,
+              sm: 450,
+              md: 465,
+            },
             borderBottom: 2,
             borderBottomColor: color + '.main',
           }}
