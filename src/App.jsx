@@ -26,14 +26,14 @@ function App() {
       <NavBar
         sectionLinks={[
           {
-            text: 'Resume',
-            hash: 'section-resume',
-            color: COLOR_RESUME,
-          },
-          {
             text: 'Projects',
             hash: 'section-projects',
             color: COLOR_PROJECTS,
+          },
+          {
+            text: 'Resume',
+            hash: 'section-resume',
+            color: COLOR_RESUME,
           },
           {
             text: 'Contact',
@@ -52,11 +52,11 @@ function App() {
           id="sections-stack"
           spacing={4}
         >
-          {/* Resume */}
-          <ResumeSection color={COLOR_RESUME}/>
-
           {/* Projects */}
           <ProjectsSection color={COLOR_PROJECTS}/>
+
+          {/* Resume */}
+          <ResumeSection color={COLOR_RESUME}/>
 
           {/*Contact*/}
           <ContactSection color={COLOR_CONTACT}/>

@@ -18,8 +18,6 @@ import { Close, Menu as MenuIcon } from '@mui/icons-material'
 import useScrollSpy from '../utils/useScrollSpy.js'
 import {
   THEME_GRADIENT_BORDERS_BG,
-  THEME_GRADIENT_BORDERS_SX,
-  THEME_GRADIENT_TEXT_SX,
   THEME_TRANSITION_DURATION_AND_TIMING_SX,
   THEME_TRANSITION_TIMING_FUNCTION
 } from './Theme.jsx'
@@ -153,9 +151,15 @@ const NavMenu = ({
         onClose={handleDrawerOnClose}
         PaperProps={{
           sx: {
-            borderRadius: 0,
-            borderWidth: '0 2px 0 0',
-            ...THEME_GRADIENT_BORDERS_SX
+            borderTopWidth: 2,
+            borderRightWidth: 2,
+            borderBottomWidth: 2,
+            borderLeftWidth: 0,
+            borderTopLeftRadius: 0,
+            borderBottomLeftRadius: 0,
+            // Gradient border when no active hash
+            background: THEME_GRADIENT_BORDERS_BG,
+            borderColor: getActiveHashColor('transparent'),
           },
         }}
       >
@@ -249,14 +253,16 @@ const NavLogo = ({
         href="#"
         onClick={handleLogoClick}
         sx={{
-          // (Wide viewports) Gradient text when no active hash
-          ...THEME_GRADIENT_TEXT_SX,
-          color: getActiveHashColor('transparent'),
-          WebkitTextFillColor: activeHash ? 'none' : 'transparent',
-          // (Narrow viewports) Hide when no active hash
+//          // (Wide viewports) Gradient text when no active hash
+//          ...THEME_GRADIENT_TEXT_SX,
+//          color: getActiveHashColor('transparent'),
+//          WebkitTextFillColor: activeHash ? 'none' : 'transparent',
+          color: getActiveHashColor('text.primary'),
           opacity: {
+            // (Narrow viewports) Hide when no active hash
             xs: activeHash ? 1.0 : 0.0,
-            md: 1.0,
+            // (Wide viewports) make unstyled text a tiiiiny bit translucent
+            md: activeHash ? 1.0 : 0.9,
           },
           // (Narrow viewports) Hide pointer when not visible
           pointerEvents: {
@@ -334,7 +340,12 @@ export const NavBar = ({
       elevation={0}
       sx={{
         py: 0,
-        borderWidth: '0 0 2px',
+        borderTopWidth: 0,
+//        borderBottomWidth: 2,
+        borderTopRightRadius: 0,
+        borderTopLeftRadius: 0,
+        borderLeftWidth: 0,
+        borderRightWidth: 0,
         borderRadius: 0,
         // Gradient border when no active hash
         background: THEME_GRADIENT_BORDERS_BG,
