@@ -76,20 +76,6 @@ const projects = [
     body: 'Bash scripts for displaying color ASCII art of Chicago flag/skyline in the terminal.',
   },
   {
-    title: "Channel ⇄ Shift Classic",
-    imgSrc: "images/projects/channel-shift-classic.png",
-    imgBanner: true,
-    skills: 'Java, Processing',
-    smallButtonsContent: [
-      {
-        text: 'GitHub',
-        link: 'https://github.com/connordelacruz/ChannelShiftGUI',
-        startIcon: <GitHub/>
-      }
-    ],
-    body: 'An older version of the Channel Shift tool created with Processing. Includes some experimental features that haven\'t been ported to the web app yet.',
-  },
-  {
     title: "iTerm2 Tab Color Commands",
     imgSrc: "images/projects/iterm2-tab-color.png",
     imgBanner: true,
@@ -102,6 +88,20 @@ const projects = [
       }
     ],
     body: 'Bash commands for setting the iTerm2 tab/title bar colors. Integrates with base16 shell themes.',
+  },
+  {
+    title: "Channel ⇄ Shift Classic",
+    imgSrc: "images/projects/channel-shift-classic.png",
+    imgBanner: true,
+    skills: 'Java, Processing',
+    smallButtonsContent: [
+      {
+        text: 'GitHub',
+        link: 'https://github.com/connordelacruz/ChannelShiftGUI',
+        startIcon: <GitHub/>
+      }
+    ],
+    body: 'An older version of the Channel Shift tool created with Processing. Includes some experimental features that haven\'t been ported to the web app yet.',
   },
   {
     title: "Git Workflow Tools",
