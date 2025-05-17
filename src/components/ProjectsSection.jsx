@@ -62,20 +62,6 @@ const projects = [
     body: 'A simple web app for creating customizable counters. Each counter can have a custom name, color, increment/decrement value, and reset value. Counters can easily be reordered by clicking and dragging them into place. Data is saved locally, so your counters will persist any time you come back to the page. Created using React and the Material UI library.',
   },
   {
-    title: "Channel ⇄ Shift Classic",
-    imgSrc: "images/projects/channel-shift-classic.png",
-    imgBanner: true,
-    skills: 'Java, Processing',
-    smallButtonsContent: [
-      {
-        text: 'GitHub',
-        link: 'https://github.com/connordelacruz/ChannelShiftGUI',
-        startIcon: <GitHub/>
-      }
-    ],
-    body: 'An older version of the Channel Shift tool created with Processing. Includes some experimental features that haven\'t been ported to the web app yet.',
-  },
-  {
     title: "Chicago ASCII Art",
     imgSrc: "images/projects/chicago-ascii-art.png",
     imgBanner: true,
@@ -88,6 +74,20 @@ const projects = [
       }
     ],
     body: 'Bash scripts for displaying color ASCII art of Chicago flag/skyline in the terminal.',
+  },
+  {
+    title: "Channel ⇄ Shift Classic",
+    imgSrc: "images/projects/channel-shift-classic.png",
+    imgBanner: true,
+    skills: 'Java, Processing',
+    smallButtonsContent: [
+      {
+        text: 'GitHub',
+        link: 'https://github.com/connordelacruz/ChannelShiftGUI',
+        startIcon: <GitHub/>
+      }
+    ],
+    body: 'An older version of the Channel Shift tool created with Processing. Includes some experimental features that haven\'t been ported to the web app yet.',
   },
   {
     title: "iTerm2 Tab Color Commands",
