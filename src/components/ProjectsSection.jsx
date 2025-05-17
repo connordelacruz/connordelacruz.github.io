@@ -26,7 +26,6 @@ const projects = [
   {
     title: "Channel ⇄ Shift",
     imgSrc: "images/projects/channel-shift.png",
-    imgBanner: true,
     skills: 'JavaScript, React, P5.js, Material UI, Node.js',
     bigButtonContent: {
       text: 'Visit Channel Shift Site',
@@ -45,7 +44,6 @@ const projects = [
   {
     title: "React Counter App",
     imgSrc: "images/projects/react-counter.png",
-    imgBanner: true,
     skills: 'JavaScript, React, Material UI, Node.js',
     bigButtonContent: {
       text: 'Visit React Counter Site',
@@ -64,7 +62,6 @@ const projects = [
   {
     title: "Chicago ASCII Art",
     imgSrc: "images/projects/chicago-ascii-art.png",
-    imgBanner: true,
     skills: 'Bash',
     smallButtonsContent: [
       {
@@ -78,7 +75,6 @@ const projects = [
   {
     title: "iTerm2 Tab Color Commands",
     imgSrc: "images/projects/iterm2-tab-color.png",
-    imgBanner: true,
     skills: 'Bash, iTerm 2, Base16 Shell',
     smallButtonsContent: [
       {
@@ -92,7 +88,6 @@ const projects = [
   {
     title: "Channel ⇄ Shift Classic",
     imgSrc: "images/projects/channel-shift-classic.png",
-    imgBanner: true,
     skills: 'Java, Processing',
     smallButtonsContent: [
       {
@@ -194,10 +189,6 @@ const ProjectImage = ({
 const ProjectCard = ({
                        title,
                        imgSrc = null,
-                       // TODO: default to true or remove once all your stuff has banner images
-                       imgBanner = false,
-                       // TODO: can prob remove below too:
-                       imgIsPortrait = false,
                        skills = null,
                        bigButtonContent = {text: '', link: ''},
                        smallButtonsContent = [],
@@ -245,16 +236,15 @@ const ProjectCard = ({
         color={color}
         sx={{
           // Remove bottom margin for cards with banners (TODO: just pad card content so margin is not required)
-          mb: imgBanner ? 0 : 1,
+          mb: imgSrc ? 0 : 1,
         }}
       />
       {/*Banner image*/}
-      {imgBanner && imgSrc &&
+      {imgSrc &&
         <CardMedia
           image={imgSrc}
           sx={{
             height: {
-              // TODO: make sure you're happy with these values
               xs: 300,
               sm: 450,
               md: 465,
@@ -265,10 +255,6 @@ const ProjectCard = ({
         />
       }
       <CardContent>
-        {/*Non-banner image*/}
-        {!imgBanner && imgSrc &&
-          <ProjectImage src={imgSrc} imgIsPortrait={imgIsPortrait}/>
-        }
         <Typography
           variant="body1"
           sx={{
