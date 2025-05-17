@@ -25,7 +25,6 @@ const projects = [
   },
   {
     title: "Channel ⇄ Shift",
-    // TODO: optimize image
     imgSrc: "images/projects/channel-shift.png",
     imgBanner: true,
     skills: 'JavaScript, React, P5.js, Material UI, Node.js',
@@ -45,7 +44,6 @@ const projects = [
   },
   {
     title: "React Counter App",
-    // TODO: optimize image
     imgSrc: "images/projects/react-counter.png",
     imgBanner: true,
     skills: 'JavaScript, React, Material UI, Node.js',
@@ -80,6 +78,7 @@ const projects = [
   {
     title: "Chicago ASCII Art",
     imgSrc: "images/projects/chicago-ascii-art.png",
+    imgBanner: true,
     skills: 'Bash',
     smallButtonsContent: [
       {
