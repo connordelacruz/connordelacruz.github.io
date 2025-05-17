@@ -92,6 +92,7 @@ const projects = [
   {
     title: "iTerm2 Tab Color Commands",
     imgSrc: "images/projects/iterm2-tab-color.png",
+    imgBanner: true,
     skills: 'Bash, iTerm 2, Base16 Shell',
     smallButtonsContent: [
       {
