@@ -17,6 +17,7 @@ export const CtaButton = ({
       target="_blank"
       sx={{
         fontSize: '1.25rem',
+        py: 1.5,
         ...sx
       }}
       {...props}

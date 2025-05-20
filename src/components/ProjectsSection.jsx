@@ -5,6 +5,7 @@ import { CtaButton } from './common/CtaButton.jsx'
 import { THEME_CONTENT_STACK_SPACING } from './Theme.jsx'
 import { SectionContainer } from './common/SectionContainer.jsx'
 import { ButtonStack } from './common/ButtonStack.jsx'
+import Grid from '@mui/material/Grid2'
 
 // ================================================================================
 // Content
@@ -26,6 +27,7 @@ const projects = [
   {
     title: "Channel ⇄ Shift",
     imgSrc: "images/projects/channel-shift.png",
+    body: 'A web app for creating "glitch art" by shifting and swapping an image\'s RGB color channels, developed as a web app with an intuitive UI to make it easily accessible for anyone to use. Built with React and P5.js. Click the button below to try it out!',
     skills: 'JavaScript, React, P5.js, Material UI, Node.js',
     bigButtonContent: {
       text: 'Visit Channel Shift Site',
@@ -39,11 +41,18 @@ const projects = [
         startIcon: <GitHub/>
       },
     ],
-    body: 'A web app for creating "glitch art" by shifting and swapping an image\'s RGB color channels, developed as a web app with an intuitive UI to make it easily accessible for anyone to use. Built with React and P5.js. Click the button below to try it out!',
+    buttonStackProps: {
+      // Split to column on sm to avoid text wrapping on big button
+      direction: {
+        xs: 'column',
+        md: 'row'
+      },
+    },
   },
   {
     title: "React Counter App",
     imgSrc: "images/projects/react-counter.png",
+    body: 'A simple web app for creating customizable counters. Each counter can have a custom name, color, increment/decrement value, and reset value. Counters can easily be reordered by clicking and dragging them into place. Data is saved locally, so your counters will persist any time you come back to the page. Created using React and the Material UI library.',
     skills: 'JavaScript, React, Material UI, Node.js',
     bigButtonContent: {
       text: 'Visit React Counter Site',
@@ -57,24 +66,18 @@ const projects = [
         startIcon: <GitHub/>
       },
     ],
-    body: 'A simple web app for creating customizable counters. Each counter can have a custom name, color, increment/decrement value, and reset value. Counters can easily be reordered by clicking and dragging them into place. Data is saved locally, so your counters will persist any time you come back to the page. Created using React and the Material UI library.',
-  },
-  {
-    title: "Chicago ASCII Art",
-    imgSrc: "images/projects/chicago-ascii-art.png",
-    skills: 'Bash',
-    smallButtonsContent: [
-      {
-        text: 'GitHub',
-        link: 'https://github.com/connordelacruz/chicago-ascii.sh',
-        startIcon: <GitHub/>
-      }
-    ],
-    body: 'Bash scripts for displaying color ASCII art of Chicago flag/skyline in the terminal.',
+    buttonStackProps: {
+      // Split to column on sm to avoid text wrapping on big button
+      direction: {
+        xs: 'column',
+        md: 'row'
+      },
+    },
   },
   {
     title: "iTerm2 Tab Color Commands",
     imgSrc: "images/projects/iterm2-tab-color.png",
+    body: 'Bash commands for setting the iTerm2 tab/title bar colors. Integrates with base16 shell themes.',
     skills: 'Bash, iTerm 2, Base16 Shell',
     smallButtonsContent: [
       {
@@ -83,11 +86,30 @@ const projects = [
         startIcon: <GitHub/>
       }
     ],
-    body: 'Bash commands for setting the iTerm2 tab/title bar colors. Integrates with base16 shell themes.',
+    gridSize: 6,
+  },
+  {
+    title: "Chicago ASCII Art",
+    imgSrc: "images/projects/chicago-ascii-art.png",
+    body: 'Bash scripts for displaying color ASCII art of Chicago flag/skyline in the terminal.',
+    skills: 'Bash',
+    smallButtonsContent: [
+      {
+        text: 'GitHub',
+        link: 'https://github.com/connordelacruz/chicago-ascii.sh',
+        startIcon: <GitHub/>
+      }
+    ],
+    gridSize: 6,
   },
   {
     title: "Channel ⇄ Shift Classic",
     imgSrc: "images/projects/channel-shift-classic.png",
+    cardImgHeight: {
+      sm: 350,
+      md: 375,
+    },
+    body: 'An older version of the Channel Shift tool created with Processing. Includes some experimental features that haven\'t been ported to the web app yet.',
     skills: 'Java, Processing',
     smallButtonsContent: [
       {
@@ -96,10 +118,11 @@ const projects = [
         startIcon: <GitHub/>
       }
     ],
-    body: 'An older version of the Channel Shift tool created with Processing. Includes some experimental features that haven\'t been ported to the web app yet.',
+    gridSize: 12,
   },
   {
     title: "Git Workflow Tools",
+    body: 'Command line tools to streamline our team\'s Git workflow. Written in Python.',
     skills: 'Python, Git',
     smallButtonsContent: [
       {
@@ -113,10 +136,11 @@ const projects = [
         startIcon: <Terminal/>
       }
     ],
-    body: 'Command line tools to streamline our team\'s Git workflow. Written in Python.',
+    gridSize: 6,
   },
   {
     title: "Python Random User Generator",
+    body: 'A Python class for generating random user information using the randomuser.me API.',
     skills: 'Python, randomuser.me',
     smallButtonsContent: [
       {
@@ -135,7 +159,7 @@ const projects = [
         startIcon: <MenuBook/>
       }
     ],
-    body: 'A Python class for generating random user information using the randomuser.me API.',
+    gridSize: 6,
   },
 ]
 
@@ -177,23 +201,28 @@ const ProjectImage = ({
  *
  * @param title
  * @param imgSrc
- * @param imgIsPortrait
+ * @param cardImgHeight
  * @param skills
  * @param bigButtonContent
  * @param smallButtonsContent
+ * @param buttonStackProps
  * @param body
  * @param color
+ * @param gridSize
  * @return {JSX.Element}
  * @constructor
  */
 const ProjectCard = ({
                        title,
                        imgSrc = null,
+                       cardImgHeight = {},
                        skills = null,
                        bigButtonContent = {text: '', link: ''},
                        smallButtonsContent = [],
+                       buttonStackProps = {},
                        body,
                        color,
+                       gridSize = 12,
                      }) => {
   // Big button component (if applicable)
   const bigButton = bigButtonContent.text ?
@@ -228,63 +257,79 @@ const ProjectCard = ({
     : null
 
   return (
-    <ContentCard
-      color={color}
+
+    <Grid
+      size={{
+        xs: 12,
+        md: gridSize,
+      }}
     >
-      <ContentCardHeader
-        title={title}
+      <ContentCard
         color={color}
         sx={{
-          // Remove bottom margin for cards with banners (TODO: just pad card content so margin is not required)
-          mb: imgSrc ? 0 : 1,
+          height: {
+            xs: 'auto',
+            md: '100%',
+          },
         }}
-      />
-      {/*Banner image*/}
-      {imgSrc &&
-        <CardMedia
-          image={imgSrc}
+      >
+        <ContentCardHeader
+          title={title}
+          color={color}
           sx={{
-            height: {
-              xs: 300,
-              sm: 450,
-              md: 465,
-            },
-            borderBottom: 2,
-            borderBottomColor: color + '.main',
+            // Remove bottom margin for cards with banners (TODO: just pad card content so margin is not required)
+            mb: imgSrc ? 0 : 1,
           }}
         />
-      }
-      <CardContent>
-        <Typography
-          variant="body1"
-          sx={{
-            px: 1,
-            textWrap: 'pretty',
-          }}
-          gutterBottom={false}
+        {/*Banner image*/}
+        {imgSrc &&
+          <CardMedia
+            image={imgSrc}
+            sx={{
+              height: {
+                xs: 300,
+                sm: 450,
+                md: 465 * (gridSize / 12),
+                // Overrides from props
+                ...cardImgHeight,
+              },
+              borderBottom: 2,
+              borderBottomColor: color + '.main',
+            }}
+          />
+        }
+        <CardContent>
+          <Typography
+            variant="body1"
+            sx={{
+              px: 1,
+              textWrap: 'pretty',
+            }}
+            gutterBottom={false}
+          >
+            {body}
+          </Typography>
+          {/*TODO: make this less messy and re-implement*/}
+          {/*{skills &&*/}
+          {/*  <Box*/}
+          {/*    sx={{*/}
+          {/*      mt: 2,*/}
+          {/*    }}*/}
+          {/*  >*/}
+          {/*    {<SkillChips skills={skills.split(', ')} color={color}/>}*/}
+          {/*  </Box>*/}
+          {/*}*/}
+        </CardContent>
+        <ContentCardActions
+          color={color}
         >
-          {body}
-        </Typography>
-        {/*TODO: make this less messy and re-implement*/}
-        {/*{skills &&*/}
-        {/*  <Box*/}
-        {/*    sx={{*/}
-        {/*      mt: 2,*/}
-        {/*    }}*/}
-        {/*  >*/}
-        {/*    {<SkillChips skills={skills.split(', ')} color={color}/>}*/}
-        {/*  </Box>*/}
-        {/*}*/}
-      </CardContent>
-      <ContentCardActions
-        color={color}
-      >
-        <ButtonStack>
-          {bigButton}
-          {smallButtons}
-        </ButtonStack>
-      </ContentCardActions>
-    </ContentCard>
+          <ButtonStack {...buttonStackProps}>
+            {bigButton}
+            {smallButtons}
+          </ButtonStack>
+        </ContentCardActions>
+      </ContentCard>
+    </Grid>
   )
 }
 
@@ -301,13 +346,17 @@ const ProjectCards = ({
                         color,
                       }) => {
   return (
-    <>
+    <Grid
+      container
+      spacing={THEME_CONTENT_STACK_SPACING}
+      alignItems="stretch"
+    >
       {
         projectCardProps.map((cardProps, i) =>
           <ProjectCard key={i} color={color} {...cardProps}/>
         )
       }
-    </>
+    </Grid>
   )
 }
 
@@ -328,7 +377,7 @@ export const ProjectsSection = ({color}) => {
       <Stack spacing={THEME_CONTENT_STACK_SPACING}>
         <ProjectCards color={color}/>
         {/*View more button*/}
-        <Box id="github-link">
+        <Box>
           <CtaButton
             color={color}
             startIcon={<GitHub/>}
