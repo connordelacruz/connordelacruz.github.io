@@ -1,7 +1,7 @@
-import { Box, Button, IconButton, Stack } from '@mui/material'
+import { Box, Button, IconButton } from '@mui/material'
 import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
-import { THEME_CONTENT_STACK_SPACING } from '../Theme.jsx'
 import { CtaButton } from './CtaButton.jsx'
+import { ButtonStack } from './ButtonStack.jsx'
 
 // ================================================================================
 // Content
@@ -183,17 +183,30 @@ export const SocialButtonLinks = ({
                                     containerSx = {},
                                     linkSx = {},
                                   }) => {
-  // TODO: highlighted as a full width top button, non-highlighted as ButtonStack?
+  // Split out highlighted button(s) from non-highlighted ones.
+  // (In practice there will probably only ever be one highlighted one, but figured I'd do it this way for flexibility)
+  const highlightedButtonProps = linkProps.filter((props) => props.highlighted)
+  const regularButtonProps = linkProps.filter((props) => !props.highlighted)
   return (
-    <Stack
-      spacing={THEME_CONTENT_STACK_SPACING}
+    <Box
       sx={{
         ...containerSx,
       }}
     >
-      {linkProps.map((props, i) =>
+      {/*Highlighted Buttons*/}
+      {highlightedButtonProps.map((props, i) =>
         <SocialButtonLink key={i} sx={{...linkSx}} {...props} color={color}/>
       )}
-    </Stack>
+      {/*Regular Buttons*/}
+      <ButtonStack
+        sx={{
+          mt: 4,
+        }}
+      >
+        {regularButtonProps.map((props, i) =>
+          <SocialButtonLink key={i} sx={{...linkSx}} {...props} color={color}/>
+        )}
+      </ButtonStack>
+    </Box>
   )
 }

@@ -44,7 +44,7 @@ export const ContactSection = ({color}) => {
                 sm: 2,
                 md: 4,
               },
-              py: 4,
+              mb: 3,
             }}
           >
             {/*TODO: you gotta re-work this copy and also figure out text wrap*/}
