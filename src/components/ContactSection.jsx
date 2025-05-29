@@ -1,9 +1,7 @@
-import { Box, CardContent, Typography } from '@mui/material'
-import { Email } from '@mui/icons-material'
-import { CtaButton } from './common/CtaButton.jsx'
+import { CardContent, Typography } from '@mui/material'
 import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
 import { SectionContainer } from './common/SectionContainer.jsx'
-import { SocialLinks } from './common/SocialLinks.jsx'
+import { SocialButtonLinks } from './common/SocialLinks.jsx'
 
 /**
  * Contact section component.
@@ -52,22 +50,9 @@ export const ContactSection = ({color}) => {
             {/*TODO: you gotta re-work this copy and also figure out text wrap*/}
             If you're looking to hire, collaborate, or just want to say hello, feel free to reach out!
           </Typography>
-          <CtaButton
-            color={color}
-            startIcon={<Email/>}
-            href="mailto:connor.c.delacruz@gmail.com"
-          >
-            connor.c.delacruz@gmail.com
-          </CtaButton>
+          <SocialButtonLinks color={color}/>
         </CardContent>
       </ContentCard>
-      <Box
-        sx={{
-          mt: 3,
-        }}
-      >
-        <SocialLinks color={color}/>
-      </Box>
     </SectionContainer>
   )
 }

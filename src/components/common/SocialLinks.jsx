@@ -1,5 +1,7 @@
-import { Box, IconButton } from '@mui/material'
+import { Box, Button, IconButton, Stack } from '@mui/material'
 import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
+import { THEME_CONTENT_STACK_SPACING } from '../Theme.jsx'
+import { CtaButton } from './CtaButton.jsx'
 
 // ================================================================================
 // Content
@@ -7,9 +9,10 @@ import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
 
 const socials = [
   {
-    label: 'Email',
+    label: 'connor.c.delacruz@gmail.com',
     iconComponent: <Email/>,
     href: 'mailto:connor.c.delacruz@gmail.com',
+    highlighted: true,
   },
   {
     label: 'GitHub',
@@ -44,14 +47,14 @@ const socials = [
  * @return {JSX.Element}
  * @constructor
  */
-export const SocialLink = ({
-                             href,
-                             label,
-                             iconComponent,
-                             color = 'inherit',
-                             sx = {},
-                             ...props
-                           }) => {
+export const SocialIconLink = ({
+                                 href,
+                                 label,
+                                 iconComponent,
+                                 color = 'inherit',
+                                 sx = {},
+                                 ...props
+                               }) => {
   return (
     <IconButton
       aria-label={label}
@@ -71,7 +74,7 @@ export const SocialLink = ({
 
 
 /**
- * List of social links.
+ * Row of social icon links.
  *
  * @param linkProps Array of objects representing each link. Keys can be any prop that SocialLink accepts, but all
  *                  should include the following keys:
@@ -83,12 +86,12 @@ export const SocialLink = ({
  * @return {JSX.Element}
  * @constructor
  */
-export const SocialLinks = ({
-                              linkProps = socials,
-                              color = 'inherit',
-                              containerSx = {},
-                              linkSx = {},
-                            }) => {
+export const SocialIconLinks = ({
+                                  linkProps = socials,
+                                  color = 'inherit',
+                                  containerSx = {},
+                                  linkSx = {},
+                                }) => {
   // TODO: figure out how to achieve gradient!!
   //      Prob need to do something like this for the link icon components: https://stackoverflow.com/questions/54273615/passing-props-in-a-component-that-is-stored-in-a-variable
   return (
@@ -99,8 +102,98 @@ export const SocialLinks = ({
       }}
     >
       {linkProps.map((props, i) =>
-        <SocialLink key={i} sx={{...linkSx}} {...props} color={color}/>
+        <SocialIconLink key={i} sx={{...linkSx}} {...props} color={color}/>
       )}
     </Box>
+  )
+}
+
+/**
+ * Button link to socials.
+ *
+ * If highlighted, will use a big juicy CtaButton. Otherwise, will use an outlined Button.
+ *
+ * @param href
+ * @param label
+ * @param iconComponent
+ * @param highlighted
+ * @param color
+ * @param sx
+ * @param props
+ * @return {JSX.Element}
+ * @constructor
+ */
+const SocialButtonLink = ({
+                            href,
+                            label,
+                            iconComponent,
+                            highlighted = false,
+                            color = 'inherit',
+                            sx = {},
+                            ...props
+                          }) => {
+  return (
+    <>
+      {
+        highlighted
+          ? <CtaButton
+            href={href}
+            target="_blank"
+            color={color}
+            startIcon={iconComponent}
+            sx={{
+              ...sx,
+            }}
+            {...props}
+          >
+            {label}
+          </CtaButton>
+          : <Button
+            href={href}
+            target="_blank"
+            variant="outlined"
+            color={color}
+            startIcon={iconComponent}
+            fullWidth
+            sx={{
+              ...sx,
+            }}
+            {...props}
+          >
+            {label}
+          </Button>
+      }
+    </>
+  )
+}
+
+/**
+ * List of full-sized social link buttons.
+ *
+ * @param linkProps
+ * @param color
+ * @param containerSx
+ * @param linkSx
+ * @return {JSX.Element}
+ * @constructor
+ */
+export const SocialButtonLinks = ({
+                                    linkProps = socials,
+                                    color = 'inherit',
+                                    containerSx = {},
+                                    linkSx = {},
+                                  }) => {
+  // TODO: highlighted as a full width top button, non-highlighted as ButtonStack?
+  return (
+    <Stack
+      spacing={THEME_CONTENT_STACK_SPACING}
+      sx={{
+        ...containerSx,
+      }}
+    >
+      {linkProps.map((props, i) =>
+        <SocialButtonLink key={i} sx={{...linkSx}} {...props} color={color}/>
+      )}
+    </Stack>
   )
 }
