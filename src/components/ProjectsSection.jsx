@@ -27,9 +27,10 @@ const projects = [
   {
     title: "Channel ⇄ Shift",
     imgSrc: "images/projects/channel-shift.png",
-    body: 'A web app for creating "glitch art" by shifting and swapping an image\'s RGB color channels, developed as a web app with an intuitive UI to make it easily accessible for anyone to use. Built with React and P5.js. Click the button below to try it out!',
+    body: 'A web app for creating "glitch art" by shifting and swapping an image\'s RGB color channels, developed as a web app with an intuitive UI to make it easily accessible for anyone to use. Built with React, Material UI, and P5.js.',
     skills: 'JavaScript, React, P5.js, Material UI, Node.js',
     bigButtonContent: {
+      // TODO: "visit" feels weird? phrasing? (and make counter consistent?)
       text: 'Visit Channel Shift Site',
       link: 'https://cheezwhiz.biz',
       startIcon: <Launch/>
@@ -52,10 +53,14 @@ const projects = [
   {
     title: "React Counter App",
     imgSrc: "images/projects/react-counter.png",
-    body: 'A simple web app for creating customizable counters. Each counter can have a custom name, color, increment/decrement value, and reset value. Counters can easily be reordered by clicking and dragging them into place. Data is saved locally, so your counters will persist any time you come back to the page. Created using React and the Material UI library.',
+    cardImgHeight: {
+      // Scales nicer for vertical screen when displayed as a column
+      md: 375,
+    },
+    body: 'A simple web app for creating counters with highly customizable properties, data persistence, and click-and-drag support. Developed with React and Material UI.',
     skills: 'JavaScript, React, Material UI, Node.js',
     bigButtonContent: {
-      text: 'Visit React Counter Site',
+      text: 'Visit Site',
       link: 'https://connordelacruz.com/react-counter/',
       startIcon: <Launch/>
     },
@@ -73,6 +78,27 @@ const projects = [
         md: 'row'
       },
     },
+    gridSize: 6,
+  },
+  {
+    title: "Channel ⇄ Shift Classic",
+    imgSrc: "images/projects/channel-shift-classic.png",
+    cardImgHeight: {
+      // Doesn't need as much vertical space when full width
+      sm: 350,
+      // Match counter app when displayed as a column
+      md: 375,
+    },
+    body: 'An older version of the Channel Shift tool created with Processing. Includes some experimental features that haven\'t been ported to the web app yet.',
+    skills: 'Java, Processing',
+    smallButtonsContent: [
+      {
+        text: 'GitHub',
+        link: 'https://github.com/connordelacruz/ChannelShiftGUI',
+        startIcon: <GitHub/>
+      }
+    ],
+    gridSize: 6,
   },
   {
     title: "iTerm2 Tab Color Commands",
@@ -101,24 +127,6 @@ const projects = [
       }
     ],
     gridSize: 6,
-  },
-  {
-    title: "Channel ⇄ Shift Classic",
-    imgSrc: "images/projects/channel-shift-classic.png",
-    cardImgHeight: {
-      sm: 350,
-      md: 375,
-    },
-    body: 'An older version of the Channel Shift tool created with Processing. Includes some experimental features that haven\'t been ported to the web app yet.',
-    skills: 'Java, Processing',
-    smallButtonsContent: [
-      {
-        text: 'GitHub',
-        link: 'https://github.com/connordelacruz/ChannelShiftGUI',
-        startIcon: <GitHub/>
-      }
-    ],
-    gridSize: 12,
   },
   {
     title: "Git Workflow Tools",

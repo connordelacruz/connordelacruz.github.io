@@ -65,7 +65,7 @@ export const HeaderSection = () => {
           variant="h4"
           gutterBottom={false}
         >
-          Hi, my name is
+          Hi! My name is
         </Typography>
         <Typography
           variant="h1"
