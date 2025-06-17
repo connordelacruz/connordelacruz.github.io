@@ -12,8 +12,14 @@ import Grid from '@mui/material/Grid2'
 // ================================================================================
 const projects = [
   {
-    // TODO: update social banner then use that as an image here
     title: 'This Site!',
+    imgSrc: 'banner/banner.png',
+    cardImgHeight: {
+      // Doesn't need as much vertical space
+      xs: 200,
+      sm: 200,
+      md: 200,
+    },
     body: 'Designed and built from the scratch using React and Material UI.',
     skills: 'JavaScript, React, Material UI, Node.js',
     smallButtonsContent: [
@@ -27,11 +33,10 @@ const projects = [
   {
     title: "Channel ⇄ Shift",
     imgSrc: "images/projects/channel-shift.png",
-    body: 'A web app for creating "glitch art" by shifting and swapping an image\'s RGB color channels, developed as a web app with an intuitive UI to make it easily accessible for anyone to use. Built with React, Material UI, and P5.js.',
+    body: 'A web app for creating "glitch art" by shifting and swapping an image\'s RGB color channels, with a simple and intuitive UI designed to be easily accessible for anyone to use. Built with React, Material UI, and P5.js.',
     skills: 'JavaScript, React, P5.js, Material UI, Node.js',
     bigButtonContent: {
-      // TODO: "visit" feels weird? phrasing? (and make counter consistent?)
-      text: 'Visit Channel Shift Site',
+      text: 'Try it out!',
       link: 'https://cheezwhiz.biz',
       startIcon: <Launch/>
     },
@@ -53,14 +58,10 @@ const projects = [
   {
     title: "React Counter App",
     imgSrc: "images/projects/react-counter.png",
-    cardImgHeight: {
-      // Scales nicer for vertical screen when displayed as a column
-      md: 375,
-    },
     body: 'A simple web app for creating counters with highly customizable properties, data persistence, and click-and-drag support. Developed with React and Material UI.',
     skills: 'JavaScript, React, Material UI, Node.js',
     bigButtonContent: {
-      text: 'Visit Site',
+      text: 'Try it out!',
       link: 'https://connordelacruz.com/react-counter/',
       startIcon: <Launch/>
     },
@@ -86,8 +87,6 @@ const projects = [
     cardImgHeight: {
       // Doesn't need as much vertical space when full width
       sm: 350,
-      // Match counter app when displayed as a column
-      md: 375,
     },
     body: 'An older version of the Channel Shift tool created with Processing. Includes some experimental features that haven\'t been ported to the web app yet.',
     skills: 'Java, Processing',
@@ -103,7 +102,7 @@ const projects = [
   {
     title: "iTerm2 Tab Color Commands",
     imgSrc: "images/projects/iterm2-tab-color.png",
-    body: 'Bash commands for setting the iTerm2 tab/title bar colors. Integrates with base16 shell themes.',
+    body: 'Bash commands for setting the iTerm2 tab/title bar colors. Integrates seamlessly with base16 shell themes.',
     skills: 'Bash, iTerm 2, Base16 Shell',
     smallButtonsContent: [
       {
