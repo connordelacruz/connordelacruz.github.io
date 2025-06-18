@@ -81,12 +81,14 @@ function App() {
           component="p"
           color="textSecondary"
           sx={{
+            fontFamily: 'Futura-Medium',
+            fontWeight: 'normal',
             textAlign: 'center',
             ...THEME_GRADIENT_TEXT_SX,
           }}
           gutterBottom={false}
         >
-          Designed and Developed by Connor de la Cruz © {new Date().getFullYear()}
+          Connor de la Cruz © {new Date().getFullYear()}
         </Typography>
       </Paper>
     </ThemeProvider>

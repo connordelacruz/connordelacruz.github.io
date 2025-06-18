@@ -14,16 +14,12 @@ import { SectionContainer } from './common/SectionContainer.jsx'
 // Skills
 const skills = [
   {
-    title: 'Programming',
-    skills: 'Python, PHP, JavaScript, CSS, Sass, HTML, Java, Bash, Groovy',
+    title: 'Languages',
+    skills: 'Python, PHP, JavaScript, MySQL, CSS, HTML, Java, Bash, Groovy',
   },
   {
-    title: 'Libraries',
-    skills: 'React, Material UI, P5.js, Processing, Django, Cypress, Selenium',
-  },
-  {
-    title: 'Tools',
-    skills: 'Git, GitHub, MySQL, Docker, Jenkins, Node.js',
+    title: 'Tools & Frameworks',
+    skills: 'React, Sass, Jenkins, Django, Cypress, Selenium, Docker, Node.js, Material UI',
   },
 ]
 
@@ -36,10 +32,9 @@ const experience = [
     endDate: 'Present',
     bullets: [
       'Developed and maintained back-end features for the flagship enterprise web application using PHP and MySQL.',
-      'Enhanced CI/CD pipelines to improve deployment efficiency, including an automated maintenance message scheduler that reduced the time to release to client sites from 2+ hours to 20–30 minutes.',
+      'Created CI/CD pipelines to improve deployment efficiency, including an automated maintenance message scheduler that reduced the time to release to 300+ client sites from 2+ hours down to just 20–30 minutes.',
       'Took initiative to build internal CLI tools in Python to automate repetitive engineering tasks, streamlining git workflows and improving developer productivity across the team.',
-      'Regularly paired with engineers for problem-solving, mentorship, and collaborative feature development.',
-      'Authored and maintained detailed documentation to support engineering best practices, streamline onboarding, and preserve institutional knowledge.',
+      'Authored extensive internal documentation to support engineering best practices, streamline onboarding, and preserve institutional knowledge.',
       'Setup SAML integrations and worked with clients directly to troubleshoot any issues.',
     ],
     skills: 'PHP, MySQL, Jenkins, Groovy, Python, Docker, Cypress, GitHub, Jira',
@@ -170,7 +165,7 @@ export const SkillCards = ({
         }}
       >
         {skillCardProps.map((props, i) =>
-          <Grid key={i} size={{xs: 12, md: 4}}>
+          <Grid key={i} size={{xs: 12, md: 12 / skillCardProps.length}}>
             <SkillCard color={color} {...props}/>
           </Grid>
         )}
@@ -201,8 +196,10 @@ const ExperienceList = ({
           key={i}
           disableGutters
           sx={{
+            // Use bottom padding for spacing
             pt: 0,
             '&:last-child': {
+              // Remove bottom padding from last item
               pb: 0,
             },
           }}
@@ -223,6 +220,7 @@ const ExperienceList = ({
             primary={bullet}
             slotProps={{
               primary: {
+                fontWeight: 500,
                 gutterBottom: false,
               },
             }}

@@ -116,7 +116,7 @@ const projects = [
   {
     title: "Chicago ASCII Art",
     imgSrc: "images/projects/chicago-ascii-art.png",
-    body: 'Bash scripts for displaying color ASCII art of Chicago flag/skyline in the terminal.',
+    body: 'Bash scripts for displaying color ASCII art of Chicago flag and skyline in the terminal with support for custom colors.',
     skills: 'Bash',
     smallButtonsContent: [
       {
@@ -263,8 +263,9 @@ const ProjectCard = ({
     )
     : null
 
+  // TODO: Make sure CardActions is always positioned on the bottom, even when neighboring cards are taller than this card
+  //       (positon: absolute / bottom: 0 should work but need to work out height weirdness)
   return (
-
     <Grid
       size={{
         xs: 12,
@@ -310,6 +311,7 @@ const ProjectCard = ({
             variant="body1"
             sx={{
               px: 1,
+              fontWeight: 500,
               textWrap: 'pretty',
             }}
             gutterBottom={false}
