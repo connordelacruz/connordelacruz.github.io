@@ -15,7 +15,7 @@ import { SectionContainer } from './common/SectionContainer.jsx'
 const skills = [
   {
     title: 'Languages',
-    skills: 'Python, PHP, JavaScript, MySQL, CSS, HTML, Java, Bash, Groovy',
+    skills: 'Python, PHP, JavaScript, MySQL, CSS, HTML, Java, Bash, Groovy, Lua',
   },
   {
     title: 'Tools & Frameworks',
@@ -33,7 +33,7 @@ const experience = [
     bullets: [
       'Developed and maintained back-end features for the flagship enterprise web application using PHP and MySQL.',
       'Created CI/CD pipelines to improve deployment efficiency, including an automated maintenance message scheduler that reduced the time to release to 300+ client sites from 2+ hours down to just 20–30 minutes.',
-      'Took initiative to build internal CLI tools in Python to automate repetitive engineering tasks, streamlining git workflows and improving developer productivity across the team.',
+      'Took initiative to build internal CLI tooling in Python to automate repetitive engineering tasks, streamlining git workflows and improving developer productivity across the team.',
       'Authored extensive internal documentation to support engineering best practices, streamline onboarding, and preserve institutional knowledge.',
       'Setup SAML integrations and worked with clients directly to troubleshoot any issues.',
     ],
