@@ -29,7 +29,7 @@ const experience = [
     jobTitle: 'Software Engineer',
     company: 'Wellspring',
     startDate: 'June 2020',
-    endDate: 'Present',
+    endDate: 'October 2025',
     bullets: [
       'Developed and maintained back-end features for the flagship enterprise web application using PHP and MySQL.',
       'Created CI/CD pipelines to improve deployment efficiency, including an automated maintenance message scheduler that reduced the time to release to 300+ client sites from 2+ hours down to just 20–30 minutes.',
