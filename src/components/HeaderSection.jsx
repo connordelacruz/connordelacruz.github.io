@@ -1,6 +1,7 @@
-import {Box, Container, Paper, Typography} from '@mui/material'
+import {Box, Container, Divider, Paper, Typography} from '@mui/material'
 import { THEME_GRADIENT_BORDERS_SX, THEME_GRADIENT_TEXT_SX } from './Theme.jsx'
 import { ZigZag } from './common/ZigZag.jsx'
+import {SocialIconLinks} from "./common/SocialLinks.jsx";
 
 /**
  * Title text.
@@ -89,50 +90,62 @@ const ProfilePhoto = () => {
  * @constructor
  */
 export const AboutSection = () => {
-    return (
-        <Paper
-            id="about-content"
-            sx={{
-                py: {
-                    xs: 4,
-                    sm: 8,
-                },
-                // Gradient border
-                ...THEME_GRADIENT_BORDERS_SX
-            }}
-        >
+  return (
+    <Paper
+      id="about-content"
+      sx={{
+        pt: {
+          xs: 4,
+          sm: 8,
+        },
+        // Gradient border
+        ...THEME_GRADIENT_BORDERS_SX
+      }}
+    >
 
-            {/*Profile Photo*/}
-            <ProfilePhoto/>
+      {/*Profile Photo*/}
+      <ProfilePhoto/>
 
-            {/*About Copy*/}
-            <Typography
-                variant="h5"
-                component="p"
-                sx={{
-                    px: {
-                        xs: 2,
-                        sm: 4,
-                        md: 8,
-                    },
-                    fontFamily: 'Roboto',
-                    fontSize: {
-                        xs: '1.25rem',
-                        sm: '1.5rem',
-                    },
-                    textAlign: 'left',
-                    textWrap: 'pretty',
-                }}
-                gutterBottom={false}
-            >
-                I'm a full-stack software engineer with a passion for creative problem solving and learning new things.
-                Whether
-                it's front end, back end, or anything in between, I love tackling new challenges and building things I
-                can be
-                proud of.
-            </Typography>
-        </Paper>
-    )
+      {/*About Copy*/}
+      <Typography
+        variant="h5"
+        component="p"
+        sx={{
+          px: {
+            xs: 2,
+            sm: 4,
+            md: 8,
+          },
+          fontFamily: 'Roboto',
+          fontSize: {
+            xs: '1.25rem',
+            sm: '1.5rem',
+          },
+          textAlign: 'left',
+          textWrap: 'pretty',
+        }}
+        gutterBottom={false}
+      >
+        I'm a full-stack software engineer with a passion for creative problem solving and learning new things.
+        Whether
+        it's front end, back end, or anything in between, I love tackling new challenges and building things I
+        can be
+        proud of.
+      </Typography>
+
+      {/*Social Links*/}
+      {/*TODO: clean this up, figure out styling*/}
+      <Box
+        sx={{
+          my: 3,
+          opacity: 0.5,
+        }}
+      >
+        <SocialIconLinks />
+      </Box>
+
+    </Paper>
+  )
 }
 
 /**
