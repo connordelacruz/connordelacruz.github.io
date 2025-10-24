@@ -200,8 +200,10 @@ export const SocialButtonLinks = ({
       {/*Regular Buttons*/}
       <ButtonStack
         sx={{
-          mt: 4,
+          mt: 3,
+          px: 2,
         }}
+        direction="column"
       >
         {regularButtonProps.map((props, i) =>
           <SocialButtonLink key={i} sx={{...linkSx}} {...props} color={color}/>

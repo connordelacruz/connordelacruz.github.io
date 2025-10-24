@@ -1,4 +1,4 @@
-import { CardContent, Typography } from '@mui/material'
+import {Box, CardContent, Typography} from '@mui/material'
 import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
 import { SectionContainer } from './common/SectionContainer.jsx'
 import { SocialButtonLinks } from './common/SocialLinks.jsx'
@@ -33,24 +33,17 @@ export const ContactSection = ({color}) => {
           }}
           />
         <CardContent>
-          <Typography
-            variant="h4"
-            component="p"
-            sx={{
-              fontFamily: 'Roboto',
-              textWrap: 'pretty',
-              px: {
-                xs: 0,
-                sm: 2,
-                md: 4,
-              },
-              mb: 3,
-            }}
-          >
-            {/*TODO: you gotta re-work this copy and also figure out text wrap*/}
-            If you're looking to hire, collaborate, or just want to say hello, feel free to reach out!
-          </Typography>
-          <SocialButtonLinks color={color}/>
+          <Box
+          sx={{
+            px: {
+              xs: 0,
+              sm: 4,
+              md: 8,
+            },
+            py: 2,
+          }}>
+            <SocialButtonLinks color={color}/>
+          </Box>
         </CardContent>
       </ContentCard>
     </SectionContainer>
