@@ -288,6 +288,14 @@ const ProjectCard = ({
             // Remove bottom margin for cards with banners (TODO: just pad card content so margin is not required)
             mb: imgSrc ? 0 : 1,
           }}
+          slotProps={{
+            title: {
+              color: color,
+              variant: 'h6',
+              textAlign: 'center',
+              gutterBottom: false,
+            },
+          }}
         />
         {/*Banner image*/}
         {imgSrc &&
