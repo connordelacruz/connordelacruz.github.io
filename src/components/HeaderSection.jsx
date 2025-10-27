@@ -134,10 +134,10 @@ export const AboutSection = () => {
       </Typography>
 
       {/*Social Links*/}
-      {/*TODO: clean this up, figure out styling*/}
       <Box
         sx={{
-          my: 3,
+          mt: 2,
+          mb: 1,
           opacity: 0.5,
         }}
       >
