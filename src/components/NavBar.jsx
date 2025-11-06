@@ -50,12 +50,14 @@ const NavTabs = ({
       <Tabs
         value={activeHash ? activeHash : false}
         sx={{
+          // Active tab indicator styles
           '& .MuiTabs-indicator': {
+            // Don't use tab indicator
+            display: 'none',
             // Full height indicator
-            height: '100%',
-            borderRadius: '50rem',
-            // indicatorColor prop doesn't work with custom palettes, so leveraging sx
-            backgroundColor: getActiveHashColor(),
+            // height: '100%',
+            // borderRadius: '5px',
+            // backgroundColor: getActiveHashColor(),
           },
         }}
       >
@@ -69,16 +71,28 @@ const NavTabs = ({
             onClick={createSmoothScrollToSectionHandler(sectionLink.hash)}
             sx={{
               ml: 1,
+              px: 3,
               // Make sure text appears above full-height tab indicator
               zIndex: 1,
+              backgroundColor: 'transparent',
               // While the Tabs textColor prop does work with custom palettes, it throws errors if you use anything
               // other than the default ones, so I guess we're going with sx instead
               color: sectionLink.color + '.main',
+              // Round borders when not selected
+              borderStyle: 'solid',
+              borderWidth: 2,
+              borderRadius: '50em',
+              borderColor: sectionLink.color + '.main',
+
+              // Selected tab styles
               '&.Mui-selected': {
-                // Set a contrasting color so it sticks out over the indicator
+                // Set background color to section color, text color to black
+                backgroundColor: getActiveHashColor(),
                 color: 'background.default',
+                // Squared circle
+                borderRadius: '0.5rem',
               },
-              transitionProperty: 'color',
+              transitionProperty: 'background-color, color, border-radius',
               ...THEME_TRANSITION_DURATION_AND_TIMING_SX,
             }}
           />
