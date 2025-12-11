@@ -22,7 +22,7 @@ const socials = [
   {
     label: 'LinkedIn',
     iconComponent: <LinkedIn/>,
-    href: 'http://www.linkedin.com/in/connordelacruz',
+    href: 'https://www.linkedin.com/in/connordelacruz',
   },
   {
     label: 'Instagram',
