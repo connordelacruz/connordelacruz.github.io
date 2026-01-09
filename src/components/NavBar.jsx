@@ -354,11 +354,9 @@ export const NavBar = ({
       elevation={0}
       sx={{
         py: 0,
-        borderWidth: 2,
-        borderTopWidth: 0,
-        borderRadius: 2,
-        borderTopLeftRadius: 0,
-        borderTopRightRadius: 0,
+        borderWidth: 0,
+        borderBottomWidth: 2,
+        borderRadius: 0,
         // Gradient border when no active hash
         background: THEME_GRADIENT_BORDERS_BG,
         borderColor: getActiveHashColor('transparent'),
