@@ -272,12 +272,12 @@ const NavLogo = ({
 //          color: getActiveHashColor('transparent'),
 //          WebkitTextFillColor: activeHash ? 'none' : 'transparent',
           color: getActiveHashColor('text.primary'),
-          opacity: {
-            // (Narrow viewports) Hide when no active hash
-            xs: activeHash ? 1.0 : 0.0,
-            // (Wide viewports) make unstyled text a tiiiiny bit translucent
-            md: activeHash ? 1.0 : 0.9,
-          },
+          // opacity: {
+          //   // (Narrow viewports) Hide when no active hash
+          //   xs: activeHash ? 1.0 : 0.0,
+          //   // (Wide viewports) make unstyled text a tiiiiny bit translucent
+          //   md: activeHash ? 1.0 : 0.9,
+          // },
           // (Narrow viewports) Hide pointer when not visible
           pointerEvents: {
             xs: activeHash === null ? 'none' : 'initial',
@@ -354,13 +354,11 @@ export const NavBar = ({
       elevation={0}
       sx={{
         py: 0,
+        borderWidth: 2,
         borderTopWidth: 0,
-//        borderBottomWidth: 2,
-        borderTopRightRadius: 0,
+        borderRadius: 2,
         borderTopLeftRadius: 0,
-        borderLeftWidth: 0,
-        borderRightWidth: 0,
-        borderRadius: 0,
+        borderTopRightRadius: 0,
         // Gradient border when no active hash
         background: THEME_GRADIENT_BORDERS_BG,
         borderColor: getActiveHashColor('transparent'),
