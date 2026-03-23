@@ -82,7 +82,7 @@ const experience = [
 
 // Common styles for Resume sub-headers
 const RESUME_SUBHEADER_SX = {
-  textTransform: 'uppercase',
+  // TODO: we probably don't need this anymore
   mb: 3,
 }
 

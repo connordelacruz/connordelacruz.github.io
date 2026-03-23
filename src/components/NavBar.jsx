@@ -198,6 +198,7 @@ const NavMenu = ({
             <Close/>
           </IconButton>
           {/*Drawer Menu Items*/}
+          {/*TODO: Futura-Medium*/}
           <List>
             {sectionLinks.map((sectionLink, i) => (
               <ListItem
@@ -262,11 +263,12 @@ const NavLogo = ({
   return (
     <Box sx={{flexGrow: {xs: 0, md: 1}}}>
       <Typography
-        variant="h6"
+        variant="h5"
         component="a"
         href="#"
         onClick={handleLogoClick}
         sx={{
+          fontFamily: 'Bauhaus Regular',
 //          // (Wide viewports) Gradient text when no active hash
 //          ...THEME_GRADIENT_TEXT_SX,
 //          color: getActiveHashColor('transparent'),

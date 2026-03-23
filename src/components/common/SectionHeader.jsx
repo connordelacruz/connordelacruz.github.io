@@ -17,7 +17,6 @@ export const SectionHeader = ({
     <ZigZagContainer
       color={color}
       sx={{
-        // TODO: increase space between zigzag and text
         mb: 4,
         mt: 2,
       }}
@@ -27,9 +26,7 @@ export const SectionHeader = ({
         variant="h2"
         gutterBottom={false}
         sx={{
-          // TODO: if we're doing this, bring down the font size
-          textTransform: 'uppercase',
-          px: 1,
+          px: 2,
           py: 0.5,
           color: color + '.main',
         }}

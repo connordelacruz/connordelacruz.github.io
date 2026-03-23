@@ -3,6 +3,7 @@
 // ================================================================================
 import { createTheme, responsiveFontSizes } from '@mui/material'
 import FuturaMediumTtf from '../fonts/Futura-Medium.ttf'
+import BauhausRegularWoff from '../fonts/BauhausRegular.woff'
 
 // ================================================================================
 // Theme Constants
@@ -103,7 +104,7 @@ const baseTheme = createTheme({
   components: {
     // Baseline
     MuiCssBaseline: {
-      // Futura font face definitions
+      // Futura and Bauhaus font face definitions
       styleOverrides: `
         @font-face {
           font-family: 'Futura-Medium';
@@ -111,6 +112,12 @@ const baseTheme = createTheme({
           font-weight: normal;
           src: local('Futura-Medium'), url(${FuturaMediumTtf}) format('truetype');
         }
+        @font-face {
+          font-family: 'Bauhaus Regular';
+          font-style: normal;
+          font-weight: normal;
+          src: local('Bauhaus Regular'), url(${BauhausRegularWoff}) format('woff');
+          }
       `,
     },
     // Typography
@@ -127,21 +134,21 @@ const baseTheme = createTheme({
             {
               props: {variant: 'h1'},
               style: {
-                fontFamily: 'Futura-Medium',
+                fontFamily: 'Bauhaus Regular',
                 fontWeight: 'normal',
               },
             },
             {
               props: {variant: 'h2'},
               style: {
-                fontFamily: 'Futura-Medium',
+                fontFamily: 'Bauhaus Regular',
                 fontWeight: 'normal',
               },
             },
             {
               props: {variant: 'h3'},
               style: {
-                fontFamily: 'Futura-Medium',
+                fontFamily: 'Bauhaus Regular',
                 fontWeight: 'normal',
               },
             },
@@ -167,10 +174,12 @@ const baseTheme = createTheme({
               },
             },
             // Button-style Typography
+            // TODO: where is this used other than buttons? Do we need this?:
             {
               props: {variant: 'button'},
               style: {
-                fontWeight: 'bold',
+                fontFamily: 'Futura-Medium',
+                fontWeight: 'normal',
               },
             },
           ],
@@ -251,7 +260,8 @@ const baseTheme = createTheme({
     MuiTab: {
       styleOverrides: {
         root: {
-          fontWeight: 'bold',
+          fontFamily: 'Futura-Medium',
+          fontWeight: 'normal',
         },
       },
     },
