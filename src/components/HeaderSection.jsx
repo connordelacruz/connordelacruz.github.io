@@ -102,6 +102,8 @@ export const AboutSection = () => {
         ...THEME_GRADIENT_BORDERS_SX
       }}
     >
+      <ProfilePhoto/>
+
       {/*About Copy*/}
       <Typography
         variant="h5"
@@ -162,7 +164,6 @@ export const HeaderSection = () => {
       }}
     >
       <TitleSection/>
-      {/*<ProfilePhoto/>*/}
       <AboutSection/>
     </Container>
   )
