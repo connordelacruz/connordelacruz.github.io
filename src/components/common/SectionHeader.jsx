@@ -26,6 +26,7 @@ export const SectionHeader = ({
         variant="h2"
         gutterBottom={false}
         sx={{
+          // TODO: larger font size for section headers! Make sure they're responsive
           px: 2,
           py: 0.5,
           color: color + '.main',

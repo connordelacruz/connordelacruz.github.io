@@ -21,7 +21,7 @@ const projects = [
       sm: 200,
       // md: 200,
     },
-    body: 'Designed and built from the scratch in React.',
+    body: 'Designed and built from scratch in React.',
     skills: 'JavaScript, React, Material UI, Node.js',
     smallButtonsContent: [
       {
