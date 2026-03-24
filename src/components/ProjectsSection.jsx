@@ -19,9 +19,9 @@ const projects = [
       // Doesn't need as much vertical space
       xs: 200,
       sm: 200,
-      md: 200,
+      // md: 200,
     },
-    body: 'Designed and built from the scratch using React and Material UI.',
+    body: 'Designed and built from the scratch in React.',
     skills: 'JavaScript, React, Material UI, Node.js',
     smallButtonsContent: [
       {
@@ -30,11 +30,12 @@ const projects = [
         startIcon: <GitHub/>
       }
     ],
+    gridSize: 6,
   },
   {
     title: "Channel ⇄ Shift",
     imgSrc: "images/projects/channel-shift.png",
-    body: 'A web app for creating "glitch art" by shifting and swapping an image\'s RGB color channels, with a simple and intuitive UI designed to be easily accessible for anyone to use. Built with React, Material UI, and P5.js.',
+    body: 'A web app for creating glitch art.',
     skills: 'JavaScript, React, P5.js, Material UI, Node.js',
     bigButtonContent: {
       text: 'Try it out!',
@@ -55,11 +56,12 @@ const projects = [
         md: 'row'
       },
     },
+    gridSize: 6,
   },
   {
     title: "React Counter App",
     imgSrc: "images/projects/react-counter.png",
-    body: 'A simple web app for creating counters with highly customizable properties, data persistence, and click-and-drag support. Developed with React and Material UI.',
+    body: 'A web app for creating customizable counters.',
     skills: 'JavaScript, React, Material UI, Node.js',
     bigButtonContent: {
       text: 'Try it out!',
@@ -89,7 +91,7 @@ const projects = [
       // Doesn't need as much vertical space when full width
       sm: 350,
     },
-    body: 'An older version of the Channel Shift tool created with Processing. Includes some experimental features that haven\'t been ported to the web app yet.',
+    body: 'Legacy version of Channel Shift for desktop.',
     skills: 'Java, Processing',
     smallButtonsContent: [
       {
