@@ -13,7 +13,7 @@ export const TitleSection = () => {
     return (
         <Box
             sx={{
-                mb: 1,
+                // mb: 1,
                 textAlign: 'center',
             }}
         >
@@ -21,7 +21,7 @@ export const TitleSection = () => {
                 variant="h4"
                 gutterBottom={false}
             >
-                Hi! My name is
+                hi, my name is
             </Typography>
             <Typography
                 variant="h1"
@@ -36,7 +36,7 @@ export const TitleSection = () => {
                         md: '6rem',
                     },
                     px: 0,
-                    py: 2,
+                    // py: 2,
                     // Gradient text
                     ...THEME_GRADIENT_TEXT_SX
                 }}
@@ -102,10 +102,6 @@ export const AboutSection = () => {
         ...THEME_GRADIENT_BORDERS_SX
       }}
     >
-
-      {/*Profile Photo*/}
-      <ProfilePhoto/>
-
       {/*About Copy*/}
       <Typography
         variant="h5"
@@ -121,16 +117,12 @@ export const AboutSection = () => {
             xs: '1.25rem',
             sm: '1.5rem',
           },
-          textAlign: 'left',
+          textAlign: 'center',
           textWrap: 'pretty',
         }}
         gutterBottom={false}
       >
-        I'm a full-stack software engineer with a passion for creative problem solving and learning new things.
-        Whether
-        it's front end, back end, or anything in between, I love tackling new challenges and building things I
-        can be
-        proud of.
+        I'm a software engineer with a passion for creative problem solving and learning new things.
       </Typography>
 
       {/*Social Links*/}
@@ -169,8 +161,9 @@ export const HeaderSection = () => {
         },
       }}
     >
-        <TitleSection/>
-        <AboutSection/>
+      <TitleSection/>
+      {/*<ProfilePhoto/>*/}
+      <AboutSection/>
     </Container>
   )
 }

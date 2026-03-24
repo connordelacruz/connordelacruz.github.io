@@ -13,6 +13,7 @@ import Grid from '@mui/material/Grid2'
 const projects = [
   {
     title: 'This Site!',
+    // TODO: update this AND SOCIAL SHARE PREVIEW with updated font
     imgSrc: 'banner/banner.png',
     cardImgHeight: {
       // Doesn't need as much vertical space

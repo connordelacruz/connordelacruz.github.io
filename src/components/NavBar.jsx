@@ -274,12 +274,12 @@ const NavLogo = ({
 //          color: getActiveHashColor('transparent'),
 //          WebkitTextFillColor: activeHash ? 'none' : 'transparent',
           color: getActiveHashColor('text.primary'),
-          // opacity: {
-          //   // (Narrow viewports) Hide when no active hash
-          //   xs: activeHash ? 1.0 : 0.0,
-          //   // (Wide viewports) make unstyled text a tiiiiny bit translucent
-          //   md: activeHash ? 1.0 : 0.9,
-          // },
+          opacity: {
+            // (Narrow viewports) Hide when no active hash
+            xs: activeHash ? 1.0 : 0.0,
+            // (Wide viewports) make unstyled text a tiiiiny bit translucent
+            md: activeHash ? 1.0 : 0.9,
+          },
           // (Narrow viewports) Hide pointer when not visible
           pointerEvents: {
             xs: activeHash === null ? 'none' : 'initial',
