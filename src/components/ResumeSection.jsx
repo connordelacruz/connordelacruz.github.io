@@ -253,13 +253,32 @@ export const ExperienceCard = ({
                                  skills,
                                  color,
                                }) => {
+  const subheader = <span>
+    <Typography
+      variant="button"
+      sx={{
+        color: 'text.primary',
+      }}
+      gutterBottom={false}
+    >
+      {company}
+    </Typography>
+    <Typography
+      variant="subtitle2"
+      sx={{
+        color: 'text.secondary',
+      }}
+    >
+      {startDate} - {endDate}
+    </Typography>
+  </span>
   return (
     <ContentCard
       color={color}
     >
       <ContentCardHeader
         title={jobTitle}
-        subheader={<span><b>{company}</b><br/>{startDate} - {endDate}</span>}
+        subheader={subheader}
         color={color}
       />
       <CardContent>
