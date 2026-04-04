@@ -220,7 +220,6 @@ const ExperienceList = ({
             primary={bullet}
             slotProps={{
               primary: {
-                fontWeight: 500,
                 gutterBottom: false,
               },
             }}

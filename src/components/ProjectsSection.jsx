@@ -19,7 +19,6 @@ const projects = [
       // Doesn't need as much vertical space
       xs: 200,
       sm: 200,
-      // md: 200,
     },
     body: 'Designed and built from scratch in React.',
     skills: 'JavaScript, React, Material UI, Node.js',
@@ -322,7 +321,6 @@ const ProjectCard = ({
             variant="body1"
             sx={{
               px: 1,
-              fontWeight: 500,
               textWrap: 'pretty',
             }}
             gutterBottom={false}

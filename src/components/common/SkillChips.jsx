@@ -29,7 +29,6 @@ export const SkillChip = ({
         },
         borderWidth: 2,
         borderColor: color + '.main',
-        fontWeight: 500,
         fontSize: '1rem',
         ...sx,
       }}

@@ -99,6 +99,18 @@ const baseTheme = createTheme({
     mode: 'dark',
   },
   // --------------------------------------------------------------------------------
+  // Default Font
+  // --------------------------------------------------------------------------------
+  typography: {
+    // Default to Futura-Medium
+    fontFamily: [
+      '"Futura-Medium"',
+      'Helvetica',
+      'Arial',
+      'sans-serif',
+    ].join(', '),
+  },
+  // --------------------------------------------------------------------------------
   // Components / Default Props
   // --------------------------------------------------------------------------------
   components: {
@@ -129,7 +141,6 @@ const baseTheme = createTheme({
       styleOverrides: {
         root: {
           variants: [
-            // TODO: Futura for body text??
             // Headers
             {
               props: {variant: 'h1'},
