@@ -13,7 +13,6 @@ export const TitleSection = () => {
     return (
         <Box
             sx={{
-                // mb: 1,
                 textAlign: 'center',
             }}
         >
@@ -36,7 +35,6 @@ export const TitleSection = () => {
                         md: '6rem',
                     },
                     px: 0,
-                    // py: 2,
                     // Gradient text
                     ...THEME_GRADIENT_TEXT_SX
                 }}
@@ -69,10 +67,6 @@ const ProfilePhoto = () => {
           md: '35%',
         },
         margin: '0 auto',
-        mb: {
-          xs: 3,
-          sm: 6,
-        },
       }}
     >
       <img
@@ -94,9 +88,9 @@ export const AboutSection = () => {
     <Paper
       id="about-content"
       sx={{
-        pt: {
+        py: {
           xs: 4,
-          sm: 8,
+          sm: 6,
         },
         // Gradient border
         ...THEME_GRADIENT_BORDERS_SX
@@ -114,7 +108,10 @@ export const AboutSection = () => {
             sm: 4,
             md: 8,
           },
-          fontFamily: 'Roboto',
+          py: {
+            xs: 2,
+            sm: 4,
+          },
           fontSize: {
             xs: '1.25rem',
             sm: '1.5rem',
@@ -130,8 +127,6 @@ export const AboutSection = () => {
       {/*Social Links*/}
       <Box
         sx={{
-          mt: 2,
-          mb: 1,
           opacity: 0.5,
         }}
       >
@@ -153,11 +148,7 @@ export const HeaderSection = () => {
     <Container
       maxWidth="md"
       sx={{
-        mt: {
-          xs: 6,
-          md: 8,
-        },
-        mb: {
+        my: {
           xs: 4,
           md: 8,
         },
