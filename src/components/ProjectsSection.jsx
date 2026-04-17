@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid2'
 // ================================================================================
 const projects = [
   {
-    title: 'This Site!',
+    title: 'This Site',
     imgSrc: 'banner/banner.png',
     cardImgHeight: {
       // Doesn't need as much vertical space
