@@ -19,7 +19,7 @@ const skills = [
   },
   {
     title: 'Tools & Frameworks',
-    skills: 'React, Sass, Jenkins, Django, Cypress, Selenium, Docker, Node.js',
+    skills: 'React, Sass, Jenkins, Django, AWS, Cypress, Selenium, Docker, Node.js',
   },
 ]
 
@@ -28,14 +28,25 @@ const experience = [
   {
     jobTitle: 'Senior Software Engineer',
     company: 'Wellspring',
-    startDate: 'June 2020',
+    startDate: 'January 2023',
     endDate: 'October 2025',
     bullets: [
-      'Developed and maintained back-end features for the flagship enterprise web application using PHP and MySQL.',
-      'Created CI/CD pipelines to improve deployment efficiency, including an automated maintenance message scheduler that reduced the time to release to 300+ client sites from 2+ hours down to just 20 minutes.',
-      'Took initiative to build internal CLI tooling in Python to automate repetitive engineering tasks, streamlining git workflows and improving developer productivity across the team.',
-      'Authored extensive internal documentation to support engineering best practices, streamline onboarding, and preserve institutional knowledge.',
-      'Setup SAML integrations and worked with clients directly to troubleshoot any issues.',
+      'Worked on larger client projects through their full lifecycle, refining specs with project managers, creating Jira epics mapping out the entire project, and taking ownership of development.',
+      'Created CI/CD pipelines to improve efficiency, including an automated maintenance message system that reduced the time to release to 150+ client sites from 2 hours down to just 20 minutes.',
+      'Built CLI tooling in Python to automate repetitive engineering tasks, streamlining git workflows, and improving developer productivity across the team.',
+    ],
+    skills: 'PHP, MySQL, Jenkins, Groovy, Python, Docker, Cypress, GitHub, Jira',
+  },
+  {
+    jobTitle: 'Software Engineer',
+    company: 'Wellspring',
+    startDate: 'June 2020',
+    endDate: 'January 2023',
+    bullets: [
+      'Developed and maintained the company’s flagship enterprise web application with a focus on client feature requests, bug fixes, and ad hoc support.',
+      'Handled production releases to 150+ clients, including cloud-hosted and self-hosted instances.',
+      'Authored extensive internal documentation to define coding standards, support engineering best practices, streamline onboarding, and preserve institutional knowledge.',
+      'Collaborated with other engineers through pair programming, troubleshooting, and code reviews.',
     ],
     skills: 'PHP, MySQL, Jenkins, Groovy, Python, Docker, Cypress, GitHub, Jira',
   },
@@ -47,7 +58,7 @@ const experience = [
     bullets: [
       'Spearheaded the development of an in-house CMS and site-building framework using Django, Sass, and JavaScript, enabling rapid, reusable, and customizable site creation for agency clients.',
       'Built a cross-browser front-end testing suite using Selenium WebDriver and Python, integrating with BrowserStack to fully automate regression testing and eliminate hours of manual QA effort.',
-      'Delivered and maintained client-facing websites ranging from marketing pages to full-featured eCommerce platforms, adapting to varying client requirements across modern web technologies.',
+      'Created and maintained client-facing websites ranging from marketing pages to full-featured eCommerce platforms, adapting to varying client requirements across modern web technologies.',
     ],
     skills: 'JavaScript, Python, Sass, CSS, MySQL, Selenium, Django, BitBucket, AEM',
   },
