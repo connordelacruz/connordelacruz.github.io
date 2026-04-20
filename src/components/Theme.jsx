@@ -19,6 +19,14 @@ const COLOR_YELLOW = '#FFB217'
 //const COLOR_TEAL = '#05ad98' // TODO: idk if we ditch the gradient maybe we can do this as a 4th color
 const COLOR_BLACK = '#101010'
 
+// Text colors
+const COLOR_TEXT_PRIMARY = 'rgba(255, 255, 255, 0.9)'
+
+// Background colors
+// const COLOR_BG_DEFAULT = COLOR_BLACK
+const COLOR_BG_DEFAULT = '#080b15'
+const COLOR_BG_PAPER = COLOR_BG_DEFAULT
+
 // --------------------------------------------------------------------------------
 // Gradients
 // --------------------------------------------------------------------------------
@@ -36,7 +44,7 @@ export const THEME_GRADIENT_TEXT_SX = {
   color: 'white',
 }
 // Hack to create gradient borders (https://codyhouse.co/nuggets/css-gradient-borders)
-export const THEME_GRADIENT_BORDERS_BG = `linear-gradient(${COLOR_BLACK}, ${COLOR_BLACK}) padding-box, ${THEME_GRADIENT} border-box`
+export const THEME_GRADIENT_BORDERS_BG = `linear-gradient(${COLOR_BG_PAPER}, ${COLOR_BG_PAPER}) padding-box, ${THEME_GRADIENT} border-box`
 export const THEME_GRADIENT_BORDERS_SX = {
   background: THEME_GRADIENT_BORDERS_BG,
   borderColor: 'transparent',
@@ -318,8 +326,14 @@ export const theme = createTheme(responsiveFontTheme, {
     // Background
     // --------------------------------------------------------------------------------
     background: {
-      default: COLOR_BLACK,
-      paper: COLOR_BLACK,
+      default: COLOR_BG_DEFAULT,
+      paper: COLOR_BG_PAPER,
+    },
+    // --------------------------------------------------------------------------------
+    // Text
+    // --------------------------------------------------------------------------------
+    text: {
+      primary: COLOR_TEXT_PRIMARY,
     },
   },
 })
