@@ -5,6 +5,7 @@ import { HeaderSection } from './components/HeaderSection.jsx'
 import { ResumeSection } from './components/ResumeSection.jsx'
 import { ProjectsSection } from './components/ProjectsSection.jsx'
 import { ContactSection } from './components/ContactSection.jsx'
+import {Chat, Terminal, Work} from "@mui/icons-material"
 
 function App() {
   // ================================================================================
@@ -29,16 +30,19 @@ function App() {
             text: 'Projects',
             hash: 'section-projects',
             color: COLOR_PROJECTS,
+            icon: <Terminal/>,
           },
           {
             text: 'Resume',
             hash: 'section-resume',
             color: COLOR_RESUME,
+            icon: <Work/>,
           },
           {
             text: 'Contact',
             hash: 'section-contact',
             color: COLOR_CONTACT,
+            icon: <Chat/>
           },
         ]}
       />

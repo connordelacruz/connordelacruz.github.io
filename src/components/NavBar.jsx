@@ -8,7 +8,7 @@ import {
   IconButton,
   List,
   ListItem,
-  ListItemButton,
+  ListItemButton, ListItemIcon,
   Tab,
   Tabs,
   Toolbar,
@@ -69,9 +69,14 @@ const NavTabs = ({
             value={sectionLink.hash}
             href={'#' + sectionLink.hash}
             onClick={createSmoothScrollToSectionHandler(sectionLink.hash)}
+            // Conditionally set icon + position if provided
+            icon={sectionLink.icon ? sectionLink.icon : null}
+            iconPosition={sectionLink.icon ? 'start': null}
             sx={{
               ml: 1,
               px: 3,
+              // Override min height for icon tabs
+              minHeight: 0,
               // Make sure text appears above full-height tab indicator
               zIndex: 1,
               backgroundColor: 'transparent',
@@ -219,13 +224,32 @@ const NavMenu = ({
                     py: 2,
                     borderRadius: '50rem',
                     color: sectionLink.color + '.main',
+
+                    // Color icons
+                    '& .MuiSvgIcon-root': {
+                      color: sectionLink.color + '.main',
+                    },
+
+                    // Selected styles
                     '&.Mui-selected': {
                       backgroundColor: sectionLink.color + '.main',
                       color: 'background.default',
+                      // Match icon color to text
+                      '& .MuiSvgIcon-root': {
+                        color: 'background.default',
+                      },
+                      // Hover color
+                      '&:hover': {
+                        backgroundColor: sectionLink.color + '.dark',
+                      },
                     },
-                    // TODO: hover color fix
                   }}
                 >
+                  {sectionLink.icon &&
+                    <ListItemIcon>
+                      {sectionLink.icon}
+                    </ListItemIcon>
+                  }
                   <Typography
                     variant="button"
                     gutterBottom={false}
