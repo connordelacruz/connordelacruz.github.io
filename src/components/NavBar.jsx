@@ -223,6 +223,7 @@ const NavMenu = ({
                       backgroundColor: sectionLink.color + '.main',
                       color: 'background.default',
                     },
+                    // TODO: hover color fix
                   }}
                 >
                   <Typography
