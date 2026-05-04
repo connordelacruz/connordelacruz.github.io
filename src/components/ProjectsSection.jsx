@@ -5,7 +5,7 @@ import { CtaButton } from './common/CtaButton.jsx'
 import { THEME_CONTENT_STACK_SPACING } from './Theme.jsx'
 import { SectionContainer } from './common/SectionContainer.jsx'
 import { ButtonStack } from './common/ButtonStack.jsx'
-import Grid from '@mui/material/Grid2'
+import Grid from '@mui/material/Grid'
 
 // ================================================================================
 // Content

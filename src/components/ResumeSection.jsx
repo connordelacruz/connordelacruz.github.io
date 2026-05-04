@@ -1,6 +1,6 @@
 import { Box, CardContent, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material'
 import { Description, PlayArrow } from '@mui/icons-material'
-import Grid from '@mui/material/Grid2'
+import Grid from '@mui/material/Grid'
 import { SkillChips } from './common/SkillChips.jsx'
 import { ContentCard, ContentCardHeader } from './common/ContentCard.jsx'
 import { CtaButton } from './common/CtaButton.jsx'
