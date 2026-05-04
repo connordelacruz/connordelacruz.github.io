@@ -163,17 +163,19 @@ const NavMenu = ({
         id="nav-drawer"
         open={drawerOpen}
         onClose={handleDrawerOnClose}
-        PaperProps={{
-          sx: {
-            borderTopWidth: 2,
-            borderRightWidth: 2,
-            borderBottomWidth: 2,
-            borderLeftWidth: 0,
-            borderTopLeftRadius: 0,
-            borderBottomLeftRadius: 0,
-            // Gradient border when no active hash
-            background: THEME_GRADIENT_BORDERS_BG,
-            borderColor: getActiveHashColor('transparent'),
+        slotProps={{
+          paper: {
+            sx: {
+              borderTopWidth: 2,
+              borderRightWidth: 2,
+              borderBottomWidth: 2,
+              borderLeftWidth: 0,
+              borderTopLeftRadius: 0,
+              borderBottomLeftRadius: 0,
+              // Gradient border when no active hash
+              background: THEME_GRADIENT_BORDERS_BG,
+              borderColor: getActiveHashColor('transparent'),
+            },
           },
         }}
       >

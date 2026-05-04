@@ -293,7 +293,7 @@ const ProjectCard = ({
             title: {
               color: color,
               variant: 'h6',
-              textAlign: 'center',
+              align: 'center',
               gutterBottom: false,
             },
           }}
@@ -366,7 +366,9 @@ const ProjectCards = ({
     <Grid
       container
       spacing={THEME_CONTENT_STACK_SPACING}
-      alignItems="stretch"
+      sx={{
+        alignItems: 'stretch',
+      }}
     >
       {
         projectCardProps.map((cardProps, i) =>

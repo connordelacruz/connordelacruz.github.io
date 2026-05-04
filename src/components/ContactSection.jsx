@@ -26,7 +26,7 @@ export const ContactSection = ({color}) => {
           slotProps={{
             title: {
               variant: 'h3',
-              textAlign: 'center',
+              align: 'center',
               color: color,
               gutterBottom: false,
             },
