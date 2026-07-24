@@ -15,11 +15,11 @@ import { SectionContainer } from './common/SectionContainer.jsx'
 const skills = [
   {
     title: 'Languages',
-    skills: 'Python, PHP, JavaScript, MySQL, CSS, HTML, Java, Bash, Groovy, Lua',
+    skills: 'Python, JavaScript, MySQL, PHP, CSS, HTML, Java, Bash, Groovy, Lua',
   },
   {
     title: 'Tools & Frameworks',
-    skills: 'React, Sass, Jenkins, Django, AWS, Cypress, Selenium, Docker, Node.js',
+    skills: 'React, Django, AWS, Jenkins, GitHub, Docker, Node.js, Sass, Selenium',
   },
 ]
 
@@ -31,9 +31,10 @@ const experience = [
     startDate: 'January 2023',
     endDate: 'October 2025',
     bullets: [
-      'Worked on larger client projects through their full lifecycle, refining specs with project managers, creating Jira epics mapping out the entire project, and taking ownership of development.',
-      'Created CI/CD pipelines to improve efficiency, including an automated maintenance message system that reduced the time to release to 150+ client sites from 2 hours down to just 20 minutes.',
-      'Built CLI tooling in Python to automate repetitive engineering tasks, streamlining git workflows, and improving developer productivity across the team.',
+        'Designed and developed client-requested features for the flagship enterprise SaaS web application.',
+        'Planned larger projects with project managers, creating specs and turning them into Jira sprints.',
+        'Took ownership of feature development through the full project lifecycle, from design to deployment.',
+        'Created CI/CD pipelines to improve efficiency, reducing the time it took for production releases for 150+ client sites from 2 hours down to just 20 minutes.',
     ],
     skills: 'PHP, MySQL, Jenkins, Groovy, Python, Docker, Cypress, GitHub, Jira',
   },
@@ -43,10 +44,10 @@ const experience = [
     startDate: 'June 2020',
     endDate: 'January 2023',
     bullets: [
-      'Developed and maintained the company’s flagship enterprise web application with a focus on client feature requests, bug fixes, and ad hoc support.',
-      'Handled production releases to 150+ clients, including cloud-hosted and self-hosted instances.',
-      'Authored extensive internal documentation to define coding standards, support engineering best practices, streamline onboarding, and preserve institutional knowledge.',
-      'Collaborated with other engineers through pair programming, troubleshooting, and code reviews.',
+        'Developed and maintained the company’s flagship SaaS enterprise web application with a focus on client feature requests, bug fixes, and ad hoc support.',
+        'Authored extensive internal documentation to define coding standards and best practices, streamline onboarding, and preserve institutional knowledge.',
+        'Collaborated with other engineers through pair programming, troubleshooting, and code reviews.',
+        'Built internal tooling in Python to automate repetitive engineering tasks, streamline git workflows, and improve developer productivity across the engineering department.',
     ],
     skills: 'PHP, MySQL, Jenkins, Groovy, Python, Docker, Cypress, GitHub, Jira',
   },
@@ -56,9 +57,9 @@ const experience = [
     startDate: 'January 2018',
     endDate: 'November 2019',
     bullets: [
-      'Spearheaded the development of an in-house CMS and site-building framework using Django, Sass, and JavaScript, enabling rapid, reusable, and customizable site creation for agency clients.',
-      'Built a cross-browser front-end testing suite using Selenium WebDriver and Python, integrating with BrowserStack to fully automate regression testing and eliminate hours of manual QA effort.',
-      'Created and maintained client-facing websites ranging from marketing pages to full-featured eCommerce platforms, adapting to varying client requirements across modern web technologies.',
+      'Spearheaded the development of an in-house website builder and CMS using Django to enable rapid, reusable, and flexible website creation for agency clients.',
+      'Developed an automated front-end testing framework using Selenium WebDriver and Python, with cross-browser support and BrowserStack integration, eliminating hours of manual QA effort.',
+      'Built and maintained client websites, ranging from marketing pages to full-featured eCommerce platforms, adapting to varying client requirements across modern web technologies.',
     ],
     skills: 'JavaScript, Python, Sass, CSS, MySQL, Selenium, Django, BitBucket, AEM',
   },
