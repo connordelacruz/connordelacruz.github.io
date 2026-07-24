@@ -135,6 +135,9 @@ const NavMenu = ({
   const handleDrawerOnClose = () => {
     setDrawerOpen(false)
   }
+
+  // TODO: Show nav logo at top of list, always make it visible even when no active hash
+
   return (
     <Box
       sx={{
@@ -205,7 +208,6 @@ const NavMenu = ({
             <Close/>
           </IconButton>
           {/*Drawer Menu Items*/}
-          {/*TODO: Futura-Medium*/}
           <List>
             {sectionLinks.map((sectionLink, i) => (
               <ListItem
