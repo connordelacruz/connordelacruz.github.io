@@ -22,6 +22,7 @@ import {
   THEME_TRANSITION_TIMING_FUNCTION
 } from './Theme.jsx'
 import React from 'react'
+import {SocialIconLinks} from "./common/SocialLinks.jsx"
 
 
 /**
@@ -31,6 +32,7 @@ import React from 'react'
  * @param activeHash
  * @param getActiveHashColor
  * @param createSmoothScrollToSectionHandler
+ * @param containerSx
  * @return {Element}
  * @constructor
  */
@@ -39,12 +41,14 @@ const NavTabs = ({
                    activeHash,
                    getActiveHashColor,
                    createSmoothScrollToSectionHandler,
+                   containerSx = {},
                  }) => {
   return (
     <Box
       sx={{
         // Hide if below md
         display: {xs: 'none', md: 'block'},
+        ...containerSx,
       }}
     >
       <Tabs
@@ -58,6 +62,10 @@ const NavTabs = ({
             // height: '100%',
             // borderRadius: '5px',
             // backgroundColor: getActiveHashColor(),
+          },
+          // Center tabs within container
+          '& .MuiTabs-list': {
+            justifyContent: 'center',
           },
         }}
       >
@@ -274,12 +282,14 @@ const NavMenu = ({
  *
  * @param activeHash
  * @param color
+ * @param containerSx
  * @return {Element}
  * @constructor
  */
 const NavLogo = ({
                    activeHash,
                    getActiveHashColor,
+                   containerSx = {},
                  }) => {
   // Smooth scroll logo link handler
   const handleLogoClick = (e) => {
@@ -290,7 +300,11 @@ const NavLogo = ({
   }
 
   return (
-    <Box sx={{flexGrow: {xs: 0, md: 1}}}>
+    <Box
+      sx={{
+        ...containerSx,
+      }}
+    >
       <Typography
         variant="h5"
         component="a"
@@ -397,8 +411,18 @@ export const NavBar = ({
     >
       <Toolbar
         sx={{
-          px: {xs: 0, md: 2},
-          justifyContent: 'center',
+          px: {
+            xs: 0,
+            md: 1,
+            lg: 2,
+          },
+          // justifyContent: 'center',
+          justifyContent: {
+            // Narrow viewport where tabs n stuff are hidden
+            xs: 'center',
+            // Wide viewports with visible tabs
+            md: 'space-between',
+          },
         }}
         disableGutters
       >
@@ -414,6 +438,20 @@ export const NavBar = ({
         <NavLogo
           activeHash={activeHash}
           getActiveHashColor={getActiveHashColor}
+          containerSx={{
+            flex: {
+              // Fix for centering
+              xs: 'none',
+              // Equal weight with tabs/links
+              md: 1,
+            },
+            marginRight: {
+              // No margin so we can center the logo
+              xs: 0,
+              // for centering tabs
+              md: 'auto',
+            },
+          }}
         />
 
         {/*Wide Viewport Links*/}
@@ -422,6 +460,29 @@ export const NavBar = ({
           activeHash={activeHash}
           getActiveHashColor={getActiveHashColor}
           createSmoothScrollToSectionHandler={createSmoothScrollToSectionHandler}
+          containerSx={{
+            flex: 1,
+          }}
+        />
+
+        {/*Social Link Icons*/}
+        <SocialIconLinks
+          containerSx={{
+            flex: 1,
+            // For centering tabs
+            marginLeft: 'auto',
+            // Hide on narrow
+            display: {
+              xs: 'none',
+              md: 'block',
+            },
+            // Override centering and right-align
+            textAlign: 'right',
+          }}
+          linkSx={{
+            mx: 0.5,
+            opacity: 0.6,
+          }}
         />
 
       </Toolbar>
