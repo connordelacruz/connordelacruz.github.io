@@ -480,7 +480,8 @@ export const NavBar = ({
             textAlign: 'right',
           }}
           linkSx={{
-            mx: 0.5,
+            // Remove margins, spacing is fine w/ button padding and this causes it to get funky right before the breakpoint
+            mx: 0,
             opacity: 0.6,
           }}
         />
