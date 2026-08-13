@@ -43,6 +43,7 @@ const NavTabs = ({
                    createSmoothScrollToSectionHandler,
                    containerSx = {},
                  }) => {
+  // TODO: cleanup styles, maybe set it up so we can switch on the fly in the future
   return (
     <Box
       sx={{
@@ -57,11 +58,12 @@ const NavTabs = ({
           // Active tab indicator styles
           '& .MuiTabs-indicator': {
             // Don't use tab indicator
-            display: 'none',
+            // display: 'none',
+
             // Full height indicator
-            // height: '100%',
-            // borderRadius: '5px',
-            // backgroundColor: getActiveHashColor(),
+            height: '100%',
+            borderRadius: '5px',
+            backgroundColor: getActiveHashColor(),
           },
           // Center tabs within container
           '& .MuiTabs-list': {
@@ -83,8 +85,10 @@ const NavTabs = ({
             sx={{
               ml: 1,
               px: 3,
-              // Override min height for icon tabs
-              minHeight: 0,
+              // Override min height for icon tabs (when not using tab indicator):
+              // minHeight: 0,
+              // Better vertical centering with full height tab indicator:
+              minHeight: '50px',
               // Make sure text appears above full-height tab indicator
               zIndex: 1,
               backgroundColor: 'transparent',
@@ -92,18 +96,18 @@ const NavTabs = ({
               // other than the default ones, so I guess we're going with sx instead
               color: sectionLink.color + '.main',
               // Round borders when not selected
-              borderStyle: 'solid',
-              borderWidth: 2,
-              borderRadius: '50em',
-              borderColor: sectionLink.color + '.main',
+              // borderStyle: 'solid',
+              // borderWidth: 2,
+              // borderRadius: '50em',
+              // borderColor: sectionLink.color + '.main',
 
               // Selected tab styles
               '&.Mui-selected': {
                 // Set background color to section color, text color to black
-                backgroundColor: getActiveHashColor(),
+                // backgroundColor: getActiveHashColor(),
                 color: 'background.default',
                 // Squared circle
-                borderRadius: '0.5rem',
+                // borderRadius: '0.5rem',
               },
               transitionProperty: 'background-color, color, border-radius',
               ...THEME_TRANSITION_DURATION_AND_TIMING_SX,
