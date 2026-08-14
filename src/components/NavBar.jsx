@@ -229,6 +229,9 @@ const NavMenu = ({
             hideOnNarrowIfNoActiveHash={false}
             typographyVariant="h4"
             clickListenerCallback={handleDrawerOnClose}
+            containerSx={{
+              mb: 1,
+            }}
           />
           {/*TODO: add zig zag or something between logo and list*/}
           <List>
@@ -286,6 +289,16 @@ const NavMenu = ({
               </ListItem>
             ))}
           </List>
+          {/*Social Icons*/}
+          <SocialIconLinks
+            containerSx={{
+              opacity: 0.9,
+              mt: 12, // TODO: use flex to display at bottom!! https://sentry.io/answers/how-to-align-content-of-a-div-to-the-bottom/
+            }}
+            linkSx={{
+              mx: 1,
+            }}
+          />
         </Box>
       </Drawer>
 
