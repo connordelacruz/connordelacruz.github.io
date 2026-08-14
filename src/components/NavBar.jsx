@@ -289,7 +289,8 @@ const NavMenu = ({
  * Nav logo component.
  *
  * @param activeHash
- * @param color
+ * @param getActiveHashColor
+ * @param hideOnNarrowIfNoActiveHash (Default: true) set opacity to 0 if no active hash (narrow viewports)
  * @param containerSx
  * @return {Element}
  * @constructor
@@ -297,6 +298,7 @@ const NavMenu = ({
 const NavLogo = ({
                    activeHash,
                    getActiveHashColor,
+                   hideOnNarrowIfNoActiveHash = true,
                    containerSx = {},
                  }) => {
   // Smooth scroll logo link handler
@@ -306,6 +308,10 @@ const NavLogo = ({
     // Update url hash
     history.pushState({}, '', '#')
   }
+
+  // Opacity to apply when no active hash
+  const noActiveHashOpacityMd = 0.9
+  const noActiveHashOpacityXs = hideOnNarrowIfNoActiveHash ? 0.0 : noActiveHashOpacityMd
 
   return (
     <Box
@@ -326,10 +332,9 @@ const NavLogo = ({
 //          WebkitTextFillColor: activeHash ? 'none' : 'transparent',
           color: getActiveHashColor('text.primary'),
           opacity: {
-            // (Narrow viewports) Hide when no active hash
-            xs: activeHash ? 1.0 : 0.0,
-            // (Wide viewports) make unstyled text a tiiiiny bit translucent
-            md: activeHash ? 1.0 : 0.9,
+            // See above for no active hash var declarations
+            xs: activeHash ? 1.0 : noActiveHashOpacityXs,
+            md: activeHash ? 1.0 : noActiveHashOpacityMd,
           },
           // (Narrow viewports) Hide pointer when not visible
           pointerEvents: {
