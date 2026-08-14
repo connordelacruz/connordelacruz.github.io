@@ -152,8 +152,6 @@ const NavMenu = ({
     setDrawerOpen(false)
   }
 
-  // TODO: Show nav logo at top of list, always make it visible even when no active hash
-
   return (
     <Box
       sx={{
@@ -206,7 +204,8 @@ const NavMenu = ({
         <Box
           role="presentation"
           sx={{
-            width: 250,
+            // Allow width to increase if necessary, but min of 250
+            minWidth: 250,
             pt: 4,
           }}
         >
@@ -224,7 +223,16 @@ const NavMenu = ({
             <Close/>
           </IconButton>
           {/*Drawer Menu Items*/}
+          <NavLogo
+            activeHash={activeHash}
+            getActiveHashColor={getActiveHashColor}
+            hideOnNarrowIfNoActiveHash={false}
+            typographyVariant="h4"
+            clickListenerCallback={handleDrawerOnClose}
+          />
+          {/*TODO: add zig zag or something between logo and list*/}
           <List>
+            {/*Section Links*/}
             {sectionLinks.map((sectionLink, i) => (
               <ListItem
                 key={i}
@@ -290,8 +298,10 @@ const NavMenu = ({
  *
  * @param activeHash
  * @param getActiveHashColor
- * @param hideOnNarrowIfNoActiveHash (Default: true) set opacity to 0 if no active hash (narrow viewports)
- * @param containerSx
+ * @param hideOnNarrowIfNoActiveHash (Default: true) Set opacity to 0 if no active hash (narrow viewports)
+ * @param typographyVariant (Default: 'h5') variant prop to use for Typography element
+ * @param clickListenerCallback (Optional) Function to call on click after smooth scroll initiated
+ * @param containerSx (Optional)
  * @return {Element}
  * @constructor
  */
@@ -299,6 +309,8 @@ const NavLogo = ({
                    activeHash,
                    getActiveHashColor,
                    hideOnNarrowIfNoActiveHash = true,
+                   typographyVariant = 'h5',
+                   clickListenerCallback = () => null,
                    containerSx = {},
                  }) => {
   // Smooth scroll logo link handler
@@ -307,11 +319,15 @@ const NavLogo = ({
     window.scrollTo({top: 0, behavior: 'smooth'})
     // Update url hash
     history.pushState({}, '', '#')
+    // Call custom click listener if provided from prop
+    clickListenerCallback()
   }
 
   // Opacity to apply when no active hash
   const noActiveHashOpacityMd = 0.9
   const noActiveHashOpacityXs = hideOnNarrowIfNoActiveHash ? 0.0 : noActiveHashOpacityMd
+  // If we're hiding on narrow when no active hash, disable pointer events
+  const noActiveHashPointerEventsXs = hideOnNarrowIfNoActiveHash ? (activeHash === null ? 'none' : 'initial') : 'initial'
 
   return (
     <Box
@@ -320,7 +336,7 @@ const NavLogo = ({
       }}
     >
       <Typography
-        variant="h5"
+        variant={typographyVariant}
         component="a"
         href="#"
         onClick={handleLogoClick}
@@ -338,7 +354,7 @@ const NavLogo = ({
           },
           // (Narrow viewports) Hide pointer when not visible
           pointerEvents: {
-            xs: activeHash === null ? 'none' : 'initial',
+            xs: noActiveHashPointerEventsXs,
             md: 'initial',
           },
           display: 'inline',
