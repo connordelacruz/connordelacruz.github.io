@@ -62,7 +62,7 @@ const NavTabs = ({
 
             // Full height indicator
             height: '100%',
-            borderRadius: '5px',
+            borderRadius: '0.5rem',
             backgroundColor: getActiveHashColor(),
           },
           // Center tabs within container
@@ -83,10 +83,7 @@ const NavTabs = ({
             icon={sectionLink.icon ? sectionLink.icon : null}
             iconPosition={sectionLink.icon ? 'start': null}
             sx={{
-              ml: 1,
-              px: 3,
-              // Override min height for icon tabs (when not using tab indicator):
-              // minHeight: 0,
+              px: 2,
               // Better vertical centering with full height tab indicator:
               minHeight: '50px',
               // Make sure text appears above full-height tab indicator
@@ -95,6 +92,12 @@ const NavTabs = ({
               // While the Tabs textColor prop does work with custom palettes, it throws errors if you use anything
               // other than the default ones, so I guess we're going with sx instead
               color: sectionLink.color + '.main',
+              // Ripple without this shows hard edges, this makes it less harsh looking
+              borderRadius: '0.5rem',
+
+              // NO INDICATOR STYLES:
+              // Override min height for icon tabs (when not using tab indicator):
+              // minHeight: 0,
               // Round borders when not selected
               // borderStyle: 'solid',
               // borderWidth: 2,
@@ -103,9 +106,10 @@ const NavTabs = ({
 
               // Selected tab styles
               '&.Mui-selected': {
+                color: 'background.default',
+                // NO INDICATOR STYLES:
                 // Set background color to section color, text color to black
                 // backgroundColor: getActiveHashColor(),
-                color: 'background.default',
                 // Squared circle
                 // borderRadius: '0.5rem',
               },
