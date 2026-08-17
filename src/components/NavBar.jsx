@@ -204,6 +204,7 @@ const NavMenu = ({
         <Box
           role="presentation"
           sx={{
+            height: '100%',
             // Allow width to increase if necessary, but min of 250
             minWidth: 250,
             pt: 4,
@@ -222,83 +223,100 @@ const NavMenu = ({
           >
             <Close/>
           </IconButton>
-          {/*Drawer Menu Items*/}
-          <NavLogo
-            activeHash={activeHash}
-            getActiveHashColor={getActiveHashColor}
-            hideOnNarrowIfNoActiveHash={false}
-            typographyVariant="h4"
-            clickListenerCallback={handleDrawerOnClose}
-            containerSx={{
-              mb: 1,
+
+          {/*Drawer Content Container*/}
+          <Box
+            id="drawer-content-container"
+            sx={{
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
             }}
-          />
-          {/*TODO: add zig zag or something between logo and list*/}
-          <List>
-            {/*Section Links*/}
-            {sectionLinks.map((sectionLink, i) => (
-              <ListItem
-                key={i}
-                disablePadding
-                sx={{
-                  my: 1,
+          >
+            {/*Logo and Section Links*/}
+            <Box
+              id="drawer-nav-links"
+            >
+              <NavLogo
+                activeHash={activeHash}
+                getActiveHashColor={getActiveHashColor}
+                hideOnNarrowIfNoActiveHash={false}
+                typographyVariant="h4"
+                clickListenerCallback={handleDrawerOnClose}
+                containerSx={{
+                  mb: 1,
                 }}
-              >
-                <ListItemButton
-                  component="a"
-                  href={'#' + sectionLink.hash}
-                  onClick={createSmoothScrollToSectionHandler(sectionLink.hash, handleDrawerOnClose)}
-                  selected={activeHash === sectionLink.hash}
-                  sx={{
-                    py: 2,
-                    borderRadius: '50rem',
-                    color: sectionLink.color + '.main',
-
-                    // Color icons
-                    '& .MuiSvgIcon-root': {
-                      color: sectionLink.color + '.main',
-                    },
-
-                    // Selected styles
-                    '&.Mui-selected': {
-                      backgroundColor: sectionLink.color + '.main',
-                      color: 'background.default',
-                      // Match icon color to text
-                      '& .MuiSvgIcon-root': {
-                        color: 'background.default',
-                      },
-                      // Hover color
-                      '&:hover': {
-                        backgroundColor: sectionLink.color + '.dark',
-                      },
-                    },
-                  }}
-                >
-                  {sectionLink.icon &&
-                    <ListItemIcon>
-                      {sectionLink.icon}
-                    </ListItemIcon>
-                  }
-                  <Typography
-                    variant="button"
-                    gutterBottom={false}
+              />
+              {/*TODO: add zig zag or something between logo and list*/}
+              <List>
+                {/*Section Links*/}
+                {sectionLinks.map((sectionLink, i) => (
+                  <ListItem
+                    key={i}
+                    disablePadding
+                    sx={{
+                      my: 1,
+                    }}
                   >
-                    {sectionLink.text}
-                  </Typography>
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-          {/*Social Icons*/}
-          <SocialIconLinks
-            containerSx={{
-              opacity: 0.9,
-              mt: 12, // TODO: use flex to display at bottom!! https://sentry.io/answers/how-to-align-content-of-a-div-to-the-bottom/
-            }}
-            linkSx={{
-              mx: 1,
-            }}
-          />
+                    <ListItemButton
+                      component="a"
+                      href={'#' + sectionLink.hash}
+                      onClick={createSmoothScrollToSectionHandler(sectionLink.hash, handleDrawerOnClose)}
+                      selected={activeHash === sectionLink.hash}
+                      sx={{
+                        py: 2,
+                        borderRadius: '50rem',
+                        color: sectionLink.color + '.main',
+
+                        // Color icons
+                        '& .MuiSvgIcon-root': {
+                          color: sectionLink.color + '.main',
+                        },
+
+                        // Selected styles
+                        '&.Mui-selected': {
+                          backgroundColor: sectionLink.color + '.main',
+                          color: 'background.default',
+                          // Match icon color to text
+                          '& .MuiSvgIcon-root': {
+                            color: 'background.default',
+                          },
+                          // Hover color
+                          '&:hover': {
+                            backgroundColor: sectionLink.color + '.dark',
+                          },
+                        },
+                      }}
+                    >
+                      {sectionLink.icon &&
+                        <ListItemIcon>
+                          {sectionLink.icon}
+                        </ListItemIcon>
+                      }
+                      <Typography
+                        variant="button"
+                        gutterBottom={false}
+                      >
+                        {sectionLink.text}
+                      </Typography>
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
+
+            {/*Social Icons*/}
+            <SocialIconLinks
+              containerSx={{
+                mb: 2,
+                opacity: 0.9,
+              }}
+              linkSx={{
+                mx: 1,
+              }}
+            />
+          </Box>
         </Box>
       </Drawer>
 
