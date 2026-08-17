@@ -228,6 +228,7 @@ const NavMenu = ({
           <Box
             id="drawer-content-container"
             sx={{
+              // All this lets us align the social links to the bottom of the drawer
               height: '100%',
               display: 'flex',
               flexDirection: 'column',
@@ -245,7 +246,7 @@ const NavMenu = ({
                 typographyVariant="h4"
                 clickListenerCallback={handleDrawerOnClose}
                 containerSx={{
-                  mb: 1,
+                  my: 1,
                 }}
               />
               {/*TODO: add zig zag or something between logo and list*/}

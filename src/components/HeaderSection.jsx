@@ -1,7 +1,6 @@
-import {Box, Container, Divider, Paper, Typography} from '@mui/material'
-import { THEME_GRADIENT_BORDERS_SX, THEME_GRADIENT_TEXT_SX } from './Theme.jsx'
-import { ZigZag } from './common/ZigZag.jsx'
-import {SocialIconLinks} from "./common/SocialLinks.jsx";
+import {Box, Container, Paper, Typography} from '@mui/material'
+import {THEME_GRADIENT_BORDERS_SX, THEME_GRADIENT_TEXT_SX} from './Theme.jsx'
+import {ZigZag} from './common/ZigZag.jsx'
 
 /**
  * Title text.
@@ -124,15 +123,6 @@ export const AboutSection = () => {
         I'm a software engineer with a passion for creative problem solving and learning new things.
       </Typography>
 
-      {/*Social Links*/}
-      <Box
-        sx={{
-          opacity: 0.5,
-        }}
-      >
-        <SocialIconLinks />
-      </Box>
-
     </Paper>
   )
 }
@@ -150,7 +140,7 @@ export const HeaderSection = () => {
       sx={{
         my: {
           xs: 4,
-          md: 8,
+          md: 6,
         },
       }}
     >
