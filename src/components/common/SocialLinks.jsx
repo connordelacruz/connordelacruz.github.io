@@ -1,7 +1,7 @@
-import { Box, Button, IconButton } from '@mui/material'
-import { Email, GitHub, Instagram, LinkedIn } from '@mui/icons-material'
-import { CtaButton } from './CtaButton.jsx'
-import { ButtonStack } from './ButtonStack.jsx'
+import {Box, Button, IconButton} from '@mui/material'
+import {Book, Email, GitHub, Instagram, LinkedIn} from '@mui/icons-material'
+import {CtaButton} from './CtaButton.jsx'
+import {ButtonStack} from './ButtonStack.jsx'
 
 // ================================================================================
 // Content
@@ -28,6 +28,11 @@ const socials = [
     label: 'Instagram',
     iconComponent: <Instagram/>,
     href: 'https://www.instagram.com/delachrome',
+  },
+  {
+    label: 'Blog',
+    iconComponent: <Book/>,
+    href: 'https://connordelacruz.com/blog/',
   },
 ]
 
